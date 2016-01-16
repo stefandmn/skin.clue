@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">-</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<coordinates>
+		<origin x="0" y="0"/>
+	</coordinates>
+
+	<controls>
+		<control type="group">
+			<posx>1392</posx>
+			<include condition="!window.isactive(infodialog)">progressPosition1</include>
+			<include condition="window.isactive(infodialog)">progressPosition2</include>
+			<visible>!player.passthrough</visible>
+			<control type="image">
+				<posx>0</posx>
+				<posy>-12</posy>
+				<width>8-col</width>
+				<height>102</height>
+				<texture>masks/selected.png</texture>
+				<colordiffuse>eeFFFFFF</colordiffuse>
+			</control>
+			<control type="label">
+				<posx>24</posx>
+				<posy>-12</posy>
+				<width>2-col</width>
+				<font>smallStrong</font>
+				<textcolor>black</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<label>13376</label>
+			</control>
+			<control type="label">
+				<description>message</description>
+				<posx>24</posx>
+				<posy>30</posy>
+				<font>dialogTitle</font>
+				<textcolor>black</textcolor>
+				<width>468</width>
+				<height>1-row</height>
+				<label>$INFO[player.volume]</label>
+				<scroll>true</scroll>
+				<shadowcolor>-</shadowcolor>
+			</control>
+		</control>
+
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DebugDialogID</include>
+			<label>DialogVolumeBar.xml</label>
+		</control>
+	</controls>
+</window>

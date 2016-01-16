@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9001</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<include>fadeInOut</include>
+
+	<controls>
+		<include>modalDialog</include>
+		<control type="group">
+			<posx>0</posx>
+			<posy>368</posy>
+			<!--animations-->
+			<include>modalDialogInOut</include>
+			<!--text-->
+			<control type="group">
+				<posx>672</posx>
+				<posy>24</posy>
+				<control type="label" id="1">
+					<description>heading</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>9-col</width>
+					<font>pageTitle</font>
+					<textcolor>selected</textcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>1-row</posy>
+					<width>8-col</width>
+					<height>128</height>
+					<font>regular</font>
+					<textcolor>selected</textcolor>
+					<label>$INFO[control.getlabel(2)] $INFO[control.getlabel(3)] $INFO[control.getlabel(4)]</label>
+				</control>
+			</control>
+			<!--Yes / No-->
+			<control type="grouplist" id="9001">
+				<posx>672</posx>
+				<posy>4-row</posy>
+				<width>8-col</width>
+				<height>1-row</height>
+				<itemgap>0</itemgap>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9999</onup>
+				<ondown>9999</ondown>
+				<orientation>horizontal</orientation>
+				<!--selection buttons-->
+				<control type="button" id="10">
+					<description>No</description>
+					<label>106</label>
+					<font>menuTitle</font>
+					<align>left</align>
+					<textoffsetx>24</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>selected</textcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+				</control>
+				<control type="button" id="11">
+					<description>Yes</description>
+					<label>107</label>
+					<font>menuTitle</font>
+					<align>left</align>
+					<textoffsetx>24</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>selected</textcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+				</control>
+			</control>
+		</control>
+		<!--error message fields (placeholders)-->
+		<control type="group">
+			<visible>false</visible>
+			<control type="label" id="2">
+				<description>Line 1</description>
+			</control>
+			<control type="label" id="3">
+				<description>Line 2</description>
+			</control>
+			<control type="label" id="4">
+				<description>Line 3</description>
+			</control>
+		</control>
+
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DebugDialogID</include>
+			<label>DialogYesNo.xml</label>
+		</control>
+	</controls>
+</window>

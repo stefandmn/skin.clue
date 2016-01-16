@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<allowoverlay>no</allowoverlay>
+	<defaultcontrol>-</defaultcontrol>
+	<onload condition="System.HasAddon(script.artistinformation) + Skin.HasSetting(VisualizationArtistInformation) + !Window(Visualisation).Property(ArtistInformationRunning)">RunScript(script.artistinformation)</onload>
+	<previouswindow>home</previouswindow>
+
+	<controls>
+		<control type="image">
+			<include>dimensionsFullscreen</include>
+			<texture>masks/black.png</texture>
+			<colordiffuse>ffFFFFFF</colordiffuse>
+			<aspectratio>stretch</aspectratio>
+		</control>
+
+		<!-- Visualization and ArtistInformation control-->
+		<control type="group">
+			<include>fadeInOut</include>
+			<control type="multiimage">
+				<visible>!isempty(Window(Visualisation).Property(ArtistInformation))</visible>
+				<posx>0</posx>
+				<posy>0</posy>
+				<include>dimensionsFullscreen</include>
+				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistInformation)]</imagepath>
+				<aspectratio>keep</aspectratio>
+				<timeperimage>10000</timeperimage>
+				<fadetime>1000</fadetime>
+				<randomize>true</randomize>
+				<include condition="Skin.HasSetting(enableAnimateFanart)">kenBurnsey</include>
+			</control>
+			<!--visualisation-->
+			<control type="visualisation" id="2">
+				<description>visualisation</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<include>dimensionsFullscreen</include>
+			</control>
+		</control>
+
+		<!--date and time-->
+		<include>dateTime</include>
+
+		<!-- ArtistInformation Biography -->
+		<control type="group">
+			<visible>!isempty(Window(Visualisation).Property(ArtistInformation)) + !isempty(Window(Visualisation).Property(ArtistInformation.ArtistBiography)) + Skin.HasSetting(VisualizationArtistBiography)</visible>
+			<posx>25</posx>
+			<posy>20</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>750</width>
+				<height>250</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture border="0">masks/black.png</texture>
+				<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
+				<bordersize>3</bordersize>
+				<colordiffuse>aaFFFFFF</colordiffuse>
+			</control>
+			<control type="textbox">
+				<posx>10</posx>
+				<posy>10</posy>
+				<width>730</width>
+				<height>230</height>
+				<font>smallMedium</font>
+				<textcolor>unselected</textcolor>
+				<align>left</align>
+				<label>$INFO[Window(Visualisation).Property(ArtistInformation.ArtistBiography)]</label>
+				<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+			</control>
+		</control>
+
+		<!-- Song View info with OSD -->
+		<control type="group" id="8000">
+			<visible>[Player.ShowInfo | Window.IsActive(MusicOSD)] + ![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
+			<animation type="windowOpen">
+				<effect type="fade" start="0" end="100" time="300" delay="600"/>
+			</animation>
+			<animation type="windowClose">
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<control type="image">
+				<description>Music cover image</description>
+				<posx>50</posx>
+				<posy>820</posy>
+				<width>180</width>
+				<height>180</height>
+				<fadetime>200</fadetime>
+				<texture fallback="masks/offblack.png">$INFO[MusicPlayer.cover]</texture>
+				<aspectratio align="center" aligny="center">stretch</aspectratio>
+			</control>
+			<control type="label">
+				<description>Rating</description>
+				<posx>50</posx>
+				<posy>985</posy>
+				<width>180</width>
+				<align>center</align>
+				<scroll>false</scroll>
+				<font>symbolNormal</font>
+				<textcolor>selected</textcolor>
+				<label>$VAR[StarRating]</label>
+				<shadowcolor>00000000</shadowcolor>
+			</control>
+			<control type="group">
+				<posx>250</posx>
+				<posy>820</posy>
+				<control type="label">
+					<visible>!isempty(MusicPlayer.Title)</visible>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>60</width>
+					<font>symbolLarge</font>
+					<textcolor>unselected</textcolor>
+					<scroll>false</scroll>
+					<label></label>
+				</control>
+				<control type="label">
+					<visible>!isempty(MusicPlayer.Title)</visible>
+					<posx>60</posx>
+					<posy>0</posy>
+					<width>24-col</width>
+					<font>largeBlack</font>
+					<textcolor>selected</textcolor>
+					<scroll>false</scroll>
+					<label>$INFO[MusicPlayer.Title]</label>
+				</control>
+				<control type="label">
+					<visible>!isempty(MusicPlayer.Artist)</visible>
+					<posx>0</posx>
+					<posy>60</posy>
+					<width>60</width>
+					<font>symbolLarge</font>
+					<textcolor>unselected</textcolor>
+					<scroll>false</scroll>
+					<label></label>
+				</control>
+				<control type="label">
+					<visible>!isempty(MusicPlayer.Artist)</visible>
+					<posx>60</posx>
+					<posy>60</posy>
+					<width>24-col</width>
+					<font>mediumStrong</font>
+					<textcolor>white</textcolor>
+					<scroll>false</scroll>
+					<label>$INFO[MusicPlayer.Artist]</label>
+				</control>
+				<control type="label">
+					<visible>!isempty(MusicPlayer.Album)</visible>
+					<posx>0</posx>
+					<posy>110</posy>
+					<width>60</width>
+					<font>symbolLarge</font>
+					<textcolor>unselected</textcolor>
+					<scroll>false</scroll>
+					<label></label>
+				</control>
+				<control type="label">
+					<visible>!isempty(MusicPlayer.Album)</visible>
+					<posx>60</posx>
+					<posy>110</posy>
+					<width>24-col</width>
+					<font>regularStrong</font>
+					<textcolor>white</textcolor>
+					<scroll>false</scroll>
+					<label>$INFO[MusicPlayer.Album,, ]$INFO[MusicPlayer.year,(,)]</label>
+				</control>
+				<control type="label">
+					<posx>4</posx>
+					<posy>160</posy>
+					<width>60</width>
+					<font>symbolMedium</font>
+					<textcolor>unselected</textcolor>
+					<scroll>false</scroll>
+					<label></label>
+				</control>
+				<control type="label">
+					<posx>60</posx>
+					<posy>160</posy>
+					<width>180</width>
+					<font>menuTitle</font>
+					<align>left</align>
+					<textcolor>white</textcolor>
+					<scroll>false</scroll>
+					<label>[B]$INFO[MusicPlayer.time,, / ]$INFO[MusicPlayer.duration][/B]</label>
+				</control>
+			</control>
+		</control>
+
+		<!-- Song ProgressBar without OSD -->
+		<control type="group">
+			<posx>100</posx>
+			<posy>800</posy>
+			<visible>!Window.IsActive(MusicOSD) + !Player.ShowInfo</visible>
+			<control type="image">
+				<posx>-100</posx>
+				<posy>180</posy>
+				<width>2020</width>
+				<height>100</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture border="0">masks/black.png</texture>
+				<bordersize>0</bordersize>
+				<colordiffuse>ccFFFFFF</colordiffuse>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>200</posy>
+				<width>100</width>
+				<font>itemTitleSmall</font>
+				<textcolor>unselected</textcolor>
+				<scroll>false</scroll>
+				<label>$INFO[MusicPlayer.time]</label>
+			</control>
+			<control type="label">
+				<posx>1720</posx>
+				<posy>200</posy>
+				<width>100</width>
+				<font>itemTitleSmall</font>
+				<textcolor>unselected</textcolor>
+				<scroll>false</scroll>
+				<label>$INFO[MusicPlayer.duration]</label>
+				<align>right</align>
+			</control>
+			<control type="progress">
+				<description>Progress Bar</description>
+				<posx>100</posx>
+				<posy>230</posy>
+				<width>1520</width>
+				<height>2</height>
+				<info>Player.Progress</info>
+				<texturebg>masks/inactive.png</texturebg>
+				<midtexture>masks/selected.png</midtexture>
+				<reveal>true</reveal>
+			</control>
+			<control type="label">
+				<description>Now Playing - Song Artist and Title</description>
+				<visible>MusicPlayer.offset(1).Exists</visible>
+				<posx>100</posx>
+				<posy>180</posy>
+				<width>1520</width>
+				<font>small</font>
+				<align>left</align>
+				<textcolor>unselected</textcolor>
+				<scroll>false</scroll>
+				<label>$INFO[MusicPlayer.Artist,[B]$LOCALIZE[31136][/B]: , - ]$INFO[MusicPlayer.Title]</label>
+			</control>
+			<control type="label">
+				<description>Next - Song Artist and Title</description>
+				<visible>MusicPlayer.offset(1).Exists</visible>
+				<posx>200r</posx>
+				<posy>220</posy>
+				<width>1520</width>
+				<font>small</font>
+				<align>right</align>
+				<textcolor>unselected</textcolor>
+				<scroll>false</scroll>
+				<label>$INFO[MusicPlayer.offset(1).Artist,[B]$LOCALIZE[19031][/B]: , - ]$INFO[MusicPlayer.offset(1).Title]</label>
+			</control>
+		</control>
+
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DebugWindowID</include>
+			<label>MusicVisualisation.xml</label>
+		</control>
+	</controls>
+</window>

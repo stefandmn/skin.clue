@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">1000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<include>fadeInOut</include>
+
+	<controls>
+		<control type="image" id="999">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>380</width>
+			<bordersize>3</bordersize>
+			<bordertexture border="3">masks/offblack.png</bordertexture>
+			<texture>masks/vignette.png</texture>
+			<colordiffuse>ffffffff</colordiffuse>
+			<aspectratio>stretch</aspectratio>
+		</control>
+
+		<control type="grouplist" id="996">
+			<posx>10</posx>
+			<posy>5</posy>
+			<itemgap>0</itemgap>
+		</control>
+
+		<control type="button" id="1000">
+			<description>Buttons</description>
+			<width>5-col</width>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<font>itemTitle</font>
+			<textoffsetx>12</textoffsetx>
+			<texturefocus>controls/textbutton-fo.png</texturefocus>
+		</control>
+
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DebugDialogID</include>
+			<label>DialogContextMenu.xml</label>
+		</control>
+	</controls>
+</window>

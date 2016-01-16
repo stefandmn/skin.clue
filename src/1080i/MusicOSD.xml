@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">700</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<left>0</left>
+		<top>0</top>
+	</coordinates>
+
+	<controls>
+		<control type="group" id="100">
+			<posx>250</posx>
+			<posy>1030</posy>
+			<control type="image">
+				<posx>-250</posx>
+				<posy>0</posy>
+				<width>1920</width>
+				<height>75</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture border="0">masks/black.png</texture>
+				<bordersize>0</bordersize>
+				<colordiffuse>ccFFFFFF</colordiffuse>
+			</control>
+			<!-- Player  buttons -->
+			<control type="group" id="600">
+				<posx>0</posx>
+				<posy>0</posy>
+				<control type="button" id="601">
+					<description>Previous button</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>902</onleft>
+					<onright>602</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Previous)</onclick>
+				</control>
+				<control type="button" id="602">
+					<description>Rewind button</description>
+					<posx>55</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>601</onleft>
+					<onright>603</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Rewind)</onclick>
+				</control>
+				<control type="button" id="603">
+					<visible>Player.Playing + !Player.Forwarding + !Player.Rewinding</visible>
+					<description>Pause button</description>
+					<posx>110</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>602</onleft>
+					<onright>604</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Play)</onclick>
+				</control>
+				<control type="button" id="604">
+					<visible>Player.Paused | Player.Forwarding | Player.Rewinding</visible>
+					<description>Play button</description>
+					<posx>110</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>603</onleft>
+					<onright>605</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Play)</onclick>
+				</control>
+				<control type="button" id="605">
+					<description>Stop button</description>
+					<posx>165</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>604</onleft>
+					<onright>606</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Stop)</onclick>
+					<onclick>Dialog.Close(MusicOSD,true)</onclick>
+					<onclick>FullScreen</onclick>
+				</control>
+				<control type="button" id="606">
+					<description>Forward button</description>
+					<posx>220</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>605</onleft>
+					<onright>607</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Forward)</onclick>
+				</control>
+				<control type="button" id="607">
+					<description>Next button</description>
+					<posx>275</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>606</onleft>
+					<onright>700</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Next)</onclick>
+				</control>
+			</control>
+			<!-- Home button - actually Close window option -->
+			<control type="button" id="700">
+				<description>Close Window button</description>
+				<posx>350</posx>
+				<posy>0</posy>
+				<width>50</width>
+				<height>50</height>
+				<font>symbol</font>
+				<aligny>center</aligny>
+				<align>center</align>
+				<textoffsetx>0</textoffsetx>
+				<focusedcolor>black</focusedcolor>
+				<textcolor>selected</textcolor>
+				<label>↸</label>
+				<onleft>607</onleft>
+				<onright>801</onright>
+				<onup>increaseRating</onup>
+				<ondown>decreaseRating</ondown>
+				<texturefocus>masks/selected.png</texturefocus>
+				<texturenofocus>masks/black.png</texturenofocus>
+				<onclick>Dialog.Close(MusicOSD,true)</onclick>
+				<onclick>FullScreen</onclick>
+				<animation effect="fade" time="200">fadeInOut</animation>
+				<visible>![Window.IsVisible(AddonSettings) | Window.IsVisible(SelectDialog) | Window.IsVisible(VisualisationPresetList)]</visible>
+			</control>
+			<!-- Repeat and Random buttons -->
+			<control type="group" id="800">
+				<posx>435</posx>
+				<posy>0</posy>
+				<control type="button" id="801">
+					<description>RepeatAll button</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>700</onleft>
+					<onright>802</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Repeat)</onclick>
+				</control>
+				<control type="button" id="802">
+					<description>Random button</description>
+					<posx>55</posx>
+					<posy>0</posy>
+					<width>50</width>
+					<height>50</height>
+					<font>symbol</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>white</textcolor>
+					<label></label>
+					<onleft>801</onleft>
+					<onright>901</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>PlayerControl(Random)</onclick>
+				</control>
+			</control>
+			<!-- Repeat and Random buttons -->
+			<control type="group" id="900">
+				<posx>570</posx>
+				<posy>0</posy>
+				<control type="button" id="901">
+					<description>Show Playlist</description>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>50</height>
+					<font>smallest</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>selected</textcolor>
+					<label>559</label>
+					<onleft>802</onleft>
+					<onright>902</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>Dialog.Close(MusicOSD,true)</onclick>
+					<onclick>ActivateWindow(musicplaylist)</onclick>
+				</control>
+				<control type="button" id="902">
+					<description>Show Settings</description>
+					<posx>205</posx>
+					<posy>0</posy>
+					<width>200</width>
+					<height>50</height>
+					<font>smallest</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>black</focusedcolor>
+					<textcolor>selected</textcolor>
+					<label>10004</label>
+					<onleft>901</onleft>
+					<onright>601</onright>
+					<onup>increaseRating</onup>
+					<ondown>decreaseRating</ondown>
+					<texturefocus>masks/selected.png</texturefocus>
+					<texturenofocus>masks/black.png</texturenofocus>
+					<onclick>Dialog.Close(MusicOSD,true)</onclick>
+					<onclick>ActivateWindow(musicsettings)</onclick>
+				</control>
+			</control>
+			<control type="label">
+				<description>Next - Song Artist and Title</description>
+				<visible>MusicPlayer.offset(1).Exists</visible>
+				<posx>1000</posx>
+				<posy>-5</posy>
+				<width>600</width>
+				<font>smallMedium</font>
+				<align>left</align>
+				<textcolor>unselected</textcolor>
+				<scroll>false</scroll>
+				<label>$INFO[MusicPlayer.offset(1).Artist,[B]$LOCALIZE[19031][/B]: , - ]$INFO[MusicPlayer.offset(1).Title]</label>
+			</control>
+		</control>
+
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DebugDialogID</include>
+			<label>MusicOSD.xml</label>
+		</control>
+	</controls>
+</window>

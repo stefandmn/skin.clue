@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+		<!--background-->
+		<include>globalBackground</include>
+
+		<!--date and time-->
+		<include>dateTime</include>
+
+		<!-- Navigation control -->
+		<control type="button" id="9000">
+			<description>Home button</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>50</width>
+			<height>50</height>
+			<font>symbol</font>
+			<aligny>center</aligny>
+			<align>center</align>
+			<textoffsetx>0</textoffsetx>
+			<focusedcolor>selected</focusedcolor>
+			<textcolor>unselected</textcolor>
+			<label>↸</label>
+			<texturefocus>masks/selected.png</texturefocus>
+			<texturenofocus>masks/black.png</texturenofocus>
+			<onup>ActivateWindow(home)</onup>
+			<ondown>9100</ondown>
+			<onleft>9000</onleft>
+			<onright>9210</onright>
+			<onclick>ActivateWindow(home)</onclick>
+		</control>
+
+		<!-- Header -->
+		<control type="group" id="9100">
+			<posx>48</posx>
+			<posy>209</posy>
+			<!--animations-->
+			<include>modalDialogInOutVertical</include>
+			<!--General info-->
+			<control type="image">
+				<posx>-384</posx>
+				<posy>44</posy>
+				<width>2500</width>
+				<height>1-row</height>
+				<texture>masks/selected.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>-3</posx>
+				<posy>44</posy>
+				<width>3</width>
+				<height>1-row</height>
+				<texture>masks/black.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<!--Location selector-->
+			<control type="spincontrolex" id="3">
+				<description>Location Select</description>
+				<posx>12</posx>
+				<posy>44</posy>
+				<label>-</label>
+				<label2>-</label2>
+				<font>pageTitle</font>
+				<textcolor>white</textcolor>
+				<width>1-col</width>
+				<align>right</align>
+				<onup>9000</onup>
+				<ondown>60</ondown>
+				<onright>2</onright>
+			</control>
+			<!--Location title-->
+			<control type="label">
+				<visible>true</visible>
+				<posx>84</posx>
+				<posy>44</posy>
+				<width>18-col</width>
+				<font>pageTitle</font>
+				<label>$INFO[Window(Weather).Property(Location)]</label>
+				<textcolor>black</textcolor>
+				<shadowcolor>-</shadowcolor>
+			</control>
+			<!--overlay-->
+			<control type="image">
+				<posx>-48</posx>
+				<posy>2-row</posy>
+				<width>fullscreenWidth</width>
+				<height>8-row</height>
+				<texture>masks/black.png</texture>
+				<colordiffuse>88ffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<!--Refresh button-->
+			<control type="button" id="2">
+				<description>Refresh</description>
+				<posx>1548</posx>
+				<posy>44</posy>
+				<label>184</label>
+				<width>200</width>
+				<align>center</align>
+				<font>pageTitle</font>
+				<textcolor>black</textcolor>
+				<focusedcolor>selected</focusedcolor>
+				<texturefocus>-</texturefocus>
+				<animation effect="fade" start="100" end="25" condition="!Control.HasFocus(2)">Conditional</animation>
+				<onup>9000</onup>
+				<ondown>60</ondown>
+				<onleft>3</onleft>
+				<onright>9210</onright>
+			</control>
+		</control>
+
+		<!--Today's Weather-->
+		<control type="group" id="9200">
+			<!--animations-->
+			<include>modalDialogInOutVertical</include>
+			<animation effect="slide" start="0" end="-1920" time="300" condition="Control.HasFocus(9310) | Control.HasFocus(9301)">Conditional</animation>
+			<posx>48</posx>
+			<posy>339</posy>
+			<width>1780</width>
+			<height>18-row</height>
+			<!-- Today's Weather Details -->
+			<control type="group" id="9201">
+				<posx>0</posx>
+				<posy>-16</posy>
+				<!-- Weather current symbol -->
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<height>220</height>
+					<font>symbolVeryLargeWeather</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>selected</textcolor>
+					<label>[B]$VAR[currentWeatherIcon][/B]</label>
+				</control>
+				<!-- Map Alerts -->
+				<control type="group">
+					<visible>!isEmpty(Window(Weather).Property(MapPath))</visible>
+					<posx>375</posx>
+					<posy>20</posy>
+					<control type="image">
+						<description>Background image</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>326</width>
+						<height>183</height>
+						<texture border="5">masks/selected.png</texture>
+					</control>
+					<control type="multiimage">
+						<description>map multiimage</description>
+						<posx>2</posx>
+						<posy>1</posy>
+						<width>322</width>
+						<height>181</height>
+						<imagepath>$INFO[Window(Weather).Property(MapPath)]</imagepath>
+						<randomize>false</randomize>
+						<loop>no</loop>
+						<aspectratio>center</aspectratio>
+						<aligny>center</aligny>
+					</control>
+				</control>
+				<!-- Temperature sign and value -->
+				<control type="label">
+					<posx>55</posx>
+					<posy>248</posy>
+					<width>65</width>
+					<align>center</align>
+					<font>symbolLargeWeather</font>
+					<textcolor>selected</textcolor>
+					<label></label>
+				</control>
+				<control type="label">
+					<posx>120</posx>
+					<posy>216</posy>
+					<width>500</width>
+					<align>left</align>
+					<aligny>top</aligny>
+					<font>largeStrong</font>
+					<textcolor>selected</textcolor>
+					<label>$INFO[Window(Weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits]</label>
+				</control>
+				<!-- Current weather conditions - Feels like-->
+				<control type="label">
+					<posx>120</posx>
+					<posy>270</posy>
+					<width>500</width>
+					<align>left</align>
+					<scroll>true</scroll>
+					<font>small</font>
+					<scrollsuffix>•</scrollsuffix>
+					<textcolor>selected</textcolor>
+					<label>$INFO[Window(Weather).Property(Current.Condition),,$COMMA ]$INFO[Window(Weather).Property(Current.FeelsLike),$LOCALIZE[402] ,]$INFO[System.TemperatureUnits]</label>
+				</control>
+				<!-- Humidity symbol and value -->
+				<control type="label">
+					<posx>55</posx>
+					<posy>310</posy>
+					<width>65</width>
+					<font>symbolWeather</font>
+					<align>center</align>
+					<textcolor>white</textcolor>
+					<label></label>
+				</control>
+				<control type="label">
+					<posx>120</posx>
+					<posy>310</posy>
+					<width>380</width>
+					<align>left</align>
+					<font>small</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[Window(Weather).Property(Current.Humidity)]</label>
+				</control>
+				<!-- Wind direction symbol and value-->
+				<control type="label">
+					<posx>55</posx>
+					<posy>355</posy>
+					<width>65</width>
+					<font>symbolWeather</font>
+					<align>center</align>
+					<textcolor>white</textcolor>
+					<label></label>
+				</control>
+				<control type="label">
+					<posx>120</posx>
+					<posy>355</posy>
+					<width>380</width>
+					<align>left</align>
+					<font>small</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[Window(Weather).Property(Current.WindSpeed)]$INFO[Window(Weather).Property(Current.WindDirection),$COMMA ,]</label>
+				</control>
+				<!-- Sunrise symbol and time -->
+				<control type="label">
+					<posx>455</posx>
+					<posy>310</posy>
+					<width>65</width>
+					<font>symbolWeather</font>
+					<align>center</align>
+					<textcolor>white</textcolor>
+					<label></label>
+				</control>
+				<control type="label">
+					<posx>520</posx>
+					<posy>310</posy>
+					<width>116</width>
+					<align>left</align>
+					<font>small</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[Window(Weather).Property(Today.Sunrise)]</label>
+				</control>
+				<!-- Sunset symbol and time -->
+				<control type="label">
+					<posx>455</posx>
+					<posy>355</posy>
+					<width>65</width>
+					<font>symbolWeather</font>
+					<align>center</align>
+					<textcolor>white</textcolor>
+					<label></label>
+				</control>
+				<control type="label">
+					<posx>520</posx>
+					<posy>355</posy>
+					<width>116</width>
+					<align>left</align>
+					<font>small</font>
+					<textcolor>white</textcolor>
+					<label>$INFO[Window(Weather).Property(Today.Sunset)]</label>
+				</control>
+				<!-- Weather Alerts -->
+				<control type="textbox">
+					<visible>!StringCompare(Window(Weather).Property(Alerts.Count),0)</visible>
+					<posx>55</posx>
+					<posy>410</posy>
+					<width>580</width>
+					<height>30</height>
+					<font>smallMedium</font>
+					<textcolor>selected</textcolor>
+					<selectedcolor>selected</selectedcolor>
+					<align>center</align>
+					<label>$INFO[Window.Property(Alerts)]</label>
+					<autoscroll time="5000" delay="3000" repeat="5000">true</autoscroll>
+				</control>
+			</control>
+			<!-- Hourly Forecast - Listing -->
+			<control type="list" id="9202">
+				<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+				<posx>720</posx>
+				<posy>-16</posy>
+				<width>924</width>
+				<height>456</height>
+				<onup>2</onup>
+				<onleft>60</onleft>
+				<onright>60</onright>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout width="924" height="91">
+					<control type="image">
+						<width>924</width>
+						<height>85</height>
+						<texture border="5">masks/inactive.png</texture>
+						<colordiffuse>88ffffff</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<posy>0</posy>
+						<width>125</width>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>small</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<posy>35</posy>
+						<width>125</width>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>small</font>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+					<control type="label">
+						<posx>150</posx>
+						<width>100</width>
+						<height>85</height>
+						<font>symbolWeather</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$VAR[listWeatherIcon][/B]</label>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="label">
+						<posx>250</posx>
+						<width>530</width>
+						<height>80</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>regular</font>
+						<label>$INFO[ListItem.Property(outlook)]</label>
+					</control>
+					<control type="label">
+						<posx>750</posx>
+						<width>120</width>
+						<height>80</height>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>regular</font>
+						<label>$INFO[ListItem.Property(temp)]</label>
+					</control>
+					<control type="label">
+						<posx>850</posx>
+						<width>50</width>
+						<height>85</height>
+						<font>symbolWeather</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label></label>
+						<textcolor>white</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout width="924" height="91">
+					<control type="image">
+						<width>924</width>
+						<height>85</height>
+						<texture border="5">masks/inactive.png</texture>
+						<colordiffuse>88ffffff</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<posy>0</posy>
+						<width>125</width>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>small</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<posy>35</posy>
+						<width>125</width>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>small</font>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+					<control type="label">
+						<posx>150</posx>
+						<width>100</width>
+						<height>85</height>
+						<font>symbolWeather</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$VAR[listWeatherIcon][/B]</label>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="label">
+						<posx>250</posx>
+						<width>530</width>
+						<height>80</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>regular</font>
+						<label>$INFO[ListItem.Property(outlook)]</label>
+					</control>
+					<control type="label">
+						<posx>750</posx>
+						<width>120</width>
+						<height>80</height>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>regular</font>
+						<label>$INFO[ListItem.Property(temp)]</label>
+					</control>
+					<control type="label">
+						<posx>850</posx>
+						<width>50</width>
+						<height>85</height>
+						<font>symbolWeather</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label></label>
+						<textcolor>white</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<label>$LOCALIZE[31909]</label>
+						<onclick>noop</onclick>
+						<visible>IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.1.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.1.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.1.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.1.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.1.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.2.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.2.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.2.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.2.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.2.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.3.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.3.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.3.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.3.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.3.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.4.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.4.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.4.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.4.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.4.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.5.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.5.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.5.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.5.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.5.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.6.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.6.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.6.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.6.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.6.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.7.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.7.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.7.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.7.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.7.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.8.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.8.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.8.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.8.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.8.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.9.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.9.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.9.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.9.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.9.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+					<item>
+						<label>$INFO[Window.Property(Hourly.10.Time)]</label>
+						<label2>$INFO[Window.Property(Hourly.10.ShortDate)]</label2>
+						<property name="fanartcode">$INFO[Window.Property(Hourly.10.FanartCode)]</property>
+						<property name="temp">$INFO[Window.Property(Hourly.10.Temperature)]</property>
+						<property name="outlook">$INFO[Window.Property(Hourly.10.Outlook)]</property>
+						<onclick>noop</onclick>
+						<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+					</item>
+				</content>
+			</control>
+			<!-- Weekly Forecast - Listing -->
+			<control type="list" id="9203">
+				<visible>IsEmpty(Window.Property(Hourly.IsFetched))</visible>
+				<posx>720</posx>
+				<posy>-16</posy>
+				<width>924</width>
+				<height>456</height>
+				<onup>2</onup>
+				<onleft>60</onleft>
+				<onright>60</onright>
+				<pagecontrol>60</pagecontrol>
+				<orientation>vertical</orientation>
+				<itemlayout width="924" height="91">
+					<control type="image">
+						<width>924</width>
+						<height>85</height>
+						<texture border="5">masks/inactive.png</texture>
+						<colordiffuse>88ffffff</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<width>150</width>
+						<height>85</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>small</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>175</posx>
+						<width>75</width>
+						<height>85</height>
+						<font>symbolWeather</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$VAR[listWeatherIcon][/B]</label>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="label">
+						<posx>250</posx>
+						<width>630</width>
+						<height>80</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>regular</font>
+						<label>$INFO[ListItem.Property(outlook)]</label>
+					</control>
+					<control type="label">
+						<posx>40r</posx>
+						<width>140</width>
+						<height>80</height>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>regular</font>
+						<label>$INFO[ListItem.Property(LowTemp)] ÷ $INFO[ListItem.Property(HighTemp)] $INFO[ListItem.Property(TempUnits)]</label>
+					</control>
+					<control type="label">
+						<posx>15r</posx>
+						<width>50</width>
+						<height>85</height>
+						<font>symbolWeather</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label></label>
+						<textcolor>white</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout width="924" height="91">
+					<control type="image">
+						<width>924</width>
+						<height>85</height>
+						<texture border="5">masks/inactive.png</texture>
+						<colordiffuse>88ffffff</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<width>150</width>
+						<height>85</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>small</font>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<posx>175</posx>
+						<width>75</width>
+						<height>85</height>
+						<font>symbolWeather</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>[B]$VAR[listWeatherIcon][/B]</label>
+						<textcolor>white</textcolor>
+					</control>
+					<control type="label">
+						<posx>250</posx>
+						<width>630</width>
+						<height>80</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>regular</font>
+						<label>$INFO[ListItem.Property(outlook)]</label>
+					</control>
+					<control type="label">
+						<posx>40r</posx>
+						<width>140</width>
+						<height>80</height>
+						<align>right</align>
+						<aligny>center</aligny>
+						<textcolor>white</textcolor>
+						<font>regular</font>
+						<label>$INFO[ListItem.Property(LowTemp)] ÷ $INFO[ListItem.Property(HighTemp)] $INFO[ListItem.Property(TempUnits)]</label>
+					</control>
+					<control type="label">
+						<posx>15r</posx>
+						<width>50</width>
+						<height>85</height>
+						<font>symbolWeather</font>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label></label>
+						<textcolor>white</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<description>Day 0</description>
+						<label>$INFO[Window.Property(Day0.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day0.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day0.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day0.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day0.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+					<item id="2">
+						<description>Day 1</description>
+						<label>$INFO[Window.Property(Day1.Title)]</label>
+						<label2>$INFO[Window.Property(Day1.ShortDate)]</label2>
+						<property name="fanartCode">$INFO[Window.Property(Day1.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day1.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day1.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day1.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+					<item id="3">
+						<description>Day 2</description>
+						<label>$INFO[Window.Property(Day2.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day2.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day2.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day2.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day2.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+					<item id="4">
+						<description>Day 3</description>
+						<label>$INFO[Window.Property(Day3.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day3.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day3.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day3.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day3.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+					<item id="5">
+						<description>Day 4</description>
+						<label>$INFO[Window.Property(Day4.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day4.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day4.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day4.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day4.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+				</content>
+			</control>
+			<!-- Related controls -->
+			<control type="group" id="9204">
+				<posx>1600</posx>
+				<posy>-16</posy>
+				<control type="scrollbar" id="60">
+					<posx>50</posx>
+					<posy>0</posy>
+					<height>456</height>
+					<onup>9100</onup>
+					<onright>9210</onright>
+				</control>
+				<control type="button" id="9210">
+					<posx>200</posx>
+					<posy>210</posy>
+					<width>48</width>
+					<height>48</height>
+					<font>symbolLarge</font>
+					<aligny>center</aligny>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<focusedcolor>selected</focusedcolor>
+					<textcolor>unselected</textcolor>
+					<label></label>
+					<onup>9000</onup>
+					<ondown>9210</ondown>
+					<onleft>9000</onleft>
+					<onright>9310</onright>
+					<onclick>Control.SetFocus(9310)</onclick>
+				</control>
+			</control>
+		</control>
+
+		<!-- Weekly Forecast Weather -->
+		<control type="group" id="9300">
+			<!--animations-->
+			<include>modalDialogInOutVertical</include>
+			<animation effect="slide" start="0" end="-1920" time="300" condition="Control.HasFocus(9310) | Control.HasFocus(9301)">Conditional</animation>
+			<posx>1920</posx>
+			<posy>339</posy>
+			<onup>9100</onup>
+			<control type="panel" id="9301">
+				<posx>80</posx>
+				<posy>0</posy>
+				<width>24-col</width>
+				<height>18-row</height>
+				<onup>9000</onup>
+				<ondown>9301</ondown>
+				<onleft>9310</onleft>
+				<onright>9301</onright>
+				<itemlayout width="336" height="6-col">
+					<control type="label">
+						<posx>46</posx>
+						<posy>72</posy>
+						<width>336</width>
+						<align>center</align>
+						<font>symbolVeryLargeWeather</font>
+						<textcolor>white</textcolor>
+						<label>$VAR[listWeatherIcon]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>4-row</posy>
+						<width>408</width>
+						<align>center</align>
+						<font>largeStrong</font>
+						<textcolor>white</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="textbox">
+						<posx>36</posx>
+						<posy>5-row</posy>
+						<width>336</width>
+						<height>1-row</height>
+						<align>center</align>
+						<font>itemTitle</font>
+						<textcolor>white</textcolor>
+						<autoscroll delay="3000" time="1000" repeat="3000"></autoscroll>
+						<label>$INFO[ListItem.Property(Outlook)]</label>
+					</control>
+					<control type="textbox">
+						<posx>36</posx>
+						<posy>6-row</posy>
+						<width>336</width>
+						<height>1-row</height>
+						<align>center</align>
+						<font>itemTitleSmall</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[13508] [B]$INFO[ListItem.Property(HighTemp)] $INFO[ListItem.Property(TempUnits)][/B] $LOCALIZE[418] [B]$INFO[ListItem.Property(LowTemp)] $INFO[ListItem.Property(TempUnits)][/B]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="6-col" height="6-col">
+					<control type="label">
+						<posx>46</posx>
+						<posy>72</posy>
+						<width>336</width>
+						<align>center</align>
+						<font>symbolVeryLargeWeather</font>
+						<textcolor>selected</textcolor>
+						<label>$VAR[listWeatherIcon]</label>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>4-row</posy>
+						<width>408</width>
+						<align>center</align>
+						<font>largeStrong</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="textbox">
+						<posx>36</posx>
+						<posy>5-row</posy>
+						<width>336</width>
+						<height>1-row</height>
+						<align>center</align>
+						<font>itemTitle</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.Property(Outlook)]</label>
+					</control>
+					<control type="textbox">
+						<posx>36</posx>
+						<posy>6-row</posy>
+						<width>336</width>
+						<height>1-row</height>
+						<align>center</align>
+						<font>itemTitleSmall</font>
+						<textcolor>selected</textcolor>
+						<label>$LOCALIZE[13508] [B]$INFO[ListItem.Property(HighTemp)] $INFO[ListItem.Property(TempUnits)][/B] $LOCALIZE[418] [B]$INFO[ListItem.Property(LowTemp)] $INFO[ListItem.Property(TempUnits)][/B]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<description>Day 0</description>
+						<label>$INFO[Window.Property(Day0.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day0.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day0.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day0.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day0.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+					<item id="2">
+						<description>Day 1</description>
+						<label>$INFO[Window.Property(Day1.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day1.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day1.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day1.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day1.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+					<item id="3">
+						<description>Day 2</description>
+						<label>$INFO[Window.Property(Day2.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day2.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day2.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day2.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day2.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+					<item id="4">
+						<description>Day 3</description>
+						<label>$INFO[Window.Property(Day3.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day3.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day3.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day3.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day3.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+					<item id="5">
+						<description>Day 4</description>
+						<label>$INFO[Window.Property(Day4.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day4.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day4.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day4.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day4.Outlook)]</property>
+						<property name="TempUnits">$INFO[System.TemperatureUnits]</property>
+						<onclick>noop</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="button" id="9310">
+				<posx>35</posx>
+				<posy>194</posy>
+				<width>48</width>
+				<height>48</height>
+				<font>symbolLarge</font>
+				<aligny>center</aligny>
+				<align>center</align>
+				<textoffsetx>0</textoffsetx>
+				<focusedcolor>selected</focusedcolor>
+				<textcolor>unselected</textcolor>
+				<label></label>
+				<onup>9000</onup>
+				<ondown>9310</ondown>
+				<onleft>9210</onleft>
+				<onright>9301</onright>
+				<onclick>Control.SetFocus(9210)</onclick>
+			</control>
+		</control>
+
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DebugWindowID</include>
+			<label>MyWeather.xml</label>
+		</control>
+	</controls>
+</window>

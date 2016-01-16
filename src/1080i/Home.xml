@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="0">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<onload condition="System.HasAddon(script.artistinformation) + Skin.HasSetting(HomeArtistInformation) + !Window(Home).Property(ArtistInformationRunning)">RunScript(script.artistinformation)</onload>
+	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
+	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+	<animation effect="fade" start="0" end="100" time="1000" reversible="true">WindowOpen</animation>
+
+	<controls>
+		<include>globalBackground</include>
+
+		<!--Recording info, Date/time and Weather temperature-->
+		<control type="group">
+			<posx>96</posx>
+			<posy>742</posy>
+			<animation type="Windowopen">
+				<effect type="fade" start="0" end="100" time="300" delay="1000"/>
+				<effect type="slide" start="0,200" end="0" tween="sine" easing="out" time="400" delay="1000"/>
+			</animation>
+			<control type="label">
+				<visible>PVR.IsRecording</visible>
+				<posx>28</posx>
+				<posy>-114</posy>
+				<width>1704</width>
+				<font>itemTitle</font>
+				<align>center</align>
+				<textcolor>selected</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<scroll>true</scroll>
+				<label>[B][UPPERCASE]$LOCALIZE[31008][/UPPERCASE]:[/B] $INFO[PVR.NowRecordingTitle] $INFO[PVR.NowRecordingChannel,(,)]</label>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>90</posy>
+				<width>24-col</width>
+				<align>center</align>
+				<font>Large</font>
+				<textcolor>white</textcolor>
+				<label>[B]$INFO[System.Time][/B] • $INFO[System.Date]</label>
+			</control>
+			<control type="label">
+				<visible>!IsEmpty(Weather.Location)</visible>
+				<posx>0</posx>
+				<posy>156</posy>
+				<width>24-col</width>
+				<align>center</align>
+				<font>regular</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[Weather.Location] • [B]$INFO[Weather.Temperature][/B]</label>
+			</control>
+		</control>
+
+		<!-- RSS News -->
+		<control type="rss">
+			<animation type="Windowopen">
+				<effect type="fade" start="0" end="100" time="300" delay="1000"/>
+			</animation>
+			<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
+			<description>RSS feed</description>
+			<posx>240</posx>
+			<posy>10</posy>
+			<height>35</height>
+			<width>1440</width>
+			<font>textboxExtraLeading</font>
+			<textcolor>unselected</textcolor>
+			<titlecolor>selected</titlecolor>
+			<headlinecolor>white</headlinecolor>
+		</control>
+
+		<!--Main Menu - Media controls and Settings-->
+		<control type="group">
+			<posx>96</posx>
+			<posy>665</posy>
+			<!--animations-->
+			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
+			<animation condition="SubString(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
+			<control type="list" id="9000">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>2000</width>
+				<height>3-col</height>
+				<orientation>horizontal</orientation>
+				<onup>9100</onup>
+				<ondown>9100</ondown>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<itemlayout width="3-col" height="3-col">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>2-col</width>
+						<height>2-col</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="masks/circle.png" border="0">masks/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>99FFFFFF</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<posy>-38</posy>
+						<width>3-col</width>
+						<height>3-col</height>
+						<font>symbolVeryLarge</font>
+						<textcolor>unselected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="3-col" height="3-col">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>2-col</width>
+						<height>2-col</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="masks/circle.png" border="0">masks/black.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>99FFFFFF</colordiffuse>
+						<visible>!Control.HasFocus(9000)</visible>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<posy>-38</posy>
+						<width>3-col</width>
+						<height>3-col</height>
+						<font>symbolVeryLarge</font>
+						<textcolor>unselected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<visible>!Control.HasFocus(9000)</visible>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>2-col</width>
+						<height>2-col</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture diffuse="masks/circle.png" border="0">masks/selected.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+						<visible>Control.HasFocus(9000)</visible>
+					</control>
+					<control type="label">
+						<posx>25</posx>
+						<posy>-38</posy>
+						<width>3-col</width>
+						<height>3-col</height>
+						<font>symbolVeryLarge</font>
+						<textcolor>selected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<visible>Control.HasFocus(9000)</visible>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<visible>!Skin.HasSetting(hideVideo)</visible>
+						<label>31000</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>Skin.SetString(showNavigationMenu,video)</onclick>
+						<onclick>activateWindow(videolibrary)</onclick>
+					</item>
+					<item id="2">
+						<visible>!Skin.HasSetting(hideMusic)</visible>
+						<label>31001</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>Skin.SetString(showNavigationMenu,music)</onclick>
+						<onclick>ActivateWindow(musiclibrary)</onclick>
+					</item>
+					<item id="3">
+						<visible>!Skin.HasSetting(hidePictures)</visible>
+						<label>31002</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>Skin.SetString(showNavigationMenu,picture)</onclick>
+						<onclick>ActivateWindow(pictures)</onclick>
+					</item>
+					<item id="4">
+						<label>5</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>ActivateWindow(settings)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+
+		<!--Secondary Menu - Environment controls-->
+		<control type="group">
+			<posx>10</posx>
+			<posy>0</posy>
+			<!--animations-->
+			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
+			<animation condition="SubString(Container(9100).NumItems,2)" effect="slide" end="10,724" time="0">conditional</animation>
+			<animation condition="SubString(Container(9100).NumItems,3)" effect="slide" end="10,662" time="0">conditional</animation>
+			<animation condition="SubString(Container(9100).NumItems,4)" effect="slide" end="10,619" time="0">conditional</animation>
+			<animation condition="SubString(Container(9100).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
+			<animation condition="SubString(Container(9100).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
+			<control type="list" id="9100">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1-row</width>
+				<height>400</height>
+				<orientation>vertical</orientation>
+				<onup>9100</onup>
+				<ondown>9100</ondown>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<itemlayout width="1-row" height="1-row">
+					<control type="label">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>36</width>
+						<height>36</height>
+						<font>symbolMedium</font>
+						<textcolor>unselected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="1-row" height="1-row">
+					<control type="label">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>36</width>
+						<height>36</height>
+						<font>symbolMedium</font>
+						<textcolor>selected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<visible>Control.HasFocus(9100)</visible>
+					</control>
+					<control type="label">
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>36</width>
+						<height>36</height>
+						<font>symbolMedium</font>
+						<textcolor>unselected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<visible>!Control.HasFocus(9100)</visible>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>10511</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>ActivateWindow(systeminfo)</onclick>
+					</item>
+					<item id="2">
+						<visible>!IsEmpty(Weather.location)</visible>
+						<label>24027</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>ActivateWindow(weather)</onclick>
+					</item>
+					<item id="3">
+						<visible>Skin.HasSetting(showFavourites)</visible>
+						<label>1036</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>Skin.SetString(showNavigationMenu,favourites)</onclick>
+						<onclick>ReplaceWindow(favourites)</onclick>
+					</item>
+					<item id="4">
+						<visible>Skin.HasSetting(showPrograms)</visible>
+						<label>0</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>Skin.SetString(showNavigationMenu,program)</onclick>
+						<onclick>ActivateWindow(programs,addons,return)</onclick>
+					</item>
+					<item id="5">
+						<label>31004</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>ActivateWindow(ShutdownMenu)</onclick>
+					</item>
+					<item id="6">
+						<visible>Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo) | System.GetBool(debug.showloginfo)</visible>
+						<label>31164</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>ReloadSkin()</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DebugWindowID</include>
+			<label>Home.xml</label>
+		</control>
+	</controls>
+</window>

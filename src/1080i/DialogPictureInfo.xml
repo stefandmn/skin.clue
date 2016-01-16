@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	<include>fadeInOut</include>
+	<controls>
+		<include>modalDialog</include>
+		<control type="group">
+			<posx>312</posx>
+			<posy>266</posy>
+			<!--animations-->
+			<include>modalDialogInOut</include>
+			<control type="image">
+				<posx>0</posx>
+				<posy>-12</posy>
+				<width>8-col</width>
+				<height>-</height>
+				<aspectratio align="left" aligny="top">keep</aspectratio>
+				<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
+				<bordersize>3</bordersize>
+				<texture>$INFO[listitem.thumb]</texture>
+			</control>
+			<control type="panel" id="5">
+				<posx>9-col</posx>
+				<posy>-30</posy>
+				<width>9-col</width>
+				<height>12-row</height>
+				<itemlayout width="8-col" height="36">
+					<control type="label">
+						<posx>0</posx>
+						<width>264</width>
+						<info>ListItem.Label</info>
+						<font>smallStrong</font>
+					</control>
+					<control type="label">
+						<posx>4-col</posx>
+						<width>552</width>
+						<align>left</align>
+						<info>ListItem.Label2</info>
+						<font>smallMedium</font>
+					</control>
+				</itemlayout>
+				<focusedlayout width="8-col" height="36">
+					<control type="label">
+						<posx>0</posx>
+						<width>264</width>
+						<info>ListItem.Label</info>
+						<font>smallStrong</font>
+					</control>
+					<control type="label">
+						<posx>4-col</posx>
+						<width>552</width>
+						<align>left</align>
+						<info>ListItem.Label2</info>
+						<font>smallMedium</font>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+
+		<!--debugging-->
+		<include>DebugGrid</include>
+		<control type="label">
+			<include>DebugDialogID</include>
+			<label>DialogPictureInfo.xml</label>
+		</control>
+	</controls>
+</window>
