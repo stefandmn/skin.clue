@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="skin.clue" name="Clue Skin" version="1.0.0" provider-name="AMSD">
+<addon id="skin.clue" name="Clue Skin" version="1.0.1" provider-name="AMSD">
 	<requires>
 		<import addon="xbmc.gui" version="5.9.0"/>
 	</requires>
@@ -7,7 +7,7 @@
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary>Clue MCPi Skin</summary>
+		<summary>Clue Skin for MCPi</summary>
 		<description lang="en">Clue Skin is an optimized add-on, based on guidance from other MCPi/Kodi packages, attempting to embrace and integrate their good ideas, making it suitable skin for RPi</description>
 		<platform>all</platform>
 		<language>en</language>
