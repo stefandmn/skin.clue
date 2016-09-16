@@ -9,28 +9,8 @@
 		<!--date and time-->
 		<include>dateTime</include>
 
-		<!-- Navigation controls -->
-		<control type="button" id="9000">
-			<description>Home button</description>
-			<posx>0</posx>
-			<posy>0</posy>
-			<width>50</width>
-			<height>50</height>
-			<font>symbol</font>
-			<aligny>center</aligny>
-			<align>center</align>
-			<textoffsetx>0</textoffsetx>
-			<focusedcolor>selected</focusedcolor>
-			<textcolor>unselected</textcolor>
-			<label>↸</label>
-			<texturefocus>masks/selected.png</texturefocus>
-			<texturenofocus>masks/black.png</texturenofocus>
-			<onup>ActivateWindow(home)</onup>
-			<ondown>9100</ondown>
-			<onleft>9000</onleft>
-			<onright>9000</onright>
-			<onclick>ActivateWindow(home)</onclick>
-		</control>
+		<!-- Home Navigation control -->
+		<include>navigationHome</include>
 
 		<!--main menu-->
 		<control type="group">
