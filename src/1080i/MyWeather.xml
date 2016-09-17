@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">2</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 
 	<controls>
@@ -723,9 +723,9 @@
 					<focusedcolor>selected</focusedcolor>
 					<textcolor>unselected</textcolor>
 					<label></label>
-					<onup>9000</onup>
+					<onup>9100</onup>
 					<ondown>9210</ondown>
-					<onleft>9000</onleft>
+					<onleft>60</onleft>
 					<onright>9310</onright>
 					<onclick>Control.SetFocus(9310)</onclick>
 				</control>
