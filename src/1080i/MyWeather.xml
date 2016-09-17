@@ -6,10 +6,8 @@
 	<controls>
 		<!--background-->
 		<include>globalBackground</include>
-
 		<!--date and time-->
 		<include>dateTime</include>
-
 		<!-- Home Navigation control -->
 		<include>navigationHome</include>
 
