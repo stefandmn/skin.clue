@@ -268,12 +268,11 @@
 						<onclick>ReplaceWindow(favourites)</onclick>
 					</item>
 					<item id="4">
-						<visible>Skin.HasSetting(showPrograms)</visible>
+						<visible>System.HasAddon(plugin.clue)</visible>
 						<label>0</label>
-						<label2></label2>
+						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>Skin.SetString(showNavigationMenu,program)</onclick>
-						<onclick>ActivateWindow(programs,addons,return)</onclick>
+						<onclick>RunAddon(plugin.clue)</onclick>
 					</item>
 					<item id="5">
 						<label>31004</label>
@@ -284,7 +283,7 @@
 					<item id="6">
 						<visible>Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo) | System.GetBool(debug.showloginfo)</visible>
 						<label>31164</label>
-						<label2></label2>
+						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ReloadSkin()</onclick>
 					</item>

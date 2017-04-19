@@ -23,7 +23,7 @@
 			<posy>38</posy>
 			<control type="label" id="1">
 				<description>header label</description>
-				<posx>0</posx>
+				<posx>-288</posx>
 				<posy>-64</posy>
 				<width>2264</width>
 				<height>1-row</height>
