@@ -210,7 +210,7 @@
 	<!--busy indicator-->
 	<include name="loadingIndicator">
 		<control type="group">
-			<visible>!IntegerGreaterThan(container.numitems,0) | Skin.HasSetting(ClueBusy4Loading)</visible>
+			<visible>!IntegerGreaterThan(container.numitems,0) | Skin.HasSetting(Busy4Loading)</visible>
 			<posx>0</posx>
 			<posy>0</posy>
 			<!--animations-->

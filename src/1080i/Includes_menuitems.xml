@@ -45,32 +45,6 @@
 	<!--video menu items-->
 	<include name="videoItems">
 		<control type="button" id="9001">
-			<description>CD / DVD handling</description>
-			<visible>System.HasMediaDVD</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>341</label>
-			<onclick>PlayDVD()</onclick>
-		</control>
-		<control type="button" id="9002">
-			<description>CD / DVD handling</description>
-			<visible>System.HasMediaDVD</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>31135</label>
-			<onclick>EjectTray()</onclick>
-		</control>
-		<control type="button" id="9003">
 			<description>Latest items</description>
 			<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
 			<height>40</height>
@@ -83,9 +57,8 @@
 			<label>31013</label>
 			<onclick>Skin.SetString(showRecentVideoItems,true)</onclick>
 		</control>
-		<control type="button" id="9004">
+		<control type="button" id="9002">
 			<description>Video library</description>
-			<visible>Library.HasContent(Movies)</visible>
 			<height>40</height>
 			<width>236</width>
 			<font>menuTitle</font>
@@ -95,8 +68,35 @@
 			<textoffsetx>12</textoffsetx>
 			<label>31059</label>
 			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-			<onclick condition="!Window.IsActive(videolibrary)">ReplaceWindow(videolibrary)</onclick>
+			<onclick condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows)">ActivateWindow(VideoFiles)</onclick>
+			<onclick condition="Library.HasContent(Movies) | Library.HasContent(TVShows)">ActivateWindow(Video,Root)</onclick>
 			<onclick>control.setfocus(50)</onclick>
+		</control>
+		<control type="button" id="9003">
+			<description>CD / DVD handling</description>
+			<visible>System.HasMediaDVD</visible>
+			<height>40</height>
+			<width>236</width>
+			<font>menuTitle</font>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<texturefocus>masks/selected.png</texturefocus>
+			<textoffsetx>12</textoffsetx>
+			<label>341</label>
+			<onclick>PlayDVD()</onclick>
+		</control>
+		<control type="button" id="9004">
+			<description>CD / DVD handling</description>
+			<visible>System.HasMediaDVD</visible>
+			<height>40</height>
+			<width>236</width>
+			<font>menuTitle</font>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<texturefocus>masks/selected.png</texturefocus>
+			<textoffsetx>12</textoffsetx>
+			<label>31135</label>
+			<onclick>EjectTray()</onclick>
 		</control>
 		<control type="button" id="9005">
 			<visible>System.GetBool(pvrmanager.enabled)</visible>
@@ -202,32 +202,6 @@
 	<!--music menu items-->
 	<include name="musicItems">
 		<control type="button" id="9001">
-			<description>CD / DVD handling</description>
-			<visible>System.HasMediaDVD</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>341</label>
-			<onclick>PlayDVD()</onclick>
-		</control>
-		<control type="button" id="9002">
-			<description>CD / DVD handling</description>
-			<visible>System.HasMediaDVD</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>31135</label>
-			<onclick>EjectTray()</onclick>
-		</control>
-		<control type="button" id="9003">
 			<description>Latest items</description>
 			<visible>Library.HasContent(Music)</visible>
 			<height>40</height>
@@ -241,9 +215,8 @@
 			<onclick>Skin.SetString(showRecentMusicItems,true)</onclick>
 			<onclick>Control.SetFocus(9998)</onclick>
 		</control>
-		<control type="button" id="9004">
+		<control type="button" id="9002">
 			<description>Music Library</description>
-			<visible>Library.HasContent(Music)</visible>
 			<height>40</height>
 			<width>236</width>
 			<font>menuTitle</font>
@@ -253,8 +226,35 @@
 			<textoffsetx>12</textoffsetx>
 			<label>31053</label>
 			<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-			<onclick condition="!Window.IsActive(musiclibrary)">ReplaceWindow(MusicLibrary)</onclick>
+			<onclick condition="!Library.HasContent(Music)">ActivateWindow(MusicFiles)</onclick>
+			<onclick condition="Library.HasContent(Music)">ActivateWindow(Music,Root)</onclick>
 			<onclick>Control.SetFocus(53)</onclick>
+		</control>
+		<control type="button" id="90031">
+			<description>CD / DVD handling</description>
+			<visible>System.HasMediaDVD</visible>
+			<height>40</height>
+			<width>236</width>
+			<font>menuTitle</font>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<texturefocus>masks/selected.png</texturefocus>
+			<textoffsetx>12</textoffsetx>
+			<label>341</label>
+			<onclick>PlayDVD()</onclick>
+		</control>
+		<control type="button" id="9004">
+			<description>CD / DVD handling</description>
+			<visible>System.HasMediaDVD</visible>
+			<height>40</height>
+			<width>236</width>
+			<font>menuTitle</font>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<texturefocus>masks/selected.png</texturefocus>
+			<textoffsetx>12</textoffsetx>
+			<label>31135</label>
+			<onclick>EjectTray()</onclick>
 		</control>
 		<control type="button" id="9005">
 			<visible>System.GetBool(pvrmanager.enabled)</visible>
@@ -491,20 +491,6 @@
 			<label>31119</label>
 			<onclick>ActivateWindowAndFocus(pvr, 35,0, 9999,1)</onclick>
 		</control>
-		<control type="button" id="506">
-			<description>Files menu (video)</description>
-			<height>40</height>
-			<width>236</width>
-			<font>smallMedium</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>31169</label>
-			<onclick>ActivateWindow(Videos,files,return)</onclick>
-			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-			<onclick>Control.SetFocus(50)</onclick>
-		</control>
 		<control type="button" id="507">
 			<description>Library update</description>
 			<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
@@ -660,21 +646,6 @@
 			<onclick>UpdateLibrary(music)</onclick>
 			<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
 			<onclick>right</onclick>
-		</control>
-		<control type="button" id="505">
-			<description>Files menu (music)</description>
-			<height>40</height>
-			<width>236</width>
-			<font>smallMedium</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>31169</label>
-			<onclick>right</onclick>
-			<onclick>ActivateWindow(MusicFiles,root)</onclick>
-			<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-			<onclick>Control.SetFocus(51)</onclick>
 		</control>
 		<control type="radiobutton" id="20">
 			<description>Shuffle</description>

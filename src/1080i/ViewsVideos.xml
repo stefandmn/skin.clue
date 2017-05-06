@@ -45,7 +45,7 @@
 					</control>
 				</control>
 			</control>
-			<control type="panel" id="50">
+			<control type="panel" id="51">
 				<animation type="windowclose">
 					<effect type="fade" start="100" end="0" time="200"/>
 				</animation>
