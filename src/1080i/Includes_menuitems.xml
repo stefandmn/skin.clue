@@ -501,9 +501,9 @@
 			<texturefocus>masks/selected.png</texturefocus>
 			<textoffsetx>12</textoffsetx>
 			<label>31169</label>
-			<onclick>right</onclick>
 			<onclick>ActivateWindow(Videos,files,return)</onclick>
 			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
+			<onclick>Control.SetFocus(50)</onclick>
 		</control>
 		<control type="button" id="507">
 			<description>Library update</description>
