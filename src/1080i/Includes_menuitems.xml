@@ -500,7 +500,7 @@
 			<focusedcolor>selected</focusedcolor>
 			<texturefocus>masks/selected.png</texturefocus>
 			<textoffsetx>12</textoffsetx>
-			<label>1214</label>
+			<label>31169</label>
 			<onclick>right</onclick>
 			<onclick>ActivateWindow(Videos,files,return)</onclick>
 			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
@@ -670,7 +670,7 @@
 			<focusedcolor>selected</focusedcolor>
 			<texturefocus>masks/selected.png</texturefocus>
 			<textoffsetx>12</textoffsetx>
-			<label>1214</label>
+			<label>31169</label>
 			<onclick>right</onclick>
 			<onclick>ActivateWindow(MusicFiles,root)</onclick>
 			<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>

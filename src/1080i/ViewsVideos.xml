@@ -16,7 +16,7 @@
 			<control type="group">
 				<visible>!isEmpty(ListItem.Thumb)</visible>
 				<posx>14-col</posx>
-				<posy>12</posy>
+				<posy>0</posy>
 				<!--Show larger thumbnail-->
 				<control type="group">
 					<animation type="windowopen">
@@ -35,7 +35,7 @@
 							<posx>0</posx>
 							<posy>0</posy>
 							<width>6-col</width>
-							<height>576</height>
+							<height>8-col</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
 							<texture background="true" fallback="masks/offblack.png" border="0">$VAR[PosterThumb]</texture>
 							<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
@@ -50,7 +50,7 @@
 					<effect type="fade" start="100" end="0" time="200"/>
 				</animation>
 				<posx>0</posx>
-				<posy>4</posy>
+				<posy>0</posy>
 				<width>13-col</width>
 				<height>12-row</height>
 				<onleft>9000</onleft>
