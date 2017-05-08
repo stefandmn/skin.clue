@@ -281,7 +281,7 @@
 						<onclick>ActivateWindow(ShutdownMenu)</onclick>
 					</item>
 					<item id="6">
-						<visible>Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo) | System.GetBool(debug.showloginfo)</visible>
+						<visible>Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo) | System.GetBool(debug.showloginfo) | true</visible>
 						<label>31164</label>
 						<label2></label2>
 						<thumb>-</thumb>

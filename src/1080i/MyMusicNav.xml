@@ -63,7 +63,7 @@
 				<control type="group" id="9999">
 					<posx>312</posx>
 					<posy>50</posy>
-					<onup>1111</onup>
+					<onup>7001</onup>
 					<animation type="windowopen">
 						<include>listSlideIn</include>
 					</animation>

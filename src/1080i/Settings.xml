@@ -170,12 +170,12 @@
 						<property name="label3">$LOCALIZE[31069] • $LOCALIZE[14036]</property>
 						<onclick>activatewindow(WeatherSettings)</onclick>
 					</item>
-					<item id="6">
+					<!--item id="6">
 						<label>$LOCALIZE[31060]</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31006] • $LOCALIZE[31065]</property>
 						<onclick>ActivateWindow(PVRSettings)</onclick>
-					</item>
+					</item-->
 					<item id="7">
 						<description>Addons</description>
 						<label>24001</label>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="false">9000</defaultcontrol>
+	<defaultcontrol always="false">7300</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
-	<onload condition="window.previous(0)">setfocus(9000)</onload>
+	<onload condition="window.previous(0)">setFocus(7300)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>
 		<include>globalBackground</include>
 
 		<!--page container group-->
-		<control type="group">
+		<control type="group" id="7000">
 			<!--window fader-->
 			<animation type="conditional" condition="window.next(0) | window.next(1) | player.hasvideo">
 				<effect type="fade" start="100" end="0" time="300"/>
@@ -26,129 +26,134 @@
 			<control type="group">
 				<posx>0</posx>
 				<posy>0</posy>
+				<include>menuHome</include>
 
-				<!--main menu-->
-				<control type="group">
+				<!--1) Left menu-->
+				<control type="group" id="7100">
 					<posx>96</posx>
 					<posy>50</posy>
-					<include>menuHome</include>
 					<include>menuItems</include>
 					<include>menuOptions</include>
 				</control>
 
-				<!--Folder titles-->
-				<control type="group">
-					<posx>312</posx>
-					<posy>50</posy>
-					<animation type="Conditional" condition="!IntegerGreaterThan(container.numitems,0)">
-						<effect type="fade" start="100" end="0" time="300"/>
-					</animation>
-					<animation type="Conditional" condition="IntegerGreaterThan(container.numitems,0)">
-						<effect type="fade" start="0" end="100" time="300"/>
-					</animation>
-					<!--source title-->
-					<control type="label">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>14-col</width>
-						<font>pageTitle</font>
-						<label>$VAR[listTitle]</label>
-						<textcolor>selected</textcolor>
+				<!-- 2) Title(s) -->
+				<control type="group" id="7200">
+					<!--folder titles-->
+					<control type="group">
+						<posx>312</posx>
+						<posy>50</posy>
+						<animation type="Conditional" condition="!IntegerGreaterThan(container.numitems,0)">
+							<effect type="fade" start="100" end="0" time="300"/>
+						</animation>
+						<animation type="Conditional" condition="IntegerGreaterThan(container.numitems,0)">
+							<effect type="fade" start="0" end="100" time="300"/>
+						</animation>
+						<!--source title-->
+						<control type="label">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>14-col</width>
+							<font>pageTitle</font>
+							<label>$VAR[listTitle]</label>
+							<textcolor>selected</textcolor>
+						</control>
+						<!--source subtitle-->
+						<control type="label">
+							<posx>0</posx>
+							<posy>45</posy>
+							<width>auto</width>
+							<font>regular</font>
+							<label>$VAR[listSubTitle]</label>
+							<textcolor>selected</textcolor>
+						</control>
 					</control>
-					<!--source subtitle-->
-					<control type="label">
-						<posx>0</posx>
-						<posy>45</posy>
-						<width>auto</width>
-						<font>regular</font>
-						<label>$VAR[listSubTitle]</label>
-						<textcolor>selected</textcolor>
+					<!-- tvshow name and season details -->
+					<control type="group">
+						<visible>[container.content(episodes) | container.content(seasons)] + !Substring(Container.folderpath,plugin) + SubString(skin.string(showRecentVideoItems),false)</visible>
+						<posx>1824</posx>
+						<posy>50</posy>
+						<control type="label">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>8-col</width>
+							<font>pageTitle</font>
+							<align>right</align>
+							<label>$INFO[listitem.tvshowTitle]</label>
+							<textcolor>selected</textcolor>
+						</control>
+						<control type="label">
+							<visible>container.content(episodes)</visible>
+							<posx>0</posx>
+							<posy>45</posy>
+							<width>8-col</width>
+							<font>regular</font>
+							<align>right</align>
+							<label fallback="31113">$INFO[ListItem.season,Season ,]</label>
+							<textcolor>selected</textcolor>
+						</control>
+						<control type="label">
+							<visible>container.content(seasons)</visible>
+							<posx>0</posx>
+							<posy>45</posy>
+							<width>8-col</width>
+							<font>regular</font>
+							<align>right</align>
+							<label>$INFO[ListItem.genre]</label>
+							<textcolor>selected</textcolor>
+						</control>
+					</control>
+					<!--addons-->
+					<control type="group">
+						<visible>container.content(episodes) + Substring(Container.folderpath,plugin)</visible>
+						<posx>1824</posx>
+						<posy>50</posy>
+						<control type="label">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>8-col</width>
+							<font>pageTitle</font>
+							<align>right</align>
+							<label>$INFO[listitem.tvshowtitle]</label>
+							<textcolor>selected</textcolor>
+						</control>
+						<control type="label">
+							<posx>0</posx>
+							<posy>45</posy>
+							<width>24-col</width>
+							<font>regular</font>
+							<align>right</align>
+							<label>$INFO[ListItem.season,Season ,]</label>
+							<textcolor>selected</textcolor>
+						</control>
 					</control>
 				</control>
 
-				<!--tvshow name and season details (TVShows only)-->
-				<control type="group">
-					<visible>[container.content(episodes) | container.content(seasons)] + !Substring(Container.folderpath,plugin) + SubString(skin.string(showRecentVideoItems),false)</visible>
-					<posx>1824</posx>
-					<posy>50</posy>
-					<control type="label">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>8-col</width>
-						<font>pageTitle</font>
-						<align>right</align>
-						<label>$INFO[listitem.tvshowTitle]</label>
-						<textcolor>selected</textcolor>
+				<!-- 3) Main content -->
+				<control type="group" id="7300">
+					<!--Listings-->
+					<control type="group" id="7301">
+						<posx>312</posx>
+						<posy>50</posy>
+						<onup>7001</onup>
+						<!--Source content-->
+						<include>viewVideoList</include>
+						<include>viewRecentVideoList</include>
 					</control>
-					<control type="label">
-						<visible>container.content(episodes)</visible>
-						<posx>0</posx>
-						<posy>45</posy>
-						<width>8-col</width>
-						<font>regular</font>
-						<align>right</align>
-						<label fallback="31113">$INFO[ListItem.season,Season ,]</label>
-						<textcolor>selected</textcolor>
-					</control>
-					<control type="label">
-						<visible>container.content(seasons)</visible>
-						<posx>0</posx>
-						<posy>45</posy>
-						<width>8-col</width>
-						<font>regular</font>
-						<align>right</align>
-						<label>$INFO[ListItem.genre]</label>
-						<textcolor>selected</textcolor>
+					<!--Page scrollbar-->
+					<control type="group" id="7302">
+						<visible>Control.IsVisible(7303) + SubString(skin.string(showRecentVideoItems),false)</visible>
+						<animation effect="fade" start="100" end="0" time="100" condition="!ControlGroup(7302).hasFocus">conditional</animation>
+						<control type="scrollbar" id="7303">
+							<posx>84r</posx>
+							<posy>225</posy>
+							<height>672</height>
+							<onleft>7301</onleft>
+						</control>
 					</control>
 				</control>
 
-				<!--addons-->
-				<control type="group">
-					<visible>container.content(episodes) + Substring(Container.folderpath,plugin)</visible>
-					<posx>1824</posx>
-					<posy>50</posy>
-					<control type="label">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>8-col</width>
-						<font>pageTitle</font>
-						<align>right</align>
-						<label>$INFO[listitem.tvshowtitle]</label>
-						<textcolor>selected</textcolor>
-					</control>
-					<control type="label">
-						<posx>0</posx>
-						<posy>45</posy>
-						<width>24-col</width>
-						<font>regular</font>
-						<align>right</align>
-						<label>$INFO[ListItem.season,Season ,]</label>
-						<textcolor>selected</textcolor>
-					</control>
-				</control>
-
-				<!--Main content listing-->
-				<control type="group" id="9999">
-					<posx>312</posx>
-					<posy>50</posy>
-					<onup>1111</onup>
-					<!--Source content-->
-					<include>viewRecentVideoList</include>
-					<include>viewVideoList</include>
-				</control>
-				<!--Page scrollbar-->
-				<control type="group" id="8000">
-					<visible>Control.IsVisible(60) + SubString(skin.string(showRecentVideoItems),false)</visible>
-					<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
-					<control type="scrollbar" id="60">
-						<posx>84r</posx>
-						<posy>225</posy>
-						<height>672</height>
-						<onleft>9999</onleft>
-					</control>
-				</control>
-				<!--Sort / misc labels (footer)-->
-				<control type="group">
+				<!--4) Footer - Sort / misc labels -->
+				<control type="group" id="7400">
 					<posx>312</posx>
 					<posy>1007</posy>
 					<include>mediaListFooter</include>
