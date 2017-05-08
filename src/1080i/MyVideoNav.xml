@@ -3,7 +3,8 @@
 	<defaultcontrol always="false">7300</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
-	<onload condition="window.previous(0)">setFocus(7300)</onload>
+	<onload condition="Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)">SetFocus(7300)</onload>
+	<onload condition="!Library.HasContent(Movies) + !Library.HasContent(TVShows) + !Library.HasContent(MusicVideos)">SetFocus(7100)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>

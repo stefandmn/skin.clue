@@ -343,9 +343,8 @@
 				<width>4-col</width>
 				<height>12-row</height>
 				<itemgap>0</itemgap>
-				<onleft>9000</onleft>
 				<onright>7300</onright>
-				<onup>9000</onup>
+				<onup>7101</onup>
 				<ondown>62</ondown>
 				<include condition="StringCompare(Skin.String(showNavigationMenu),music)">musicOptions</include>
 				<include condition="StringCompare(Skin.String(showNavigationMenu),video)">videoOptions</include>
@@ -516,6 +515,16 @@
 			<onclick>xbmc.mastermode</onclick>
 			<selected>system.ismaster</selected>
 			<visible>system.haslocks</visible>
+		</control>
+		<control type="radiobutton" id="16">
+			<description>Party Mode</description>
+			<label>589</label>
+			<height>40</height>
+			<width>236</width>
+			<font>smallMedium</font>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<texturefocus>masks/selected.png</texturefocus>
 		</control>
 	</include>
 

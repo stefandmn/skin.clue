@@ -184,7 +184,7 @@
 			</animation>
 			<!--no recent items-->
 			<control type="label">
-				<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows)</visible>
+				<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows) + !Library.HasContent(MusicVideos)</visible>
 				<posx>1-col</posx>
 				<posy>2-row</posy>
 				<width>21-col</width>
@@ -249,7 +249,7 @@
 						<control type="label">
 							<posx>12</posx>
 							<posy>18</posy>
-							<width>252</width>
+							<width>339</width>
 							<font>smallMedium</font>
 							<textcolor>unselected</textcolor>
 							<label>$INFO[ListItem.Label2]</label>
@@ -321,7 +321,7 @@
 							<visible>Control.hasFocus(7320)</visible>
 							<posx>12</posx>
 							<posy>18</posy>
-							<width>252</width>
+							<width>339</width>
 							<font>smallMedium</font>
 							<textcolor>black</textcolor>
 							<shadowcolor>-</shadowcolor>
@@ -342,7 +342,7 @@
 							<visible>!Control.hasFocus(7320)</visible>
 							<posx>12</posx>
 							<posy>18</posy>
-							<width>252</width>
+							<width>339</width>
 							<font>smallMedium</font>
 							<textcolor>unselected</textcolor>
 							<shadowcolor>-</shadowcolor>
