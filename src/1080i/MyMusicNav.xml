@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="false">9000</defaultcontrol>
+	<defaultcontrol always="false">7300</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload condition="window.previous(0)">setfocus(9000)</onload>
+	<onload condition="Library.HasContent(Music)">SetFocus(7300)</onload>
+	<onload condition="!Library.HasContent(Music)">SetFocus(7100)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>
 		<include>globalBackground</include>
 
 		<!--page container group-->
-		<control type="group">
+		<control type="group" id="7000">
 			<!--window fader-->
 			<animation type="conditional" condition="window.next(0) | window.next(1)">
 				<effect type="fade" start="100" end="0" time="300"/>
@@ -25,18 +26,18 @@
 			<control type="group">
 				<posx>0</posx>
 				<posy>0</posy>
+				<include>menuHome</include>
 
-				<!--main menu-->
-				<control type="group">
+				<!--1) Left menu-->
+				<control type="group" id="7100">
 					<posx>96</posx>
 					<posy>50</posy>
-					<include>menuHome</include>
 					<include>menuItems</include>
 					<include>menuOptions</include>
 				</control>
 
-				<!--Folder titles-->
-				<control type="group">
+				<!-- 2) Title(s) -->
+				<control type="group" id="7200">
 					<posx>312</posx>
 					<posy>50</posy>
 					<!--source title-->
@@ -59,37 +60,41 @@
 					</control>
 				</control>
 
-				<!--Main content listing-->
-				<control type="group" id="9999">
-					<posx>312</posx>
-					<posy>50</posy>
-					<onup>7001</onup>
-					<animation type="windowopen">
-						<include>listSlideIn</include>
-					</animation>
-					<animation type="windowclose">
-						<effect type="fade" start="100" end="0" time="300" delay="300"/>
-					</animation>
-					<!--source content-->
-					<include>viewRecentMusicList</include>
-					<include>viewMusicList</include>
-					<include>viewArtistList</include>
-					<include>viewMusicGrid</include>
-					<include>viewSongList</include>
-				</control>
-				<!--page scrollbar-->
-				<control type="group" id="8000">
-					<visible>Control.IsVisible(60) + SubString(skin.string(showRecentMusicItems),false)</visible>
-					<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
-					<control type="scrollbar" id="60">
-						<posx>84r</posx>
-						<posy>222</posy>
-						<height>712</height>
-						<onleft>9999</onleft>
+				<!-- 3) Main content -->
+				<control type="group" id="7300">
+					<!--Main content listing-->
+					<control type="group" id="7301">
+						<posx>312</posx>
+						<posy>50</posy>
+						<onup>7001</onup>
+						<animation type="windowopen">
+							<include>listSlideIn</include>
+						</animation>
+						<animation type="windowclose">
+							<effect type="fade" start="100" end="0" time="300" delay="300"/>
+						</animation>
+						<!--source content-->
+						<include>viewRecentMusicList</include>
+						<include>viewMusicList</include>
+						<include>viewArtistList</include>
+						<include>viewMusicGrid</include>
+						<include>viewSongList</include>
+					</control>
+					<!--page scrollbar-->
+					<control type="group" id="7302">
+						<visible>Control.IsVisible(7303) + SubString(skin.string(showRecentMusicItems),false)</visible>
+						<animation effect="fade" start="100" end="0" time="100" condition="!ControlGroup(7302).hasFocus">conditional</animation>
+						<control type="scrollbar" id="7303">
+							<posx>84r</posx>
+							<posy>222</posy>
+							<height>712</height>
+							<onleft>7301</onleft>
+						</control>
 					</control>
 				</control>
-				<!--Sort / misc labels (footer)-->
-				<control type="group">
+
+				<!--4) Footer - Sort / misc labels -->
+				<control type="group" id="7400">
 					<posx>312</posx>
 					<posy>1007</posy>
 					<include>mediaListFooter</include>

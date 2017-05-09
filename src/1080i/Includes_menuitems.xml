@@ -29,10 +29,10 @@
 		<control type="grouplist" id="7101">
 			<posx>-50</posx>
 			<posy>180</posy>
-			<onleft>62</onleft>
+			<onleft>7103</onleft>
 			<onright>7300</onright>
 			<onup>7001</onup>
-			<ondown>62</ondown>
+			<ondown>7103</ondown>
 			<onback>activateWindow(home)</onback>
 			<include condition="StringCompare(Skin.String(showNavigationMenu),video)">videoItems</include>
 			<include condition="StringCompare(Skin.String(showNavigationMenu),music)">musicItems</include>
@@ -66,50 +66,10 @@
 			<textoffsetx>12</textoffsetx>
 			<label>31059</label>
 			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-			<onclick condition="!Window.IsActive(videolibrary)+(Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos))">ReplaceWindow(videolibrary)</onclick>
-			<onclick condition="!Window.IsActive(videolibrary)+!Library.HasContent(Movies)+!Library.HasContent(TVShows)+!Library.HasContent(MusicVideos)">ReplaceWindow(VideoFiles)</onclick>
+			<onclick condition="!Window.IsActive(VideoLibrary">ReplaceWindow(VideoLibrary)</onclick>
 			<onclick>Control.setFocus(50)</onclick>
 		</control>
 		<control type="button" id="7113">
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>31006</label>
-			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-			<onclick>ActivateWindowAndFocus(pvr, 32,0, 7300,1)</onclick>
-		</control>
-		<control type="button" id="7114">
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>31112</label>
-			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-			<onclick>ActivateWindowAndFocus(pvr, 31,0, 10,1)</onclick>
-		</control>
-		<control type="button" id="7115">
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>19163</label>
-			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-			<onclick>ActivateWindowAndFocus(pvr, 34,0, 13,1)</onclick>
-		</control>
-		<control type="button" id="7116">
 			<description>customVideoAddon1</description>
 			<visible>!isempty(Skin.String(customVideoAddon1))</visible>
 			<height>40</height>
@@ -125,7 +85,7 @@
 			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 			<onclick>Control.SetFocus(52)</onclick>
 		</control>
-		<control type="button" id="7117">
+		<control type="button" id="7114">
 			<description>customVideoAddon2</description>
 			<visible>!isempty(Skin.String(customVideoAddon2))</visible>
 			<height>40</height>
@@ -141,7 +101,7 @@
 			<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 			<onclick>Control.SetFocus(52)</onclick>
 		</control>
-		<control type="button" id="7118">
+		<control type="button" id="7115">
 			<description>customVideoAddon3</description>
 			<visible>!isempty(Skin.String(customVideoAddon3))</visible>
 			<height>40</height>
@@ -173,7 +133,7 @@
 
 	<!--music menu items-->
 	<include name="musicItems">
-		<control type="button" id="9001">
+		<control type="button" id="7111">
 			<description>Latest items</description>
 			<visible>Library.HasContent(Music)</visible>
 			<height>40</height>
@@ -185,9 +145,8 @@
 			<textoffsetx>12</textoffsetx>
 			<label>31013</label>
 			<onclick>Skin.SetString(showRecentMusicItems,true)</onclick>
-			<onclick>Control.SetFocus(9998)</onclick>
 		</control>
-		<control type="button" id="9002">
+		<control type="button" id="7112">
 			<description>Music Library</description>
 			<height>40</height>
 			<width>236</width>
@@ -198,50 +157,10 @@
 			<textoffsetx>12</textoffsetx>
 			<label>31053</label>
 			<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-			<onclick condition="!Library.HasContent(Music)">ActivateWindow(MusicFiles)</onclick>
-			<onclick condition="Library.HasContent(Music)">ActivateWindow(Music,Root)</onclick>
-			<onclick>Control.SetFocus(53)</onclick>
+			<onclick condition="!Window.IsActive(musiclibrary)">ReplaceWindow(MusicLibrary)</onclick>
+			<onclick>Control.setFocus(51)</onclick>
 		</control>
-		<control type="button" id="90031">
-			<description>CD / DVD handling</description>
-			<visible>System.HasMediaDVD</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>341</label>
-			<onclick>PlayDVD()</onclick>
-		</control>
-		<control type="button" id="9004">
-			<description>CD / DVD handling</description>
-			<visible>System.HasMediaDVD</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>31135</label>
-			<onclick>EjectTray()</onclick>
-		</control>
-		<control type="button" id="9005">
-			<visible>System.GetBool(pvrmanager.enabled)</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>menuTitle</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>19021</label>
-			<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-			<onclick>ActivateWindowAndFocus(pvr, 33,0, 7300,1)</onclick>
-		</control>
-		<control type="button" id="9011">
+		<control type="button" id="7113">
 			<description>customMusicAddon1</description>
 			<visible>!isempty(Skin.String(customMusicAddon1))</visible>
 			<height>40</height>
@@ -258,7 +177,7 @@
 			<onclick condition="StringCompare(Skin.String(customMusicAddon1Type),audioPlaylist)">ActivateWindow(MusicLibrary,$INFO[Skin.String(customMusicAddon1)],return)</onclick>
 			<onclick>setfocus(51)</onclick>
 		</control>
-		<control type="button" id="9012">
+		<control type="button" id="7114">
 			<description>customMusicAddon2</description>
 			<visible>!isempty(Skin.String(customMusicAddon2))</visible>
 			<height>40</height>
@@ -275,7 +194,7 @@
 			<onclick condition="StringCompare(Skin.String(customMusicAddon2Type),audioPlaylist)">ActivateWindow(MusicLibrary,$INFO[Skin.String(customMusicAddon2)],return)</onclick>
 			<onclick>setfocus(51)</onclick>
 		</control>
-		<control type="button" id="9013">
+		<control type="button" id="7115">
 			<description>customMusicAddon3</description>
 			<visible>!isempty(Skin.String(customMusicAddon3))</visible>
 			<height>40</height>
@@ -292,7 +211,7 @@
 			<onclick condition="StringCompare(Skin.String(customMusicAddon3Type),audioPlaylist)">ActivateWindow(MusicLibrary,$INFO[Skin.String(customMusicAddon3)],return)</onclick>
 			<onclick>setfocus(51)</onclick>
 		</control>
-		<control type="button" id="9020">
+		<control type="button" id="7119">
 			<description>Favorites</description>
 			<height>40</height>
 			<width>236</width>
@@ -337,7 +256,7 @@
 				<shadowcolor>-</shadowcolor>
 			</control>
 			<!--menu items-->
-			<control type="grouplist" id="62">
+			<control type="grouplist" id="7103">
 				<posx>0</posx>
 				<posy>90</posy>
 				<width>4-col</width>
@@ -345,7 +264,7 @@
 				<itemgap>0</itemgap>
 				<onright>7300</onright>
 				<onup>7101</onup>
-				<ondown>62</ondown>
+				<ondown>7103</ondown>
 				<include condition="StringCompare(Skin.String(showNavigationMenu),music)">musicOptions</include>
 				<include condition="StringCompare(Skin.String(showNavigationMenu),video)">videoOptions</include>
 				<include condition="StringCompare(Skin.String(showNavigationMenu),picture)">pictureOptions</include>
@@ -355,7 +274,7 @@
 
 	<!--video menu options -->
 	<include name="videoOptions">
-		<control type="button" id="501">
+		<control type="button" id="7121">
 			<description>Now Playing</description>
 			<visible>Player.HasVideo</visible>
 			<height>40</height>
@@ -369,7 +288,7 @@
 			<onclick>right</onclick>
 			<onclick>action(fullscreen)</onclick>
 		</control>
-		<control type="button" id="502">
+		<control type="button" id="7122">
 			<description>Search (videos)</description>
 			<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows)] + System.HasAddon(script.advancedsearch)</visible>
 			<height>40</height>
@@ -422,49 +341,9 @@
 			<alttexturefocus>masks/selected.png</alttexturefocus>
 			<textoffsetx>12</textoffsetx>
 		</control>
-		<control type="button" id="503">
-			<description>Change Channel Group (PVR only)</description>
-			<visible>window.isactive(pvr) + [Control.IsVisible(11) | Control.IsVisible(10)]</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>smallMedium</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>$LOCALIZE[31073] ◀ ▶</label>
-			<onclick>sendclick(32)</onclick>
-		</control>
-		<control type="button" id="504">
-			<description>Search (PVR)</description>
-			<visible>window.isactive(pvr)</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>smallMedium</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>137</label>
-			<onclick>right</onclick>
-			<onclick>activateWindow(pvrguidesearch)</onclick>
-		</control>
-		<control type="button" id="505">
-			<description>Timers / scheduler</description>
-			<visible>window.isactive(pvr)</visible>
-			<height>40</height>
-			<width>236</width>
-			<font>smallMedium</font>
-			<textcolor>unselected</textcolor>
-			<focusedcolor>selected</focusedcolor>
-			<texturefocus>masks/selected.png</texturefocus>
-			<textoffsetx>12</textoffsetx>
-			<label>31119</label>
-			<onclick>ActivateWindowAndFocus(pvr, 35,0, 7300,1)</onclick>
-		</control>
-		<control type="button" id="507">
+		<control type="button" id="7123">
 			<description>Library update</description>
-			<visible>Library.HasContent(Movies) | Library.HasContent(TVShows)</visible>
+			<visible>Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)</visible>
 			<height>40</height>
 			<width>236</width>
 			<font>smallMedium</font>
@@ -487,7 +366,7 @@
 			<textoffsetx>12</textoffsetx>
 			<texturefocus>masks/selected.png</texturefocus>
 		</control>
-		<control type="radiobutton" id="508">
+		<control type="radiobutton" id="7124">
 			<description>Filter</description>
 			<visible>Container.CanFilterAdvanced</visible>
 			<label>587</label>
@@ -530,7 +409,7 @@
 
 	<!--music menu options -->
 	<include name="musicOptions">
-		<control type="button" id="501">
+		<control type="button" id="7121">
 			<description>Now playing</description>
 			<visible>Player.HasAudio</visible>
 			<height>40</height>
@@ -544,7 +423,7 @@
 			<onclick>right</onclick>
 			<onclick>activateWindow(visualisation)</onclick>
 		</control>
-		<control type="button" id="502">
+		<control type="button" id="7122">
 			<description>Current playlist</description>
 			<visible>MusicPlayer.Offset(0).Exists</visible>
 			<height>40</height>
@@ -558,7 +437,7 @@
 			<onclick>right</onclick>
 			<onclick>activateWindow(musicplaylist)</onclick>
 		</control>
-		<control type="button" id="503">
+		<control type="button" id="7123">
 			<description>Search (videos)</description>
 			<visible>Library.HasContent(Music) + System.HasAddon(script.advancedsearch)</visible>
 			<height>40</height>
@@ -613,7 +492,7 @@
 			<textoffsetx>12</textoffsetx>
 		</control>
 		<!--music section-->
-		<control type="button" id="504">
+		<control type="button" id="7124">
 			<description>Library update</description>
 			<visible>Library.HasContent(Music)</visible>
 			<height>40</height>
