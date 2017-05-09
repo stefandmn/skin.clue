@@ -233,7 +233,7 @@
 						</item>
 						<item>
 							<visible>Player.CanRecord</visible>
-							<description>Record (PVR only)</description>
+							<description>Record</description>
 							<label></label>
 							<thumb>-</thumb>
 							<onclick>PlayerControl(record)</onclick>
