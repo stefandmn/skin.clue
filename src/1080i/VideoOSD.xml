@@ -232,7 +232,7 @@
 							<onclick>PlayerControl(next)</onclick>
 						</item>
 						<item>
-							<visible>System.GetBool(pvrmanager.enabled) + Player.CanRecord</visible>
+							<visible>Player.CanRecord</visible>
 							<description>Record (PVR only)</description>
 							<label></label>
 							<thumb>-</thumb>

@@ -212,10 +212,6 @@ msgctxt "#31059"
 msgid "Video Library"
 msgstr ""
 
-msgctxt "#31060"
-msgid "PVR"
-msgstr ""
-
 msgctxt "#31061"
 msgid "Skin"
 msgstr ""
@@ -422,10 +418,6 @@ msgstr ""
 
 msgctxt "#31118"
 msgid "Unwatched titles only"
-msgstr ""
-
-msgctxt "#31119"
-msgid "PVR Scheduler"
 msgstr ""
 
 msgctxt "#31120"

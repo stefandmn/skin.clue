@@ -6,7 +6,6 @@
 	<include file="Includes_menuitems.xml"/>
 	<include file="ViewsVideos.xml"/>
 	<include file="ViewsDialogs.xml"/>
-	<include file="ViewsPVR.xml"/>
 	<include file="ViewsMusic.xml"/>
 	<include file="ViewsPictures.xml"/>
 

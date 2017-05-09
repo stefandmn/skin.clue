@@ -1,4 +1,5 @@
 v1.0
+- Remove PVR functions
 - Update Video screen to simplify the navigation and improve LatestVideo list
 - Clue plugin has been integrated in skin.clue
 - Add Home control in all main screens just to prepare the skin for touch interface
