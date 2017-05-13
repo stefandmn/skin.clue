@@ -161,14 +161,14 @@
 						<thumb>-</thumb>
 						<onclick>noop</onclick>
 					</item>
-					<!--item id="8">
+					<item id="8">
 						<description>PVR</description>
 						<label>24019</label>
 						<label2>$INFO[Pvr.BackendName][CR]$INFO[Pvr.BackendDiskSpace]</label2>
 						<property name="itemIcon">&gt;</property>
 						<thumb>-</thumb>
 						<onclick>noop</onclick>
-					</item-->
+					</item>
 				</content>
 			</control>
 		</control>
