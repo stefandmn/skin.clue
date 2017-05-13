@@ -10,7 +10,8 @@
 	<controls>
 		<include>globalBackground</include>
 
-		<!--Recording info, Date/time and Weather temperature-->
+
+		<!-- Date/time and Weather temperature -->
 		<control type="group">
 			<posx>96</posx>
 			<posy>742</posy>
@@ -39,6 +40,7 @@
 			</control>
 		</control>
 
+
 		<!-- RSS News -->
 		<control type="rss">
 			<animation type="Windowopen">
@@ -56,7 +58,8 @@
 			<headlinecolor>white</headlinecolor>
 		</control>
 
-		<!--Main Menu - Media controls and Settings-->
+
+		<!-- Main Menu - Media controls and Settings -->
 		<control type="group">
 			<posx>96</posx>
 			<posy>665</posy>
@@ -176,7 +179,8 @@
 			</control>
 		</control>
 
-		<!--Secondary Menu - Environment controls-->
+
+		<!-- Secondary Menu - Environment controls -->
 		<control type="group">
 			<posx>10</posx>
 			<posy>0</posy>
@@ -278,6 +282,7 @@
 				</content>
 			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>
