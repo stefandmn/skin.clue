@@ -16,32 +16,6 @@
 		</control>
 	</include>
 
-	<!-- Home button - actually Close current window/dialog -->
-	<include name="menuHome">
-		<control type="button" id="1111">
-			<description>Home button</description>
-			<posx>-96</posx>
-			<posy>-50</posy>
-			<width>50</width>
-			<height>50</height>
-			<font>symbol</font>
-			<aligny>center</aligny>
-			<align>center</align>
-			<textoffsetx>0</textoffsetx>
-			<focusedcolor>selected</focusedcolor>
-			<textcolor>unselected</textcolor>
-			<label>↸</label>
-			<onleft>1111</onleft>
-			<onright>9000</onright>
-			<onup>1111</onup>
-			<ondown>9000</ondown>
-			<texturefocus>masks/selected.png</texturefocus>
-			<texturenofocus>masks/black.png</texturenofocus>
-			<onclick>ActivateWindow(home)</onclick>
-			<visible>!Window.IsVisible(home)</visible>
-		</control>
-	</include>
-
 	<!--video menu items-->
 	<include name="videoItems">
 		<control type="button" id="9001">

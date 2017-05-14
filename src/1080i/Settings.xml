@@ -9,9 +9,6 @@
 		<!--date and time-->
 		<include>dateTime</include>
 
-		<!-- Home Navigation control -->
-		<include>navigationHome</include>
-
 		<!--main menu-->
 		<control type="group">
 			<posx>312</posx>

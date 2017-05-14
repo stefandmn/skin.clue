@@ -11,9 +11,6 @@
 		<!--date and time-->
 		<include>dateTime</include>
 
-		<!-- Home Navigation control -->
-		<include>navigationHome</include>
-
 		<control type="group">
 			<posx>96</posx>
 			<posy>95</posy>

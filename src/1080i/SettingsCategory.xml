@@ -16,10 +16,6 @@
 		<!--date and time-->
 		<include>dateTime</include>
 
-		<!-- Navigation controls: Home and Back -->
-		<include>navigationHome</include>
-		<include>navigationBack</include>
-
 		<!--placeholder label for current setting group title-->
 		<control type="label" id="2">
 			<visible>false</visible>

@@ -17,10 +17,6 @@
 		<!--date and time-->
 		<include>dateTime</include>
 
-		<!-- Navigation controls: Home and Back -->
-		<include>navigationHome</include>
-		<include>navigationBack</include>
-
 		<control type="group">
 			<posx>240</posx>
 			<posy>95</posy>
