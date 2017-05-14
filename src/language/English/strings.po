@@ -43,7 +43,7 @@ msgid "Latest"
 msgstr ""
 
 msgctxt "#31006"
-msgid "Live TV"
+msgid "File Manager"
 msgstr ""
 
 msgctxt "#31007"
@@ -51,7 +51,7 @@ msgid "Library Empty"
 msgstr ""
 
 msgctxt "#31008"
-msgid "Recording"
+msgid "Resources"
 msgstr ""
 
 msgctxt "#31009"
@@ -82,7 +82,9 @@ msgctxt "#31015"
 msgid "About MCPi"
 msgstr ""
 
-#31016 Empty string
+msgctxt "#31016"
+msgid "Clue System"
+msgstr ""
 
 msgctxt "#31017"
 msgid "Channels"
@@ -598,4 +600,16 @@ msgstr ""
 
 msgctxt "#31168"
 msgid "Back"
+msgstr ""
+
+msgctxt "#31169"
+msgid "Remote Control"
+msgstr ""
+
+msgctxt "#31170"
+msgid "Media Services"
+msgstr ""
+
+msgctxt "#31171"
+msgid "Media System"
 msgstr ""

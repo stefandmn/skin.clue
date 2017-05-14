@@ -140,83 +140,85 @@
 						<label>480</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31061] • $LOCALIZE[24008]</property>
-						<onclick>activatewindow(AppearanceSettings)</onclick>
+						<onclick>ActivateWindow(AppearanceSettings)</onclick>
 					</item>
 					<item id="2">
 						<description>Videos</description>
 						<label>3</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31063] • $LOCALIZE[24012]</property>
-						<onclick>activatewindow(VideosSettings)</onclick>
+						<onclick>ActivateWindow(VideosSettings)</onclick>
 					</item>
 					<item id="3">
 						<description>Music</description>
 						<label>2</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31063] • $LOCALIZE[31066]</property>
-						<onclick>activatewindow(MusicSettings)</onclick>
+						<onclick>ActivateWindow(MusicSettings)</onclick>
 					</item>
 					<item id="4">
 						<description>Pictures</description>
 						<label>1</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31063] • $LOCALIZE[31068]</property>
-						<onclick>activatewindow(PicturesSettings)</onclick>
+						<onclick>ActivateWindow(PicturesSettings)</onclick>
 					</item>
 					<item id="5">
 						<description>Weather</description>
 						<label>8</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31069] • $LOCALIZE[14036]</property>
-						<onclick>activatewindow(WeatherSettings)</onclick>
+						<onclick>ActivateWindow(WeatherSettings)</onclick>
 					</item>
 					<item id="6">
-						<label>$LOCALIZE[31060]</label>
-						<label2></label2>
-						<property name="label3">$LOCALIZE[31006] • $LOCALIZE[31065]</property>
-						<onclick>ActivateWindow(PVRSettings)</onclick>
-					</item>
-					<item id="7">
 						<description>Addons</description>
 						<label>24001</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31067]</property>
-						<onclick>activatewindow(AddonBrowser)</onclick>
+						<onclick>ActivateWindow(AddonBrowser)</onclick>
+					</item>
+					<item id="7">
+						<description>Media Services</description>
+						<label>31170</label>
+						<label2></label2>
+						<property name="label3">$LOCALIZE[31169] • $LOCALIZE[1273]</property>
+						<onclick>ActivateWindow(ServiceSettings)</onclick>
 					</item>
 					<item id="8">
-						<description>Services</description>
-						<label>14036</label>
-						<label2></label2>
-						<property name="label3">$LOCALIZE[31071] • $LOCALIZE[1273]</property>
-						<onclick>activatewindow(ServiceSettings)</onclick>
+						<description>Media System</description>
+						<label>31171</label>
+						<label2></label2>
+						<property name="label3">$LOCALIZE[14094] • $LOCALIZE[14095]</property>
+						<onclick>ActivateWindow(SystemSettings)</onclick>
 					</item>
 					<item id="9">
-						<description>System</description>
-						<label>13000</label>
-						<label2></label2>
-						<property name="label3">$LOCALIZE[14094] • $LOCALIZE[14095]</property>
-						<onclick>activatewindow(SystemSettings)</onclick>
-					</item>
-					<item id="10">
 						<description>File Manager</description>
-						<label>10003</label>
+						<label>31006</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31095] • $LOCALIZE[31111]</property>
-						<onclick>activatewindow(3)</onclick>
+						<onclick>ActivateWindow(3)</onclick>
 					</item>
-					<item id="11">
+					<item id="10">
 						<description>Programs</description>
 						<label>31003</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31067]</property>
 						<onclick>ActivateWindow(programs,addons,return)</onclick>
 					</item>
-					<item id="12">
+					<item id="11">
 						<description>Profiles</description>
 						<label>13200</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31105] • $LOCALIZE[31106]</property>
-						<onclick>activatewindow(34)</onclick>
+						<onclick>ActivateWindow(34)</onclick>
+					</item>
+					<item id="12">
+						<description>Clue System</description>
+						<visible>System.HasAddon(plugin.clue)</visible>
+						<label>31016</label>
+						<label2></label2>
+						<property name="label3">$LOCALIZE[31071] • $LOCALIZE[14036]</property>
+						<onclick>RunAddon(plugin.clue)</onclick>
 					</item>
 				</content>
 			</control>

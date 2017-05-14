@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="0">
-	<defaultcontrol always="true">9000</defaultcontrol>
+	<defaultcontrol always="true">9999</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="System.HasAddon(script.artistinformation) + Skin.HasSetting(HomeArtistInformation) + !Window(Home).Property(ArtistInformationRunning)">RunScript(script.artistinformation)</onload>
 	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
@@ -10,7 +10,8 @@
 	<controls>
 		<include>globalBackground</include>
 
-		<!--Recording info, Date/time and Weather temperature-->
+
+		<!-- 1) Date/time and Weather -->
 		<control type="group">
 			<posx>96</posx>
 			<posy>742</posy>
@@ -18,18 +19,6 @@
 				<effect type="fade" start="0" end="100" time="300" delay="1000"/>
 				<effect type="slide" start="0,200" end="0" tween="sine" easing="out" time="400" delay="1000"/>
 			</animation>
-			<control type="label">
-				<visible>PVR.IsRecording</visible>
-				<posx>28</posx>
-				<posy>-114</posy>
-				<width>1704</width>
-				<font>itemTitle</font>
-				<align>center</align>
-				<textcolor>selected</textcolor>
-				<shadowcolor>-</shadowcolor>
-				<scroll>true</scroll>
-				<label>[B][UPPERCASE]$LOCALIZE[31008][/UPPERCASE]:[/B] $INFO[PVR.NowRecordingTitle] $INFO[PVR.NowRecordingChannel,(,)]</label>
-			</control>
 			<control type="label">
 				<posx>0</posx>
 				<posy>90</posy>
@@ -51,7 +40,8 @@
 			</control>
 		</control>
 
-		<!-- RSS News -->
+
+		<!-- 2) RSS News -->
 		<control type="rss">
 			<animation type="Windowopen">
 				<effect type="fade" start="0" end="100" time="300" delay="1000"/>
@@ -68,23 +58,24 @@
 			<headlinecolor>white</headlinecolor>
 		</control>
 
-		<!--Main Menu - Media controls and Settings-->
+
+		<!-- 3) Main Menu - Media controls and Settings -->
 		<control type="group">
 			<posx>96</posx>
 			<posy>665</posy>
 			<!--animations-->
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
-			<animation condition="SubString(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
-			<control type="list" id="9000">
+			<animation condition="SubString(Container(9999).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
+			<control type="list" id="9999">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>2000</width>
 				<height>3-col</height>
 				<orientation>horizontal</orientation>
-				<onup>9100</onup>
-				<ondown>9100</ondown>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
+				<onup>9111</onup>
+				<ondown>9111</ondown>
+				<onleft>9999</onleft>
+				<onright>9999</onright>
 				<itemlayout width="3-col" height="3-col">
 					<control type="image">
 						<posx>0</posx>
@@ -117,7 +108,7 @@
 						<texture diffuse="masks/circle.png" border="0">masks/black.png</texture>
 						<bordersize>0</bordersize>
 						<colordiffuse>99FFFFFF</colordiffuse>
-						<visible>!Control.HasFocus(9000)</visible>
+						<visible>!Control.HasFocus(9999)</visible>
 					</control>
 					<control type="label">
 						<posx>25</posx>
@@ -128,7 +119,7 @@
 						<textcolor>unselected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>!Control.HasFocus(9000)</visible>
+						<visible>!Control.HasFocus(9999)</visible>
 					</control>
 					<control type="image">
 						<posx>0</posx>
@@ -139,7 +130,7 @@
 						<texture diffuse="masks/circle.png" border="0">masks/selected.png</texture>
 						<bordersize>0</bordersize>
 						<colordiffuse>ccFFFFFF</colordiffuse>
-						<visible>Control.HasFocus(9000)</visible>
+						<visible>Control.HasFocus(9999)</visible>
 					</control>
 					<control type="label">
 						<posx>25</posx>
@@ -150,7 +141,7 @@
 						<textcolor>selected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>Control.HasFocus(9000)</visible>
+						<visible>Control.HasFocus(9999)</visible>
 					</control>
 				</focusedlayout>
 				<content>
@@ -188,27 +179,28 @@
 			</control>
 		</control>
 
-		<!--Secondary Menu - Environment controls-->
+
+		<!-- 4) Secondary Menu - Environment controls -->
 		<control type="group">
 			<posx>10</posx>
 			<posy>0</posy>
 			<!--animations-->
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
-			<animation condition="SubString(Container(9100).NumItems,2)" effect="slide" end="10,724" time="0">conditional</animation>
-			<animation condition="SubString(Container(9100).NumItems,3)" effect="slide" end="10,662" time="0">conditional</animation>
-			<animation condition="SubString(Container(9100).NumItems,4)" effect="slide" end="10,619" time="0">conditional</animation>
-			<animation condition="SubString(Container(9100).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
-			<animation condition="SubString(Container(9100).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
-			<control type="list" id="9100">
+			<animation condition="SubString(Container(9111).NumItems,2)" effect="slide" end="10,724" time="0">conditional</animation>
+			<animation condition="SubString(Container(9111).NumItems,3)" effect="slide" end="10,662" time="0">conditional</animation>
+			<animation condition="SubString(Container(9111).NumItems,4)" effect="slide" end="10,619" time="0">conditional</animation>
+			<animation condition="SubString(Container(9111).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
+			<animation condition="SubString(Container(9111).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
+			<control type="list" id="9111">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>1-row</width>
 				<height>400</height>
 				<orientation>vertical</orientation>
-				<onup>9100</onup>
-				<ondown>9100</ondown>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
+				<onup>9111</onup>
+				<ondown>9111</ondown>
+				<onleft>9999</onleft>
+				<onright>9999</onright>
 				<itemlayout width="1-row" height="1-row">
 					<control type="label">
 						<posx>3</posx>
@@ -231,7 +223,7 @@
 						<textcolor>selected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>Control.HasFocus(9100)</visible>
+						<visible>Control.HasFocus(9111)</visible>
 					</control>
 					<control type="label">
 						<posx>3</posx>
@@ -242,7 +234,7 @@
 						<textcolor>unselected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>!Control.HasFocus(9100)</visible>
+						<visible>!Control.HasFocus(9111)</visible>
 					</control>
 				</focusedlayout>
 				<content>
@@ -268,19 +260,12 @@
 						<onclick>ReplaceWindow(favourites)</onclick>
 					</item>
 					<item id="4">
-						<visible>System.HasAddon(plugin.clue)</visible>
-						<label>0</label>
-						<label2></label2>
-						<thumb>-</thumb>
-						<onclick>RunAddon(plugin.clue)</onclick>
-					</item>
-					<item id="5">
 						<label>31004</label>
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ActivateWindow(ShutdownMenu)</onclick>
 					</item>
-					<item id="6">
+					<item id="10">
 						<visible>Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo) | System.GetBool(debug.showloginfo)</visible>
 						<label>31164</label>
 						<label2></label2>
@@ -290,6 +275,7 @@
 				</content>
 			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>

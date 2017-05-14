@@ -231,13 +231,6 @@
 							<thumb>-</thumb>
 							<onclick>PlayerControl(next)</onclick>
 						</item>
-						<item>
-							<visible>System.GetBool(pvrmanager.enabled) + Player.CanRecord</visible>
-							<description>Record (PVR only)</description>
-							<label></label>
-							<thumb>-</thumb>
-							<onclick>PlayerControl(record)</onclick>
-						</item>
 					</content>
 				</control>
 				<!--subtitles etc-->
