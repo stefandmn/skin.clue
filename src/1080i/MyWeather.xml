@@ -86,19 +86,21 @@
 				<onup>9000</onup>
 				<ondown>60</ondown>
 				<onleft>3</onleft>
-				<onright>9210</onright>
+				<onright>Control.SetFocus(9301)</onright>
 			</control>
 		</control>
+
 
 		<!--Today's Weather-->
 		<control type="group" id="9200">
 			<!--animations-->
 			<include>modalDialogInOutVertical</include>
-			<animation effect="slide" start="0" end="-1920" time="300" condition="Control.HasFocus(9310) | Control.HasFocus(9301)">Conditional</animation>
+			<animation effect="slide" start="0" end="-1920" time="300" condition="Control.HasFocus(9301)">Conditional</animation>
 			<posx>48</posx>
 			<posy>339</posy>
 			<width>1780</width>
 			<height>18-row</height>
+
 			<!-- Today's Weather Details -->
 			<control type="group" id="9201">
 				<posx>0</posx>
@@ -264,6 +266,7 @@
 					<autoscroll time="5000" delay="3000" repeat="5000">true</autoscroll>
 				</control>
 			</control>
+
 			<!-- Hourly Forecast - Listing -->
 			<control type="list" id="9202">
 				<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
@@ -512,6 +515,7 @@
 					</item>
 				</content>
 			</control>
+
 			<!-- Weekly Forecast - Listing -->
 			<control type="list" id="9203">
 				<visible>IsEmpty(Window.Property(Hourly.IsFetched))</visible>
@@ -696,6 +700,7 @@
 					</item>
 				</content>
 			</control>
+
 			<!-- Related controls -->
 			<control type="group" id="9204">
 				<posx>1600</posx>
@@ -705,34 +710,18 @@
 					<posy>0</posy>
 					<height>456</height>
 					<onup>9100</onup>
-					<onright>9210</onright>
-				</control>
-				<control type="button" id="9210">
-					<posx>200</posx>
-					<posy>210</posy>
-					<width>48</width>
-					<height>48</height>
-					<font>symbolLarge</font>
-					<aligny>center</aligny>
-					<align>center</align>
-					<textoffsetx>0</textoffsetx>
-					<focusedcolor>selected</focusedcolor>
-					<textcolor>unselected</textcolor>
-					<label></label>
-					<onup>9100</onup>
-					<ondown>9210</ondown>
-					<onleft>60</onleft>
-					<onright>9310</onright>
-					<onclick>Control.SetFocus(9310)</onclick>
+					<onright>Control.SetFocus(9301)</onright>
 				</control>
 			</control>
 		</control>
 
+
 		<!-- Weekly Forecast Weather -->
 		<control type="group" id="9300">
+			<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 			<!--animations-->
 			<include>modalDialogInOutVertical</include>
-			<animation effect="slide" start="0" end="-1920" time="300" condition="Control.HasFocus(9310) | Control.HasFocus(9301)">Conditional</animation>
+			<animation effect="slide" start="0" end="-1920" time="300" condition="Control.HasFocus(9301)">Conditional</animation>
 			<posx>1920</posx>
 			<posy>339</posy>
 			<onup>9100</onup>
@@ -743,7 +732,7 @@
 				<height>18-row</height>
 				<onup>9000</onup>
 				<ondown>9301</ondown>
-				<onleft>9310</onleft>
+				<onleft>Control.SetFocus(2)</onleft>
 				<onright>9301</onright>
 				<itemlayout width="336" height="6-col">
 					<control type="label">
@@ -879,25 +868,8 @@
 					</item>
 				</content>
 			</control>
-			<control type="button" id="9310">
-				<posx>35</posx>
-				<posy>194</posy>
-				<width>48</width>
-				<height>48</height>
-				<font>symbolLarge</font>
-				<aligny>center</aligny>
-				<align>center</align>
-				<textoffsetx>0</textoffsetx>
-				<focusedcolor>selected</focusedcolor>
-				<textcolor>unselected</textcolor>
-				<label></label>
-				<onup>9000</onup>
-				<ondown>9310</ondown>
-				<onleft>9210</onleft>
-				<onright>9301</onright>
-				<onclick>Control.SetFocus(9210)</onclick>
-			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>
