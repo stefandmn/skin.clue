@@ -31,7 +31,7 @@ msgid "Play"
 msgstr ""
 
 msgctxt "#31003"
-msgid "Program Addons"
+msgid "Programs"
 msgstr ""
 
 msgctxt "#31004"

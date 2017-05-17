@@ -7,7 +7,7 @@
 		<control type="group">
 			<posx>581r</posx>
 			<posy>963</posy>
-			<visible>!Window.IsActive(visualisation) + [Window.IsActive(musiclibrary) | Window.IsActive(videolibrary) | Window.IsActive(home) | Window.IsActive(MusicFiles) | Window.IsActive(weather) | Window.IsActive(slideshow) | Window.IsActive(settings)]</visible>
+			<visible>!Window.IsActive(visualisation) + [Window.IsActive(musiclibrary) | Window.IsActive(videolibrary) | Window.IsActive(home) | Window.IsActive(musicfiles) | Window.IsActive(weather) | Window.IsActive(slideshow) | Window.IsActive(settings)]</visible>
 			<!--animations-->
 			<animation type="Windowopen">
 				<effect type="slide" start="1000,0" end="0,0" time="300" tween="sine"/>

@@ -22,7 +22,7 @@
 				<description>Song Title</description>
 				<posx>3-col</posx>
 				<posy>0</posy>
-				<width>6-col</width>
+				<width>9-col</width>
 				<font>mediumStrong</font>
 				<label>$INFO[ListItem.Title]</label>
 				<textcolor>selected</textcolor>
@@ -32,7 +32,7 @@
 				<description>Artist</description>
 				<posx>3-col</posx>
 				<posy>1-row</posy>
-				<width>6-col</width>
+				<width>9-col</width>
 				<font>itemTitle</font>
 				<label>[COLOR accented]$INFO[ListItem.artist,, ][/COLOR]$INFO[ListItem.Album]</label>
 				<textcolor>selected</textcolor>
@@ -127,6 +127,7 @@
 					</content>
 				</control>
 			</control>
+
 			<!--album info / thumb download-->
 			<control type="panel" id="9000">
 				<posx>3-col</posx>
@@ -136,11 +137,11 @@
 				<itemgap>3</itemgap>
 				<onup>8000</onup>
 				<orientation>horizontal</orientation>
-				<itemlayout width="3-col" height="1-row">
+				<itemlayout width="5-col" height="1-row">
 					<control type="image">
 						<posx>0</posx>
 						<posy>2</posy>
-						<width>3-col</width>
+						<width>5-col</width>
 						<height>53</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>masks/black.png</texture>
@@ -157,18 +158,18 @@
 					<control type="label">
 						<posx>1-col</posx>
 						<posy>2</posy>
-						<width>192</width>
+						<width>4-col</width>
 						<font>menuTitle</font>
 						<textcolor>selected</textcolor>
 						<label>$INFO[ListItem.label]</label>
 						<shadowcolor>-</shadowcolor>
 					</control>
 				</itemlayout>
-				<focusedlayout width="3-col" height="1-row">
+				<focusedlayout width="5-col" height="1-row">
 					<control type="image">
 						<posx>0</posx>
 						<posy>2</posy>
-						<width>3-col</width>
+						<width>5-col</width>
 						<height>53</height>
 						<aspectratio>stretch</aspectratio>
 						<texture>masks/selected.png</texture>
@@ -185,7 +186,7 @@
 					<control type="label">
 						<posx>1-col</posx>
 						<posy>2</posy>
-						<width>192</width>
+						<width>4-col</width>
 						<font>menuTitle</font>
 						<textcolor>black</textcolor>
 						<label>$INFO[ListItem.label]</label>

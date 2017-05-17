@@ -9,7 +9,7 @@
 	<controls>
 		<include>globalBackground</include>
 
-		<!--page container group-->
+		<!-- Page container group -->
 		<control type="group">
 			<!--window fader-->
 			<animation type="conditional" condition="window.next(0) | window.next(1) | player.hasvideo">
@@ -28,7 +28,7 @@
 				<posy>0</posy>
 
 
-				<!--Main menu-->
+				<!-- Main menu -->
 				<control type="group">
 					<posx>96</posx>
 					<posy>50</posy>
@@ -117,7 +117,7 @@
 							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 							<onclick>Control.SetFocus(50)</onclick>
 						</control>
-						<control type="button" id="409">
+						<control type="button" id="406">
 							<description>Favorites</description>
 							<height>40</height>
 							<width>236</width>

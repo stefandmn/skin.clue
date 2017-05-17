@@ -4,9 +4,7 @@
 	<include file="Includes_variables.xml"/>
 	<include file="Includes_animations.xml"/>
 	<include file="Includes_menuitems.xml"/>
-	<include file="ViewsVideos.xml"/>
 	<include file="ViewsDialogs.xml"/>
-	<include file="ViewsMusic.xml"/>
 	<include file="ViewsPictures.xml"/>
 
 	<!--fullscreen coordinates -->
