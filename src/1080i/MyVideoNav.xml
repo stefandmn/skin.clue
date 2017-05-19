@@ -197,31 +197,6 @@
 								<label>137</label>
 								<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 							</control>
-							<control type="button" id="3">
-								<description>Sort by</description>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<textoffsetx>12</textoffsetx>
-								<label>103</label>
-							</control>
-							<control type="togglebutton" id="4">
-								<description>Sort direction</description>
-								<label>31109</label>
-								<altlabel>31110</altlabel>
-								<align>left</align>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<alttexturefocus>masks/selected.png</alttexturefocus>
-								<textoffsetx>12</textoffsetx>
-							</control>
 							<control type="button" id="413">
 								<description>Files menu (video)</description>
 								<height>40</height>
@@ -236,6 +211,31 @@
 								<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 								<onclick>Control.SetFocus(50)</onclick>
 							</control>
+							<control type="button" id="3">
+								<description>Sort by</description>
+								<height>40</height>
+								<width>236</width>
+								<font>smallMedium</font>
+								<textcolor>selected</textcolor>
+								<focusedcolor>black</focusedcolor>
+								<texturefocus>masks/selected.png</texturefocus>
+								<textoffsetx>12</textoffsetx>
+								<label>103</label>
+							</control>
+							<control type="togglebutton" id="4">
+								<description>Sort direction</description>
+								<label>31109</label>
+								<altlabel>31110</altlabel>
+								<align>left</align>
+								<height>40</height>
+								<width>236</width>
+								<font>smallMedium</font>
+								<textcolor>selected</textcolor>
+								<focusedcolor>black</focusedcolor>
+								<texturefocus>masks/selected.png</texturefocus>
+								<alttexturefocus>masks/selected.png</alttexturefocus>
+								<textoffsetx>12</textoffsetx>
+							</control>
 							<control type="button" id="414">
 								<description>Library update</description>
 								<visible>Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)</visible>
@@ -248,7 +248,6 @@
 								<textoffsetx>12</textoffsetx>
 								<label>653</label>
 								<onclick>UpdateLibrary(video)</onclick>
-								<onclick>right</onclick>
 							</control>
 							<control type="radiobutton" id="14">
 								<description>Watched Toggle</description>
@@ -430,15 +429,15 @@
 							<label>31007</label>
 						</control>
 						<!--content (movies, tvshows and music videos)-->
-						<control type="list" id="7100">
+						<control type="panel" id="7100">
 							<visible>Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)</visible>
 							<posx>-12</posx>
 							<posy>-12</posy>
 							<width>22-col</width>
-							<height>6-row</height>
+							<height>18-row</height>
 							<onleft>7400</onleft>
 							<ondown>7100</ondown>
-							<orientation>horizontal</orientation>
+							<orientation>vertical</orientation>
 							<animation type="windowopen">
 								<include>listSlideIn</include>
 							</animation>
@@ -490,7 +489,7 @@
 							</itemlayout>
 							<focusedlayout width="380" height="362">
 								<control type="image">
-									<visible>control.hasfocus(7100)</visible>
+									<visible>Control.HasFocus(7100)</visible>
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
@@ -502,7 +501,7 @@
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
 								<control type="image">
-									<visible>!control.hasfocus(7100)</visible>
+									<visible>!Control.HasFocus(7100)</visible>
 									<posx>0</posx>
 									<posy>0</posy>
 									<width>363</width>
@@ -517,7 +516,7 @@
 									<posx>0</posx>
 									<posy>272</posy>
 									<control type="image">
-										<visible>control.hasfocus(7100)</visible>
+										<visible>Control.HasFocus(7100)</visible>
 										<posx>0</posx>
 										<posy>0</posy>
 										<width>363</width>
@@ -528,7 +527,7 @@
 										<colordiffuse>ffFFFFFF</colordiffuse>
 									</control>
 									<control type="image">
-										<visible>!control.hasfocus(7100)</visible>
+										<visible>!Control.HasFocus(7100)</visible>
 										<posx>0</posx>
 										<posy>0</posy>
 										<width>363</width>
@@ -539,7 +538,7 @@
 										<colordiffuse>77FFFFFF</colordiffuse>
 									</control>
 									<control type="label">
-										<visible>control.hasfocus(7100)</visible>
+										<visible>Control.HasFocus(7100)</visible>
 										<posx>12</posx>
 										<posy>-12</posy>
 										<width>339</width>
@@ -550,7 +549,7 @@
 										<scroll>true</scroll>
 									</control>
 									<control type="label">
-										<visible>control.hasfocus(7100)</visible>
+										<visible>Control.HasFocus(7100)</visible>
 										<posx>12</posx>
 										<posy>18</posy>
 										<width>252</width>
@@ -560,7 +559,7 @@
 										<label>$INFO[ListItem.Label2]</label>
 									</control>
 									<control type="label">
-										<visible>!control.hasfocus(7100)</visible>
+										<visible>!Control.HasFocus(7100)</visible>
 										<posx>12</posx>
 										<posy>-12</posy>
 										<width>339</width>
@@ -571,7 +570,7 @@
 										<scroll>true</scroll>
 									</control>
 									<control type="label">
-										<visible>!control.hasfocus(7100)</visible>
+										<visible>!Control.HasFocus(7100)</visible>
 										<posx>12</posx>
 										<posy>18</posy>
 										<width>252</width>

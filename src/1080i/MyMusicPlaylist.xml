@@ -304,7 +304,7 @@
 
 				<!--Sort / misc labels (footer)-->
 				<control type="group">
-					<posx>312</posx>
+					<posx>352</posx>
 					<posy>1007</posy>
 					<include>mediaListFooter</include>
 				</control>
@@ -329,6 +329,7 @@
 				<include>sideBarMenuItems</include>
 			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>

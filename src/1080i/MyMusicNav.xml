@@ -235,8 +235,8 @@
 								<height>40</height>
 								<width>236</width>
 								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
+								<textcolor>selected</textcolor>
+								<focusedcolor>black</focusedcolor>
 								<texturefocus>masks/selected.png</texturefocus>
 								<textoffsetx>12</textoffsetx>
 								<label>103</label>
@@ -249,8 +249,8 @@
 								<height>40</height>
 								<width>236</width>
 								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
+								<textcolor>selected</textcolor>
+								<focusedcolor>black</focusedcolor>
 								<texturefocus>masks/selected.png</texturefocus>
 								<alttexturefocus>masks/selected.png</alttexturefocus>
 								<textoffsetx>12</textoffsetx>

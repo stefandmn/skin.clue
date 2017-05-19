@@ -182,18 +182,18 @@
 						<onclick>ActivateWindow(AppearanceSettings)</onclick>
 					</item>
 					<item id="8">
-						<description>File Manager</description>
-						<label>31006</label>
-						<label2></label2>
-						<property name="label3">$LOCALIZE[31095] • $LOCALIZE[31111]</property>
-						<onclick>ActivateWindow(3)</onclick>
-					</item>
-					<item id="9">
 						<description>Profiles</description>
 						<label>13200</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31105] • $LOCALIZE[31106]</property>
 						<onclick>ActivateWindow(34)</onclick>
+					</item>
+					<item id="9">
+						<description>File Manager</description>
+						<label>31006</label>
+						<label2></label2>
+						<property name="label3">$LOCALIZE[31095] • $LOCALIZE[31111]</property>
+						<onclick>ActivateWindow(3)</onclick>
 					</item>
 					<item id="10">
 						<description>Media Services</description>

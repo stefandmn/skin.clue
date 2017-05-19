@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="false">7400</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
-	<previouswindow>videolibrary</previouswindow>
+	<allowoverlay>yes</allowoverlay>
 
 	<controls>
 		<include>globalBackground</include>
@@ -12,19 +11,18 @@
 			<animation type="conditional" condition="window.next(0) | window.next(1) | player.hasvideo">
 				<effect type="fade" start="100" end="0" time="300"/>
 			</animation>
+
 			<!--shift page for certain modal dialogs-->
 			<include>modalDialogContentShift</include>
+			<!--date and time-->
+			<include>dateTime</include>
+
 			<!--content provider-->
 			<control type="group">
 				<posx>0</posx>
 				<posy>0</posy>
-				<!--main menu-->
-				<control type="group">
-					<posx>96</posx>
-					<posy>95</posy>
-					<include>dateTime</include>
-					<include>menuItems</include>
-				</control>
+
+
 				<!--Folder titles-->
 				<control type="group">
 					<posx>312</posx>
@@ -54,12 +52,14 @@
 						<textcolor>selected</textcolor>
 					</control>
 				</control>
+
+
 				<!--Main content listing-->
-				<control type="group" id="9999">
+				<control type="group" id="7000">
 					<posx>312</posx>
 					<posy>95</posy>
 					<!--source content-->
-					<control type="group" id="9500">
+					<control type="group" id="7100">
 						<visible>SubString(skin.string(showRecentVideoItems),false)</visible>
 						<animation type="windowopen">
 							<include>listSlideIn</include>
@@ -233,17 +233,19 @@
 						</control>
 					</control>
 				</control>
+				
 				<!--page scrollbar-->
-				<control type="group" id="8000">
+				<control type="group" id="7200">
 					<visible>Control.IsVisible(60)</visible>
-					<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(7200).hasfocus">conditional</animation>
 					<control type="scrollbar" id="60">
 						<posx>108r</posx>
 						<posy>276</posy>
 						<height>672</height>
-						<onleft>9999</onleft>
+						<onleft>7000</onleft>
 					</control>
 				</control>
+
 				<!--Sort / misc labels (footer)-->
 				<control type="group">
 					<visible>SubString(skin.string(showRecentVideoItems),false)</visible>
@@ -253,6 +255,7 @@
 				</control>
 			</control>
 		</control>
+
 		<!--sorting and misc controls-->
 		<control type="group" id="61">
 			<!--animations-->
