@@ -10,6 +10,7 @@
 		<posx>15</posx>
 		<posy>15</posy>
 	</coordinates>
+
 	<controls>
 		<control type="button" id="10">
 			<description>Startup Trigger</description>
@@ -17,6 +18,7 @@
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
 		</control>
+
 		<!--debugging-->
 		<include>DebugGrid</include>
 		<control type="label">

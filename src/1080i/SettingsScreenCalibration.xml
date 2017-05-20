@@ -8,7 +8,6 @@
 			<description>videowindow</description>
 			<include>dimensionsFullscreen</include>
 		</control>
-
 		<control type="mover" id="8">
 			<description>top left mover</description>
 			<posx>0</posx>
@@ -63,6 +62,7 @@
 			<align>center</align>
 			<label>-</label>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>

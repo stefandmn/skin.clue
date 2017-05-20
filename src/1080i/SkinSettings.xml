@@ -6,6 +6,8 @@
 	<controls>
 		<!--background-->
 		<include>globalBackground</include>
+		<!--date and time-->
+		<include>dateTime</include>
 
 		<control type="image">
 			<include>dimensionsFullscreen</include>
@@ -13,9 +15,6 @@
 			<aspectratio>stretch</aspectratio>
 			<colordiffuse>99ffffff</colordiffuse>
 		</control>
-
-		<!--date and time-->
-		<include>dateTime</include>
 
 		<control type="group">
 			<posx>240</posx>
@@ -380,6 +379,7 @@
 				</control>
 			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="0">
-	<defaultcontrol always="true">9999</defaultcontrol>
+	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="System.HasAddon(script.artistinformation) + Skin.HasSetting(HomeArtistInformation) + !Window(Home).Property(ArtistInformationRunning)">RunScript(script.artistinformation)</onload>
 	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
@@ -65,17 +65,17 @@
 			<posy>665</posy>
 			<!--animations-->
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
-			<animation condition="SubString(Container(9999).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
-			<control type="list" id="9999">
+			<animation condition="SubString(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
+			<control type="list" id="9000">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>2000</width>
 				<height>3-col</height>
 				<orientation>horizontal</orientation>
-				<onup>9111</onup>
-				<ondown>9111</ondown>
-				<onleft>9999</onleft>
-				<onright>9999</onright>
+				<onup>9100</onup>
+				<ondown>9100</ondown>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
 				<itemlayout width="3-col" height="3-col">
 					<control type="image">
 						<posx>0</posx>
@@ -108,7 +108,7 @@
 						<texture diffuse="masks/circle.png" border="0">masks/black.png</texture>
 						<bordersize>0</bordersize>
 						<colordiffuse>99FFFFFF</colordiffuse>
-						<visible>!Control.HasFocus(9999)</visible>
+						<visible>!Control.HasFocus(9000)</visible>
 					</control>
 					<control type="label">
 						<posx>25</posx>
@@ -119,7 +119,7 @@
 						<textcolor>unselected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>!Control.HasFocus(9999)</visible>
+						<visible>!Control.HasFocus(9000)</visible>
 					</control>
 					<control type="image">
 						<posx>0</posx>
@@ -130,7 +130,7 @@
 						<texture diffuse="masks/circle.png" border="0">masks/selected.png</texture>
 						<bordersize>0</bordersize>
 						<colordiffuse>ccFFFFFF</colordiffuse>
-						<visible>Control.HasFocus(9999)</visible>
+						<visible>Control.HasFocus(9000)</visible>
 					</control>
 					<control type="label">
 						<posx>25</posx>
@@ -141,7 +141,7 @@
 						<textcolor>selected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>Control.HasFocus(9999)</visible>
+						<visible>Control.HasFocus(9000)</visible>
 					</control>
 				</focusedlayout>
 				<content>
@@ -186,21 +186,21 @@
 			<posy>0</posy>
 			<!--animations-->
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
-			<animation condition="SubString(Container(9111).NumItems,2)" effect="slide" end="10,724" time="0">conditional</animation>
-			<animation condition="SubString(Container(9111).NumItems,3)" effect="slide" end="10,662" time="0">conditional</animation>
-			<animation condition="SubString(Container(9111).NumItems,4)" effect="slide" end="10,619" time="0">conditional</animation>
-			<animation condition="SubString(Container(9111).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
-			<animation condition="SubString(Container(9111).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
-			<control type="list" id="9111">
+			<animation condition="SubString(Container(9100).NumItems,2)" effect="slide" end="10,724" time="0">conditional</animation>
+			<animation condition="SubString(Container(9100).NumItems,3)" effect="slide" end="10,662" time="0">conditional</animation>
+			<animation condition="SubString(Container(9100).NumItems,4)" effect="slide" end="10,619" time="0">conditional</animation>
+			<animation condition="SubString(Container(9100).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
+			<animation condition="SubString(Container(9100).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
+			<control type="list" id="9100">
 				<posx>0</posx>
 				<posy>0</posy>
 				<width>1-row</width>
 				<height>400</height>
 				<orientation>vertical</orientation>
-				<onup>9111</onup>
-				<ondown>9111</ondown>
-				<onleft>9999</onleft>
-				<onright>9999</onright>
+				<onup>9100</onup>
+				<ondown>9100</ondown>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
 				<itemlayout width="1-row" height="1-row">
 					<control type="label">
 						<posx>3</posx>
@@ -223,7 +223,7 @@
 						<textcolor>selected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>Control.HasFocus(9111)</visible>
+						<visible>Control.HasFocus(9100)</visible>
 					</control>
 					<control type="label">
 						<posx>3</posx>
@@ -234,7 +234,7 @@
 						<textcolor>unselected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>!Control.HasFocus(9111)</visible>
+						<visible>!Control.HasFocus(9100)</visible>
 					</control>
 				</focusedlayout>
 				<content>

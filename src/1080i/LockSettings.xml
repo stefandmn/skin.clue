@@ -6,12 +6,14 @@
 	<controls>
 		<!--background-->
 		<include>globalBackground</include>
+
 		<control type="image">
 			<include>dimensionsFullscreen</include>
 			<texture>masks/black.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<colordiffuse>99ffffff</colordiffuse>
 		</control>
+
 		<control type="group">
 			<posx>384</posx>
 			<posy>152</posy>
@@ -157,6 +159,7 @@
 				</content>
 			</control>
 		</control>
+
 		<!--hidden dialog buttons-->
 		<control type="group">
 			<visible>false</visible>
@@ -167,6 +170,7 @@
 				<description>Cancel</description>
 			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>

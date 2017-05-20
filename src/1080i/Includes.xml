@@ -3,9 +3,7 @@
 	<include file="Defaults.xml"/>
 	<include file="Includes_variables.xml"/>
 	<include file="Includes_animations.xml"/>
-	<include file="Includes_menuitems.xml"/>
-	<include file="ViewsDialogs.xml"/>
-	<include file="ViewsPictures.xml"/>
+
 
 	<!--fullscreen coordinates -->
 	<include name="dimensionsFullscreen">
@@ -14,6 +12,7 @@
 		<width>fullscreenWidth</width>
 		<height>fullscreenHeight</height>
 	</include>
+
 
 	<!--modal dialogs-->
 	<include name="modalDialog">
@@ -30,6 +29,7 @@
 			<aspectratio>stretch</aspectratio>
 		</control>
 	</include>
+
 
 	<!--Global background-->
 	<include name="globalBackground">
@@ -140,6 +140,7 @@
 		</control>
 	</include>
 
+
 	<!--date and time-->
 	<include name="dateTime">
 		<control type="label">
@@ -153,6 +154,7 @@
 			<animation effect="fade" end="55" condition="true">Conditional</animation>
 		</control>
 	</include>
+
 
 	<!--busy indicator-->
 	<include name="loadingIndicator">
@@ -191,6 +193,7 @@
 			</control>
 		</control>
 	</include>
+
 
 	<!--footer for media lists-->
 	<include name="mediaListFooter">
@@ -263,6 +266,7 @@
 		</control>
 	</include>
 
+
     <!--conditional positioning for progress dialogs (avoid overlaps)-->
     <include name="progressPosition1">
 		<posy>95</posy>
@@ -270,6 +274,7 @@
     <include name="progressPosition2">
 		<posy>209</posy>
 	</include>
+
 
 	<!--Debug Window Label-->
 	<include name="DebugDialogID">
@@ -283,6 +288,7 @@
 		<visible>Skin.HasSetting(DebugInfo)</visible>
 	</include>
 
+
 	<!--Debug Dialog Label-->
 	<include name="DebugWindowID">
 		<posx>15</posx>
@@ -295,6 +301,7 @@
 		<visible>Skin.HasSetting(DebugInfo)</visible>
 	</include>
 
+
 	<!--Debug Label for other type of screens-->
 	<include name="DebugScreenID">
 		<posx>15</posx>
@@ -306,6 +313,18 @@
 		<align>left</align>
 		<visible>Skin.HasSetting(DebugInfo)</visible>
 	</include>
+
+
+	<!--Debug grid control-->
+	<include name="DebugGrid">
+		<control type="image">
+			<include>dimensionsFullscreen</include>
+			<texture>debug.png</texture>
+			<colordiffuse>77FFFFFF</colordiffuse>
+			<visible>Skin.HasSetting(DebugGrid)</visible>
+		</control>
+	</include>
+
 
 	<!-- Keyboard button coordinates -->
 	<include name="KeyboardButton">
@@ -321,13 +340,4 @@
 		<focusedcolor>black</focusedcolor>
 	</include>
 
-	<!--Debug grid control-->
-	<include name="DebugGrid">
-		<control type="image">
-			<include>dimensionsFullscreen</include>
-			<texture>debug.png</texture>
-			<colordiffuse>77FFFFFF</colordiffuse>
-			<visible>Skin.HasSetting(DebugGrid)</visible>
-		</control>
-	</include>
 </includes>

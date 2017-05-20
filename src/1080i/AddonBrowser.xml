@@ -7,13 +7,15 @@
 	<controls>
 		<!--background-->
 		<include>globalBackground</include>
+
 		<control type="image">
 			<include>dimensionsFullscreen</include>
 			<texture>masks/black.png</texture>
 			<aspectratio>stretch</aspectratio>
 			<colordiffuse>99ffffff</colordiffuse>
 		</control>
-		<control type="group" id="9001">
+
+		<control type="group" id="4200">
 			<posx>168</posx>
 			<posy>152</posy>
 			<!--animations-->
@@ -45,6 +47,7 @@
 				<textcolor>black</textcolor>
 				<shadowcolor>-</shadowcolor>
 			</control>
+			
 			<control type="grouplist">
 				<posx>336</posx>
 				<posy>44</posy>
@@ -61,7 +64,7 @@
 					<texturefocus>masks/black.png</texturefocus>
 					<textoffsetx>12</textoffsetx>
 					<textoffsety>-6</textoffsety>
-					<ondown>9999</ondown>
+					<ondown>4000</ondown>
 				</control>
 				<control type="radiobutton" id="7">
 					<aligny>center</aligny>
@@ -74,7 +77,7 @@
 					<texturefocus>masks/black.png</texturefocus>
 					<textoffsetx>12</textoffsetx>
 					<textoffsety>-6</textoffsety>
-					<ondown>9999</ondown>
+					<ondown>4000</ondown>
 				</control>
 				<control type="radiobutton" id="8">
 					<aligny>center</aligny>
@@ -87,7 +90,7 @@
 					<texturefocus>masks/black.png</texturefocus>
 					<textoffsetx>12</textoffsetx>
 					<textoffsety>-6</textoffsety>
-					<ondown>9999</ondown>
+					<ondown>4000</ondown>
 				</control>
 				<control type="button" id="5">
 					<aligny>center</aligny>
@@ -100,29 +103,115 @@
 					<texturefocus>masks/black.png</texturefocus>
 					<textoffsetx>12</textoffsetx>
 					<textoffsety>-6</textoffsety>
-					<ondown>9999</ondown>
+					<ondown>4000</ondown>
 				</control>
 			</control>
+
 			<!--content listing-->
-			<control type="group" id="9999">
+			<control type="group" id="4000">
 				<onup>6</onup>
 				<posx>0</posx>
 				<posy>-50</posy>
-				<include>viewDialogList</include>
+				<control type="panel" id="50">
+					<posx>0</posx>
+					<posy>3-row</posy>
+					<width>22-col</width>
+					<height>11-row</height>
+					<onleft>4000</onleft>
+					<onright>60</onright>
+					<ondown>50</ondown>
+					<onup>50</onup>
+					<pagecontrol>60</pagecontrol>
+					<itemlayout height="1-row" width="11-col">
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>48</width>
+						<height>48</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture fallback="masks/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+					</control>
+					<control type="label">
+						<posx>1-col</posx>
+						<posy>0</posy>
+						<width>7-col</width>
+						<font>itemTitle</font>
+						<textcolor>unselected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<right>48</right>
+						<posy>0</posy>
+						<width>4-col</width>
+						<align>right</align>
+						<label>$INFO[ListItem.Label2]</label>
+						<font>smallMedium</font>
+						<textcolor>unselected</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<shadowcolor>-</shadowcolor>
+						<textoffsetx>24</textoffsetx>
+					</control>
+					</itemlayout>
+					<focusedlayout height="1-row" width="11-col">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>768</width>
+						<height>53</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="24,0,24,0">controls/listitem-fo.png</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>ffFFFFFF</colordiffuse>
+					</control>
+					<control type="image">
+						<posx>4</posx>
+						<posy>4</posy>
+						<width>48</width>
+						<height>48</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture fallback="masks/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+					</control>
+					<control type="label">
+						<posx>1-col</posx>
+						<posy>0</posy>
+						<width>7-col</width>
+						<font>itemTitle</font>
+						<textcolor>black</textcolor>
+						<selectedcolor>black</selectedcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<right>48</right>
+						<posy>0</posy>
+						<width>4-col</width>
+						<align>right</align>
+						<label>$INFO[ListItem.Label2]</label>
+						<font>smallMedium</font>
+						<textcolor>black</textcolor>
+						<selectedcolor>black</selectedcolor>
+						<shadowcolor>-</shadowcolor>
+						<textoffsetx>24</textoffsetx>
+					</control>
+					</focusedlayout>
+				</control>
 			</control>
+			
 			<!--page scrollbar-->
-			<control type="group" id="8000">
+			<control type="group" id="4100">
 				<visible>Control.IsVisible(60)</visible>
-				<animation effect="fade" start="100" end="70" time="100" condition="!controlgroup(8000).hasfocus">conditional</animation>
+				<animation effect="fade" start="100" end="70" time="100" condition="!controlgroup(4100).hasfocus">conditional</animation>
 				<control type="scrollbar" id="60">
 					<posx>1608</posx>
 					<posy>126</posy>
 					<height>11-row</height>
-					<onleft>9999</onleft>
+					<onleft>4000</onleft>
 				</control>
 			</control>
 		</control>
 
+		
 		<!--debugging-->
 		<include>DebugGrid</include>
 		<control type="label">

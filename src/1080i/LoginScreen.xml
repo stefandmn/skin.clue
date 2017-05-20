@@ -5,6 +5,7 @@
 
 	<controls>
 		<include>globalBackground</include>
+
 		<control type="group">
 			<posx>384</posx>
 			<posy>323</posy>

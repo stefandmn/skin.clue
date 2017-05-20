@@ -4,6 +4,7 @@
 	<allowoverlay>yes</allowoverlay>
 
 	<controls>
+
 		<!--vignette-->
 		<control type="image">
 			<include>dimensionsFullscreen</include>
@@ -12,7 +13,7 @@
 			<aspectratio>stretch</aspectratio>
 		</control>
 
-		<!--picture info-->
+		<!-- Picture Info-->
 		<control type="group">
 			<posx>384</posx>
 			<posy>950</posy>
@@ -59,6 +60,7 @@
 				<label>$INFO[Slideshow.Filedate]</label>
 			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>
