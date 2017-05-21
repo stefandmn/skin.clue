@@ -45,7 +45,6 @@
 			<effect type="fade" start="0" end="100" time="300"/>
 			<effect type="slide" start="0,-200" end="0" tween="cubic" easing="out" time="400"/>
 		</animation>
-
 		<animation type="Windowclose">
 			<effect type="fade" start="100" end="0" time="300"/>
 			<effect type="slide" start="0" end="0,300" tween="cubic" easing="out" time="400"/>

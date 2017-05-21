@@ -22,6 +22,7 @@
 				<description>OK</description>
 			</control>
 		</control>
+
 		<control type="group">
 			<posx>600</posx>
 			<posy>380</posy>

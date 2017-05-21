@@ -59,7 +59,7 @@
 				<width>-</width>
 				<itemgap>3</itemgap>
 				<height>11-row</height>
-				<onleft>9000</onleft>
+				<onleft>4000</onleft>
 				<onright>2</onright>
 				<orientation>vertical</orientation>
 			</control>
@@ -70,12 +70,12 @@
 				<width>840</width>
 				<height>11-row</height>
 				<onleft>9</onleft>
-				<onright>9001</onright>
+				<onright>4000</onright>
 				<orientation>vertical</orientation>
 				<itemgap>3</itemgap>
 			</control>
 			<!--OK / Cancel-->
-			<control type="panel" id="9001">
+			<control type="panel" id="4000">
 				<posx>16-col</posx>
 				<posy>120</posy>
 				<width>4-col</width>

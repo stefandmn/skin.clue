@@ -49,6 +49,7 @@
 				<aspectratio>stretch</aspectratio>
 			</control>
 		</control>
+
 		<!--content is artist-->
 		<control type="group">
 			<visible>container.content(artists)</visible>
@@ -214,6 +215,7 @@
 				</content>
 			</control>
 		</control>
+
 		<!--content is album-->
 		<control type="group">
 			<visible>container.content(albums) + !container.content(artists)</visible>
@@ -383,6 +385,7 @@
 				</content>
 			</control>
 		</control>
+
 		<!--dialog controls-->
 		<control type="group">
 			<visible>false</visible>
@@ -399,6 +402,7 @@
 				<label>20413</label>
 			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>
