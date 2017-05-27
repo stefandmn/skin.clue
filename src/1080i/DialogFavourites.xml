@@ -19,6 +19,8 @@
 			<texture>masks/vignette.png</texture>
 			<aspectratio>stretch</aspectratio>
 		</control>
+
+		<!-- content -->
 		<control type="group">
 			<posx>96</posx>
 			<posy>95</posy>
@@ -59,7 +61,7 @@
 					<control type="label">
 						<posx>12</posx>
 						<posy>233</posy>
-						<width>408</width>
+						<width>384</width>
 						<font>itemTitle</font>
 						<textcolor>selected</textcolor>
 						<label>$INFO[ListItem.Label]</label>
@@ -90,7 +92,7 @@
 					<control type="label">
 						<posx>12</posx>
 						<posy>233</posy>
-						<width>408</width>
+						<width>384</width>
 						<font>itemTitle</font>
 						<textcolor>black</textcolor>
 						<label>$INFO[ListItem.Label]</label>
@@ -99,6 +101,7 @@
 				</focusedlayout>
 			</control>
 		</control>
+
 
 		<!--debugging-->
 		<include>DebugGrid</include>
