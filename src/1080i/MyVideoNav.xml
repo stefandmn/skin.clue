@@ -480,7 +480,7 @@
 									<control type="label">
 										<posx>12</posx>
 										<posy>18</posy>
-										<width>252</width>
+										<width>339</width>
 										<font>smallMedium</font>
 										<textcolor>unselected</textcolor>
 										<label>$INFO[ListItem.Label2]</label>
@@ -552,7 +552,7 @@
 										<visible>Control.HasFocus(7100)</visible>
 										<posx>12</posx>
 										<posy>18</posy>
-										<width>252</width>
+										<width>339</width>
 										<font>smallMedium</font>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
@@ -573,7 +573,7 @@
 										<visible>!Control.HasFocus(7100)</visible>
 										<posx>12</posx>
 										<posy>18</posy>
-										<width>252</width>
+										<width>339</width>
 										<font>smallMedium</font>
 										<textcolor>unselected</textcolor>
 										<shadowcolor>-</shadowcolor>
@@ -612,28 +612,28 @@
 								</item>
 								<item id="5">
 									<label>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeTitle)]</label>
-									<label2>$INFO[Window(Home).Property(LatestEpisode.1.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.1.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.1.EpisodeNumber),$LOCALIZE[31040],]</label2>
+									<label2>$INFO[Window(Home).Property(LatestEpisode.1.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.1.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.1.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
 									<thumb>$INFO[Window(Home).Property(LatestEpisode.1.Thumb)]</thumb>
 									<onclick>$INFO[Window(Home).Property(LatestEpisode.1.Path)]</onclick>
 									<visible>!IsEmpty(Window(Home).Property(LatestEpisode.1.EpisodeTitle))</visible>
 								</item>
 								<item id="6">
 									<label>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeTitle)]</label>
-									<label2>$INFO[Window(Home).Property(LatestEpisode.2.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.2.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.2.EpisodeNumber),$LOCALIZE[31040],]</label2>
+									<label2>$INFO[Window(Home).Property(LatestEpisode.2.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.2.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.2.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
 									<thumb>$INFO[Window(Home).Property(LatestEpisode.2.Thumb)]</thumb>
 									<onclick>$INFO[Window(Home).Property(LatestEpisode.2.Path)]</onclick>
 									<visible>!IsEmpty(Window(Home).Property(LatestEpisode.2.EpisodeTitle))</visible>
 								</item>
 								<item id="7">
 									<label>$INFO[Window(Home).Property(LatestEpisode.3.EpisodeTitle)]</label>
-									<label2>$INFO[Window(Home).Property(LatestEpisode.3.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.3.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.3.EpisodeNumber),$LOCALIZE[31040],]</label2>
+									<label2>$INFO[Window(Home).Property(LatestEpisode.3.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.3.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.3.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
 									<thumb>$INFO[Window(Home).Property(LatestEpisode.3.Thumb)]</thumb>
 									<onclick>$INFO[Window(Home).Property(LatestEpisode.3.Path)]</onclick>
 									<visible>!IsEmpty(Window(Home).Property(LatestEpisode.3.EpisodeTitle))</visible>
 								</item>
 								<item id="8">
 									<label>$INFO[Window(Home).Property(LatestEpisode.4.EpisodeTitle)]</label>
-									<label2>$INFO[Window(Home).Property(LatestEpisode.4.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.4.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.4.EpisodeNumber),$LOCALIZE[31040],]</label2>
+									<label2>$INFO[Window(Home).Property(LatestEpisode.4.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.4.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.4.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
 									<thumb>$INFO[Window(Home).Property(LatestEpisode.4.Thumb)]</thumb>
 									<onclick>$INFO[Window(Home).Property(LatestEpisode.4.Path)]</onclick>
 									<visible>!IsEmpty(Window(Home).Property(LatestEpisode.4.EpisodeTitle)) + [!Library.HasContent(MusicVideos) | !Library.HasContent(Movies)]</visible>
