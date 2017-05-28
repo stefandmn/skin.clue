@@ -254,7 +254,7 @@
 					<item id="3">
 						<visible>Skin.HasSetting(showFavourites)</visible>
 						<label>1036</label>
-						<label2></label2>
+						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>Skin.SetString(showNavigationMenu,favourites)</onclick>
 						<onclick>ReplaceWindow(favourites)</onclick>
