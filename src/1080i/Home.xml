@@ -254,7 +254,7 @@
 					<item id="3">
 						<visible>Skin.HasSetting(showFavourites)</visible>
 						<label>1036</label>
-						<label2></label2>
+						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>Skin.SetString(showNavigationMenu,favourites)</onclick>
 						<onclick>ReplaceWindow(favourites)</onclick>
@@ -264,13 +264,6 @@
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ActivateWindow(ShutdownMenu)</onclick>
-					</item>
-					<item id="10">
-						<visible>Skin.HasSetting(DebugGrid) | Skin.HasSetting(DebugInfo) | System.GetBool(debug.showloginfo)</visible>
-						<label>31164</label>
-						<label2></label2>
-						<thumb>-</thumb>
-						<onclick>ReloadSkin()</onclick>
 					</item>
 				</content>
 			</control>

@@ -583,7 +583,7 @@ msgid "Enable Fanart Animations (for powerful devices)"
 msgstr ""
 
 msgctxt "#31164"
-msgid "Reload Skin"
+msgid "Reload skin"
 msgstr ""
 
 msgctxt "#31165"

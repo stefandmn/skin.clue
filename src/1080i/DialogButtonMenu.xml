@@ -3,6 +3,7 @@
 <window type="buttonMenu">
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
+	<previouswindow>home</previouswindow>
 	<include>fadeInOut</include>
 
 	<controls>
@@ -102,15 +103,17 @@
 						<onclick>Quit()</onclick>
 					</item>
 					<item id="8">
+						<description>Exit to desktop</description>
 						<label>13016</label>
 						<visible>System.CanPowerDown + Skin.HasSetting(exitFirst)</visible>
 						<thumb>-</thumb>
 						<onclick>Powerdown()</onclick>
 					</item>
 					<item id="9">
-						<label>31168</label>
+						<description>Reload skin</description>
+						<label>31164</label>
 						<thumb>-</thumb>
-						<onclick>back</onclick>
+						<onclick>ReloadSkin()</onclick>
 					</item>
 				</content>
 			</control>

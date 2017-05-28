@@ -4,6 +4,7 @@
 	<allowoverlay>no</allowoverlay>
 	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 	<animation effect="fade" start="0" end="100" time="1000" reversible="true">WindowOpen</animation>
+
 	<controls>
 		<!--background-->
 		<include>globalBackground</include>
@@ -104,7 +105,7 @@
 					<item id="1">
 						<description>MCPi/Kodi Version</description>
 						<label>31015</label>
-						<label2>Kodi $INFO[System.BuildVersion][CR]$INFO[System.BuildDate]</label2>
+						<label2>Kodi $INFO[System.BuildVersion][CR]$INFO[System.BuildDate][CR][CR]$INFO[System.AddonTitle(skin.clue)] $INFO[System.AddonVersion(skin.clue)]</label2>
 						<property name="itemIcon">&gt;</property>
 						<thumb>-</thumb>
 						<onclick>noop</onclick>
@@ -112,7 +113,7 @@
 					<item id="2">
 						<description>System</description>
 						<label>31016</label>
-						<label2>$INFO[System.FriendlyName][CR]$INFO[System.TotalUptime]</label2>
+						<label2>$INFO[System.FriendlyName][CR]$INFO[System.KernelVersion][CR]$INFO[System.TotalUptime]</label2>
 						<property name="itemIcon">&gt;</property>
 						<thumb>-</thumb>
 						<onclick>noop</onclick>
