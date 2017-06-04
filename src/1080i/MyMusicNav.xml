@@ -70,25 +70,24 @@
 							<onclick>Control.SetFocus(53)</onclick>
 						</control>
 						<control type="button" id="303">
-							<description>customMusicAddon1</description>
-							<visible>!isempty(Skin.String(customMusicAddon1))</visible>
+							<description>customAudioAddon1</description>
+							<visible>!isempty(Skin.String(customAudioAddon1))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
-							<textcolor>unselected</textcolor>
+							<textcolor>white</textcolor>
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$VAR[customMusicAddon1Title]</label>
+							<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon1))]</label>
 							<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
 							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-							<onclick condition="StringCompare(Skin.String(customMusicAddon1Type),audioAddon)">RunAddon($INFO[Skin.String(customMusicAddon1)])</onclick>
-							<onclick condition="StringCompare(Skin.String(customMusicAddon1Type),audioPlaylist)">ActivateWindow(MusicLibrary,$INFO[Skin.String(customMusicAddon1)],return)</onclick>
-							<onclick>setfocus(51)</onclick>
+							<onclick>RunAddon($INFO[Skin.String(customAudioAddon1)])</onclick>
+							<onclick>Control.SetFocus(51)</onclick>
 						</control>
 						<control type="button" id="304">
-							<description>customMusicAddon2</description>
-							<visible>!isempty(Skin.String(customMusicAddon2))</visible>
+							<description>customAudioAddon2</description>
+							<visible>!isempty(Skin.String(customAudioAddon2))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
@@ -96,16 +95,15 @@
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$VAR[customMusicAddon2Title]</label>
+							<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon2))]</label>
 							<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
 							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-							<onclick condition="StringCompare(Skin.String(customMusicAddon2Type),audioAddon)">RunAddon($INFO[Skin.String(customMusicAddon2)])</onclick>
-							<onclick condition="StringCompare(Skin.String(customMusicAddon2Type),audioPlaylist)">ActivateWindow(MusicLibrary,$INFO[Skin.String(customMusicAddon2)],return)</onclick>
-							<onclick>setfocus(51)</onclick>
+							<onclick>RunAddon($INFO[Skin.String(customAudioAddon2)])</onclick>
+							<onclick>Control.SetFocus(51)</onclick>
 						</control>
 						<control type="button" id="305">
-							<description>customMusicAddon3</description>
-							<visible>!isempty(Skin.String(customMusicAddon3))</visible>
+							<description>customAudioAddon3</description>
+							<visible>!isempty(Skin.String(customAudioAddon3))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
@@ -113,12 +111,11 @@
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$VAR[customMusicAddon3Title]</label>
+							<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon3))]</label>
 							<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
 							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-							<onclick condition="StringCompare(Skin.String(customMusicAddon3Type),audioAddon)">RunAddon($INFO[Skin.String(customMusicAddon3)])</onclick>
-							<onclick condition="StringCompare(Skin.String(customMusicAddon3Type),audioPlaylist)">ActivateWindow(MusicLibrary,$INFO[Skin.String(customMusicAddon3)],return)</onclick>
-							<onclick>setfocus(51)</onclick>
+							<onclick>RunAddon($INFO[Skin.String(customAudioAddon3)])</onclick>
+							<onclick>Control.SetFocus(51)</onclick>
 						</control>
 						<control type="button" id="306">
 							<description>Favorites</description>

@@ -75,14 +75,13 @@
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
-							<textcolor>unselected</textcolor>
+							<textcolor>white</textcolor>
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$VAR[customVideoAddon1Title]</label>
-							<onclick condition="StringCompare(Skin.String(customVideoAddon1Type),videoAddon)">RunAddon($INFO[Skin.String(customVideoAddon1)])</onclick>
-							<onclick condition="StringCompare(Skin.String(customVideoAddon1Type),videoPlaylist)">ActivateWindow(Videos,$INFO[Skin.String(customVideoAddon1)],return)</onclick>
+							<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon1))]</label>
 							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
+							<onclick>RunAddon($INFO[Skin.String(customVideoAddon1)])</onclick>
 							<onclick>Control.SetFocus(50)</onclick>
 						</control>
 						<control type="button" id="404">
@@ -91,14 +90,13 @@
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
-							<textcolor>unselected</textcolor>
+							<textcolor>white</textcolor>
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$VAR[customVideoAddon2Title]</label>
-							<onclick condition="StringCompare(Skin.String(customVideoAddon2Type),videoAddon)">RunAddon($INFO[Skin.String(customVideoAddon2)])</onclick>
-							<onclick condition="StringCompare(Skin.String(customVideoAddon2Type),videoPlaylist)">ActivateWindow(Videos,$INFO[Skin.String(customVideoAddon2)],return)</onclick>
+							<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon2))]</label>
 							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
+							<onclick>RunAddon($INFO[Skin.String(customVideoAddon2)])</onclick>
 							<onclick>Control.SetFocus(50)</onclick>
 						</control>
 						<control type="button" id="405">
@@ -107,14 +105,13 @@
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
-							<textcolor>unselected</textcolor>
+							<textcolor>white</textcolor>
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$VAR[customVideoAddon3Title]</label>
-							<onclick condition="StringCompare(Skin.String(customVideoAddon3Type),videoAddon)">RunAddon($INFO[Skin.String(customVideoAddon3)])</onclick>
-							<onclick condition="StringCompare(Skin.String(customVideoAddon3Type),videoPlaylist)">ActivateWindow(Videos,$INFO[Skin.String(customVideoAddon3)],return)</onclick>
+							<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon3))]</label>
 							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
+							<onclick>RunAddon($INFO[Skin.String(customVideoAddon3)])</onclick>
 							<onclick>Control.SetFocus(50)</onclick>
 						</control>
 						<control type="button" id="406">

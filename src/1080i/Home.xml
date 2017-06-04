@@ -245,13 +245,20 @@
 						<onclick>ActivateWindow(systeminfo)</onclick>
 					</item>
 					<item id="2">
+                        <label>31003</label>
+                        <label2></label2>
+                        <thumb>-</thumb>
+						<visible>Skin.HasSetting(showPrograms)</visible>
+                        <onclick>ActivateWindow(programs,addons,return)</onclick>
+                    </item>
+					<item id="3">
 						<visible>!IsEmpty(Weather.location)</visible>
 						<label>24027</label>
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ActivateWindow(weather)</onclick>
 					</item>
-					<item id="3">
+					<item id="4">
 						<visible>Skin.HasSetting(showFavourites)</visible>
 						<label>1036</label>
 						<label2></label2>
@@ -259,7 +266,7 @@
 						<onclick>Skin.SetString(showNavigationMenu,favourites)</onclick>
 						<onclick>ReplaceWindow(favourites)</onclick>
 					</item>
-					<item id="4">
+					<item id="5">
 						<label>31004</label>
 						<label2></label2>
 						<thumb>-</thumb>

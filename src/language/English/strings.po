@@ -575,7 +575,7 @@ msgid "Hide Info"
 msgstr ""
 
 msgctxt "#31162"
-msgid "Home menu items"
+msgid "Home menu"
 msgstr ""
 
 msgctxt "#31163"
@@ -612,4 +612,20 @@ msgstr ""
 
 msgctxt "#31171"
 msgid "Media System"
+msgstr ""
+
+msgctxt "#31201"
+msgid "Custom Menus"
+msgstr ""
+
+msgctxt "#31202"
+msgid "Set Video Addons"
+msgstr ""
+
+msgctxt "#31203"
+msgid "Set Audio Addons"
+msgstr ""
+
+msgctxt "#31204"
+msgid "Set Picture Addons"
 msgstr ""

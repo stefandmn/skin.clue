@@ -129,7 +129,7 @@
 					<item id="4">
 						<description>Storage</description>
 						<label>13277</label>
-						<label2>$INFO[System.TotalSpace,, $LOCALIZE[20161]][CR]$INFO[System.FreeSpace,, $LOCALIZE[156]]</label2>
+						<label2>$INFO[System.TotalSpace][CR]$INFO[System.FreeSpace]</label2>
 						<property name="itemIcon">&gt;</property>
 						<thumb>-</thumb>
 						<onclick>noop</onclick>

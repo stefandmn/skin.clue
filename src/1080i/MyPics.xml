@@ -52,6 +52,48 @@
 							<onclick>ReplaceWindow(pictures)</onclick>
 						</control>
 						<control type="button" id="302">
+							<description>customPictureAddon1</description>
+							<visible>!isempty(Skin.String(customPictureAddon1))</visible>
+							<height>40</height>
+							<width>236</width>
+							<font>menuTitle</font>
+							<textcolor>white</textcolor>
+							<focusedcolor>selected</focusedcolor>
+							<texturefocus>masks/selected.png</texturefocus>
+							<textoffsetx>12</textoffsetx>
+							<label>$INFO[System.AddonTitle(Skin.String(customPictureAddon1))]</label>
+							<onclick>RunAddon($INFO[Skin.String(customPictureAddon1)])</onclick>
+							<onclick>Control.SetFocus(52)</onclick>
+						</control>
+						<control type="button" id="303">
+							<description>customPictureAddon2</description>
+							<visible>!isempty(Skin.String(customPictureAddon2))</visible>
+							<height>40</height>
+							<width>236</width>
+							<font>menuTitle</font>
+							<textcolor>unselected</textcolor>
+							<focusedcolor>selected</focusedcolor>
+							<texturefocus>masks/selected.png</texturefocus>
+							<textoffsetx>12</textoffsetx>
+							<label>$INFO[System.AddonTitle(Skin.String(customPictureAddon2))]</label>
+							<onclick>RunAddon($INFO[Skin.String(customPictureAddon2)])</onclick>
+							<onclick>Control.SetFocus(52)</onclick>
+						</control>
+						<control type="button" id="304">
+							<description>customPictureAddon3</description>
+							<visible>!isempty(Skin.String(customPictureAddon3))</visible>
+							<height>40</height>
+							<width>236</width>
+							<font>menuTitle</font>
+							<textcolor>unselected</textcolor>
+							<focusedcolor>selected</focusedcolor>
+							<texturefocus>masks/selected.png</texturefocus>
+							<textoffsetx>12</textoffsetx>
+							<label>$INFO[System.AddonTitle(Skin.String(customPictureAddon3))]</label>
+							<onclick>RunAddon($INFO[Skin.String(customPictureAddon3)])</onclick>
+							<onclick>Control.SetFocus(52)</onclick>
+						</control>
+						<control type="button" id="305">
 							<description>Favorites</description>
 							<height>40</height>
 							<width>236</width>
