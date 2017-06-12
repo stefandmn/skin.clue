@@ -204,7 +204,7 @@
 								<texturefocus>masks/selected.png</texturefocus>
 								<textoffsetx>12</textoffsetx>
 								<label>31008</label>
-								<onclick>ActivateWindow(Videos,files,return)</onclick>
+								<onclick>ActivateWindow(Videos,sources://video/,return)</onclick>
 								<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 								<onclick>Control.SetFocus(50)</onclick>
 							</control>

@@ -195,6 +195,45 @@
 	</include>
 
 
+	<!-- Network configuration status -->
+	<include name="networkStatus">
+		<control type="grouplist">
+			<posx>10</posx>
+			<posy>1</posy>
+			<width>2-col</width>
+			<itemgap>30</itemgap>
+			<orientation>horizontal</orientation>
+			<control type="label">
+				<visible>Skin.HasSetting(NetworkWireless)</visible>
+				<!--width>30</width-->
+				<align>center</align>
+				<font>symbol</font>
+				<textcolor>disabled</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>[B][/B]</label>
+			</control>
+			<control type="label">
+				<visible>Skin.HasSetting(NetworkMobile)</visible>
+				<!--width>30</width-->
+				<align>center</align>
+				<font>symbol</font>
+				<textcolor>disabled</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>[B][/B]</label>
+			</control>
+			<control type="label">
+				<visible>Skin.HasSetting(NetworkRouter) | Skin.HasSetting(NetworkRepeater)</visible>
+				<!--width>30</width-->
+				<align>center</align>
+				<font>symbol</font>
+				<textcolor>disabled</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>[B][/B]</label>
+			</control>
+		</control>
+	</include>
+
+
 	<!--footer for media lists-->
 	<include name="mediaListFooter">
 		<visible>SubString(skin.string(showRecentVideoItems),false)</visible>

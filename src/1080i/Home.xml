@@ -9,6 +9,7 @@
 
 	<controls>
 		<include>globalBackground</include>
+		<include>networkStatus</include>
 
 
 		<!-- 1) Date/time and Weather -->
