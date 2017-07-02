@@ -9,6 +9,7 @@
 
 	<controls>
 		<include>globalBackground</include>
+		<include>networkStatus</include>
 
 
 		<!-- 1) Date/time and Weather -->
@@ -47,7 +48,7 @@
 				<effect type="fade" start="0" end="100" time="300" delay="1000"/>
 			</animation>
 			<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
-			<description>RSS feed</description>
+			<description>RSS feeds</description>
 			<posx>240</posx>
 			<posy>10</posy>
 			<height>35</height>
@@ -65,6 +66,7 @@
 			<posy>665</posy>
 			<!--animations-->
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
+			<animation condition="SubString(Container(9000).NumItems,3)" effect="slide" end="575,0" time="0">conditional</animation>
 			<animation condition="SubString(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
 			<control type="list" id="9000">
 				<posx>0</posx>
@@ -245,21 +247,28 @@
 						<onclick>ActivateWindow(systeminfo)</onclick>
 					</item>
 					<item id="2">
+                        <label>31003</label>
+                        <label2></label2>
+                        <thumb>-</thumb>
+						<visible>Skin.HasSetting(showPrograms)</visible>
+                        <onclick>ActivateWindow(programs,addons,return)</onclick>
+                    </item>
+					<item id="3">
 						<visible>!IsEmpty(Weather.location)</visible>
 						<label>24027</label>
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ActivateWindow(weather)</onclick>
 					</item>
-					<item id="3">
+					<item id="4">
 						<visible>Skin.HasSetting(showFavourites)</visible>
 						<label>1036</label>
-						<label2></label2>
+						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>Skin.SetString(showNavigationMenu,favourites)</onclick>
 						<onclick>ReplaceWindow(favourites)</onclick>
 					</item>
-					<item id="4">
+					<item id="5">
 						<label>31004</label>
 						<label2></label2>
 						<thumb>-</thumb>

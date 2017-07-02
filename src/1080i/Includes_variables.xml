@@ -6,6 +6,7 @@
 	<constant name="fullscreenWidth">1920</constant>
 	<constant name="fullscreenHeight">1080</constant>
 
+
 	<!--Grid (24 cols @72px. Margins: 26px / 96px, row-height: 57 (1.6 em))-->
 	<constant name="1-col">72</constant>
 	<constant name="2-col">144</constant>
@@ -51,6 +52,8 @@
 	<constant name="17-row">969</constant>
 	<constant name="18-row">1026</constant>
 
+
+	<!-- player speed variable -->
 	<variable name="seekSpeed">
 		<value condition="Player.Forwarding2x">FF 2x</value>
 		<value condition="Player.Forwarding4x">FF 4x</value>
@@ -64,6 +67,7 @@
 		<value condition="Player.Rewinding32x">RW 32x</value>
 	</variable>
 
+
 	<!--fanart selection-->
 	<variable name="fanartType">
 		<value condition="Window.IsActive(videolibrary)">$INFO[Skin.String(videoFanartLocation)]</value>
@@ -72,6 +76,7 @@
 		<value condition="Window.IsActive(programs)">$INFO[Skin.String(videoFanartLocation)]</value>
 		<value>$INFO[Skin.String(videoFanartLocation)]</value>
 	</variable>
+
 
 	<!--folder titles-->
 	<variable name="listTitle">
@@ -91,6 +96,7 @@
 		<value>$LOCALIZE[14022]</value>
 	</variable>
 
+	<!--folder sub-titles-->
 	<variable name="listSubTitle">
 		<value condition="Window.IsActive(videolibrary) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31013]</value>
 		<value condition="Window.IsActive(videolibrary) + SubString(skin.string(showRecentVideoItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
@@ -112,98 +118,20 @@
 		<value condition="!IsEmpty(ListItem.VideoResolution)">$LOCALIZE[31128]</value>
 	</variable>
 
+
 	<!--grid view width (addons / programs)-->
 	<variable name="gridWidth">
 		<value condition="window.isactive(programs)">24-col</value>
 		<value>22-col</value>
 	</variable>
 
-	<!--video addons-->
-	<variable name="customVideoAddon1Title">
-		<value condition="stringcompare(Skin.String(customVideoAddon1Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon1))]</value>
-		<value>$INFO[Skin.String(customVideoAddon1Name)]</value>
-	</variable>
 
-	<variable name="customVideoAddon2Title">
-		<value condition="stringcompare(Skin.String(customVideoAddon2Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon2))]</value>
-		<value>$INFO[Skin.String(customVideoAddon2Name)]</value>
-	</variable>
-
-	<variable name="customVideoAddon3Title">
-		<value condition="stringcompare(Skin.String(customVideoAddon3Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon3))]</value>
-		<value>$INFO[Skin.String(customVideoAddon3Name)]</value>
-	</variable>
-
-	<variable name="customVideoAddon4Title">
-		<value condition="stringcompare(Skin.String(customVideoAddon4Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon4))]</value>
-		<value>$INFO[Skin.String(customVideoAddon4Name)]</value>
-	</variable>
-
-	<variable name="customVideoAddon5Title">
-		<value condition="stringcompare(Skin.String(customVideoAddon5Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon5))]</value>
-		<value>$INFO[Skin.String(customVideoAddon5Name)]</value>
-	</variable>
-
-	<variable name="customVideoAddon6Title">
-		<value condition="stringcompare(Skin.String(customVideoAddon6Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon6))]</value>
-		<value>$INFO[Skin.String(customVideoAddon6Name)]</value>
-	</variable>
-
-	<variable name="customVideoAddon7Title">
-		<value condition="stringcompare(Skin.String(customVideoAddon7Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon7))]</value>
-		<value>$INFO[Skin.String(customVideoAddon7Name)]</value>
-	</variable>
-
-	<variable name="customVideoAddon8Title">
-		<value condition="stringcompare(Skin.String(customVideoAddon8Type),videoAddon)">$INFO[system.addontitle(Skin.String(customVideoAddon8))]</value>
-		<value>$INFO[Skin.String(customVideoAddon8Name)]</value>
-	</variable>
-
-	<!--music addons-->
-	<variable name="customMusicAddon1Title">
-		<value condition="stringcompare(Skin.String(customMusicAddon1Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon1))]</value>
-		<value>$INFO[Skin.String(customMusicAddon1Name)]</value>
-	</variable>
-
-	<variable name="customMusicAddon2Title">
-		<value condition="stringcompare(Skin.String(customMusicAddon2Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon2))]</value>
-		<value>$INFO[Skin.String(customMusicAddon2Name)]</value>
-	</variable>
-
-	<variable name="customMusicAddon3Title">
-		<value condition="stringcompare(Skin.String(customMusicAddon3Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon3))]</value>
-		<value>$INFO[Skin.String(customMusicAddon3Name)]</value>
-	</variable>
-
-	<variable name="customMusicAddon4Title">
-		<value condition="stringcompare(Skin.String(customMusicAddon4Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon4))]</value>
-		<value>$INFO[Skin.String(customMusicAddon4Name)]</value>
-	</variable>
-
-	<variable name="customMusicAddon5Title">
-		<value condition="stringcompare(Skin.String(customMusicAddon5Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon5))]</value>
-		<value>$INFO[Skin.String(customMusicAddon5Name)]</value>
-	</variable>
-
-	<variable name="customMusicAddon6Title">
-		<value condition="stringcompare(Skin.String(customMusicAddon6Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon6))]</value>
-		<value>$INFO[Skin.String(customMusicAddon6Name)]</value>
-	</variable>
-
-	<variable name="customMusicAddon7Title">
-		<value condition="stringcompare(Skin.String(customMusicAddon7Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon7))]</value>
-		<value>$INFO[Skin.String(customMusicAddon7Name)]</value>
-	</variable>
-
-	<variable name="customMusicAddon8Title">
-		<value condition="stringcompare(Skin.String(customMusicAddon8Type),audioAddon)">$INFO[system.addontitle(Skin.String(customMusicAddon8))]</value>
-		<value>$INFO[Skin.String(customMusicAddon8Name)]</value>
-	</variable>
-
+	<!--poster thumb-->
 	<variable name="PosterThumb">
 		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
 		<value condition="IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
 	</variable>
+
 
 	<!--weather icons-->
 	<variable name="listWeatherIcon">
@@ -305,6 +233,7 @@
 		<!--Thunder Showers/Night-->
 	</variable>
 
+
 	<!--weather icons-->
 	<variable name="currentWeatherIcon">
 		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),0)"></value>
@@ -404,6 +333,7 @@
 		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),47)"></value>
 		<!--Thunder Showers/Night-->
 	</variable>
+
 
 	<!--Star rating for music tracks-->
     <variable name="StarRating">

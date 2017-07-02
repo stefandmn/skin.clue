@@ -7,10 +7,9 @@
 	</coordinates>
 	<controls>
 		<control type="group">
-			<posx>1392</posx>
+			<posx>693r</posx>
 			<include condition="!window.isactive(progressdialog)">progressPosition1</include>
 			<include condition="window.isactive(progressdialog)">progressPosition2</include>
-			<!--<visible>!Window.IsActive(fullscreenvideo)</visible>-->
 			<!--animations-->
 			<animation type="Windowclose">
 				<effect type="fade" start="100" end="0" time="400" tween="sine"/>
@@ -18,7 +17,7 @@
 			<control type="image">
 				<posx>0</posx>
 				<posy>-12</posy>
-				<width>8-col</width>
+				<width>688</width>
 				<height>102</height>
 				<texture>masks/selected.png</texture>
 				<colordiffuse>eeFFFFFF</colordiffuse>
@@ -29,13 +28,12 @@
 			</control>
 			<control type="label" id="401">
 				<description>heading</description>
-				<posx>24</posx>
+				<posx>12</posx>
 				<posy>-12</posy>
 				<font>smallStrong</font>
-				<width>468</width>
+				<width>668</width>
 				<height>1-row</height>
 				<label>-</label>
-				<scroll>true</scroll>
 				<textcolor>black</textcolor>
 				<shadowcolor>-</shadowcolor>
 				<!--animations-->
@@ -45,11 +43,11 @@
 			</control>
 			<control type="label" id="402">
 				<description>message</description>
-				<posx>24</posx>
-				<posy>30</posy>
-				<font>dialogTitle</font>
-				<textcolor>black</textcolor>
-				<width>468</width>
+				<posx>12</posx>
+				<posy>25</posy>
+				<font>pageSubTitle</font>
+				<textcolor>selected</textcolor>
+				<width>668</width>
 				<height>1-row</height>
 				<label>-</label>
 				<scroll>true</scroll>
@@ -64,7 +62,7 @@
 		<!--debugging-->
 		<include>DebugGrid</include>
 		<control type="label">
-			<include>DebugWindowID</include>
+			<include>DebugDialogID</include>
 			<label>DialogKaiToast.xml</label>
 		</control>
 	</controls>

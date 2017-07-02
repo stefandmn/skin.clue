@@ -115,7 +115,7 @@
 							<onclick>noop</onclick>
 						</item>
 						<item id="3">
-							<label>$LOCALIZE[14092]</label>
+							<label>$LOCALIZE[31201]</label>
 							<onclick>noop</onclick>
 						</item>
 					</content>
@@ -131,6 +131,7 @@
 				<height>14-row</height>
 				<onleft>8000</onleft>
 				<orientation>vertical</orientation>
+				<!-- General tab -->
 				<control type="button" id="1">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<description>Override global background image</description>
@@ -212,76 +213,6 @@
 					<onclick>Skin.ToggleSetting(exitFirst)</onclick>
 					<selected>Skin.HasSetting(exitFirst)</selected>
 				</control>
-				<control type="radiobutton" id="8">
-					<visible>Container(8000).Hasfocus(2)</visible>
-					<description>Hide Video</description>
-					<width>16-col</width>
-					<label>31147</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(hideVideo)</onclick>
-					<selected>Skin.HasSetting(hideVideo)</selected>
-				</control>
-				<control type="radiobutton" id="9">
-					<visible>Container(8000).Hasfocus(2)</visible>
-					<description>Hide Music</description>
-					<width>16-col</width>
-					<label>31148</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(hideMusic)</onclick>
-					<selected>Skin.HasSetting(hideMusic)</selected>
-				</control>
-				<control type="radiobutton" id="10">
-					<visible>Container(8000).Hasfocus(2)</visible>
-					<description>Hide Pictures</description>
-					<width>16-col</width>
-					<label>31149</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(hidePictures)</onclick>
-					<selected>Skin.HasSetting(hidePictures)</selected>
-				</control>
-				<control type="radiobutton" id="12">
-					<visible>Container(8000).Hasfocus(2)</visible>
-					<description>Show Programs</description>
-					<width>16-col</width>
-					<label>31151</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(showPrograms)</onclick>
-					<selected>Skin.HasSetting(showPrograms)</selected>
-				</control>
-				<control type="radiobutton" id="13">
-					<visible>Container(8000).Hasfocus(2)</visible>
-					<description>Hide Favourites</description>
-					<width>16-col</width>
-					<label>31160</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(showFavourites)</onclick>
-					<selected>Skin.HasSetting(showFavourites)</selected>
-				</control>
-				<control type="radiobutton" id="14">
-					<visible>Container(8000).Hasfocus(3)</visible>
-					<description>Enable Debug Grid</description>
-					<width>16-col</width>
-					<label>31034</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
-					<selected>Skin.HasSetting(DebugGrid)</selected>
-				</control>
-				<control type="radiobutton" id="15">
-					<visible>Container(8000).Hasfocus(3)</visible>
-					<description>Disable Debug Info</description>
-					<width>16-col</width>
-					<label>31035</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(DebugInfo)</onclick>
-					<selected>Skin.HasSetting(DebugInfo)</selected>
-				</control>
 				<control type="radiobutton" id="16">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<description>Enable Fanart animation</description>
@@ -321,6 +252,277 @@
 					<focusedcolor>selected</focusedcolor>
 					<onclick>Skin.ToggleSetting(VisualizationArtistBiography)</onclick>
 					<selected>Skin.HasSetting(VisualizationArtistBiography)</selected>
+				</control>
+				<control type="label" id="402">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<width>15-col</width>
+					<height>45</height>
+					<font>itemTitle</font>
+					<label>14092</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="radiobutton" id="14">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<description>Enable Debug Grid</description>
+					<width>16-col</width>
+					<label>31034</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
+					<selected>Skin.HasSetting(DebugGrid)</selected>
+				</control>
+				<control type="radiobutton" id="15">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<description>Disable Debug Info</description>
+					<width>16-col</width>
+					<label>31035</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(DebugInfo)</onclick>
+					<selected>Skin.HasSetting(DebugInfo)</selected>
+				</control>
+				<!-- Home Menu tab -->
+				<control type="radiobutton" id="8">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<description>Hide Video</description>
+					<width>16-col</width>
+					<label>31147</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(hideVideo)</onclick>
+					<selected>Skin.HasSetting(hideVideo)</selected>
+				</control>
+				<control type="radiobutton" id="9">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<description>Hide Music</description>
+					<width>16-col</width>
+					<label>31148</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(hideMusic)</onclick>
+					<selected>Skin.HasSetting(hideMusic)</selected>
+				</control>
+				<control type="radiobutton" id="10">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<description>Hide Pictures</description>
+					<width>16-col</width>
+					<label>31149</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(hidePictures)</onclick>
+					<selected>Skin.HasSetting(hidePictures)</selected>
+				</control>
+				<control type="label" id="403">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<width>15-col</width>
+					<height>45</height>
+					<font>itemTitle</font>
+					<label>31302</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="radiobutton" id="12">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<description>Show Programs</description>
+					<width>16-col</width>
+					<label>31151</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(showPrograms)</onclick>
+					<selected>Skin.HasSetting(showPrograms)</selected>
+				</control>
+				<control type="radiobutton" id="13">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<description>Show Favourites</description>
+					<width>16-col</width>
+					<label>31160</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(showFavourites)</onclick>
+					<selected>Skin.HasSetting(showFavourites)</selected>
+				</control>
+				<!-- Custom Menus tab -->
+				<control type="label" id="410">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<width>15-col</width>
+					<height>45</height>
+					<font>itemTitle</font>
+					<label>31202</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="411">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Video Menu for Addon 1</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]1[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customVideoAddon1))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customVideoAddon1,xbmc.addon.video,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
+				</control>
+				<control type="button" id="412">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Video Menu for Addon 2</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]2[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customVideoAddon2))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customVideoAddon2,xbmc.addon.video,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
+				</control>
+				<control type="button" id="413">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Video Menu for Addon 3</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]3[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customVideoAddon3))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customVideoAddon3,xbmc.addon.video,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
+				</control>
+				<control type="label" id="420">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<width>15-col</width>
+					<height>45</height>
+					<font>itemTitle</font>
+					<label>31203</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="421">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Audio Menu for Addon 1</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]1[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customAudioAddon1))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customAudioAddon1,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
+				</control>
+				<control type="button" id="422">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Audio Menu for Addon 2</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]2[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customAudioAddon2))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customAudioAddon2,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
+				</control>
+				<control type="button" id="423">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Audio Menu for Addon 3</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]3[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customAudioAddon3))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customAudioAddon3,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
+				</control>
+				<control type="label" id="430">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<width>15-col</width>
+					<height>45</height>
+					<font>itemTitle</font>
+					<label>31204</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
+				<control type="button" id="431">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Picture Menu for Addon 1</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]1[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customPictureAddon1))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customPictureAddon1,xbmc.addon.image,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
+				</control>
+				<control type="button" id="432">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Picture Menu for Addon 2</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]2[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customPictureAddon2))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customPictureAddon2,xbmc.addon.image,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
+				</control>
+				<control type="button" id="433">
+					<visible>Container(8000).Hasfocus(3)</visible>
+					<description>Custom Picture Menu for Addon 3</description>
+					<height>54</height>
+					<width>15-col</width>
+					<align>left</align>
+					<textoffsetx>12</textoffsetx>
+					<font>itemTitle</font>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus>masks/selected.png</texturefocus>
+					<label>$LOCALIZE[24000] [B]3[/B]</label>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customPictureAddon3))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(customPictureAddon3,xbmc.addon.image,xbmc.addon.executable)</onclick>
+					<textwidth>8-col</textwidth>
 				</control>
 			</control>
 

@@ -84,7 +84,7 @@
 					<visible>!IntegerGreaterThan(System.CPUTemperature,65)</visible>
 					<posx>10</posx>
 					<posy>27</posy>
-					<font>pageTitle</font>
+					<font>pageSubTitle</font>
 					<textcolor>selected</textcolor>
 					<width>556</width>
 					<height>1-row</height>
@@ -99,7 +99,7 @@
 					<visible>IntegerGreaterThan(System.CPUTemperature,65)</visible>
 					<posx>10</posx>
 					<posy>27</posy>
-					<font>pageTitle</font>
+					<font>pageSubTitle</font>
 					<textcolor>selected</textcolor>
 					<width>556</width>
 					<height>1-row</height>

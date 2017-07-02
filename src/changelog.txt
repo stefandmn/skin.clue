@@ -1,10 +1,13 @@
 v1.0
+- Update color schemes and define default color aligned with the color theme described by the icons
+- Dialog Extended ProgressBar and MusicOverlay have been improved
+- Update and extend skin settings and define default values
 - Remove PVR functions
 - Update Video screen to simplify the navigation and improve LatestVideo list
 - Clue plugin has been integrated in skin.clue
 - Add Home control in all main screens just to prepare the skin for touch interface
 - Update slide mechanism in Weather screen
-- Fix misic playlist editor
+- Fix music playlist editor
 - Adapted for Kodi v16
 - Change Home screen adding a secondary menu
 - Improve MusicOverlay screen

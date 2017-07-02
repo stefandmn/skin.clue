@@ -159,7 +159,7 @@
 	<!--busy indicator-->
 	<include name="loadingIndicator">
 		<control type="group">
-			<visible>!IntegerGreaterThan(container.numitems,0) | Skin.HasSetting(Busy4Loading)</visible>
+			<visible>!IntegerGreaterThan(container.numitems,0) | Skin.HasSetting(ShowLoading) | window.isactive(busydialog)</visible>
 			<posx>0</posx>
 			<posy>0</posy>
 			<!--animations-->
@@ -190,6 +190,42 @@
 				<texture border="0">busy.gif</texture>
 				<bordertexture border="0">-</bordertexture>
 				<colordiffuse>99FFFFFF</colordiffuse>
+			</control>
+		</control>
+	</include>
+
+
+	<!-- Network configuration status -->
+	<include name="networkStatus">
+		<control type="grouplist">
+			<posx>10</posx>
+			<posy>1</posy>
+			<width>2-col</width>
+			<itemgap>30</itemgap>
+			<orientation>horizontal</orientation>
+			<control type="label">
+				<visible>Skin.HasSetting(NetworkWireless)</visible>
+				<align>center</align>
+				<font>symbol</font>
+				<textcolor>disabled</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>[B][/B]</label>
+			</control>
+			<control type="label">
+				<visible>Skin.HasSetting(NetworkMobile)</visible>
+				<align>center</align>
+				<font>symbol</font>
+				<textcolor>disabled</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>[B][/B]</label>
+			</control>
+			<control type="label">
+				<visible>Skin.HasSetting(NetworkRouter) | Skin.HasSetting(NetworkRepeater)</visible>
+				<align>center</align>
+				<font>symbol</font>
+				<textcolor>disabled</textcolor>
+				<shadowcolor>black</shadowcolor>
+				<label>[B][/B]</label>
 			</control>
 		</control>
 	</include>
