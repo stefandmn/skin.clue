@@ -1,5 +1,5 @@
 v1.0
-- Update color schemes and define default color aligned with the color theme described by the icons
+- Update color schemes and default color theme
 - Dialog Extended ProgressBar and MusicOverlay have been improved
 - Update and extend skin settings and define default values
 - Remove PVR functions
