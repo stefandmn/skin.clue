@@ -159,7 +159,7 @@
 	<!--busy indicator-->
 	<include name="loadingIndicator">
 		<control type="group">
-			<visible>!IntegerGreaterThan(container.numitems,0) | Skin.HasSetting(Busy4Loading)</visible>
+			<visible>!IntegerGreaterThan(container.numitems,0) | Skin.HasSetting(ShowLoading) | window.isactive(busydialog)</visible>
 			<posx>0</posx>
 			<posy>0</posy>
 			<!--animations-->
@@ -205,7 +205,6 @@
 			<orientation>horizontal</orientation>
 			<control type="label">
 				<visible>Skin.HasSetting(NetworkWireless)</visible>
-				<!--width>30</width-->
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -214,7 +213,6 @@
 			</control>
 			<control type="label">
 				<visible>Skin.HasSetting(NetworkMobile)</visible>
-				<!--width>30</width-->
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -223,7 +221,6 @@
 			</control>
 			<control type="label">
 				<visible>Skin.HasSetting(NetworkRouter) | Skin.HasSetting(NetworkRepeater)</visible>
-				<!--width>30</width-->
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>

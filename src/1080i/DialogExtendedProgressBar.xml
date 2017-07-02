@@ -3,7 +3,7 @@
 	<defaultcontrol/>
 	<controls>
 		<control type="group">
-			<posx>1392</posx>
+			<posx>693r</posx>
 			<include condition="!window.isactive(infodialog)">progressPosition1</include>
 			<include condition="window.isactive(infodialog)">progressPosition2</include>
 			<!--animations-->
@@ -13,7 +13,7 @@
 			<control type="image">
 				<posx>0</posx>
 				<posy>-12</posy>
-				<width>8-col</width>
+				<width>688</width>
 				<height>102</height>
 				<texture>masks/selected.png</texture>
 				<colordiffuse>eeFFFFFF</colordiffuse>
@@ -24,10 +24,10 @@
 			</control>
 			<control type="label" id="30">
 				<description>header label</description>
-				<posx>24</posx>
+				<posx>12</posx>
 				<posy>-12</posy>
 				<font>smallStrong</font>
-				<width>468</width>
+				<width>668</width>
 				<height>1-row</height>
 				<textcolor>black</textcolor>
 				<shadowcolor>-</shadowcolor>
@@ -36,17 +36,39 @@
 					<effect type="fade" start="0" end="100" delay="400" time="400" tween="sine"/>
 				</animation>
 			</control>
-			<control type="textbox" id="31">
+			<control type="label" id="31">
+				<visible>!IntegerGreaterThan(System.CPUTemperature,65)</visible>
 				<description>message</description>
-				<posx>24</posx>
-				<posy>22</posy>
-				<font>pageTitle</font>
-				<textcolor>black</textcolor>
-				<width>468</width>
+				<posx>12</posx>
+				<posy>25</posy>
+				<font>pageSubTitle</font>
+				<textcolor>selected</textcolor>
+				<width>668</width>
 				<height>1-row</height>
 				<label>-</label>
-				<autoscroll delay="3000" time="1000" repeat="10000"/>
 				<shadowcolor>-</shadowcolor>
+				<scroll>true</scroll>
+				<scrollspeed>30</scrollspeed>
+				<scrollsuffix> • </scrollsuffix>
+				<!--animations-->
+				<animation type="Windowopen">
+					<effect type="fade" start="0" end="100" delay="600" time="400" tween="sine"/>
+				</animation>
+			</control>
+			<control type="label" id="31">
+				<visible>IntegerGreaterThan(System.CPUTemperature,65)</visible>
+				<description>message</description>
+				<posx>12</posx>
+				<posy>25</posy>
+				<font>pageSubTitle</font>
+				<textcolor>selected</textcolor>
+				<width>668</width>
+				<height>1-row</height>
+				<label>-</label>
+				<shadowcolor>-</shadowcolor>
+				<scroll>false</scroll>
+				<scrollspeed>30</scrollspeed>
+				<scrollsuffix> • </scrollsuffix>
 				<!--animations-->
 				<animation type="Windowopen">
 					<effect type="fade" start="0" end="100" delay="600" time="400" tween="sine"/>

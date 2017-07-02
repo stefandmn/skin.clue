@@ -2,10 +2,12 @@
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload>Skin.Reset(DebugInfo)</onload>
-	<onload>Skin.Reset(DebugGrid)</onload>
-	<onload>Skin.SetString(showRecentVideoItems,true)</onload>
-	<onload>Skin.SetString(showRecentMusicItems,true)</onload>
+	<onload>Skin.SetBool(showRecentVideoItems)</onload>
+	<onload>Skin.SetBool(showRecentMusicItems)</onload>
+	<onload condition="!Skin.HasSetting(DebugInfo)">Skin.SetString(DebugInfo,false)</onload>
+	<onload condition="!Skin.HasSetting(DebugGrid)">Skin.SetString(DebugGrid,false)</onload>
+	<onload condition="!Skin.HasSetting(HomeArtistInformation)">Skin.SetString(HomeArtistInformation,true)</onload>
+	<onload condition="!Skin.HasSetting(VisualizationArtistInformation)">Skin.SetString(VisualizationArtistInformation,true)</onload>
 	<coordinates>
 		<posx>15</posx>
 		<posy>15</posy>

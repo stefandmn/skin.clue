@@ -48,7 +48,7 @@
 				<effect type="fade" start="0" end="100" time="300" delay="1000"/>
 			</animation>
 			<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
-			<description>RSS feed</description>
+			<description>RSS feeds</description>
 			<posx>240</posx>
 			<posy>10</posy>
 			<height>35</height>
@@ -66,6 +66,7 @@
 			<posy>665</posy>
 			<!--animations-->
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
+			<animation condition="SubString(Container(9000).NumItems,3)" effect="slide" end="575,0" time="0">conditional</animation>
 			<animation condition="SubString(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
 			<control type="list" id="9000">
 				<posx>0</posx>

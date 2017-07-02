@@ -315,6 +315,17 @@
 					<onclick>Skin.ToggleSetting(hidePictures)</onclick>
 					<selected>Skin.HasSetting(hidePictures)</selected>
 				</control>
+				<control type="label" id="403">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<width>15-col</width>
+					<height>45</height>
+					<font>itemTitle</font>
+					<label>31302</label>
+					<textcolor>white</textcolor>
+					<shadowcolor>black</shadowcolor>
+					<align>left</align>
+					<aligny>center</aligny>
+				</control>
 				<control type="radiobutton" id="12">
 					<visible>Container(8000).Hasfocus(2)</visible>
 					<description>Show Programs</description>
@@ -327,7 +338,7 @@
 				</control>
 				<control type="radiobutton" id="13">
 					<visible>Container(8000).Hasfocus(2)</visible>
-					<description>Hide Favourites</description>
+					<description>Show Favourites</description>
 					<width>16-col</width>
 					<label>31160</label>
 					<textcolor>unselected</textcolor>
