@@ -587,15 +587,11 @@ msgid "Reload skin"
 msgstr ""
 
 msgctxt "#31165"
-msgid "Enable Artist Slideshow in Home Screen"
+msgid "Enable Artist Viewer in Home Screen"
 msgstr ""
 
 msgctxt "#31166"
-msgid "Enable Artist Slideshow in Music Visualization Screen"
-msgstr ""
-
-msgctxt "#31167"
-msgid "Enable Artist Biography in Music Visualization Screen"
+msgid "Enable Artist Viewer in Music Visualization Screen"
 msgstr ""
 
 msgctxt "#31168"

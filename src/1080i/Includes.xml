@@ -115,9 +115,9 @@
 			</control>
 			<!--Artist Slideshow in Home screen-->
 			<control type="group">
-				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomeArtistInformation) + !Skin.HasSetting(useGlobalFanartBackground)</visible>
+				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomeArtistViewer) + !Skin.HasSetting(useGlobalFanartBackground)</visible>
 				<control type="image">
-					<visible>isempty(Window(Visualisation).Property(ArtistInformation))</visible>
+					<visible>isempty(Window(Visualisation).Property(ArtistViewer))</visible>
 					<posx>0</posx>
 					<posy>0</posy>
 					<include>dimensionsFullscreen</include>
@@ -126,11 +126,11 @@
 					<aspectratio align="left" aligny="top">stretch</aspectratio>
 				</control>
 				<control type="multiimage">
-					<visible>!isempty(Window(Visualisation).Property(ArtistInformation))</visible>
+					<visible>!isempty(Window(Visualisation).Property(ArtistViewer))</visible>
 					<posx>0</posx>
 					<posy>0</posy>
 					<include>dimensionsFullscreen</include>
-					<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistInformation)]</imagepath>
+					<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistViewer)]</imagepath>
 					<aspectratio>keep</aspectratio>
 					<timeperimage>15000</timeperimage>
 					<fadetime>1000</fadetime>

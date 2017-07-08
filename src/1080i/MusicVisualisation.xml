@@ -2,7 +2,7 @@
 <window>
 	<allowoverlay>no</allowoverlay>
 	<defaultcontrol>-</defaultcontrol>
-	<onload condition="System.HasAddon(script.artistinformation) + Skin.HasSetting(VisualizationArtistInformation) + !Window(Visualisation).Property(ArtistInformationRunning)">RunScript(script.artistinformation)</onload>
+	<onload condition="System.HasAddon(script.artistviewer) + Skin.HasSetting(VisualizationArtistViewer) + !Window(Visualisation).Property(ArtistViewerRunning)">RunScript(script.artistviewer)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>
@@ -13,15 +13,15 @@
 			<aspectratio>stretch</aspectratio>
 		</control>
 
-		<!-- Visualization and ArtistInformation control-->
+		<!-- Visualization and ArtistViewer control-->
 		<control type="group">
 			<include>fadeInOut</include>
 			<control type="multiimage">
-				<visible>!isempty(Window(Visualisation).Property(ArtistInformation))</visible>
+				<visible>!isempty(Window(Visualisation).Property(ArtistViewer))</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<include>dimensionsFullscreen</include>
-				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistInformation)]</imagepath>
+				<imagepath background="true">$INFO[Window(Visualisation).Property(ArtistViewer)]</imagepath>
 				<aspectratio>keep</aspectratio>
 				<timeperimage>10000</timeperimage>
 				<fadetime>1000</fadetime>
@@ -39,35 +39,6 @@
 
 		<!--date and time-->
 		<include>dateTime</include>
-
-		<!-- ArtistInformation Biography -->
-		<control type="group">
-			<visible>!isempty(Window(Visualisation).Property(ArtistInformation)) + !isempty(Window(Visualisation).Property(ArtistInformation.ArtistBiography)) + Skin.HasSetting(VisualizationArtistBiography)</visible>
-			<posx>25</posx>
-			<posy>20</posy>
-			<control type="image">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>750</width>
-				<height>250</height>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture border="0">masks/black.png</texture>
-				<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
-				<bordersize>3</bordersize>
-				<colordiffuse>aaFFFFFF</colordiffuse>
-			</control>
-			<control type="textbox">
-				<posx>10</posx>
-				<posy>10</posy>
-				<width>730</width>
-				<height>230</height>
-				<font>smallMedium</font>
-				<textcolor>unselected</textcolor>
-				<align>left</align>
-				<label>$INFO[Window(Visualisation).Property(ArtistInformation.ArtistBiography)]</label>
-				<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
-			</control>
-		</control>
 
 		<!-- Song View info with OSD -->
 		<control type="group" id="8000">
