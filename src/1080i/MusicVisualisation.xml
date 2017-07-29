@@ -2,7 +2,7 @@
 <window>
 	<allowoverlay>no</allowoverlay>
 	<defaultcontrol>-</defaultcontrol>
-	<onload condition="System.HasAddon(script.artistviewer) + Skin.HasSetting(VisualizationArtistViewer) + !Window(Visualisation).Property(ArtistViewerRunning)">RunScript(script.artistviewer)</onload>
+	<onload condition="System.HasAddon(script.artistviewer) + Skin.HasSetting(VisualizationArtistViewer) + !Window(Visualisation).Property(ArtistViewerRunning)">RunScript(script.artistviewer,daemon=true)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>

@@ -2,7 +2,7 @@
 <window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload condition="System.HasAddon(script.artistviewer) + Skin.HasSetting(HomeArtistViewer) + !Window(Home).Property(ArtistViewerRunning)">RunScript(script.artistviewer)</onload>
+	<onload condition="System.HasAddon(script.artistviewer) + Skin.HasSetting(HomeArtistViewer) + !Window(Home).Property(ArtistViewerRunning)">RunScript(script.artistviewer,daemon=true)</onload>
 	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
 	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 	<animation effect="fade" start="0" end="100" time="1000" reversible="true">WindowOpen</animation>
