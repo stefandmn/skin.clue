@@ -164,7 +164,7 @@
 								<focusedcolor>selected</focusedcolor>
 								<texturefocus>masks/selected.png</texturefocus>
 								<textoffsetx>12</textoffsetx>
-								<label>1214</label>
+								<label>31008</label>
 								<onclick>right</onclick>
 								<onclick>ActivateWindow(pictures,root)</onclick>
 							</control>
@@ -331,50 +331,12 @@
 					</control>
 				</control>
 
-
 				<!--Sort / misc labels (footer)-->
 				<control type="group">
 					<posx>312</posx>
 					<posy>1007</posy>
 					<include>mediaListFooter</include>
 				</control>
-			</control>
-		</control>
-
-
-		<!--sorting and misc controls-->
-		<control type="group" id="61">
-			<!--animations-->
-			<animation type="Conditional" condition="!controlgroup(61).hasfocus">
-				<effect type="fade" start="100" end="0" time="200"/>
-			</animation>
-			<animation type="Conditional" condition="controlgroup(61).hasfocus">
-				<effect type="fade" start="0" end="100" time="200"/>
-			</animation>
-			<animation type="conditional" condition="window.next(1)">
-				<effect type="fade" start="100" end="0" time="300"/>
-			</animation>
-			<!--overlay-->
-			<control type="image">
-				<include>dimensionsFullscreen</include>
-				<texture>masks/vignette.png</texture>
-				<colordiffuse>ffffffff</colordiffuse>
-				<aspectratio>stretch</aspectratio>
-			</control>
-			<!--titles-->
-			<control type="group">
-				<posx>24</posx>
-				<posy>111</posy>
-				<animation type="Conditional" condition="controlgroup(62).hasfocus">
-					<effect type="fade" start="0" end="100" time="300"/>
-					<effect type="slide" start="-200" end="0" tween="sine" easing="out" time="400"/>
-				</animation>
-				<animation type="Conditional" condition="!controlgroup(62).hasfocus">
-					<effect type="fade" start="100" end="0" time="300"/>
-					<effect type="slide" start="0" end="-200" tween="sine" easing="out" time="400"/>
-				</animation>
-				<!--menu-->
-				<include>sideBarMenuItems</include>
 			</control>
 		</control>
 
