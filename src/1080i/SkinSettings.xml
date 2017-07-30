@@ -224,24 +224,24 @@
 					<selected>Skin.HasSetting(enableAnimateFanart)</selected>
 				</control>
 				<control type="radiobutton" id="17">
-					<visible>Container(8000).Hasfocus(1) + System.HasAddon(script.artistviewer)</visible>
-					<description>Enable Home Artist Slideshow</description>
+					<visible>Container(8000).Hasfocus(1) + System.HasAddon(script.artistslideshow)</visible>
+					<description>Enable Artist Slideshow in Home screen</description>
 					<width>16-col</width>
 					<label>31165</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(HomeArtistViewer)</onclick>
-					<selected>Skin.HasSetting(HomeArtistViewer)</selected>
+					<onclick>Skin.ToggleSetting(HomeArtistSlideshow)</onclick>
+					<selected>Skin.HasSetting(HomeArtistSlideshow)</selected>
 				</control>
 				<control type="radiobutton" id="18">
-					<visible>Container(8000).Hasfocus(1) + System.HasAddon(script.artistviewer)</visible>
-					<description>Enable Visualization Artist Viewer</description>
+					<visible>Container(8000).Hasfocus(1) + System.HasAddon(script.artistslideshow)</visible>
+					<description>Enable Artist Slideshow in Music Visualization screen</description>
 					<width>16-col</width>
 					<label>31166</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(VisualizationArtistViewer)</onclick>
-					<selected>Skin.HasSetting(VisualizationArtistViewer)</selected>
+					<onclick>Skin.ToggleSetting(MusicArtistSlideshow)</onclick>
+					<selected>Skin.HasSetting(MusicArtistSlideshow)</selected>
 				</control>
 				<control type="label" id="402">
 					<visible>Container(8000).Hasfocus(1)</visible>
