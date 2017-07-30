@@ -323,7 +323,7 @@
 							<label>24012</label>
 							<thumb>-</thumb>
 							<onclick>Close</onclick>
-							<onclick>activateWindow(5100)</onclick>
+							<onclick>ActivateWindow(153)</onclick>
 						</item>
 						<item>
 							<description>Audio Settings</description>
