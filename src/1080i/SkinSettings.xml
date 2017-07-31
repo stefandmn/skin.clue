@@ -230,8 +230,8 @@
 					<label>31165</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(HomeArtistSlideshow)</onclick>
-					<selected>Skin.HasSetting(HomeArtistSlideshow)</selected>
+					<onclick>Skin.ToggleSetting(HomePlayerArtwork)</onclick>
+					<selected>Skin.HasSetting(HomePlayerArtwork)</selected>
 				</control>
 				<control type="radiobutton" id="18">
 					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.playerartwork)</visible>
@@ -240,8 +240,8 @@
 					<label>31166</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(MusicArtistSlideshow)</onclick>
-					<selected>Skin.HasSetting(MusicArtistSlideshow)</selected>
+					<onclick>Skin.ToggleSetting(MusicPlayerArtwork)</onclick>
+					<selected>Skin.HasSetting(MusicPlayerArtwork)</selected>
 				</control>
 				<control type="label" id="402">
 					<visible>Container(8000).Hasfocus(1)</visible>
