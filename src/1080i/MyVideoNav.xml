@@ -168,7 +168,7 @@
 							</control>
 							<control type="button" id="412">
 								<description>Search (videos)</description>
-								<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + System.HasAddon(script.advancedsearch)</visible>
+								<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + System.HasAddon(plugin.globalsearch)</visible>
 								<height>40</height>
 								<width>236</width>
 								<font>smallMedium</font>
@@ -178,12 +178,12 @@
 								<textoffsetx>12</textoffsetx>
 								<label>137</label>
 								<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-								<onclick>RunScript(script.advancedsearch,movies=true&amp;actors=true&amp;tvshows=true&amp;episodes=true&amp;musicvideos=true)</onclick>
+								<onclick>RunScript(plugin.globalsearch,movies=true&amp;actors=true&amp;tvshows=true&amp;episodes=true&amp;musicvideos=true)</onclick>
 								<onclick>right</onclick>
 							</control>
 							<control type="button" id="8">
 								<description>Search (videos)</description>
-								<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + !System.HasAddon(script.advancedsearch)</visible>
+								<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + !System.HasAddon(plugin.globalsearch)</visible>
 								<height>40</height>
 								<width>236</width>
 								<font>smallMedium</font>
