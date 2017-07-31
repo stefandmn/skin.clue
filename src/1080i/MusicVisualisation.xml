@@ -2,7 +2,7 @@
 <window>
 	<allowoverlay>no</allowoverlay>
 	<defaultcontrol>-</defaultcontrol>
-	<onload condition="System.HasAddon(script.artistslideshow) + Skin.HasSetting(MusicArtistSlideshow) + !Window(Visualisation).Property(ArtistSlideshowRunning)">RunScript(script.artistslideshow)</onload>
+	<onload condition="System.HasAddon(plugin.playerartwork) + Skin.HasSetting(MusicArtistSlideshow) + !Window(Visualisation).Property(ArtistSlideshowRunning)">RunScript(plugin.playerartwork)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>

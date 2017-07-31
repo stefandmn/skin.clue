@@ -224,7 +224,7 @@
 					<selected>Skin.HasSetting(enableAnimateFanart)</selected>
 				</control>
 				<control type="radiobutton" id="17">
-					<visible>Container(8000).Hasfocus(1) + System.HasAddon(script.artistslideshow)</visible>
+					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.playerartwork)</visible>
 					<description>Enable Artist Slideshow in Home screen</description>
 					<width>16-col</width>
 					<label>31165</label>
@@ -234,7 +234,7 @@
 					<selected>Skin.HasSetting(HomeArtistSlideshow)</selected>
 				</control>
 				<control type="radiobutton" id="18">
-					<visible>Container(8000).Hasfocus(1) + System.HasAddon(script.artistslideshow)</visible>
+					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.playerartwork)</visible>
 					<description>Enable Artist Slideshow in Music Visualization screen</description>
 					<width>16-col</width>
 					<label>31166</label>
