@@ -113,7 +113,7 @@
 				<colordiffuse>ffffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-			<!--Artist Slideshow in Home screen-->
+			<!--Player Artwork based on playing artist(s) in Home or Music Visualization screen(s)-->
 			<control type="group">
 				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomePlayerArtwork) + !Skin.HasSetting(useGlobalFanartBackground)</visible>
 				<control type="image">
