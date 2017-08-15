@@ -35,7 +35,7 @@
 				<texture>$INFO[listitem.art(fanart)]</texture>
 				<colordiffuse>ffffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
-				<include condition="Skin.HasSetting(enableAnimateFanart)">kenBurnsey</include>
+				<include condition="Skin.HasSetting(AnimateFanart)">kenBurnsey</include>
 			</control>
 			<control type="image">
 				<include>dimensionsFullscreen</include>

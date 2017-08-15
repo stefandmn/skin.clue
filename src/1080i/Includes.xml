@@ -56,7 +56,7 @@
 			</control>
 			<!--default background-->
 			<control type="image">
-				<visible>!Skin.HasSetting(useGlobalFanartBackground) + isempty(skin.string(globalBackground))</visible>
+				<visible>!Skin.HasSetting(GlobalFanartBackground) + isempty(skin.string(GlobalBackground))</visible>
 				<include>dimensionsFullscreen</include>
 				<texture>special://skin/media/backgrounds/background001.png</texture>
 				<colordiffuse>6affffff</colordiffuse>
@@ -65,16 +65,16 @@
 			</control>
 			<!--User setting: global background override-->
 			<control type="image">
-				<visible>!Skin.HasSetting(useGlobalFanartBackground) + !isempty(skin.string(globalBackground))</visible>
+				<visible>!Skin.HasSetting(GlobalFanartBackground) + !isempty(skin.string(GlobalBackground))</visible>
 				<include>dimensionsFullscreen</include>
-				<texture>$INFO[skin.string(globalBackground)]</texture>
+				<texture>$INFO[skin.string(GlobalBackground)]</texture>
 				<colordiffuse>6Affffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 				<animation effect="fade" start="0" end="100" time="1000" condition="window.previous(home)">windowopen</animation>
 			</control>
 			<!--User setting: rolling fanart slides-->
 			<control type="multiimage">
-				<visible>Skin.HasSetting(useGlobalFanartBackground) + !Container.content(seasons) + !Container.content(songs) + [!Container.content(episodes) | Substring(Container.folderpath,plugin)]</visible>
+				<visible>Skin.HasSetting(GlobalFanartBackground) + !Container.content(seasons) + !Container.content(songs) + [!Container.content(episodes) | Substring(Container.folderpath,plugin)]</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<include>dimensionsFullscreen</include>
@@ -115,7 +115,7 @@
 			</control>
 			<!--Player Artwork based on playing artist(s) in Home or Music Visualization screen(s)-->
 			<control type="group">
-				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomePlayerArtwork) + !Skin.HasSetting(useGlobalFanartBackground)</visible>
+				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomePlayerArtwork) + !Skin.HasSetting(GlobalFanartBackground)</visible>
 				<control type="image">
 					<visible>isempty(Window(Visualisation).Property(PlayerArtwork))</visible>
 					<posx>0</posx>
@@ -204,7 +204,7 @@
 			<itemgap>30</itemgap>
 			<orientation>horizontal</orientation>
 			<control type="label">
-				<visible>Skin.HasSetting(NetworkWireless)</visible>
+				<visible>!isempty(Window(Home).Property(NetworkWireless))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -212,7 +212,7 @@
 				<label>[B][/B]</label>
 			</control>
 			<control type="label">
-				<visible>Skin.HasSetting(NetworkMobile)</visible>
+				<visible>!isempty(Window(Home).Property(NetworkMobile))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -220,7 +220,7 @@
 				<label>[B][/B]</label>
 			</control>
 			<control type="label">
-				<visible>Skin.HasSetting(NetworkRouter) | Skin.HasSetting(NetworkRepeater)</visible>
+				<visible>!isempty(Window(Home).Property(NetworkRouter)) | !isempty(Window(Home).Property(NetworkRepeater))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>

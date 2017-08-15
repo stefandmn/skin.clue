@@ -26,7 +26,7 @@
 				<timeperimage>10000</timeperimage>
 				<fadetime>1000</fadetime>
 				<randomize>true</randomize>
-				<include condition="Skin.HasSetting(enableAnimateFanart)">kenBurnsey</include>
+				<include condition="Skin.HasSetting(AnimateFanart)">kenBurnsey</include>
 			</control>
 			<!--visualisation-->
 			<control type="visualisation" id="2">

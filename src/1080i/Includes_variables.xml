@@ -70,11 +70,11 @@
 
 	<!--fanart selection-->
 	<variable name="fanartType">
-		<value condition="Window.IsActive(videolibrary)">$INFO[Skin.String(videoFanartLocation)]</value>
-		<value condition="Window.IsActive(musiclibrary)">$INFO[Skin.String(musicFanartLocation)]</value>
-		<value condition="Window.IsActive(musicfiles)">$INFO[Skin.String(musicFanartLocation)]</value>
-		<value condition="Window.IsActive(programs)">$INFO[Skin.String(videoFanartLocation)]</value>
-		<value>$INFO[Skin.String(videoFanartLocation)]</value>
+		<value condition="Window.IsActive(videolibrary)">$INFO[Skin.String(VideoFanartLocation)]</value>
+		<value condition="Window.IsActive(musiclibrary)">$INFO[Skin.String(MusicFanartLocation)]</value>
+		<value condition="Window.IsActive(musicfiles)">$INFO[Skin.String(MusicFanartLocation)]</value>
+		<value condition="Window.IsActive(programs)">$INFO[Skin.String(VideoFanartLocation)]</value>
+		<value>$INFO[Skin.String(VideoFanartLocation)]</value>
 	</variable>
 
 

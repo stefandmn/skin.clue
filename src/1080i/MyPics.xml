@@ -2,7 +2,7 @@
 <window>
 	<defaultcontrol always="false">6300</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
+	<onload condition="Skin.hasSetting(StopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>

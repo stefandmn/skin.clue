@@ -144,8 +144,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>31084</label>
-					<label2>$INFO[Skin.String(globalBackground)]</label2>
-					<onclick>Skin.SetFile(globalBackground,.png|.jpg|.gif,special://skin/media/backgrounds/)</onclick>
+					<label2>$INFO[Skin.String(GlobalBackground)]</label2>
+					<onclick>Skin.SetFile(GlobalBackground,.png|.jpg|.gif,special://skin/media/backgrounds/)</onclick>
 					<textwidth>8-col</textwidth>
 					<onright>501</onright>
 				</control>
@@ -161,8 +161,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>31026</label>
-					<label2>$INFO[Skin.String(videoFanartLocation)]</label2>
-					<onclick>Skin.SetPath(videoFanartLocation)</onclick>
+					<label2>$INFO[Skin.String(VideoFanartLocation)]</label2>
+					<onclick>Skin.SetPath(VideoFanartLocation)</onclick>
 					<textwidth>8-col</textwidth>
 					<onright>502</onright>
 				</control>
@@ -178,8 +178,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>31030</label>
-					<label2>$INFO[Skin.String(musicFanartLocation)]</label2>
-					<onclick>Skin.SetPath(musicFanartLocation)</onclick>
+					<label2>$INFO[Skin.String(MusicFanartLocation)]</label2>
+					<onclick>Skin.SetPath(MusicFanartLocation)</onclick>
 					<textwidth>8-col</textwidth>
 					<onright>503</onright>
 				</control>
@@ -190,8 +190,8 @@
 					<label>31087</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(useGlobalFanartBackground)</onclick>
-					<selected>Skin.HasSetting(useGlobalFanartBackground)</selected>
+					<onclick>Skin.ToggleSetting(GlobalFanartBackground)</onclick>
+					<selected>Skin.HasSetting(GlobalFanartBackground)</selected>
 				</control>
 				<control type="radiobutton" id="6">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -200,8 +200,8 @@
 					<label>31143</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(stopVideoOnMenu)</onclick>
-					<selected>Skin.HasSetting(stopVideoOnMenu)</selected>
+					<onclick>Skin.ToggleSetting(StopVideoOnMenu)</onclick>
+					<selected>Skin.HasSetting(StopVideoOnMenu)</selected>
 				</control>
 				<control type="radiobutton" id="7">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -210,8 +210,8 @@
 					<label>31142</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(exitFirst)</onclick>
-					<selected>Skin.HasSetting(exitFirst)</selected>
+					<onclick>Skin.ToggleSetting(ExitFirst)</onclick>
+					<selected>Skin.HasSetting(ExitFirst)</selected>
 				</control>
 				<control type="radiobutton" id="16">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -220,12 +220,12 @@
 					<label>31163</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(enableAnimateFanart)</onclick>
-					<selected>Skin.HasSetting(enableAnimateFanart)</selected>
+					<onclick>Skin.ToggleSetting(AnimateFanart)</onclick>
+					<selected>Skin.HasSetting(AnimateFanart)</selected>
 				</control>
 				<control type="radiobutton" id="17">
 					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.playerartwork)</visible>
-					<description>Enable Artist Slideshow in Home screen</description>
+					<description>Enable Artwork in Home screen</description>
 					<width>16-col</width>
 					<label>31165</label>
 					<textcolor>unselected</textcolor>
@@ -235,7 +235,7 @@
 				</control>
 				<control type="radiobutton" id="18">
 					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.playerartwork)</visible>
-					<description>Enable Artist Slideshow in Music Visualization screen</description>
+					<description>Enable Artwork in Music Visualization screen</description>
 					<width>16-col</width>
 					<label>31166</label>
 					<textcolor>unselected</textcolor>
@@ -533,7 +533,7 @@
 					<label></label>
 					<onleft>1</onleft>
 					<ondown>502</ondown>
-					<onclick>Skin.Reset(globalBackground)</onclick>
+					<onclick>Skin.Reset(GlobalBackground)</onclick>
 				</control>
 				<control type="button" id="502">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -550,7 +550,7 @@
 					<onleft>2</onleft>
 					<ondown>503</ondown>
 					<onup>501</onup>
-					<onclick>Skin.Reset(videoFanartLocation)</onclick>
+					<onclick>Skin.Reset(VideoFanartLocation)</onclick>
 				</control>
 				<control type="button" id="503">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -567,7 +567,7 @@
 					<onleft>3</onleft>
 					<ondown>504</ondown>
 					<onup>502</onup>
-					<onclick>Skin.Reset(musicFanartLocation)</onclick>
+					<onclick>Skin.Reset(MusicFanartLocation)</onclick>
 				</control>
 			</control>
 		</control>
