@@ -190,6 +190,13 @@
 			<style></style>
 		</font>
 		<font>
+			<name>symbolLarger</name>
+			<filename>symbol.ttf</filename>
+			<size>48</size>
+			<style></style>
+		</font>
+
+		<font>
 			<name>symbolVeryLarge</name>
 			<filename>symbol.ttf</filename>
 			<size>96</size>
