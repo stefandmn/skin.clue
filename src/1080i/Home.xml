@@ -2,7 +2,7 @@
 <window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload condition="System.HasAddon(plugin.playerartwork) + Skin.HasSetting(HomePlayerArtwork) + !Window(Home).Property(PlayerArtwork.Running)">RunScript(plugin.playerartwork,daemon=true)</onload>
+	<onload condition="System.HasAddon(plugin.artwork) + Skin.HasSetting(HomeArtwork) + !Window(Home).Property(PluginArtwork.Running)">RunScript(plugin.artwork,daemon=true)</onload>
 	<onload condition="Skin.hasSetting(StopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
 	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 	<animation effect="fade" start="0" end="100" time="1000" reversible="true">WindowOpen</animation>
@@ -269,6 +269,13 @@
 						<onclick>ReplaceWindow(favourites)</onclick>
 					</item>
 					<item id="5">
+						<visible>Skin.HasSetting(showSearch) + System.HasAddon(plugin.search)</visible>
+						<label>31304</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>RunScript(plugin.search)</onclick>
+					</item>
+					<item id="6">
 						<label>31004</label>
 						<label2></label2>
 						<thumb>-</thumb>

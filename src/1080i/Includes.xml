@@ -115,9 +115,9 @@
 			</control>
 			<!--Player Artwork based on playing artist(s) in Home or Music Visualization screen(s)-->
 			<control type="group">
-				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomePlayerArtwork) + !Skin.HasSetting(GlobalFanartBackground)</visible>
+				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomeArtwork) + !Skin.HasSetting(GlobalFanartBackground)</visible>
 				<control type="image">
-					<visible>isempty(Window(Visualisation).Property(PlayerArtwork))</visible>
+					<visible>isempty(Window(Visualisation).Property(PluginArtwork))</visible>
 					<posx>0</posx>
 					<posy>0</posy>
 					<include>dimensionsFullscreen</include>
@@ -126,11 +126,11 @@
 					<aspectratio align="left" aligny="top">stretch</aspectratio>
 				</control>
 				<control type="multiimage">
-					<visible>!isempty(Window(Visualisation).Property(PlayerArtwork))</visible>
+					<visible>!isempty(Window(Visualisation).Property(PluginArtwork))</visible>
 					<posx>0</posx>
 					<posy>0</posy>
 					<include>dimensionsFullscreen</include>
-					<imagepath background="true">$INFO[Window(Visualisation).Property(PlayerArtwork)]</imagepath>
+					<imagepath background="true">$INFO[Window(Visualisation).Property(PluginArtwork)]</imagepath>
 					<aspectratio>keep</aspectratio>
 					<timeperimage>15000</timeperimage>
 					<fadetime>1000</fadetime>
