@@ -204,7 +204,7 @@
 			<itemgap>30</itemgap>
 			<orientation>horizontal</orientation>
 			<control type="label">
-				<visible>!isempty(Window(Home).Property(NetworkWireless))</visible>
+				<visible>!isempty(Window(Home).Property(ServiceClue.NetworkWireless))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -212,7 +212,7 @@
 				<label>[B][/B]</label>
 			</control>
 			<control type="label">
-				<visible>!isempty(Window(Home).Property(NetworkMobile))</visible>
+				<visible>!isempty(Window(Home).Property(ServiceClue.NetworkMobile))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -220,7 +220,7 @@
 				<label>[B][/B]</label>
 			</control>
 			<control type="label">
-				<visible>!isempty(Window(Home).Property(NetworkRouter)) | !isempty(Window(Home).Property(NetworkRepeater))</visible>
+				<visible>!isempty(Window(Home).Property(ServiceClue.NetworkRouter)) | !isempty(Window(Home).Property(ServiceClue.NetworkRepeater))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
