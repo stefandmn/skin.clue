@@ -6,8 +6,8 @@
 	<onload>Skin.SetBool(showRecentMusicItems)</onload>
 	<onload condition="!Skin.HasSetting(DebugInfo)">Skin.SetString(DebugInfo,false)</onload>
 	<onload condition="!Skin.HasSetting(DebugGrid)">Skin.SetString(DebugGrid,false)</onload>
-	<onload condition="!Skin.HasSetting(HomeArtwork)">Skin.SetString(HomeArtwork,true)</onload>
-	<onload condition="!Skin.HasSetting(MusicArtwork)">Skin.SetString(MusicArtwork,true)</onload>
+	<onload condition="!Skin.HasSetting(HomeSlideshow)">Skin.SetString(HomeSlideshow,true)</onload>
+	<onload condition="!Skin.HasSetting(MusicSlideshow)">Skin.SetString(MusicSlideshow,true)</onload>
 	<coordinates>
 		<posx>15</posx>
 		<posy>15</posy>

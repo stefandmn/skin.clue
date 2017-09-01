@@ -587,11 +587,11 @@ msgid "Reload skin"
 msgstr ""
 
 msgctxt "#31165"
-msgid "Enable Artwork in Home screen"
+msgid "Enable Slideshow in Home screen"
 msgstr ""
 
 msgctxt "#31166"
-msgid "Enable Artwork in Music Visualization screen"
+msgid "Enable Slideshow in Music Visualization screen"
 msgstr ""
 
 msgctxt "#31168"

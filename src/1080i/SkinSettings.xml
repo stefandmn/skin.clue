@@ -224,24 +224,24 @@
 					<selected>Skin.HasSetting(AnimateFanart)</selected>
 				</control>
 				<control type="radiobutton" id="17">
-					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.artwork)</visible>
-					<description>Enable Artwork in Home screen</description>
+					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.slideshow)</visible>
+					<description>Enable Slideshow in Home screen</description>
 					<width>16-col</width>
 					<label>31165</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(HomeArtwork)</onclick>
-					<selected>Skin.HasSetting(HomeArtwork)</selected>
+					<onclick>Skin.ToggleSetting(HomeSlideshow)</onclick>
+					<selected>Skin.HasSetting(HomeSlideshow)</selected>
 				</control>
 				<control type="radiobutton" id="18">
-					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.artwork)</visible>
-					<description>Enable Artwork in Music Visualization screen</description>
+					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.slideshow)</visible>
+					<description>Enable Slideshow in Music Visualization screen</description>
 					<width>16-col</width>
 					<label>31166</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(MusicArtwork)</onclick>
-					<selected>Skin.HasSetting(MusicArtwork)</selected>
+					<onclick>Skin.ToggleSetting(MusicSlideshow)</onclick>
+					<selected>Skin.HasSetting(MusicSlideshow)</selected>
 				</control>
 				<control type="label" id="402">
 					<visible>Container(8000).Hasfocus(1)</visible>

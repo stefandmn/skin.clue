@@ -277,26 +277,7 @@
 						<thumb>-</thumb>
 						<onclick>SendClick(2003,10)</onclick>
 					</item>
-					<item>
-						<description>Get Artwork</description>
-						<label2></label2>
-						<onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mode=gui, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
-						<onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
-						<label>$INFO[System.AddonTitle(script.artwork.downloader)]</label>
-						<visible>System.HasAddon(script.artwork.downloader)</visible>
-					</item>
 				</content>
-			</control>
-			<!--empty image if no artwork downloader installed-->
-			<control type="image">
-				<visible>!System.HasAddon(script.artwork.downloader)</visible>
-				<posx>372</posx>
-				<posy>952</posy>
-				<width>285</width>
-				<height>55</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>masks/black.png</texture>
-				<colordiffuse>cc000000</colordiffuse>
 			</control>
 		</control>
 		<!--content is tvshow episode or content is from a plugin-->
