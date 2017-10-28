@@ -118,12 +118,5 @@
 				</content>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogButtonMenu.xml</label>
-		</control>
 	</controls>
 </window>

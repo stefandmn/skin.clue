@@ -83,13 +83,5 @@
 				<shadowcolor>-</shadowcolor>
 			</control>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>VideoFullScreen.xml</label>
-		</control>
 	</controls>
 </window>

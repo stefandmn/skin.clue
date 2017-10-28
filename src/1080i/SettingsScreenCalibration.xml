@@ -62,13 +62,5 @@
 			<align>center</align>
 			<label>-</label>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>SettingsScreenCalibration.xml</label>
-		</control>
 	</controls>
 </window>

@@ -301,12 +301,5 @@
 				<textcolor>selected</textcolor>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogNumeric.xml</label>
-		</control>
 	</controls>
 </window>

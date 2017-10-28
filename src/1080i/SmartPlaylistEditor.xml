@@ -409,11 +409,5 @@
 				</control>
 			</control>
 		</control>
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DialogID</include>
-			<label>SmartPlaylistEditor.xml</label>
-		</control>
 	</controls>
 </window>

@@ -101,13 +101,5 @@
 				</focusedlayout>
 			</control>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogFavourites.xml</label>
-		</control>
 	</controls>
 </window>

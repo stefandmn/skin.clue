@@ -69,12 +69,5 @@
 				</animation>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugScreenID</include>
-			<label>DialogMuteBug.xml</label>
-		</control>
 	</controls>
 </window>

@@ -869,13 +869,5 @@
 				</content>
 			</control>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>MyWeather.xml</label>
-		</control>
 	</controls>
 </window>

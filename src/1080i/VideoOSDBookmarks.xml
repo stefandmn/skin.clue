@@ -228,11 +228,5 @@
 				<description>Clear Bookmark button</description>
 			</control>
 		</control>
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>VideoOSDBookmarks.xml</label>
-		</control>
 	</controls>
 </window>

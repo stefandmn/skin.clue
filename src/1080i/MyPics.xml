@@ -339,13 +339,5 @@
 				</control>
 			</control>
 		</control>
-
-
-		<!--debug-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>MyPics.xml</label>
-		</control>
 	</controls>
 </window>

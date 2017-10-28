@@ -31,12 +31,5 @@
 			<textoffsetx>12</textoffsetx>
 			<texturefocus>controls/textbutton-fo.png</texturefocus>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogContextMenu.xml</label>
-		</control>
 	</controls>
 </window>

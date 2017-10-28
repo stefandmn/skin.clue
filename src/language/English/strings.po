@@ -15,7 +15,7 @@ msgid "A skin for MCPi/Kodi from AMSD"
 msgstr ""
 
 msgctxt "Addon Description"
-msgid "Clue is a lightweight, clean and simple MCPi experience designed for maximum usability"
+msgid "Clue is a lightweight, clean and simple media player experience designed for maximum usability"
 msgstr ""
 
 msgctxt "#31000"
@@ -83,7 +83,7 @@ msgid "About MCPi"
 msgstr ""
 
 msgctxt "#31016"
-msgid "Clue System"
+msgid "System configuration"
 msgstr ""
 
 msgctxt "#31017"
@@ -132,14 +132,6 @@ msgstr ""
 
 msgctxt "#31033"
 msgid "Set Media Source Content"
-msgstr ""
-
-msgctxt "#31034"
-msgid "Enable Debug Grid"
-msgstr ""
-
-msgctxt "#31035"
-msgid "Enable Debug Info"
 msgstr ""
 
 msgctxt "#31037"
@@ -215,7 +207,7 @@ msgid "Video Library"
 msgstr ""
 
 msgctxt "#31061"
-msgid "Skin"
+msgid "Look and Feel Options"
 msgstr ""
 
 msgctxt "#31062"
@@ -223,7 +215,7 @@ msgid "Memory"
 msgstr ""
 
 msgctxt "#31063"
-msgid "File Lists"
+msgid "Player Content and Configuration"
 msgstr ""
 
 msgctxt "#31064"
@@ -239,7 +231,7 @@ msgid "Audio CDs"
 msgstr ""
 
 msgctxt "#31067"
-msgid "System extensions"
+msgid "System Addons/Entensions"
 msgstr ""
 
 msgctxt "#31068"
@@ -255,7 +247,7 @@ msgid "Screen"
 msgstr ""
 
 msgctxt "#31071"
-msgid "Networking"
+msgid "Communication and Data Services"
 msgstr ""
 
 msgctxt "#31072"
@@ -287,7 +279,7 @@ msgid "Now and Next"
 msgstr ""
 
 msgctxt "#31079"
-msgid "MCPi"
+msgid "Media Content and Options"
 msgstr ""
 
 msgctxt "#31080"
@@ -296,6 +288,10 @@ msgstr ""
 
 msgctxt "#31082"
 msgid "Version"
+msgstr ""
+
+msgctxt "#31083"
+msgid "Skin Details and Preferences"
 msgstr ""
 
 msgctxt "#31084"
@@ -312,6 +308,10 @@ msgstr ""
 
 msgctxt "#31087"
 msgid "Enable global fanart background: "
+msgstr ""
+
+msgctxt "#31088"
+msgid "Clue/Environment Settings"
 msgstr ""
 
 msgctxt "#31089"
@@ -331,7 +331,7 @@ msgid "Favourite"
 msgstr ""
 
 msgctxt "#31095"
-msgid "Transfer"
+msgid "Manage Media Resources"
 msgstr ""
 
 msgctxt "#31096"
@@ -359,15 +359,15 @@ msgid "Delete Group"
 msgstr ""
 
 msgctxt "#31103"
-msgid "Profile Settings"
+msgid "System Access Profiling"
 msgstr ""
 
 msgctxt "#31104"
-msgid "Available Profiles"
+msgid "Disable this Addon"
 msgstr ""
 
 msgctxt "#31105"
-msgid "Login options"
+msgid "MCPi Central Configurations"
 msgstr ""
 
 msgctxt "#31106"
@@ -379,7 +379,7 @@ msgid "Active profile"
 msgstr ""
 
 msgctxt "#31108"
-msgid "Log out"
+msgid "Clue and MCPi System Details"
 msgstr ""
 
 msgctxt "#31109"
@@ -391,7 +391,7 @@ msgid "Order: Descending"
 msgstr ""
 
 msgctxt "#31111"
-msgid "Copy files"
+msgid "Manage your programs"
 msgstr ""
 
 msgctxt "#31112"
@@ -624,6 +624,14 @@ msgstr ""
 
 msgctxt "#31204"
 msgid "Set Picture Addons"
+msgstr ""
+
+msgctxt "#31218"
+msgid "Enable this Addon"
+msgstr ""
+
+msgctxt "#31219"
+msgid "Addons Settings"
 msgstr ""
 
 msgctxt "#31301"

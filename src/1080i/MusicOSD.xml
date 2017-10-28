@@ -311,13 +311,5 @@
 				<label>$INFO[MusicPlayer.offset(1).Artist,[B]$LOCALIZE[19031][/B]: , - ]$INFO[MusicPlayer.offset(1).Title]</label>
 			</control>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>MusicOSD.xml</label>
-		</control>
 	</controls>
 </window>

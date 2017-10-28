@@ -252,12 +252,5 @@
 				<description>New folder</description>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>FileBrowser.xml</label>
-		</control>
 	</controls>
 </window>

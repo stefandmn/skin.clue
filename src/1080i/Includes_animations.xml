@@ -27,6 +27,13 @@
 	</include>
 
 
+	<!--focus thumb-->
+	<include name="focusThumb">
+		<animation type="focus" loop="false" reversible="false">
+			<effect type="zoom" start="95" end="110" center="auto" tween="sine" easing="out" time="200"/>
+		</animation>
+	</include>
+
 	<!--modal dialog handling-->
 	<include name="modalDialogInOut">
 		<animation type="Windowopen">

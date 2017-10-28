@@ -306,12 +306,5 @@
 				<description>Clear button</description>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>WindowID</include>
-			<label>MyMusicPlaylistEditor.xml</label>
-		</control>
 	</controls>
 </window>

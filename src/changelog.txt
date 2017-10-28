@@ -1,3 +1,8 @@
+v1.1
+- Create MyPlaylist screen and aggregate all music components into a file.
+- Replace DialogKaiToast.xml with DialogNotification.xml
+- Adapt add-on components for Kodi v17
+
 v1.0
 - Update color schemes and default color theme
 - Dialog Extended ProgressBar and MusicOverlay have been improved

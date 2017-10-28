@@ -75,13 +75,5 @@
 				</animation>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<posy>0</posy>
-			<include>DebugDialogID</include>
-			<label>DialogExtendedProgressBar.xml</label>
-		</control>
 	</controls>
 </window>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">4000</defaultcontrol>
-	<allowoverlay>no</allowoverlay>
 
 	<controls>
 		<!--fanart / coverart if available-->
@@ -58,7 +57,7 @@
 				<posy>44</posy>
 				<width>16-col</width>
 				<font>dialogTitle</font>
-				<label>$INFO[ListItem.Property(Addon.Type)]</label>
+				<label>$INFO[ListItem.AddonType]</label>
 				<textcolor>black</textcolor>
 				<shadowcolor>-</shadowcolor>
 			</control>
@@ -78,14 +77,14 @@
 					<posy>3-row</posy>
 					<width>696</width>
 					<font>mediumStrong</font>
-					<label>$INFO[ListItem.Property(Addon.Name)]</label>
+					<label>$INFO[ListItem.AddonName]</label>
 				</control>
 				<control type="label">
 					<posx>0</posx>
 					<posy>4-row</posy>
 					<width>696</width>
 					<font>regularStrong</font>
-					<label>$INFO[ListItem.Property(Addon.Creator)] • $LOCALIZE[31082] $INFO[ListItem.Property(Addon.Version)]</label>
+					<label>$INFO[ListItem.AddonCreator] • $LOCALIZE[31082] $INFO[ListItem.AddonVersion]</label>
 				</control>
 				<control type="textbox" id="400">
 					<posx>0</posx>
@@ -93,10 +92,51 @@
 					<font>textboxExtraLeading</font>
 					<width>696</width>
 					<height>340</height>
-					<label>[B]$INFO[ListItem.Property(Addon.Description)][/B]</label>
+					<label>[B]$INFO[ListItem.AddonDescription][/B]</label>
 					<autoscroll delay="5000" time="1000" repeat="10000"/>
 				</control>
+				<!--screenshots-->
+				<control type="panel" id="50">
+					<posx>0</posx>
+					<posy>10-row</posy>
+					<width>16-col</width>
+					<height>8-row</height>
+					<onleft>4000</onleft>
+					<onup>4000</onup>
+					<ondown>4000</ondown>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">600</scrolltime>
+					<itemlayout width="444" height="336">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>408</width>
+							<height>264</height>
+							<aspectratio>scale</aspectratio>
+							<texture border="6">$INFO[Listitem.thumb]</texture>
+							<bordertexture border="6" colordiffuse="aa111111">masks/black.png</bordertexture>
+							<bordersize>6</bordersize>
+						</control>
+					</itemlayout>
+					<focusedlayout width="444" height="336">
+						<control type="group">
+							<include>focusThumb</include>
+							<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>408</width>
+								<height>264</height>
+								<aspectratio>scale</aspectratio>
+								<texture>$INFO[Listitem.thumb]</texture>
+								<bordertexture border="6">masks/selected.png</bordertexture>
+								<bordersize>6</bordersize>
+								<colordiffuse>ffffffff</colordiffuse>
+							</control>
+						</control>
+					</focusedlayout>
+				</control>
 			</control>
+
 			<!--dialog controls-->
 			<control type="group">
 				<visible>!Window.IsVisible(AddonSettings) + !Window.IsActive(TextViewer)</visible>
@@ -109,6 +149,7 @@
 					<height>6-row</height>
 					<itemgap>3</itemgap>
 					<orientation>vertical</orientation>
+					<onright>50</onright>
 					<itemlayout width="6-col" height="1-row">
 						<control type="image">
 							<posx>0</posx>
@@ -167,57 +208,51 @@
 					</focusedlayout>
 					<content>
 						<item id="1">
-							<visible>!substring(ListItem.Property(Addon.path),http,Left)</visible>
+							<visible>Control.IsEnabled(12)</visible>
 							<label>31117</label>
 							<label2></label2>
 							<thumb>-</thumb>
-							<onclick>sendclick(12)</onclick>
+							<onclick>sendclick(146,12)</onclick>
 						</item>
 						<item id="2">
 							<label>$INFO[Control.GetLabel(6)]</label>
 							<label2></label2>
 							<thumb>-</thumb>
-							<onclick>SendClick(6)</onclick>
+							<onclick>SendClick(146,6)</onclick>
 						</item>
 						<item id="3">
-							<visible>Control.IsEnabled(8)</visible>
-							<label>$INFO[Control.GetLabel(8)]</label>
-							<label2></label2>
-							<thumb>-</thumb>
-							<onclick>SendClick(8)</onclick>
-						</item>
-						<item id="4">
-							<visible>Control.IsEnabled(11)</visible>
-							<label>$INFO[Control.GetLabel(11)]</label>
-							<label2></label2>
-							<thumb>-</thumb>
-							<onclick>SendClick(11)</onclick>
-						</item>
-						<item id="5">
-							<visible>Control.IsEnabled(7)</visible>
-							<label>$INFO[Control.GetLabel(7)]</label>
-							<label2></label2>
-							<thumb>-</thumb>
-							<onclick>SendClick(7)</onclick>
-						</item>
-						<item id="6">
 							<visible>Control.IsEnabled(9)</visible>
 							<label>$INFO[Control.GetLabel(9)]</label>
 							<label2></label2>
 							<thumb>-</thumb>
-							<onclick>SendClick(9)</onclick>
+							<onclick>SendClick(146,9)</onclick>
 						</item>
-						<item id="7">
-							<visible>Control.IsEnabled(10)</visible>
-							<label>$INFO[Control.GetLabel(10)]</label>
-							<label2></label2>
+						<item id="4">
+							<visible>Control.IsEnabled(8)</visible>
+							<label>$INFO[Control.GetLabel(8)]</label>
+							<label2></label2>
 							<thumb>-</thumb>
-							<onclick>SendClick(10)</onclick>
+							<onclick>SendClick(146,8)</onclick>
+						</item>
+						<item id="5">
+							<visible>Control.IsEnabled(7) + String.IsEqual(Control.GetLabel(7),enable)</visible>
+							<label>$LOCALIZE[31218]</label>
+							<label2></label2>
+							<thumb>-</thumb>
+							<onclick>SendClick(146,7)</onclick>
+						</item>
+						<item id="6">
+							<visible>Control.IsEnabled(7) + String.IsEqual(Control.GetLabel(7),disable)</visible>
+							<label>$LOCALIZE[31104]</label>
+							<label2></label2>
+							<thumb>-</thumb>
+							<onclick>SendClick(146,7)</onclick>
 						</item>
 					</content>
 				</control>
 			</control>
 		</control>
+
 		<!--buttons-->
 		<control type="group">
 			<visible>false</visible>
@@ -236,24 +271,9 @@
 				<description>Addon Settings</description>
 				<label>24020</label>
 			</control>
-			<control type="button" id="10">
-				<description>Changelog button</description>
-				<label>24036</label>
-			</control>
-			<control type="button" id="11">
-				<description>Rollback button</description>
-				<label>24048</label>
-			</control>
 			<control type="button" id="12">
 				<description>Launch addon</description>
 			</control>
-		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogAddonInfo.xml</label>
 		</control>
 	</controls>
 </window>

@@ -1037,12 +1037,5 @@
 				</control>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogKeyboard.xml</label>
-		</control>
 	</controls>
 </window>

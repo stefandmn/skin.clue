@@ -227,12 +227,5 @@
 				<description>Get Thumb button</description>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogSongInfo.xml</label>
-		</control>
 	</controls>
 </window>

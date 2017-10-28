@@ -243,37 +243,6 @@
 					<onclick>Skin.ToggleSetting(MusicSlideshow)</onclick>
 					<selected>Skin.HasSetting(MusicSlideshow)</selected>
 				</control>
-				<control type="label" id="402">
-					<visible>Container(8000).Hasfocus(1)</visible>
-					<width>15-col</width>
-					<height>45</height>
-					<font>itemTitle</font>
-					<label>14092</label>
-					<textcolor>white</textcolor>
-					<shadowcolor>black</shadowcolor>
-					<align>left</align>
-					<aligny>center</aligny>
-				</control>
-				<control type="radiobutton" id="14">
-					<visible>Container(8000).Hasfocus(1)</visible>
-					<description>Enable Debug Grid</description>
-					<width>16-col</width>
-					<label>31034</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(DebugGrid)</onclick>
-					<selected>Skin.HasSetting(DebugGrid)</selected>
-				</control>
-				<control type="radiobutton" id="15">
-					<visible>Container(8000).Hasfocus(1)</visible>
-					<description>Disable Debug Info</description>
-					<width>16-col</width>
-					<label>31035</label>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(DebugInfo)</onclick>
-					<selected>Skin.HasSetting(DebugInfo)</selected>
-				</control>
 				<!-- Home Menu tab -->
 				<control type="radiobutton" id="8">
 					<visible>Container(8000).Hasfocus(2)</visible>
@@ -580,14 +549,6 @@
 					<onclick>Skin.Reset(MusicFanartLocation)</onclick>
 				</control>
 			</control>
-		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>SkinSettings.xml</label>
 		</control>
 	</controls>
 </window>

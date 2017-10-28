@@ -57,12 +57,5 @@
 				</focusedlayout>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogPictureInfo.xml</label>
-		</control>
 	</controls>
 </window>

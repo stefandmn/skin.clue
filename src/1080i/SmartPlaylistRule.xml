@@ -159,11 +159,5 @@
 				</control>
 			</control>
 		</control>
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DialogID</include>
-			<label>SmartPlaylistRule.xml</label>
-		</control>
 	</controls>
 </window>

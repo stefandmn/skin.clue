@@ -542,12 +542,5 @@
 				<description>Trailer</description>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogVideoInfo.xml</label>
-		</control>
 	</controls>
 </window>

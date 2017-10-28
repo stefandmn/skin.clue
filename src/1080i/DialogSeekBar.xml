@@ -138,12 +138,5 @@
 				<shadowcolor>-</shadowcolor>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogSeekbar.xml</label>
-		</control>
 	</controls>
 </window>

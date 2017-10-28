@@ -179,12 +179,5 @@
 				<label>409</label>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogPeripheralSettings.xml</label>
-		</control>
 	</controls>
 </window>

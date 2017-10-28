@@ -5,12 +5,5 @@
 
 	<controls>
 		<include>loadingIndicator</include>
-
-		<include>DebugGrid</include>
-		<control type="label">
-			<posy>0</posy>
-			<include>DebugDialogID</include>
-			<label>DialogBusy.xml</label>
-		</control>
 	</controls>
 </window>

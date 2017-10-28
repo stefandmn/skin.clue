@@ -76,13 +76,5 @@
 				<description>Slider</description>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<posy>130</posy>
-			<include>DebugDialogID</include>
-			<label>DialogSlider.xml</label>
-		</control>
 	</controls>
 </window>

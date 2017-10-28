@@ -3,6 +3,7 @@
 	<include file="Defaults.xml"/>
 	<include file="Includes_variables.xml"/>
 	<include file="Includes_animations.xml"/>
+	<include file="Includes_music.xml"/>
 
 
 	<!--fullscreen coordinates -->
@@ -310,57 +311,6 @@
     <include name="progressPosition2">
 		<posy>209</posy>
 	</include>
-
-
-	<!--Debug Window Label-->
-	<include name="DebugDialogID">
-		<posx>15</posx>
-		<posy>15</posy>
-		<width>fullscreenwidth</width>
-		<height>1-row</height>
-		<font>smallStrong</font>
-		<textcolor>selected</textcolor>
-		<align>left</align>
-		<visible>Skin.HasSetting(DebugInfo)</visible>
-	</include>
-
-
-	<!--Debug Dialog Label-->
-	<include name="DebugWindowID">
-		<posx>15</posx>
-		<posy>45</posy>
-		<width>fullscreenwidth</width>
-		<height>1-row</height>
-		<font>smallStrong</font>
-		<textcolor>selected</textcolor>
-		<align>left</align>
-		<visible>Skin.HasSetting(DebugInfo)</visible>
-	</include>
-
-
-	<!--Debug Label for other type of screens-->
-	<include name="DebugScreenID">
-		<posx>15</posx>
-		<posy>75</posy>
-		<width>fullscreenwidth</width>
-		<height>1-row</height>
-		<font>smallStrong</font>
-		<textcolor>selected</textcolor>
-		<align>left</align>
-		<visible>Skin.HasSetting(DebugInfo)</visible>
-	</include>
-
-
-	<!--Debug grid control-->
-	<include name="DebugGrid">
-		<control type="image">
-			<include>dimensionsFullscreen</include>
-			<texture>debug.png</texture>
-			<colordiffuse>77FFFFFF</colordiffuse>
-			<visible>Skin.HasSetting(DebugGrid)</visible>
-		</control>
-	</include>
-
 
 	<!-- Keyboard button coordinates -->
 	<include name="KeyboardButton">

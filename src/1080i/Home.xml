@@ -10,7 +10,7 @@
 	<controls>
 		<include>globalBackground</include>
 		<include>networkStatus</include>
-
+		<include>musicOverlay</include>
 
 		<!-- 1) Date/time and Weather -->
 		<control type="group">
@@ -153,7 +153,7 @@
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>Skin.SetString(showNavigationMenu,video)</onclick>
-						<onclick>activateWindow(videolibrary)</onclick>
+						<onclick>activateWindow(videos)</onclick>
 					</item>
 					<item id="2">
 						<visible>!Skin.HasSetting(hideMusic)</visible>
@@ -161,7 +161,7 @@
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>Skin.SetString(showNavigationMenu,music)</onclick>
-						<onclick>ActivateWindow(musiclibrary)</onclick>
+						<onclick>ActivateWindow(music)</onclick>
 					</item>
 					<item id="3">
 						<visible>!Skin.HasSetting(hidePictures)</visible>
@@ -283,14 +283,6 @@
 					</item>
 				</content>
 			</control>
-		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>Home.xml</label>
 		</control>
 	</controls>
 </window>

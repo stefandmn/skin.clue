@@ -162,12 +162,5 @@
 				<description>Clear Button</description>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>DialogMediaFilter.xml</label>
-		</control>
 	</controls>
 </window>

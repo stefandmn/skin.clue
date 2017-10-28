@@ -112,7 +112,7 @@
 					</item>
 					<item id="2">
 						<description>System</description>
-						<label>31016</label>
+						<label>14209</label>
 						<label2>$INFO[System.FriendlyName][CR][CR]$INFO[System.KernelVersion]</label2>
 						<property name="itemIcon">&gt;</property>
 						<thumb>-</thumb>
@@ -168,13 +168,6 @@
 					</item>
 				</content>
 			</control>
-		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>SettingsSystemInfo.xml</label>
 		</control>
 	</controls>
 </window>

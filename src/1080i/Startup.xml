@@ -4,8 +4,6 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload>Skin.SetBool(showRecentVideoItems)</onload>
 	<onload>Skin.SetBool(showRecentMusicItems)</onload>
-	<onload condition="!Skin.HasSetting(DebugInfo)">Skin.SetString(DebugInfo,false)</onload>
-	<onload condition="!Skin.HasSetting(DebugGrid)">Skin.SetString(DebugGrid,false)</onload>
 	<onload condition="!Skin.HasSetting(HomeSlideshow)">Skin.SetString(HomeSlideshow,true)</onload>
 	<onload condition="!Skin.HasSetting(MusicSlideshow)">Skin.SetString(MusicSlideshow,true)</onload>
 	<coordinates>
@@ -19,13 +17,6 @@
 			<onfocus>ReplaceWindow(home)</onfocus>
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
-		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>StartUp.xml</label>
 		</control>
 	</controls>
 </window>

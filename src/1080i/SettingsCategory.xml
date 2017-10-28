@@ -150,13 +150,5 @@
 				<textoffsety>8</textoffsety>
 			</control>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>SettingsCategory.xml</label>
-		</control>
 	</controls>
 </window>

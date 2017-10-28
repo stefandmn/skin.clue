@@ -278,12 +278,5 @@
 				<description>Cancel Button</description>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogMediaSource.xml</label>
-		</control>
 	</controls>
 </window>

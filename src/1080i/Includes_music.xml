@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Skin variables-->
+<includes>
+
+	<!-- Music Overlay -->
+	<include name="musicOverlay">
+		<control type="group">
+			<visible>player.hasAudio + !Window.IsActive(visualisation) + !container.content(songs)</visible>
+			<posx>581r</posx>
+			<posy>963</posy>
+			<!--animations-->
+			<animation type="Windowopen">
+				<effect type="slide" start="1000,0" end="0,0" time="300" tween="sine"/>
+			</animation>
+			<!-- Album Cover -->
+			<control type="image">
+				<posx>-112</posx>
+				<posy>0</posy>
+				<width>112</width>
+				<height>112</height>
+				<aspectratio>scale</aspectratio>
+				<texture fallback="masks/vignette.png" border="0">$INFO[MusicPlayer.cover]</texture>
+				<bordertexture border="2">masks/selected.png</bordertexture>
+				<bordersize>2</bordersize>
+				<colordiffuse>ffFFFFFF</colordiffuse>
+				<visible>!isempty(MusicPlayer.cover)</visible>
+			</control>
+			<!--- Pause sign when the Player is on pause -->
+			<control type="label">
+				<visible>Player.Paused</visible>
+				<posx>-112</posx>
+				<posy>0</posy>
+				<width>112</width>
+				<height>112</height>
+				<font>symbolLarge</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>unselected</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<label></label>
+			</control>
+			<!-- Faded background -->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>8-col</width>
+				<height>112</height>
+				<texture>masks/selected.png</texture>
+				<colordiffuse>eeFFFFFF</colordiffuse>
+			</control>
+			<control type="group">
+				<!--animations-->
+				<animation type="Windowopen">
+					<effect type="fade" start="0" end="100" delay="300" time="300" tween="sine"/>
+				</animation>
+				<control type="label">
+					<description>Artist and Album</description>
+					<visible>!isempty(MusicPlayer.Album)</visible>
+					<posx>10</posx>
+					<posy>-12</posy>
+					<font>smallMedium</font>
+					<width>556</width>
+					<height>1-row</height>
+					<label>[UPPERCASE][B]$INFO[MusicPlayer.Artist][/B] • $INFO[MusicPlayer.Album][/UPPERCASE]</label>
+					<scroll>false</scroll>
+					<textcolor>black</textcolor>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<control type="label">
+					<description>Only Artist because Album is not described</description>
+					<visible>isempty(MusicPlayer.Album)</visible>
+					<posx>10</posx>
+					<posy>-12</posy>
+					<font>smallMedium</font>
+					<width>556</width>
+					<height>1-row</height>
+					<label>[UPPERCASE][B]$INFO[MusicPlayer.Artist][/B][/UPPERCASE]</label>
+					<scroll>false</scroll>
+					<textcolor>black</textcolor>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<control type="label">
+					<description>Song Title</description>
+					<visible>!IntegerGreaterThan(System.CPUTemperature,65)</visible>
+					<posx>10</posx>
+					<posy>27</posy>
+					<font>pageSubTitle</font>
+					<textcolor>selected</textcolor>
+					<width>556</width>
+					<height>1-row</height>
+					<label>$INFO[MusicPlayer.Title]</label>
+					<shadowcolor>-</shadowcolor>
+					<scroll>true</scroll>
+					<scrollspeed>30</scrollspeed>
+					<scrollsuffix> • </scrollsuffix>
+				</control>
+				<control type="label">
+					<description>Song Title</description>
+					<visible>IntegerGreaterThan(System.CPUTemperature,65)</visible>
+					<posx>10</posx>
+					<posy>27</posy>
+					<font>pageSubTitle</font>
+					<textcolor>selected</textcolor>
+					<width>556</width>
+					<height>1-row</height>
+					<label>$INFO[MusicPlayer.Title]</label>
+					<shadowcolor>-</shadowcolor>
+					<scroll>false</scroll>
+				</control>
+				<control type="progress">
+					<description>Progress Bar</description>
+					<posx>0</posx>
+					<posy>79</posy>
+					<width>8-col</width>
+					<height>1</height>
+					<info>Player.Progress</info>
+					<midtexture>masks/inactive.png</midtexture>
+					<reveal>true</reveal>
+				</control>
+			</control>
+			<control type="label">
+				<description>Next Song Artist and Title</description>
+				<visible>MusicPlayer.offset(1).Exists</visible>
+				<posx>10</posx>
+				<posy>70</posy>
+				<font>smallest</font>
+				<width>556</width>
+				<height>1-row</height>
+				<label>[B]$LOCALIZE[19031][/B]: $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]</label>
+				<scroll>false</scroll>
+				<textcolor>black</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<!--animations-->
+				<animation type="Windowopen">
+					<effect type="fade" start="0" end="100" delay="600" time="300" tween="sine"/>
+				</animation>
+			</control>
+		</control>
+	</include>
+
+
+	<!-- Latest Music -->
+	<include name="latestMusic">
+		<control type="group">
+			<visible>SubString(skin.string(showRecentMusicItems),true)</visible>
+			<posx>0</posx>
+			<posy>3-row</posy>
+			<animation type="conditional" condition="window.Next(0)">
+				<effect type="fade" start="100" end="0" time="300" delay="300"/>
+			</animation>
+			<animation type="windowclose">
+				<effect type="fade" start="100" end="0" time="300"/>
+			</animation>
+			<!--no recent items-->
+			<control type="label">
+				<visible>!Library.HasContent(Music)</visible>
+				<posx>1-col</posx>
+				<posy>2-row</posy>
+				<width>21-col</width>
+				<height>8-row</height>
+				<font>veryLarge</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<wrapmultiline>true</wrapmultiline>
+				<textcolor>22FFFFFF</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<label>31007</label>
+			</control>
+			<!--content-->
+			<control type="panel" id="$PARAM[id]">
+				<visible>Library.HasContent(Music)</visible>
+				<posx>-12</posx>
+				<posy>0</posy>
+				<width>22-col</width>
+				<height>13-row</height>
+				<onleft>$PARAM[left]</onleft>
+				<itemlayout width="312" height="366">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>276</width>
+						<height>273</height>
+						<aspectratio>stretch</aspectratio>
+						<texture fallback="masks/black.png" border="0">$INFO[Listitem.thumb]</texture>
+						<bordertexture border="3" colordiffuse="22FFFFFF">masks/selected.png</bordertexture>
+						<bordersize>3</bordersize>
+						<colordiffuse>ffFFFFFF</colordiffuse>
+					</control>
+					<control type="group">
+						<posx>0</posx>
+						<posy>276</posy>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>276</width>
+							<height>64</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>masks/black.png</texture>
+							<bordersize>0</bordersize>
+							<colordiffuse>77FFFFFF</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>12</posx>
+							<posy>-12</posy>
+							<width>252</width>
+							<font>itemTitleSmallCondensed</font>
+							<textcolor>unselected</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>12</posx>
+							<posy>18</posy>
+							<width>252</width>
+							<font>smallMedium</font>
+							<textcolor>unselected</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="312" height="366">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>276</width>
+						<height>273</height>
+						<aspectratio>stretch</aspectratio>
+						<texture fallback="masks/black.png" border="0">$INFO[Listitem.thumb]</texture>
+						<bordertexture border="3" colordiffuse="ffFFFFFF">masks/selected.png</bordertexture>
+						<bordersize>3</bordersize>
+						<colordiffuse>ffFFFFFF</colordiffuse>
+					</control>
+					<control type="group">
+						<posx>0</posx>
+						<posy>276</posy>
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>276</width>
+							<height>64</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>masks/selected.png</texture>
+							<bordersize>0</bordersize>
+							<colordiffuse>ffFFFFFF</colordiffuse>
+						</control>
+						<control type="label">
+							<posx>12</posx>
+							<posy>-12</posy>
+							<width>252</width>
+							<font>itemTitleSmallCondensed</font>
+							<scroll>true</scroll>
+							<textcolor>black</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+						<control type="label">
+							<posx>12</posx>
+							<posy>18</posy>
+							<width>252</width>
+							<font>smallMedium</font>
+							<textcolor>black</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>$INFO[Window(Home).Property(LatestSong.1.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.1.Artist),, • ] $INFO[Window(Home).Property(LatestSong.1.Album)] $INFO[Window(Home).Property(LatestSong.1.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.1.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.1.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.1.Title))</visible>
+					</item>
+					<item id="2">
+						<label>$INFO[Window(Home).Property(LatestSong.2.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.2.Artist),, • ] $INFO[Window(Home).Property(LatestSong.2.Album)] $INFO[Window(Home).Property(LatestSong.2.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.2.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.2.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.2.Title))</visible>
+					</item>
+					<item id="3">
+						<label>$INFO[Window(Home).Property(LatestSong.3.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.3.Artist),, • ] $INFO[Window(Home).Property(LatestSong.3.Album)] $INFO[Window(Home).Property(LatestSong.3.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.3.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.3.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.3.Title))</visible>
+					</item>
+					<item id="4">
+						<label>$INFO[Window(Home).Property(LatestSong.4.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.4.Artist),, • ] $INFO[Window(Home).Property(LatestSong.4.Album)] $INFO[Window(Home).Property(LatestSong.4.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.4.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.4.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.4.Title))</visible>
+					</item>
+					<item id="5">
+						<label>$INFO[Window(Home).Property(LatestSong.5.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.5.Artist),, • ] $INFO[Window(Home).Property(LatestSong.5.Album)] $INFO[Window(Home).Property(LatestSong.5.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.1.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.5.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.5.Title))</visible>
+					</item>
+					<item id="6">
+						<label>$INFO[Window(Home).Property(LatestSong.6.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.6.Artist),, • ] $INFO[Window(Home).Property(LatestSong.6.Album)] $INFO[Window(Home).Property(LatestSong.6.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.6.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.6.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.6.Title))</visible>
+					</item>
+					<item id="7">
+						<label>$INFO[Window(Home).Property(LatestSong.7.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.7.Artist),, • ] $INFO[Window(Home).Property(LatestSong.7.Album)] $INFO[Window(Home).Property(LatestSong.7.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.7.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.7.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.7.Title))</visible>
+					</item>
+					<item id="8">
+						<label>$INFO[Window(Home).Property(LatestSong.8.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.8.Artist),, • ] $INFO[Window(Home).Property(LatestSong.8.Album)] $INFO[Window(Home).Property(LatestSong.8.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.8.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.8.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.8.Title))</visible>
+					</item>
+					<item id="9">
+						<label>$INFO[Window(Home).Property(LatestSong.9.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.9.Artist),, • ] $INFO[Window(Home).Property(LatestSong.9.Album)] $INFO[Window(Home).Property(LatestSong.9.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.9.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.1.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.9.Title))</visible>
+					</item>
+					<item id="10">
+						<label>$INFO[Window(Home).Property(LatestSong.10.Title)]</label>
+						<label2>$INFO[Window(Home).Property(LatestSong.10.Artist),, • ] $INFO[Window(Home).Property(LatestSong.10.Album)] $INFO[Window(Home).Property(LatestSong.10.Year),(,)]</label2>
+						<thumb>$INFO[Window(Home).Property(LatestSong.10.Thumb)]</thumb>
+						<onclick>PlayMedia("$INFO[Window(Home).Property(LatestSong.10.Path)]")</onclick>
+						<visible>!IsEmpty(Window(Home).Property(LatestSong.10.Title))</visible>
+					</item>
+				</content>
+			</control>
+		</control>
+	</include>
+
+</includes>

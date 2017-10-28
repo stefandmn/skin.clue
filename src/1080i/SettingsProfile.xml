@@ -144,13 +144,5 @@
 				</focusedlayout>
 			</control>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>settingsProfile.xml</label>
-		</control>
 	</controls>
 </window>

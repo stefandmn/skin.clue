@@ -67,12 +67,5 @@
 				</focusedlayout>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>LoginScreen.xml</label>
-		</control>
 	</controls>
 </window>

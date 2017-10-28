@@ -60,13 +60,5 @@
 				<label>$INFO[Slideshow.Filedate]</label>
 			</control>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>SlideShow.xml</label>
-		</control>
 	</controls>
 </window>

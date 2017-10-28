@@ -201,12 +201,5 @@
 				<font>smallStrong</font>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>FileManager.xml</label>
-		</control>
 	</controls>
 </window>

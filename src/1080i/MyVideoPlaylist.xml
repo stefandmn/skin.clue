@@ -259,12 +259,5 @@
 		<!--loading indicator-->
 		<include>loadingIndicator</include>
 
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>MyVideoPlaylist.xml</label>
-		</control>
 	</controls>
 </window>

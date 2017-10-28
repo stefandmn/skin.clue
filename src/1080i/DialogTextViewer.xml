@@ -30,12 +30,5 @@
 				<font>textboxExtraLeading</font>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogTextViewer.xml</label>
-		</control>
 	</controls>
 </window>

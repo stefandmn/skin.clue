@@ -310,13 +310,5 @@
 				</control>
 			</control>
 		</control>
-
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugWindowID</include>
-			<label>MyMusicPlaylist.xml</label>
-		</control>
 	</controls>
 </window>

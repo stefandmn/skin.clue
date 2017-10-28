@@ -84,12 +84,5 @@
 				<description>Line 3</description>
 			</control>
 		</control>
-
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>DialogYesNo.xml</label>
-		</control>
 	</controls>
 </window>

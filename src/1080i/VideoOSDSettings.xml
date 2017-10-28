@@ -79,11 +79,5 @@
 				<height>54</height>
 			</control>
 		</control>
-		<!--debugging-->
-		<include>DebugGrid</include>
-		<control type="label">
-			<include>DebugDialogID</include>
-			<label>VideoOSDSettings.xml</label>
-		</control>
 	</controls>
 </window>
