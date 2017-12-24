@@ -198,10 +198,6 @@ msgctxt "#31057"
 msgid "Create Music Playlist"
 msgstr ""
 
-msgctxt "#31058"
-msgid "Music Addons"
-msgstr ""
-
 msgctxt "#31059"
 msgid "Video Library"
 msgstr ""
@@ -268,10 +264,6 @@ msgstr ""
 
 msgctxt "#31076"
 msgid "Change Title"
-msgstr ""
-
-msgctxt "#31077"
-msgid "Music Files"
 msgstr ""
 
 msgctxt "#31078"
@@ -626,6 +618,10 @@ msgctxt "#31204"
 msgid "Set Picture Addons"
 msgstr ""
 
+msgctxt "#31205"
+msgid "No further details available."
+msgstr ""
+
 msgctxt "#31218"
 msgid "Enable this Addon"
 msgstr ""
@@ -648,4 +644,32 @@ msgstr ""
 
 msgctxt "#31304"
 msgid "Global Search"
+msgstr ""
+
+msgctxt "#31310"
+msgid "Artist"
+msgstr ""
+
+msgctxt "#31311"
+msgid "Year"
+msgstr ""
+
+msgctxt "#31312"
+msgid "Duration"
+msgstr ""
+
+msgctxt "#31313"
+msgid "Album"
+msgstr ""
+
+msgctxt "#31314"
+msgid "Genre"
+msgstr ""
+
+msgctxt "#31315"
+msgid "Rating"
+msgstr ""
+
+msgctxt "#31316"
+msgid "Rate"
 msgstr ""

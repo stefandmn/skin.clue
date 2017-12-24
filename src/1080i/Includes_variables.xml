@@ -32,6 +32,8 @@
 	<constant name="22-col">1584</constant>
 	<constant name="23-col">1656</constant>
 	<constant name="24-col">1728</constant>
+	<constant name="25-col">1800</constant>
+	<constant name="26-col">1872</constant>
 
 	<constant name="1-row">57</constant>
 	<constant name="2-row">114</constant>
@@ -70,9 +72,8 @@
 
 	<!--fanart selection-->
 	<variable name="fanartType">
-		<value condition="Window.IsActive(videolibrary)">$INFO[Skin.String(VideoFanartLocation)]</value>
-		<value condition="Window.IsActive(musiclibrary)">$INFO[Skin.String(MusicFanartLocation)]</value>
-		<value condition="Window.IsActive(musicfiles)">$INFO[Skin.String(MusicFanartLocation)]</value>
+		<value condition="Window.IsActive(videos)">$INFO[Skin.String(VideoFanartLocation)]</value>
+		<value condition="Window.IsActive(music)">$INFO[Skin.String(MusicFanartLocation)]</value>
 		<value condition="Window.IsActive(programs)">$INFO[Skin.String(VideoFanartLocation)]</value>
 		<value>$INFO[Skin.String(VideoFanartLocation)]</value>
 	</variable>
@@ -80,14 +81,10 @@
 
 	<!--folder titles-->
 	<variable name="listTitle">
-		<value condition="Window.IsActive(videolibrary) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31012]</value>
-		<value condition="Window.IsActive(musiclibrary) + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31053]</value>
-		<value condition="Window.IsActive(musicfiles) + SubString(container.foldername,add-ons)">$LOCALIZE[31058]</value>
-		<value condition="Window.IsActive(musicfiles) + SubString(container.foldername,playlists)">$LOCALIZE[20011]</value>
-		<value condition="Window.IsActive(musicfiles) + !Substring(Container.folderpath,plugin)">$LOCALIZE[31077]</value>
+		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31012]</value>
+		<value condition="Window.IsActive(music) + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31053]</value>
 		<value condition="Substring(Container.folderpath,plugin)">$INFO[container.foldername]</value>
 		<value condition="Container.Content(movies)">$LOCALIZE[20342] [COLOR accented]$LOCALIZE[31054] $INFO[container.sortmethod][/COLOR]</value>
-		<value condition="Container.Content(livetv)">31006</value>
 		<value condition="Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)">$LOCALIZE[20343] [COLOR accented]$LOCALIZE[31054] $INFO[container.sortmethod][/COLOR]</value>
 		<value condition="Container.Content(addons)">$LOCALIZE[31010]</value>
 		<value condition="Container.Content(albums)">$LOCALIZE[31037] [COLOR accented]$LOCALIZE[31054] $INFO[container.sortmethod][/COLOR]</value>
@@ -98,10 +95,10 @@
 
 	<!--folder sub-titles-->
 	<variable name="listSubTitle">
-		<value condition="Window.IsActive(videolibrary) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31013]</value>
-		<value condition="Window.IsActive(videolibrary) + SubString(skin.string(showRecentVideoItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
-		<value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31013]</value>
-		<value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)] + SubString(skin.string(showRecentMusicItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
+		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31013]</value>
+		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
+		<value condition="Window.IsActive(music) + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31013]</value>
+		<value condition="Window.IsActive(music) + SubString(skin.string(showRecentMusicItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
 	</variable>
 
 	<!--list view item detail / subheader-->
@@ -335,13 +332,33 @@
 	</variable>
 
 
-	<!--Star rating for music tracks-->
+	<!--Star rating for music player-->
     <variable name="StarRating">
-        <value condition="SubString(MusicPlayer.Rating,1)"></value>
-        <value condition="SubString(MusicPlayer.Rating,2)"></value>
-        <value condition="SubString(MusicPlayer.Rating,3)"></value>
-        <value condition="SubString(MusicPlayer.Rating,4)"></value>
-        <value condition="SubString(MusicPlayer.Rating,5)"></value>
-        <value></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,1)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,2)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,3)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,4)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,5)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,6)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,7)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,8)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,9)"></value>
+        <value condition="stringcompare(MusicPlayer.UserRating,10)"></value>
+        <value></value>
+    </variable>
+
+	<!--Star rating for song info-->
+    <variable name="InfoStarRating">
+        <value condition="stringcompare(ListItem.UserRating,1)"></value>
+        <value condition="stringcompare(ListItem.UserRating,2)"></value>
+        <value condition="stringcompare(ListItem.UserRating,3)"></value>
+        <value condition="stringcompare(ListItem.UserRating,4)"></value>
+        <value condition="stringcompare(ListItem.UserRating,5)"></value>
+        <value condition="stringcompare(ListItem.UserRating,6)"></value>
+        <value condition="stringcompare(ListItem.UserRating,7)"></value>
+        <value condition="stringcompare(ListItem.UserRating,8)"></value>
+        <value condition="stringcompare(ListItem.UserRating,9)"></value>
+        <value condition="stringcompare(ListItem.UserRating,10)"></value>
+        <value></value>
     </variable>
 </includes>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<allowoverlay>yes</allowoverlay>
-	<onload condition="window.isactive(videos) | window.isactive(music)">SetFocus(9000,0)</onload>
+	<onload condition="Window.isActive(videos) | Window.isActive(music)">SetFocus(9000,0)</onload>
 	<coordinates>
 		<origin x="0" y="0"/>
 	</coordinates>

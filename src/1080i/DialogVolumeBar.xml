@@ -9,9 +9,12 @@
 	<controls>
 		<control type="group">
 			<posx>1392</posx>
-			<include condition="!window.isactive(infodialog)">progressPosition1</include>
-			<include condition="window.isactive(infodialog)">progressPosition2</include>
-			<visible>!player.passthrough</visible>
+			<include condition="!window.isactive(notification)">progressPosition1</include>
+			<include condition="window.isactive(notification)">progressPosition2</include>
+			<visible>!Player.Passthrough</visible>
+			 <animation type="windowclose">
+                <effect type="fade" start="100" end="0" time="400" tween="sine"/>
+            </animation>
 			<control type="image">
 				<posx>0</posx>
 				<posy>-12</posy>
@@ -21,6 +24,7 @@
 				<colordiffuse>eeFFFFFF</colordiffuse>
 			</control>
 			<control type="label">
+				<description>heading</description>
 				<posx>24</posx>
 				<posy>-12</posy>
 				<width>2-col</width>
@@ -37,7 +41,7 @@
 				<textcolor>black</textcolor>
 				<width>468</width>
 				<height>1-row</height>
-				<label>$INFO[player.volume]</label>
+				<label>$INFO[Player.Volume]</label>
 				<scroll>true</scroll>
 				<shadowcolor>-</shadowcolor>
 			</control>

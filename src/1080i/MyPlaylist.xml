@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">59</defaultcontrol>
+	<onload>Skin.Reset(MusicAvoidRepeatDiscovery)</onload>
 	<allowoverlay>yes</allowoverlay>
 
 	<controls>

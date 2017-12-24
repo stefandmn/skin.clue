@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">8000</defaultcontrol>
+    <animation type="windowClose">
+        <effect type="fade" start="100" end="0" time="400" delay="400"/>
+    </animation>
+
+	<controls>
+		<!-- 0) fanart / coverart if available -->
+		<control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<include>dimensionsFullscreen</include>
+				<texture>masks/black.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<!--fanart-->
+			<control type="image">
+				<visible>!container.content(albums) + !container.content(songs)</visible>
+				<posx>0</posx>
+				<posy>0</posy>
+				<include>dimensionsFullscreen</include>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				<texture fallback="masks/black.png">$INFO[Listitem.art(fanart)]</texture>
+				<include condition="Skin.HasSetting(AnimateFanart)">kenBurnsey</include>
+			</control>
+			<!--coverart-->
+			<control type="image">
+				<visible>container.content(albums)</visible>
+				<posx>240</posx>
+				<posy>2-row</posy>
+				<width>12-col</width>
+				<height>12-col</height>
+				<aspectratio align="center" aligny="top">stretch</aspectratio>
+				<texture fallback="masks/black.png">$INFO[Listitem.thumb]</texture>
+				<animation effect="rotateY" end="-10" center="auto,auto" time="500">windowOpen</animation>
+				<animation effect="rotateY" end="-10" center="auto,auto" time="0">windowClose</animation>
+			</control>
+			<!--vignette-->
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<include>dimensionsFullscreen</include>
+				<texture>masks/vignette.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+		</control>
+
+		<!-- 1) content is artist -->
+		<control type="group">
+			<visible>container.content(artists)</visible>
+			<posx>1359</posx>
+			<posy>95</posy>
+			<animation type="Windowopen">
+				<effect type="fade" start="0" end="100" time="300" delay="300"/>
+				<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
+			</animation>
+			<!--overlay-->
+			<control type="image">
+				<posx>-12</posx>
+				<posy>-95</posy>
+				<width>573</width>
+				<height>935</height>
+				<texture>masks/offblack.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>-12</posx>
+				<posy>-95</posy>
+				<width>573</width>
+				<height>198</height>
+				<texture>masks/selected.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>-12</posx>
+				<posy>838</posy>
+				<width>573</width>
+				<height>198</height>
+				<texture>masks/black.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<!--artist thumb-->
+			<control type="image">
+				<posx>361</posx>
+				<posy>-95</posy>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio>keep</aspectratio>
+				<bordersize>2</bordersize>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<!--artist name-->
+			<control type="label">
+				<posx>0</posx>
+				<posy>-90</posy>
+				<width>352</width>
+				<align>left</align>
+				<font>pageTitle</font>
+				<textcolor>black</textcolor>
+				<label>$INFO[ListItem.Artist]</label>
+				<scroll>true</scroll>
+				<shadowcolor>-</shadowcolor>
+			</control>
+			<!--artist meta -->
+			<control type="label">
+				<posx>0</posx>
+				<posy>-20</posy>
+				<width>352</width>
+				<align>left</align>
+				<font>itemTitleSmall</font>
+				<textcolor>black</textcolor>
+				<label>$INFO[ListItem.Property(Artist_Born)]$INFO[ListItem.Genre, • ,]</label>
+				<shadowcolor>-</shadowcolor>
+				<wrapmultiline>true</wrapmultiline>
+			</control>
+			<!--artist description-->
+			<control type="textbox">
+				<posx>0</posx>
+				<posy>132</posy>
+				<font>textboxExtraLeading</font>
+				<width>552</width>
+				<align>left</align>
+				<textcolor>selected</textcolor>
+				<height>675</height>
+				<label fallback="31205">$INFO[ListItem.Property(Artist_Description)]</label>
+				<autoscroll delay="10000" time="3000" repeat="10000"/>
+				<shadowcolor>-</shadowcolor>
+			</control>
+			<!--dialog controls-->
+			<control type="panel" id="8000">
+				<posx>-7</posx>
+				<posy>840</posy>
+				<width>561</width>
+				<height>1-row</height>
+				<itemgap>3</itemgap>
+				<orientation>horizontal</orientation>
+				<itemlayout width="187" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>187</width>
+						<height>55</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>masks/black.png</texture>
+						<colordiffuse>cc000000</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>17</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<font>symbol</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+					<control type="label">
+						<posx>1-row</posx>
+						<posy>2</posy>
+						<width>130</width>
+						<font>menuTitle</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.label]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout width="187" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>187</width>
+						<height>55</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>masks/selected.png</texture>
+					</control>
+					<control type="label">
+						<posx>17</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<font>symbol</font>
+						<textcolor>black</textcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+					<control type="label">
+						<posx>1-row</posx>
+						<posy>2</posy>
+						<width>130</width>
+						<font>menuTitle</font>
+						<textcolor>black</textcolor>
+						<label>$INFO[ListItem.label]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<label>184</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>SendClick(6)</onclick>
+					</item>
+					<item>
+						<label>13405</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>SendClick(10)</onclick>
+					</item>
+					<item>
+						<label>20413</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>SendClick(12)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+
+		<!-- 2)content is album -->
+		<control type="group">
+			<visible>container.content(albums) + !container.content(artists)</visible>
+			<posx>1359</posx>
+			<posy>95</posy>
+			<animation type="Windowopen">
+				<effect type="fade" start="0" end="100" time="300" delay="300"/>
+				<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
+			</animation>
+			<!--overlay-->
+			<control type="image">
+				<posx>-12</posx>
+				<posy>-95</posy>
+				<width>573</width>
+				<height>935</height>
+				<texture>masks/offblack.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>-12</posx>
+				<posy>-95</posy>
+				<width>573</width>
+				<height>198</height>
+				<texture>masks/selected.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="image">
+				<posx>-12</posx>
+				<posy>838</posy>
+				<width>573</width>
+				<height>198</height>
+				<texture>masks/black.png</texture>
+				<colordiffuse>ccffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<!--album thumb-->
+			<control type="image">
+				<posx>361</posx>
+				<posy>-95</posy>
+				<width>200</width>
+				<height>200</height>
+				<aspectratio>keep</aspectratio>
+				<bordersize>2</bordersize>
+				<texture background="true">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="group">
+				<posx>0</posx>
+				<posy>0</posy>
+				<!--album name-->
+				<control type="label">
+					<posx>0</posx>
+					<posy>-90</posy>
+					<width>352</width>
+					<align>left</align>
+					<font>pageTitle</font>
+					<textcolor>black</textcolor>
+					<label>$INFO[ListItem.album]</label>
+					<scroll>true</scroll>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<!--album meta-->
+				<control type="label">
+					<posx>0</posx>
+					<posy>-20</posy>
+					<width>352</width>
+					<align>left</align>
+					<font>itemTitleSmall</font>
+					<textcolor>black</textcolor>
+					<label>$INFO[listitem.artist]$INFO[Listitem.year, • ,]</label>
+					<shadowcolor>-</shadowcolor>
+				</control>
+				<!--album description-->
+				<control type="textbox">
+					<posx>0</posx>
+					<posy>132</posy>
+					<font>textboxExtraLeading</font>
+					<width>552</width>
+					<align>left</align>
+					<textcolor>selected</textcolor>
+					<height>675</height>
+					<label fallback="31205">$INFO[ListItem.Property(Album_Description)]</label>
+					<autoscroll delay="10000" time="3000" repeat="10000"/>
+					<shadowcolor>-</shadowcolor>
+				</control>
+			</control>
+			<!--dialog controls-->
+			<control type="panel" id="8000">
+				<posx>-7</posx>
+				<posy>840</posy>
+				<width>561</width>
+				<height>1-row</height>
+				<itemgap>3</itemgap>
+				<orientation>horizontal</orientation>
+				<itemlayout width="187" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>187</width>
+						<height>55</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>masks/black.png</texture>
+						<colordiffuse>cc000000</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>17</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<font>symbol</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+					<control type="label">
+						<posx>1-row</posx>
+						<posy>2</posy>
+						<width>130</width>
+						<font>menuTitle</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.label]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout width="187" height="1-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>2</posy>
+						<width>187</width>
+						<height>55</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>masks/selected.png</texture>
+					</control>
+					<control type="label">
+						<posx>17</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<font>symbol</font>
+						<textcolor>black</textcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+					<control type="label">
+						<posx>1-row</posx>
+						<posy>2</posy>
+						<width>130</width>
+						<font>menuTitle</font>
+						<textcolor>black</textcolor>
+						<label>$INFO[ListItem.label]</label>
+						<shadowcolor>-</shadowcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<label>184</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>SendClick(6)</onclick>
+					</item>
+					<item>
+						<label>13405</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>SendClick(10)</onclick>
+					</item>
+					<item>
+						<label>20413</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>SendClick(12)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+
+        <!-- 3) content is a song -->
+        <control type="group">
+            <visible>container.content(songs)</visible>
+            <!--content-->
+            <control type="group">
+                <posx>6-col</posx>
+                <posy>3-row</posy>
+                <include>modalDialogInOut</include>
+                <!--titles-->
+                <control type="label">
+                    <description>Song title</description>
+                    <posx>0</posx>
+                    <posy>100</posy>
+                    <width>20-col</width>
+                    <height>3-row</height>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>largeLight</font>
+                    <textcolor>selected</textcolor>
+                    <shadowcolor>-</shadowcolor>
+                    <label>[B]$INFO[ListItem.title][/B]</label>
+                    <wrapmultiline>true</wrapmultiline>
+                </control>
+                <!--col 1-->
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>4-row</posy>
+                    <width>8-col</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>selected</textcolor>
+                    <shadowcolor>-</shadowcolor>
+                    <label>[COLOR accented]$LOCALIZE[31310][/COLOR] $INFO[ListItem.artist]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>5-row</posy>
+                    <width>8-col</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>selected</textcolor>
+                    <shadowcolor>-</shadowcolor>
+                    <label>[COLOR accented]$LOCALIZE[31311][/COLOR]  $INFO[ListItem.year]</label>
+                </control>
+                <control type="label">
+                    <posx>0</posx>
+                    <posy>6-row</posy>
+                    <width>8-col</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>selected</textcolor>
+                    <shadowcolor>-</shadowcolor>
+                    <label>[COLOR accented]$LOCALIZE[31312][/COLOR]  $INFO[ListItem.duration]</label>
+                </control>
+                <!--col 2-->
+                <control type="label">
+                    <posx>8-col</posx>
+                    <posy>4-row</posy>
+                    <width>8-col</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>selected</textcolor>
+                    <shadowcolor>-</shadowcolor>
+                    <label>[COLOR accented]$LOCALIZE[31313][/COLOR]  $INFO[ListItem.album]</label>
+                </control>
+                <control type="label">
+                    <posx>8-col</posx>
+                    <posy>5-row</posy>
+                    <width>8-col</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>selected</textcolor>
+                    <shadowcolor>-</shadowcolor>
+                    <label>[COLOR accented]$LOCALIZE[31314][/COLOR]  $INFO[ListItem.genre]</label>
+                </control>
+                <control type="label">
+                    <posx>8-col</posx>
+                    <posy>6-row</posy>
+                    <width>100</width>
+                    <align>left</align>
+                    <aligny>center</aligny>
+                    <font>itemTitle</font>
+                    <textcolor>selected</textcolor>
+                    <shadowcolor>-</shadowcolor>
+					<label>[COLOR accented]$LOCALIZE[31315][/COLOR] </label>
+                    <!--label>[COLOR accented]$LOCALIZE[31315][/COLOR]  $INFO[ListItem.UserRating]</label-->
+                </control>
+                <!--album description-->
+                <control type="textbox">
+                    <posx>0</posx>
+                    <posy>400</posy>
+                    <font>textboxExtraLeading</font>
+                    <width>16-col</width>
+                    <height>190</height>
+                    <align>left</align>
+                    <textcolor>selected</textcolor>
+                    <shadowcolor>-</shadowcolor>
+                    <label>$INFO[ListItem.Property(Album_Description)]</label>
+                    <autoscroll delay="10000" time="3000" repeat="10000"/>
+                </control>
+				<!--coverart-->
+				<control type="image">
+					<visible>!isEmpty(Listitem.thumb)</visible>
+					<posx>-288</posx>
+					<posy>3-row</posy>
+					<width>4-row</width>
+					<height>4-row</height>
+					<aspectratio align="center" aligny="top">stretch</aspectratio>
+					<texture fallback="masks/offblack.png">$INFO[Listitem.thumb]</texture>
+				</control>
+                <!--dialog controls-->
+				<control type="group" id="8000">
+					<control type="button" id="8001">
+						<posx>-288</posx>
+						<posy>410</posy>
+						<width>4-row</width>
+						<height>45</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>smallMedium</font>
+						<label>13511</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>selected</focusedcolor>
+						<texturefocus>masks/selected.png</texturefocus>
+						<textoffsetx>12</textoffsetx>
+						<textoffsety>-6</textoffsety>
+						<onleft>8002</onleft>
+						<onright>8002</onright>
+						<onclick>SendClick(2003,10)</onclick>
+					</control>
+					<!--Star rating-->
+					<control type="button" id="8002">
+						<posx>670</posx>
+						<posy>6-row</posy>
+						<height>45</height>
+						<width>250</width>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolNormal</font>
+						<label>$VAR[InfoStarRating]</label>
+						<textcolor>selected</textcolor>
+						<focusedcolor>selected</focusedcolor>
+						<texturefocus>masks/selected.png</texturefocus>
+						<ondown>decreaserating</ondown>
+						<onup>increaserating</onup>
+						<onleft>8001</onleft>
+						<onright>8001</onright>
+						<onclick>noop</onclick>
+					</control>
+				</control>
+            </control>
+        </control>
+
+		<!-- 4) dialog controls -->
+		<control type="group">
+			<visible>false</visible>
+			<control type="button" id="6">
+				<description>Refresh button</description>
+				<label>184</label>
+			</control>
+            <control type="button" id="7">
+                <description>Set rating</description>
+            </control>
+			<control type="button" id="10">
+				<description>Get Thumb</description>
+				<label>13405</label>
+			</control>
+			<control type="button" id="12">
+				<description>Get Fanart</description>
+				<label>20413</label>
+			</control>
+		</control>
+
+	</controls>
+</window>
