@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Clue General Component Builder
+  ~ This is a Ant builder file that defines constants and variables used for geenral on development process
+-->
+
+<project name="Clue Component" basedir=".">
+
+	<!-- Define local environment location -->
+	<property name="user" value="root"/>
+	<property name="password" value="clue"/>
+
+	<property name="os.local" value="windows"/>
+	<property name="host.local" value="localhost"/>
+
+	<property name="os.dev11" value="linux"/>
+	<property name="host.dev11" value="192.168.121.91"/>
+
+	<property name="os.dev21" value="linux"/>
+	<property name="host.dev21" value="192.168.121.92"/>
+
+	<property name="os.dev31" value="linux"/>
+	<property name="host.dev31" value="192.168.121.93"/>
+
+	<property name="os.dev41" value="linux"/>
+	<property name="host.dev41" value="192.168.121.94"/>
+
+	<property name="os.dev51" value="linux"/>
+	<property name="host.dev51" value="192.168.121.95"/>
+
+	<property name="os.dev12" value="linux"/>
+	<property name="host.dev12" value="192.168.122.91"/>
+
+	<property name="os.dev22" value="linux"/>
+	<property name="host.dev22" value="192.168.122.92"/>
+
+	<property name="os.dev32" value="linux"/>
+	<property name="host.dev32" value="192.168.122.93"/>
+
+	<property name="os.dev42" value="linux"/>
+	<property name="host.dev42" value="192.168.122.94"/>
+
+	<property name="os.dev52" value="linux"/>
+	<property name="host.dev52" value="192.168.122.95"/>
+
+	<property name="os.clue1" value="linux"/>
+	<property name="host.clue1" value="192.168.121.5"/>
+
+	<property name="os.clue2" value="linux"/>
+	<property name="host.clue2" value="192.168.122.5"/>
+
+	<property name="os.mobile" value="linux"/>
+	<property name="host.mobile" value="192.168.120.1"/>
+
+
+	<!-- Define 'innerproperty' macro -->
+	<macrodef name="innerproperty">
+		<attribute name="insys"/>
+		<sequential>
+			<property name="env" value="${os.@{insys}}"/>
+			<property name="host" value="${host.@{insys}}"/>
+			<property name="ssh" value="${user}:${password}@${host}:"/>
+		</sequential>
+	</macrodef>
+	
+</project>

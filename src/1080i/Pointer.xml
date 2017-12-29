@@ -13,7 +13,7 @@
 			<description>Pointer</description>
 			<width>45</width>
 			<height>45</height>
-			<texture>controls/pointer-nf.png</texture>
+			<texture>controls/pointer-fo.png</texture>
 		</control>
 		<control type="image" id="2">
 			<description>Pointer Focus</description>
@@ -25,13 +25,13 @@
 			<description>Pointer Drag</description>
 			<width>45</width>
 			<height>45</height>
-			<texture>controls/pointer-drag.png</texture>
+			<texture>controls/pointer-nf.png</texture>
 		</control>
 		<control type="image" id="4">
 			<description>Pointer Click</description>
 			<width>45</width>
 			<height>45</height>
-			<texture>controls/pointer-click.png</texture>
+			<texture>controls/pointer-nf.png</texture>
 		</control>
 	</controls>
 </window>

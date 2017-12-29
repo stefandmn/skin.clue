@@ -1,4 +1,5 @@
 v1.1
+- Create themes: Blue, Crimson, Magenta and Lime (beside the default one)
 - Create MyPlaylist screen and aggregate all music components into a file.
 - Replace DialogKaiToast.xml with DialogNotification.xml
 - Adapt add-on components for Kodi v17
