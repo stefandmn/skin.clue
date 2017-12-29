@@ -9,6 +9,7 @@
 
 	<!-- Define local environment location -->
 	<property name="module" value="skin.clue"/>
+	<property name="res.dir" value="${basedir}/res"/>
 	<property name="src.dir" value="${basedir}/src"/>
 	<property name="tools.dir" value="${basedir}/tools"/>
 	<property name="linux.dir" value="/opt/clue/share/kodi/addons/${module}"/>
@@ -46,7 +47,7 @@
 		<echo message="Creating texture theme: ${themename} -> ${themefile}.xbt"/>
 		<exec executable="${tools.dir}/TexturePacker.exe">
 			<arg value="-input"/>
-			<arg value="src/themes/${themename}"/>
+			<arg value="res/themes/${themename}"/>
 			<arg value="-output"/>
 			<arg value="src/media/${themefile}.xbt"/>
 		</exec>
@@ -56,7 +57,7 @@
 	<target name="pack.linux" description="Create compressed archive with all theme files">
 		<exec executable="${tools.dir}/TexturePacker">
 			<arg value="-input"/>
-			<arg value="src/themes/${themename}"/>
+			<arg value="res/themes/${themename}"/>
 			<arg value="-output"/>
 			<arg value="src/media/${themefile}.xbt"/>
 		</exec>
@@ -66,7 +67,7 @@
 	<target name="xbt" description="Create themes">
 		<antcall target="pack.${env}">
 			<param name="themename" value="Defaults"/>
-			<param name="themefile" value="Texture"/>
+			<param name="themefile" value="Textures"/>
 		</antcall>
 		<antcall target="pack.${env}">
 			<param name="themename" value="Blue"/>
