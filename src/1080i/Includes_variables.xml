@@ -56,7 +56,7 @@
 
 
 	<!-- player speed variable -->
-	<variable name="seekSpeed">
+	<variable name="SeekSpeed">
 		<value condition="Player.Forwarding2x">FF 2x</value>
 		<value condition="Player.Forwarding4x">FF 4x</value>
 		<value condition="Player.Forwarding8x">FF 8x</value>
@@ -71,7 +71,7 @@
 
 
 	<!--fanart selection-->
-	<variable name="fanartType">
+	<variable name="FanartType">
 		<value condition="Window.IsActive(videos)">$INFO[Skin.String(VideoFanartLocation)]</value>
 		<value condition="Window.IsActive(music)">$INFO[Skin.String(MusicFanartLocation)]</value>
 		<value condition="Window.IsActive(programs)">$INFO[Skin.String(VideoFanartLocation)]</value>
@@ -80,7 +80,7 @@
 
 
 	<!--folder titles-->
-	<variable name="listTitle">
+	<variable name="ListTitle">
 		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31012]</value>
 		<value condition="Window.IsActive(music) + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31053]</value>
 		<value condition="Substring(Container.folderpath,plugin)">$INFO[container.foldername]</value>
@@ -94,7 +94,7 @@
 	</variable>
 
 	<!--folder sub-titles-->
-	<variable name="listSubTitle">
+	<variable name="ListSubTitle">
 		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31013]</value>
 		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
 		<value condition="Window.IsActive(music) + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31013]</value>
@@ -102,24 +102,17 @@
 	</variable>
 
 	<!--list view item detail / subheader-->
-	<variable name="itemDetail">
-		<value condition="Container.Content(movies)">$INFO[Listitem.duration,,$LOCALIZE[31018]] • $VAR[itemResolution] $INFO[ListItem.VideoResolution]</value>
+	<variable name="ItemDetail">
+		<value condition="Container.Content(movies)">$INFO[Listitem.duration,,$LOCALIZE[31018]] • $VAR[ItemResolution] $INFO[ListItem.VideoResolution]</value>
 		<value condition="Container.Content(tvshows)">$INFO[ListItem.Property(UnWatchedEpisodes)] $LOCALIZE[16101]</value>
 		<value condition="Container.Content(seasons)">$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[16101]]</value>
 		<value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
 	</variable>
 
 	<!--SD / HD value (thanks 'Black!)-->
-	<variable name="itemResolution">
-		<value condition="IntegerGreaterThan(ListItem.VideoResolution,719)">$LOCALIZE[31127]</value>
+	<variable name="ItemResolution">
+		<value condition="Integer.IsGreater(ListItem.VideoResolution,719)">$LOCALIZE[31127]</value>
 		<value condition="!IsEmpty(ListItem.VideoResolution)">$LOCALIZE[31128]</value>
-	</variable>
-
-
-	<!--grid view width (addons / programs)-->
-	<variable name="gridWidth">
-		<value condition="window.isactive(programs)">24-col</value>
-		<value>22-col</value>
 	</variable>
 
 
@@ -131,7 +124,7 @@
 
 
 	<!--weather icons-->
-	<variable name="listWeatherIcon">
+	<variable name="ListWeatherIcon">
 		<value condition="stringcompare(ListItem.Property(fanartCode),0)"></value>
 		<!--Rain/Lightning-->
 		<value condition="stringcompare(ListItem.Property(fanartCode),1)"></value>
@@ -232,7 +225,7 @@
 
 
 	<!--weather icons-->
-	<variable name="currentWeatherIcon">
+	<variable name="CurrentWeatherIcon">
 		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),0)"></value>
 		<!--Rain/Lightning-->
 		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),1)"></value>
@@ -360,5 +353,12 @@
         <value condition="stringcompare(ListItem.UserRating,9)"></value>
         <value condition="stringcompare(ListItem.UserRating,10)"></value>
         <value></value>
+    </variable>
+
+    <variable name="BackgroundImage">
+        <value condition="Integer.IsLess(System.Time(mm),30)">backgrounds/background01.png</value>
+		<value condition="Integer.IsGreater(System.Time(mm),30)">backgrounds/background02.png</value>
+        <value>special://skin/media/backgrounds/background01.png</value>
+		<value>special://skin/media/backgrounds/background02.png</value>
     </variable>
 </includes>

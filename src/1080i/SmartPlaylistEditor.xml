@@ -48,263 +48,170 @@
 					<textcolor>black</textcolor>
 					<shadowcolor>-</shadowcolor>
 				</control>
-				<!--set playlist type-->
-				<control type="spincontrolex" id="22">
-					<description>Set Playlist type</description>
-					<posx>0</posx>
-					<posy>2-row</posy>
-					<width>840</width>
-					<label>467</label>
-					<onright>9002</onright>
-					<ondown>12</ondown>
-				</control>
-				<control type="label">
-					<description>Playlist Name Label</description>
-					<posx>12</posx>
-					<posy>3-row</posy>
-					<width>840</width>
-					<label>21433</label>
-					<textcolor>selected</textcolor>
-					<font>itemTitle</font>
-				</control>
-				<control type="edit" id="12">
-					<description>Name Button</description>
-					<posx>4-col</posx>
-					<posy>3-row</posy>
-					<width>552</width>
-					<label>-</label>
-					<onup>22</onup>
-					<onright>9002</onright>
-					<ondown>10</ondown>
-				</control>
-				<control type="group">
-					<posy>4-row</posy>
-					<!--add / remove edit rules-->
-					<control type="group">
-						<control type="panel" id="9001">
+
+				<!-- Dialog - Left Part -->
+				<control type="group" id="9001">
+					<!-- Title and Type -->
+					<control type="group" id="90011">
+						<!--set playlist name-->
+						<control type="label">
+							<description>Playlist Name Label</description>
+							<posx>12</posx>
+							<posy>2-row</posy>
+							<width>840</width>
+							<label>21433</label>
+							<textcolor>selected</textcolor>
+							<font>itemTitle</font>
+						</control>
+						<control type="edit" id="12">
+							<description>Name Button</description>
+							<posx>3-col</posx>
+							<posy>2-row</posy>
+							<width>624</width>
+							<label>-</label>
+							<onright>9002</onright>
+							<ondown>22</ondown>
+						</control>
+						<!--set playlist type-->
+						<control type="button" id="22">
+							<description>Set Playlist type</description>
 							<posx>0</posx>
-							<posy>55</posy>
-							<width>264</width>
-							<height>3-row</height>
-							<itemgap>3</itemgap>
-							<onright>10</onright>
+							<posy>3-row</posy>
+							<width>840</width>
+							<label>467</label>
+							<onright>9002</onright>
 							<onup>12</onup>
-							<ondown>16</ondown>
-							<orientation>vertical</orientation>
-							<itemlayout width="6-col" height="1-row">
-								<control type="image">
-									<posx>0</posx>
-									<posy>2</posy>
-									<width>6-col</width>
-									<height>53</height>
-									<aspectratio>stretch</aspectratio>
-									<texture>masks/black.png</texture>
-								</control>
+							<ondown>90012</ondown>
+							<font>itemTitle</font>
+							<textcolor>selected</textcolor>
+							<texturefocus>masks/selected.png</texturefocus>
+							<alttexturefocus>masks/selected.png</alttexturefocus>
+							<textoffsetx>12</textoffsetx>
+						</control>
+					</control>
+
+					<!-- Rules -->
+					<control type="group" id="90012">
+						<posy>4-row</posy>
+						<control type="image">
+							<posx>0</posx>
+							<posy>20</posy>
+							<width>840</width>
+							<height>4-row</height>
+							<aspectratio>stretch</aspectratio>
+							<texture>masks/inactive.png</texture>
+							<colordiffuse>77FFFFFF</colordiffuse>
+						</control>
+						<!--list of rules-->
+						<control type="panel" id="10">
+							<description>Rules List Control</description>
+							<posx>0</posx>
+							<posy>20</posy>
+							<width>840</width>
+							<height>4-row</height>
+							<onup>90011</onup>
+							<onright>9002</onright>
+							<ondown>90013</ondown>
+							<itemlayout width="8-col" height="1-row">
 								<control type="label">
-									<posx>24</posx>
-									<posy>0</posy>
-									<width>1-col</width>
-									<font>symbol</font>
+									<posx>12</posx>
+									<posy>-1</posy>
+									<width>840</width>
+									<height>1-row</height>
+									<font>itemTitle</font>
 									<textcolor>selected</textcolor>
-									<label>$INFO[ListItem.label2]</label>
-									<shadowcolor>-</shadowcolor>
-								</control>
-								<control type="label">
-									<posx>1-col</posx>
-									<posy>2</posy>
-									<width>6-col</width>
-									<font>menuTitle</font>
-									<textcolor>selected</textcolor>
-									<label>$INFO[ListItem.label]</label>
+									<selectedcolor>black</selectedcolor>
+									<info>ListItem.Label</info>
 									<shadowcolor>-</shadowcolor>
 								</control>
 							</itemlayout>
-							<focusedlayout width="6-col" height="1-row">
+							<focusedlayout width="8-col" height="1-row">
 								<control type="image">
 									<posx>0</posx>
-									<posy>2</posy>
-									<width>6-col</width>
+									<posy>0</posy>
+									<width>840</width>
 									<height>53</height>
 									<aspectratio>stretch</aspectratio>
 									<texture>masks/selected.png</texture>
+									<bordersize>0</bordersize>
+									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
 								<control type="label">
-									<posx>24</posx>
-									<posy>0</posy>
-									<width>1-col</width>
-									<font>symbol</font>
+									<posx>12</posx>
+									<posy>-1</posy>
+									<width>840</width>
+									<height>1-row</height>
+									<font>itemTitle</font>
 									<textcolor>black</textcolor>
-									<label>$INFO[ListItem.label2]</label>
-									<shadowcolor>-</shadowcolor>
-								</control>
-								<control type="label">
-									<posx>1-col</posx>
-									<posy>2</posy>
-									<width>6-col</width>
-									<font>menuTitle</font>
-									<textcolor>black</textcolor>
-									<label>$INFO[ListItem.label]</label>
+									<selectedcolor>black</selectedcolor>
+									<info>ListItem.Label</info>
 									<shadowcolor>-</shadowcolor>
 								</control>
 							</focusedlayout>
-							<content>
-								<item id="1">
-									<description>Add Rule</description>
-									<label>15019</label>
-									<label2></label2>
-									<thumb>-</thumb>
-									<onclick>SendClick(129,13)</onclick>
-								</item>
-								<item id="2">
-									<description>Remove Rule</description>
-									<label>1210</label>
-									<label2></label2>
-									<thumb>-</thumb>
-									<onclick>SendClick(129,14)</onclick>
-								</item>
-								<item id="3">
-									<description>Edit Button</description>
-									<label>21435</label>
-									<label2></label2>
-									<thumb>-</thumb>
-									<onclick>SendClick(129,15)</onclick>
-								</item>
-							</content>
 						</control>
 					</control>
-					<control type="panel" id="10">
-						<description>Rules List Control</description>
-						<posx>4-col</posx>
-						<posy>1-row</posy>
-						<width>552</width>
-						<height>4-row</height>
-						<onup>12</onup>
-						<onleft>9001</onleft>
-						<ondown>16</ondown>
-						<itemlayout width="8-col" height="1-row">
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>8-col</width>
-								<height>53</height>
-								<aspectratio>stretch</aspectratio>
-								<texture>masks/black.png</texture>
-								<bordersize>0</bordersize>
-								<colordiffuse>ffFFFFFF</colordiffuse>
-							</control>
-							<control type="label">
-								<posx>12</posx>
-								<posy>-1</posy>
-								<width>8-col</width>
-								<height>1-row</height>
-								<font>itemTitle</font>
-								<textcolor>selected</textcolor>
-								<selectedcolor>black</selectedcolor>
-								<info>ListItem.Label</info>
-								<shadowcolor>-</shadowcolor>
-							</control>
-						</itemlayout>
-						<focusedlayout width="8-col" height="1-row">
-							<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>8-col</width>
-								<height>53</height>
-								<aspectratio>stretch</aspectratio>
-								<texture>masks/selected.png</texture>
-								<bordersize>0</bordersize>
-								<colordiffuse>ffFFFFFF</colordiffuse>
-							</control>
-							<control type="label">
-								<posx>12</posx>
-								<posy>-1</posy>
-								<width>8-col</width>
-								<height>1-row</height>
-								<font>itemTitle</font>
-								<textcolor>black</textcolor>
-								<selectedcolor>black</selectedcolor>
-								<info>ListItem.Label</info>
-								<shadowcolor>-</shadowcolor>
-							</control>
-						</focusedlayout>
+
+					<!-- Conditions -->
+					<control type="group" id="90013">
+						<control type="button" id="16">
+							<posx>0</posx>
+							<posy>9-row</posy>
+							<width>840</width>
+							<label>21424</label>
+							<onright>9002</onright>
+							<onup>90012</onup>
+							<ondown>17</ondown>
+							<font>itemTitle</font>
+							<textcolor>selected</textcolor>
+							<texturefocus>masks/selected.png</texturefocus>
+							<alttexturefocus>masks/selected.png</alttexturefocus>
+							<textoffsetx>12</textoffsetx>
+						</control>
+						<control type="button" id="17">
+							<posx>0</posx>
+							<posy>10-row</posy>
+							<width>840</width>
+							<label>21427</label>
+							<onright>9002</onright>
+							<onup>16</onup>
+							<ondown>18</ondown>
+							<font>itemTitle</font>
+							<textcolor>selected</textcolor>
+							<texturefocus>masks/selected.png</texturefocus>
+							<alttexturefocus>masks/selected.png</alttexturefocus>
+							<textoffsetx>12</textoffsetx>
+						</control>
+						<control type="button" id="18">
+							<posx>0</posx>
+							<posy>11-row</posy>
+							<width>840</width>
+							<label>21429</label>
+							<onright>9002</onright>
+							<onup>17</onup>
+							<ondown>19</ondown>
+							<font>itemTitle</font>
+							<textcolor>selected</textcolor>
+							<texturefocus>masks/selected.png</texturefocus>
+							<alttexturefocus>masks/selected.png</alttexturefocus>
+							<textoffsetx>12</textoffsetx>
+						</control>
+						<control type="button" id="19">
+							<posx>0</posx>
+							<posy>12-row</posy>
+							<width>840</width>
+							<label>31044</label>
+							<onright>9002</onright>
+							<onup>18</onup>
+							<font>itemTitle</font>
+							<textcolor>selected</textcolor>
+							<texturefocus>masks/selected.png</texturefocus>
+							<alttexturefocus>masks/selected.png</alttexturefocus>
+							<textoffsetx>12</textoffsetx>
+						</control>
 					</control>
 				</control>
-				<control type="spincontrolex" id="16">
-					<posx>0</posx>
-					<posy>9-row</posy>
-					<width>840</width>
-					<label>21424</label>
-					<onright>9002</onright>
-					<onup>10</onup>
-					<ondown>17</ondown>
-				</control>
-				<control type="spincontrolex" id="17">
-					<posx>0</posx>
-					<posy>10-row</posy>
-					<width>840</width>
-					<label>21427</label>
-					<onright>9002</onright>
-					<onup>16</onup>
-					<ondown>18</ondown>
-				</control>
-				<control type="spincontrolex" id="18">
-					<posx>0</posx>
-					<posy>11-row</posy>
-					<width>840</width>
-					<label>21429</label>
-					<onright>9002</onright>
-					<onup>17</onup>
-					<ondown>19</ondown>
-				</control>
-				<control type="label">
-					<posx>12</posx>
-					<posy>12-row</posy>
-					<width>8-col</width>
-					<height>1-row</height>
-					<font>itemTitle</font>
-					<textcolor>selected</textcolor>
-					<label>31044</label>
-					<shadowcolor>-</shadowcolor>
-				</control>
-				<control type="togglebutton" id="19">
-					<posx>0</posx>
-					<posy>12-row</posy>
-					<width>840</width>
-					<label>21431</label>
-					<altlabel>21430</altlabel>
-					<textcolor>selected</textcolor>
-					<texturefocus>masks/selected.png</texturefocus>
-					<alttexturefocus>masks/selected.png</alttexturefocus>
-					<align>right</align>
-					<textoffsetx>12</textoffsetx>
-					<onright>9002</onright>
-					<onup>18</onup>
-				</control>
-				<!--bit of bloat... Handles togglebutton focus-->
-				<control type="label">
-					<visible>control.hasfocus(19)</visible>
-					<posx>12</posx>
-					<posy>12-row</posy>
-					<width>8-col</width>
-					<height>1-row</height>
-					<font>itemTitle</font>
-					<textcolor>black</textcolor>
-					<label>31044</label>
-					<shadowcolor>-</shadowcolor>
-				</control>
-				<control type="label">
-					<visible>control.hasfocus(19)</visible>
-					<posx>828</posx>
-					<posy>12-row</posy>
-					<width>840</width>
-					<align>right</align>
-					<height>1-row</height>
-					<font>itemTitle</font>
-					<textcolor>black</textcolor>
-					<label>$INFO[control.getlabel(19)]</label>
-					<shadowcolor>-</shadowcolor>
-				</control>
-				<!--OK / Cancel-->
+
+				<!-- Dialog - Right Part = OK / Cancel buttons -->
 				<control type="panel" id="9002">
 					<posx>12-col</posx>
 					<posy>2-row</posy>
@@ -312,7 +219,7 @@
 					<height>5-row</height>
 					<itemgap>3</itemgap>
 					<orientation>vertical</orientation>
-					<onleft>22</onleft>
+					<onleft>9001</onleft>
 					<itemlayout width="4-col" height="1-row">
 						<control type="image">
 							<posx>0</posx>
@@ -387,6 +294,7 @@
 					</content>
 				</control>
 			</control>
+
 			<!--buttons-->
 			<control type="group">
 				<visible>false</visible>

@@ -629,7 +629,7 @@
 						<height>24</height>
 						<textcolor>unselected</textcolor>
 						<shadowcolor>-</shadowcolor>
-						<label>$VAR[itemDetail]</label>
+						<label>$VAR[ItemDetail]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="12-col" height="1-row">
@@ -663,7 +663,7 @@
 						<textcolor>black</textcolor>
 						<selectedcolor>black</selectedcolor>
 						<shadowcolor>-</shadowcolor>
-						<label>$VAR[itemDetail]</label>
+						<label>$VAR[ItemDetail]</label>
 					</control>
 				</focusedlayout>
 			</control>

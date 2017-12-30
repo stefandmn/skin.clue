@@ -115,7 +115,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>selected</textcolor>
-					<label>[B]$VAR[currentWeatherIcon][/B]</label>
+					<label>[B]$VAR[CurrentWeatherIcon][/B]</label>
 				</control>
 				<!-- Map Alerts -->
 				<control type="group">
@@ -314,7 +314,7 @@
 						<font>symbolWeather</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>[B]$VAR[listWeatherIcon][/B]</label>
+						<label>[B]$VAR[ListWeatherIcon][/B]</label>
 						<textcolor>white</textcolor>
 					</control>
 					<control type="label">
@@ -383,7 +383,7 @@
 						<font>symbolWeather</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>[B]$VAR[listWeatherIcon][/B]</label>
+						<label>[B]$VAR[ListWeatherIcon][/B]</label>
 						<textcolor>white</textcolor>
 					</control>
 					<control type="label">
@@ -553,7 +553,7 @@
 						<font>symbolWeather</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>[B]$VAR[listWeatherIcon][/B]</label>
+						<label>[B]$VAR[ListWeatherIcon][/B]</label>
 						<textcolor>white</textcolor>
 					</control>
 					<control type="label">
@@ -612,7 +612,7 @@
 						<font>symbolWeather</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<label>[B]$VAR[listWeatherIcon][/B]</label>
+						<label>[B]$VAR[ListWeatherIcon][/B]</label>
 						<textcolor>white</textcolor>
 					</control>
 					<control type="label">
@@ -742,7 +742,7 @@
 						<align>center</align>
 						<font>symbolVeryLargeWeather</font>
 						<textcolor>white</textcolor>
-						<label>$VAR[listWeatherIcon]</label>
+						<label>$VAR[ListWeatherIcon]</label>
 					</control>
 					<control type="label">
 						<posx>0</posx>
@@ -783,7 +783,7 @@
 						<align>center</align>
 						<font>symbolVeryLargeWeather</font>
 						<textcolor>selected</textcolor>
-						<label>$VAR[listWeatherIcon]</label>
+						<label>$VAR[ListWeatherIcon]</label>
 					</control>
 					<control type="label">
 						<posx>0</posx>

@@ -113,7 +113,7 @@
 					<item id="2">
 						<description>System</description>
 						<label>14209</label>
-						<label2>$INFO[System.FriendlyName][CR][CR]$INFO[System.KernelVersion]</label2>
+						<label2>$INFO[System.FriendlyName][CR][CR]$INFO[System.OSVersionInfo]</label2>
 						<property name="itemIcon">&gt;</property>
 						<thumb>-</thumb>
 						<onclick>noop</onclick>

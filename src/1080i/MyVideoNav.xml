@@ -318,7 +318,7 @@
 						<posy>0</posy>
 						<width>14-col</width>
 						<font>pageTitle</font>
-						<label>$VAR[listTitle]</label>
+						<label>$VAR[ListTitle]</label>
 						<textcolor>selected</textcolor>
 					</control>
 					<!--source subtitle-->
@@ -327,7 +327,7 @@
 						<posy>45</posy>
 						<width>auto</width>
 						<font>regular</font>
-						<label>$VAR[listSubTitle]</label>
+						<label>$VAR[ListSubTitle]</label>
 						<textcolor>selected</textcolor>
 					</control>
 				</control>
@@ -754,7 +754,7 @@
 									<height>24</height>
 									<textcolor>unselected</textcolor>
 									<shadowcolor>-</shadowcolor>
-									<label>$VAR[itemDetail]</label>
+									<label>$VAR[ItemDetail]</label>
 								</control>
 								<!--new episodes available flag (tvshows only)-->
 								<control type="label">
@@ -808,7 +808,7 @@
 									<height>24</height>
 									<textcolor>black</textcolor>
 									<shadowcolor>-</shadowcolor>
-									<label>$VAR[itemDetail]</label>
+									<label>$VAR[ItemDetail]</label>
 								</control>
 								<!--new episodes available flag (tvshows only)-->
 								<control type="label">

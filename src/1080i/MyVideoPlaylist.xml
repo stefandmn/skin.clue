@@ -151,7 +151,7 @@
 										<height>24</height>
 										<textcolor>unselected</textcolor>
 										<shadowcolor>-</shadowcolor>
-										<label>$VAR[itemDetail]</label>
+										<label>$VAR[ItemDetail]</label>
 									</control>
 									<!--new episodes available flag (tvshows only)-->
 									<control type="label">
@@ -205,7 +205,7 @@
 										<height>24</height>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
-										<label>$VAR[itemDetail]</label>
+										<label>$VAR[ItemDetail]</label>
 									</control>
 									<!--new episodes available flag (tvshows only)-->
 									<control type="label">

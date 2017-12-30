@@ -134,7 +134,7 @@
 				<align>center</align>
 				<font>veryLarge</font>
 				<textcolor>44ffffff</textcolor>
-				<label>$VAR[seekSpeed]</label>
+				<label>$VAR[SeekSpeed]</label>
 				<shadowcolor>-</shadowcolor>
 			</control>
 		</control>
