@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="false">7400</defaultcontrol>
+	<defaultcontrol always="false">511</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="Skin.hasSetting(StopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
-	<onload condition="window.previous(0)">SetFocus(7400)</onload>
+	<onload condition="window.previous(0)">SetFocus(511)</onload>
+	<onload condition="SubString(skin.string(showRecentVideoItems),true)">SetFocus(612)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>
 		<include>globalBackground</include>
 
 		<!-- Page container group -->
-		<control type="group">
+		<control type="group" id="500">
 			<!--window fader-->
 			<animation type="conditional" condition="window.next(0) | window.next(1) | player.hasvideo">
 				<effect type="fade" start="100" end="0" time="300"/>
@@ -22,315 +23,65 @@
 			<include>dateTime</include>
 
 
-			<!--Content provider-->
-			<control type="group">
+			<!--Content Provider-->
+			<control type="group" id="501">
 				<posx>0</posx>
 				<posy>0</posy>
 
-
-				<!-- Main menu -->
-				<control type="group">
+				<!--Menus-->
+				<control type="group" id="510">
 					<posx>96</posx>
 					<posy>50</posy>
 
-					<!-- Menu Item -->
-					<control type="grouplist" id="7400">
-						<posx>-50</posx>
-						<posy>180</posy>
-						<onleft>62</onleft>
-						<onright>7000</onright>
-						<onup>1111</onup>
-						<ondown>62</ondown>
-						<control type="button" id="401">
-							<description>Latest items</description>
-							<visible>Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)</visible>
-							<height>40</height>
-							<width>236</width>
-							<font>menuTitle</font>
-							<textcolor>unselected</textcolor>
-							<focusedcolor>selected</focusedcolor>
-							<texturefocus>masks/selected.png</texturefocus>
-							<textoffsetx>12</textoffsetx>
-							<label>31013</label>
-							<onclick>Skin.SetString(showRecentVideoItems,true)</onclick>
-						</control>
-						<control type="button" id="402">
-							<description>Video library</description>
-							<visible>Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)</visible>
-							<height>40</height>
-							<width>236</width>
-							<font>menuTitle</font>
-							<textcolor>unselected</textcolor>
-							<focusedcolor>selected</focusedcolor>
-							<texturefocus>masks/selected.png</texturefocus>
-							<textoffsetx>12</textoffsetx>
-							<label>31059</label>
-							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-							<onclick condition="!Window.IsActive(videolibrary)">ReplaceWindow(videolibrary)</onclick>
-							<onclick>Control.SetFocus(50)</onclick>
-						</control>
-						<control type="button" id="403">
-							<description>customVideoAddon1</description>
-							<visible>!isempty(Skin.String(customVideoAddon1))</visible>
-							<height>40</height>
-							<width>236</width>
-							<font>menuTitle</font>
-							<textcolor>white</textcolor>
-							<focusedcolor>selected</focusedcolor>
-							<texturefocus>masks/selected.png</texturefocus>
-							<textoffsetx>12</textoffsetx>
-							<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon1))]</label>
-							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-							<onclick>RunAddon($INFO[Skin.String(customVideoAddon1)])</onclick>
-							<onclick>Control.SetFocus(50)</onclick>
-						</control>
-						<control type="button" id="404">
-							<description>customVideoAddon2</description>
-							<visible>!isempty(Skin.String(customVideoAddon2))</visible>
-							<height>40</height>
-							<width>236</width>
-							<font>menuTitle</font>
-							<textcolor>white</textcolor>
-							<focusedcolor>selected</focusedcolor>
-							<texturefocus>masks/selected.png</texturefocus>
-							<textoffsetx>12</textoffsetx>
-							<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon2))]</label>
-							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-							<onclick>RunAddon($INFO[Skin.String(customVideoAddon2)])</onclick>
-							<onclick>Control.SetFocus(50)</onclick>
-						</control>
-						<control type="button" id="405">
-							<description>customVideoAddon3</description>
-							<visible>!isempty(Skin.String(customVideoAddon3))</visible>
-							<height>40</height>
-							<width>236</width>
-							<font>menuTitle</font>
-							<textcolor>white</textcolor>
-							<focusedcolor>selected</focusedcolor>
-							<texturefocus>masks/selected.png</texturefocus>
-							<textoffsetx>12</textoffsetx>
-							<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon3))]</label>
-							<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-							<onclick>RunAddon($INFO[Skin.String(customVideoAddon3)])</onclick>
-							<onclick>Control.SetFocus(50)</onclick>
-						</control>
-						<control type="button" id="406">
-							<description>Favorites</description>
-							<height>40</height>
-							<width>236</width>
-							<font>menuTitle</font>
-							<textcolor>unselected</textcolor>
-							<focusedcolor>selected</focusedcolor>
-							<texturefocus>masks/selected.png</texturefocus>
-							<textoffsetx>12</textoffsetx>
-							<label>1036</label>
-							<onclick>ActivateWindow(favourites,return)</onclick>
-						</control>
-					</control>
+					<!-- Left Menu: Items-->
+					<include content="VideoMenuItems">
+						<param name="id" value="511"/>
+						<param name="right" value="530"/>
+						<param name="down" value="512"/>
+						<param name="library" value="50"/>
+						<param name="latest" value="630"/>
+						<param name="listing" value="532"/>
+					</include>
 
-					<!-- Menu Options -->
+					<!-- Left Menu: Options -->
+					<include content="VideoMenuOptions">
+						<param name="id" value="512"/>
+						<param name="up" value="511"/>
+						<param name="right" value="530"/>
+					</include>
+				</control>
+
+
+				<!--Folder Titles-->
+				<control type="group" id="520">
 					<control type="group">
-						<posx>-50</posx>
-						<posy>440</posy>
+						<posx>312</posx>
+						<posy>50</posy>
+						<animation type="Conditional" condition="!IntegerGreaterThan(container.numitems,0)">
+							<effect type="fade" start="100" end="0" time="300"/>
+						</animation>
+						<animation type="Conditional" condition="IntegerGreaterThan(container.numitems,0)">
+							<effect type="fade" start="0" end="100" time="300"/>
+						</animation>
+						<!--source title-->
 						<control type="label">
-							<posx>-10</posx>
-							<posy>45</posy>
-							<width>24-col</width>
-							<font>menuTitle</font>
-							<label>$LOCALIZE[33063]</label>
-							<textcolor>selected</textcolor>
-							<shadowcolor>-</shadowcolor>
-						</control>
-						<!--menu items-->
-						<control type="grouplist" id="62">
 							<posx>0</posx>
-							<posy>90</posy>
-							<width>4-col</width>
-							<height>12-row</height>
-							<itemgap>0</itemgap>
-							<onleft>7400</onleft>
-							<onright>7000</onright>
-							<onup>7400</onup>
-							<ondown>62</ondown>
-							<control type="button" id="411">
-								<description>Now Playing</description>
-								<visible>Player.HasVideo</visible>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<textoffsetx>12</textoffsetx>
-								<label>31136</label>
-								<onclick>right</onclick>
-								<onclick>action(fullscreen)</onclick>
-							</control>
-							<control type="button" id="412">
-								<description>Search (videos)</description>
-								<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + System.HasAddon(plugin.search)</visible>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<textoffsetx>12</textoffsetx>
-								<label>137</label>
-								<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-								<onclick>RunScript(plugin.search,movies=true&amp;actors=true&amp;tvshows=true&amp;episodes=true&amp;musicvideos=true)</onclick>
-								<onclick>right</onclick>
-							</control>
-							<control type="button" id="8">
-								<description>Search (videos)</description>
-								<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + !System.HasAddon(plugin.search)</visible>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<textoffsetx>12</textoffsetx>
-								<label>137</label>
-								<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-							</control>
-							<control type="button" id="413">
-								<description>Files menu (video)</description>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<textoffsetx>12</textoffsetx>
-								<label>31008</label>
-								<onclick>ActivateWindow(Videos,sources://video/,return)</onclick>
-								<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-								<onclick>Control.SetFocus(50)</onclick>
-							</control>
-							<control type="button" id="3">
-								<description>Sort by</description>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>selected</textcolor>
-								<focusedcolor>black</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<textoffsetx>12</textoffsetx>
-								<label>103</label>
-							</control>
-							<control type="togglebutton" id="4">
-								<description>Sort direction</description>
-								<label>31109</label>
-								<altlabel>31110</altlabel>
-								<align>left</align>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>selected</textcolor>
-								<focusedcolor>black</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<alttexturefocus>masks/selected.png</alttexturefocus>
-								<textoffsetx>12</textoffsetx>
-							</control>
-							<control type="button" id="414">
-								<description>Library update</description>
-								<visible>Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)</visible>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<textoffsetx>12</textoffsetx>
-								<label>653</label>
-								<onclick>UpdateLibrary(video)</onclick>
-							</control>
-							<control type="radiobutton" id="14">
-								<description>Watched Toggle</description>
-								<label>20367</label>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<textoffsetx>12</textoffsetx>
-								<texturefocus>masks/selected.png</texturefocus>
-							</control>
-							<control type="radiobutton" id="415">
-								<description>Filter</description>
-								<visible>Container.CanFilterAdvanced</visible>
-								<label>587</label>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textoffsetx>12</textoffsetx>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<onclick>right</onclick>
-								<onclick>Filter</onclick>
-							</control>
-							<control type="radiobutton" id="11">
-								<description>Unlock Shares</description>
-								<label>20336</label>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textoffsetx>12</textoffsetx>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<onclick>right</onclick>
-								<onclick>xbmc.mastermode</onclick>
-								<selected>system.ismaster</selected>
-								<visible>system.haslocks</visible>
-							</control>
-							<control type="radiobutton" id="16">
-								<description>Party Mode</description>
-								<label>589</label>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-							</control>
+							<posy>0</posy>
+							<width>14-col</width>
+							<font>pageTitle</font>
+							<label>$VAR[ListTitle]</label>
+							<textcolor>selected</textcolor>
+						</control>
+						<!--source subtitle-->
+						<control type="label">
+							<posx>0</posx>
+							<posy>45</posy>
+							<width>auto</width>
+							<font>regular</font>
+							<label>$VAR[ListSubTitle]</label>
+							<textcolor>selected</textcolor>
 						</control>
 					</control>
-				</control>
-
-
-				<!--Folder titles-->
-				<control type="group">
-					<control type="group">
-					<posx>312</posx>
-					<posy>50</posy>
-					<animation type="Conditional" condition="!IntegerGreaterThan(container.numitems,0)">
-						<effect type="fade" start="100" end="0" time="300"/>
-					</animation>
-					<animation type="Conditional" condition="IntegerGreaterThan(container.numitems,0)">
-						<effect type="fade" start="0" end="100" time="300"/>
-					</animation>
-					<!--source title-->
-					<control type="label">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>14-col</width>
-						<font>pageTitle</font>
-						<label>$VAR[ListTitle]</label>
-						<textcolor>selected</textcolor>
-					</control>
-					<!--source subtitle-->
-					<control type="label">
-						<posx>0</posx>
-						<posy>45</posy>
-						<width>auto</width>
-						<font>regular</font>
-						<label>$VAR[ListSubTitle]</label>
-						<textcolor>selected</textcolor>
-					</control>
-				</control>
 					<!--tvshow name and season details-->
 					<control type="group">
 						<visible>[container.content(episodes) | container.content(seasons)] + !Substring(Container.folderpath,plugin) + SubString(skin.string(showRecentVideoItems),false)</visible>
@@ -393,463 +144,41 @@
 				</control>
 
 
-				<!--Main content listing-->
-				<control type="group" id="7000">
+				<!--Main Content: Listing-->
+				<control type="group" id="530">
 					<posx>312</posx>
 					<posy>50</posy>
-					<onup>1111</onup>
 
-					<!-- Latest Videos -->
-					<control type="group">
-						<visible>SubString(skin.string(showRecentVideoItems),true)</visible>
-						<posx>0</posx>
-						<posy>3-row</posy>
-						<animation type="windowopen">
-							<include>listSlideIn</include>
-						</animation>
-						<animation type="windowclose">
-							<effect type="fade" start="100" end="0" time="200"/>
-						</animation>
-						<!--no recent items-->
-						<control type="label">
-							<visible>!Library.HasContent(Movies) + !Library.HasContent(TVShows) + !Library.HasContent(MusicVideos)</visible>
-							<posx>1-col</posx>
-							<posy>2-row</posy>
-							<width>21-col</width>
-							<height>8-row</height>
-							<font>veryLarge</font>
-							<align>center</align>
-							<aligny>center</aligny>
-							<wrapmultiline>true</wrapmultiline>
-							<textcolor>22FFFFFF</textcolor>
-							<shadowcolor>-</shadowcolor>
-							<label>31007</label>
-						</control>
-						<!--content (movies, tvshows and music videos)-->
-						<control type="panel" id="7100">
-							<visible>Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)</visible>
-							<posx>-12</posx>
-							<posy>-12</posy>
-							<width>22-col</width>
-							<height>18-row</height>
-							<onleft>7400</onleft>
-							<ondown>7100</ondown>
-							<orientation>vertical</orientation>
-							<animation type="windowopen">
-								<include>listSlideIn</include>
-							</animation>
-							<animation type="windowclose">
-								<effect type="fade" start="100" end="0" time="300"/>
-							</animation>
-							<itemlayout width="380" height="362">
-								<control type="image">
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>363</width>
-									<height>269</height>
-									<aspectratio>scale</aspectratio>
-									<texture fallback="masks/black.png" border="0">$INFO[Listitem.thumb]</texture>
-									<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
-									<bordersize>3</bordersize>
-									<colordiffuse>ffFFFFFF</colordiffuse>
-								</control>
-								<control type="group">
-									<posx>0</posx>
-									<posy>272</posy>
-									<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>363</width>
-										<height>64</height>
-										<aspectratio>stretch</aspectratio>
-										<texture>masks/black.png</texture>
-										<bordersize>0</bordersize>
-										<colordiffuse>77FFFFFF</colordiffuse>
-									</control>
-									<control type="label">
-										<posx>12</posx>
-										<posy>-12</posy>
-										<width>339</width>
-										<font>itemTitleSmallCondensed</font>
-										<textcolor>unselected</textcolor>
-										<label>$INFO[ListItem.Label]</label>
-									</control>
-									<control type="label">
-										<posx>12</posx>
-										<posy>18</posy>
-										<width>339</width>
-										<font>smallMedium</font>
-										<textcolor>unselected</textcolor>
-										<label>$INFO[ListItem.Label2]</label>
-									</control>
-								</control>
-							</itemlayout>
-							<focusedlayout width="380" height="362">
-								<control type="image">
-									<visible>Control.HasFocus(7100)</visible>
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>363</width>
-									<height>269</height>
-									<aspectratio>scale</aspectratio>
-									<texture fallback="masks/black.png" border="0">$INFO[Listitem.thumb]</texture>
-									<bordertexture border="3" colordiffuse="ffFFFFFF">masks/selected.png</bordertexture>
-									<bordersize>3</bordersize>
-									<colordiffuse>ffFFFFFF</colordiffuse>
-								</control>
-								<control type="image">
-									<visible>!Control.HasFocus(7100)</visible>
-									<posx>0</posx>
-									<posy>0</posy>
-									<width>363</width>
-									<height>269</height>
-									<aspectratio>scale</aspectratio>
-									<texture fallback="masks/black.png" border="0">$INFO[Listitem.thumb]</texture>
-									<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
-									<bordersize>3</bordersize>
-									<colordiffuse>ffFFFFFF</colordiffuse>
-								</control>
-								<control type="group">
-									<posx>0</posx>
-									<posy>272</posy>
-									<control type="image">
-										<visible>Control.HasFocus(7100)</visible>
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>363</width>
-										<height>64</height>
-										<aspectratio>stretch</aspectratio>
-										<texture>masks/selected.png</texture>
-										<bordersize>0</bordersize>
-										<colordiffuse>ffFFFFFF</colordiffuse>
-									</control>
-									<control type="image">
-										<visible>!Control.HasFocus(7100)</visible>
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>363</width>
-										<height>64</height>
-										<aspectratio>stretch</aspectratio>
-										<texture>masks/black.png</texture>
-										<bordersize>0</bordersize>
-										<colordiffuse>77FFFFFF</colordiffuse>
-									</control>
-									<control type="label">
-										<visible>Control.HasFocus(7100)</visible>
-										<posx>12</posx>
-										<posy>-12</posy>
-										<width>339</width>
-										<font>itemTitleSmallCondensed</font>
-										<textcolor>black</textcolor>
-										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.Label]</label>
-										<scroll>true</scroll>
-									</control>
-									<control type="label">
-										<visible>Control.HasFocus(7100)</visible>
-										<posx>12</posx>
-										<posy>18</posy>
-										<width>339</width>
-										<font>smallMedium</font>
-										<textcolor>black</textcolor>
-										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.Label2]</label>
-									</control>
-									<control type="label">
-										<visible>!Control.HasFocus(7100)</visible>
-										<posx>12</posx>
-										<posy>-12</posy>
-										<width>339</width>
-										<font>itemTitleSmallCondensed</font>
-										<textcolor>unselected</textcolor>
-										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.Label]</label>
-										<scroll>true</scroll>
-									</control>
-									<control type="label">
-										<visible>!Control.HasFocus(7100)</visible>
-										<posx>12</posx>
-										<posy>18</posy>
-										<width>339</width>
-										<font>smallMedium</font>
-										<textcolor>unselected</textcolor>
-										<shadowcolor>-</shadowcolor>
-										<label>$INFO[ListItem.Label2]</label>
-									</control>
-								</control>
-							</focusedlayout>
-							<content>
-								<item id="1">
-									<label>$INFO[Window(Home).Property(LatestMovie.1.Title)]</label>
-									<label2>$INFO[Window(Home).Property(LatestMovie.1.Year),, •] $INFO[Window(Home).Property(LatestMovie.1.RunningTime),, $LOCALIZE[31018]]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestMovie.1.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestMovie.1.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestMovie.1.Title))</visible>
-								</item>
-								<item id="2">
-									<label>$INFO[Window(Home).Property(LatestMovie.2.Title)]</label>
-									<label2>$INFO[Window(Home).Property(LatestMovie.2.Year),, •] $INFO[Window(Home).Property(LatestMovie.2.RunningTime),, $LOCALIZE[31018]]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestMovie.2.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestMovie.2.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestMovie.2.Title))</visible>
-								</item>
-								<item id="3">
-									<label>$INFO[Window(Home).Property(LatestMovie.3.Title)]</label>
-									<label2>$INFO[Window(Home).Property(LatestMovie.3.Year),, •] $INFO[Window(Home).Property(LatestMovie.3.RunningTime),, $LOCALIZE[31018]]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestMovie.3.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestMovie.3.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestMovie.3.Title))</visible>
-								</item>
-								<item id="4">
-									<label>$INFO[Window(Home).Property(LatestMovie.4.Title)]</label>
-									<label2>$INFO[Window(Home).Property(LatestMovie.4.Year),, •] $INFO[Window(Home).Property(LatestMovie.4.RunningTime),, $LOCALIZE[31018]]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestMovie.4.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestMovie.4.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestMovie.4.Title)) + [!Library.HasContent(MusicVideos) | !Library.HasContent(TVShows)]</visible>
-								</item>
-								<item id="5">
-									<label>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeTitle)]</label>
-									<label2>$INFO[Window(Home).Property(LatestEpisode.1.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.1.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.1.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestEpisode.1.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestEpisode.1.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestEpisode.1.EpisodeTitle))</visible>
-								</item>
-								<item id="6">
-									<label>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeTitle)]</label>
-									<label2>$INFO[Window(Home).Property(LatestEpisode.2.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.2.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.2.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestEpisode.2.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestEpisode.2.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestEpisode.2.EpisodeTitle))</visible>
-								</item>
-								<item id="7">
-									<label>$INFO[Window(Home).Property(LatestEpisode.3.EpisodeTitle)]</label>
-									<label2>$INFO[Window(Home).Property(LatestEpisode.3.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.3.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.3.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestEpisode.3.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestEpisode.3.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestEpisode.3.EpisodeTitle))</visible>
-								</item>
-								<item id="8">
-									<label>$INFO[Window(Home).Property(LatestEpisode.4.EpisodeTitle)]</label>
-									<label2>$INFO[Window(Home).Property(LatestEpisode.4.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.4.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.4.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestEpisode.4.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestEpisode.4.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestEpisode.4.EpisodeTitle)) + [!Library.HasContent(MusicVideos) | !Library.HasContent(Movies)]</visible>
-								</item>
-								<item id="9">
-									<label>$INFO[Window(Home).Property(LatestMusicVideo.1.Title)] - $INFO[Window(Home).Property(Movies.Count)]</label>
-									<label2>$INFO[Window(Home).Property(LatestMusicVideo.1.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.1.Artist),, $LOCALIZE[31018]]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestMusicVideo.1.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestMusicVideo.1.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.1.Title))</visible>
-								</item>
-								<item id="10">
-									<label>$INFO[Window(Home).Property(LatestMusicVideo.2.Title)]</label>
-									<label2>$INFO[Window(Home).Property(LatestMusicVideo.2.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.2.Artist),, $LOCALIZE[31018]]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestMusicVideo.2.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestMusicVideo.2.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.2.Title))</visible>
-								</item>
-								<item id="11">
-									<label>$INFO[Window(Home).Property(LatestMusicVideo.3.Title)]</label>
-									<label2>$INFO[Window(Home).Property(LatestMusicVideo.3.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.3.Artist),, $LOCALIZE[31018]]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestMusicVideo.3.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestMusicVideo.3.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.3.Title)) + [!IntegerGreaterThan(Window(Home).Property(Movies.Count), 2) | !IntegerGreaterThan(Window(Home).Property(Episodes.Count), 2)]</visible>
-								</item>
-								<item id="12">
-									<label>$INFO[Window(Home).Property(LatestMusicVideo.4.Title)]</label>
-									<label2>$INFO[Window(Home).Property(LatestMusicVideo.4.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.4.Artist),, $LOCALIZE[31018]]</label2>
-									<thumb>$INFO[Window(Home).Property(LatestMusicVideo.4.Thumb)]</thumb>
-									<onclick>$INFO[Window(Home).Property(LatestMusicVideo.4.Path)]</onclick>
-									<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.4.Title)) + [!IntegerGreaterThan(Window(Home).Property(Movies.Count), 1) | !IntegerGreaterThan(Window(Home).Property(Episodes.Count), 1)]</visible>
-								</item>
-							</content>
-						</control>
-					</control>
+					<!-- Content: Latest Videos -->
+					<include content="VideoLatestContent">
+						<param name="id" value="531"/>
+						<param name="left" value="510"/>
+					</include>
 
-					<!-- Video List -->
-					<control type="group">
-						<visible>SubString(skin.string(showRecentVideoItems),false)</visible>
-						<posx>0</posx>
-						<posy>3-row</posy>
-						<animation type="windowopen">
-							<include>listSlideIn</include>
-						</animation>
-						<animation type="windowclose">
-							<effect type="fade" start="100" end="0" time="200"/>
-						</animation>
-						<!--focussed item detail-->
-						<control type="group">
-							<visible>!isEmpty(ListItem.Thumb)</visible>
-							<posx>14-col</posx>
-							<posy>0</posy>
-							<!--Show larger thumbnail-->
-							<control type="group">
-								<animation type="windowopen">
-									<effect type="fade" start="0" end="100" time="300" delay="700"/>
-									<effect type="slide" start="3-col" end="0" center="auto" tween="cubic" easing="out" time="400" delay="700"/>
-								</animation>
-								<animation type="windowclose">
-									<effect type="fade" start="100" end="0" time="300" delay="300"/>
-									<effect type="slide" start="0" end="3-col" tween="cubic" easing="out" time="400" delay="300"/>
-								</animation>
-								<animation type="visible">
-									<include>listSlideIn</include>
-								</animation>
-								<control type="group">
-									<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>6-col</width>
-										<height>8-col</height>
-										<aspectratio scalediffuse="false">keep</aspectratio>
-										<texture background="true" fallback="masks/offblack.png" border="0">$VAR[PosterThumb]</texture>
-										<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
-										<bordersize>3</bordersize>
-										<fadetime>200</fadetime>
-									</control>
-								</control>
-							</control>
-						</control>
-						<control type="panel" id="50">
-							<animation type="windowclose">
-								<effect type="fade" start="100" end="0" time="200"/>
-							</animation>
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>13-col</width>
-							<height>12-row</height>
-							<onleft>7400</onleft>
-							<onright>60</onright>
-							<ondown>50</ondown>
-							<onup>50</onup>
-							<pagecontrol>60</pagecontrol>
-							<scrolltime tween="sine" easing="inout">300</scrolltime>
-							<itemlayout width="13-col" height="1-row">
-								<control type="image">
-									<posx>0</posx>
-									<posy>2</posy>
-									<width>13-col</width>
-									<height>53</height>
-									<aspectratio>stretch</aspectratio>
-									<texture border="24,0,24,0">controls/listitem-nf.png</texture>
-									<bordersize>0</bordersize>
-									<colordiffuse>99FFFFFF</colordiffuse>
-								</control>
-								<control type="label">
-									<posx>32</posx>
-									<posy>0</posy>
-									<width>664</width>
-									<font>itemTitle</font>
-									<textcolor>unselected</textcolor>
-									<shadowcolor>-</shadowcolor>
-									<label>$INFO[ListItem.Label]</label>
-								</control>
-								<control type="label">
-									<posx>48r</posx>
-									<posy>17</posy>
-									<width>264</width>
-									<font>smallStrong</font>
-									<align>right</align>
-									<height>24</height>
-									<textcolor>unselected</textcolor>
-									<shadowcolor>-</shadowcolor>
-									<label>$VAR[ItemDetail]</label>
-								</control>
-								<!--new episodes available flag (tvshows only)-->
-								<control type="label">
-									<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
-									<posx>36r</posx>
-									<posy>-2</posy>
-									<width>40</width>
-									<font>symbol</font>
-									<textcolor>unselected</textcolor>
-									<shadowcolor>-</shadowcolor>
-									<label></label>
-								</control>
-								<control type="label">
-									<visible>!isempty(ListItem.playcount)</visible>
-									<posx>36r</posx>
-									<posy>1</posy>
-									<width>40</width>
-									<font>symbol</font>
-									<textcolor>unselected</textcolor>
-									<shadowcolor>-</shadowcolor>
-									<label></label>
-								</control>
-							</itemlayout>
-							<focusedlayout width="13-col" height="1-row">
-								<control type="image">
-									<posx>0</posx>
-									<posy>2</posy>
-									<width>13-col</width>
-									<height>53</height>
-									<aspectratio>stretch</aspectratio>
-									<texture border="24,0,24,0">controls/listitem-fo.png</texture>
-									<bordersize>0</bordersize>
-									<colordiffuse>FFFFFFFF</colordiffuse>
-								</control>
-								<control type="label">
-									<posx>32</posx>
-									<posy>0</posy>
-									<width>664</width>
-									<font>itemTitle</font>
-									<textcolor>black</textcolor>
-									<selectedcolor>black</selectedcolor>
-									<shadowcolor>-</shadowcolor>
-									<label>$INFO[ListItem.Label]</label>
-								</control>
-								<control type="label">
-									<posx>48r</posx>
-									<posy>17</posy>
-									<width>264</width>
-									<font>smallStrong</font>
-									<align>right</align>
-									<height>24</height>
-									<textcolor>black</textcolor>
-									<shadowcolor>-</shadowcolor>
-									<label>$VAR[ItemDetail]</label>
-								</control>
-								<!--new episodes available flag (tvshows only)-->
-								<control type="label">
-									<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
-									<posx>36r</posx>
-									<posy>-2</posy>
-									<width>40</width>
-									<font>symbol</font>
-									<textcolor>black</textcolor>
-									<shadowcolor>-</shadowcolor>
-									<label></label>
-								</control>
-								<control type="label">
-									<visible>!isempty(ListItem.playcount)</visible>
-									<posx>36r</posx>
-									<posy>1</posy>
-									<width>40</width>
-									<font>symbol</font>
-									<textcolor>black</textcolor>
-									<shadowcolor>-</shadowcolor>
-									<label></label>
-								</control>
-							</focusedlayout>
-						</control>
-					</control>
+					<!-- Content: List of General Video List -->
+					<include content="VideoGeneralList">
+						<param name="id" value="532"/>
+						<param name="left" value="510"/>
+						<param name="right" value="60"/>
+					</include>
 				</control>
 
+
 				<!--Page scrollbar-->
-				<control type="group" id="7300">
+				<control type="group" id="540">
 					<visible>Control.IsVisible(60) + SubString(skin.string(showRecentVideoItems),false)</visible>
-					<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(7300).hasfocus">conditional</animation>
+					<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(540).hasfocus">conditional</animation>
 					<control type="scrollbar" id="60">
 						<posx>84r</posx>
 						<posy>225</posy>
 						<height>672</height>
-						<onleft>7000</onleft>
+						<onleft>530</onleft>
 					</control>
 				</control>
 
+
 				<!--Sort / misc labels (footer)-->
-				<control type="group">
+				<control type="group" id="550">
 					<posx>312</posx>
 					<posy>1007</posy>
 					<include>mediaListFooter</include>

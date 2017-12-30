@@ -71,7 +71,7 @@ msgid "Movies and TVShows"
 msgstr ""
 
 msgctxt "#31013"
-msgid "Latest content"
+msgid "Updates"
 msgstr ""
 
 msgctxt "#31014"
@@ -183,7 +183,7 @@ msgid "shot(s)"
 msgstr ""
 
 msgctxt "#31053"
-msgid "Music Library"
+msgid "Library"
 msgstr ""
 
 msgctxt "#31054"
@@ -196,10 +196,6 @@ msgstr ""
 
 msgctxt "#31057"
 msgid "Create Music Playlist"
-msgstr ""
-
-msgctxt "#31059"
-msgid "Video Library"
 msgstr ""
 
 msgctxt "#31061"

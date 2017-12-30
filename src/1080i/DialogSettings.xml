@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol>5</defaultcontrol>
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
 
 	<controls>
 		<!--background-->
@@ -11,7 +12,9 @@
 			<aspectratio>stretch</aspectratio>
 			<colordiffuse>99ffffff</colordiffuse>
 		</control>
-		<control type="group">
+
+		<!-- Window Header -->
+		<control type="group" id="500">
 			<posx>384</posx>
 			<posy>95</posy>
 			<!--animations-->
@@ -34,53 +37,93 @@
 				<colordiffuse>ffffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-			<control type="label" id="1">
+			<control type="label">
+				<description>header label</description>
 				<posx>12</posx>
 				<posy>44</posy>
-				<width>8-col</width>
+				<width>16-col</width>
 				<font>dialogTitle</font>
-				<label>$LOCALIZE[5]</label>
+				<label>31033</label>
 				<textcolor>black</textcolor>
 				<shadowcolor>-</shadowcolor>
 			</control>
+		</control>
+
+		<!--Misc Options-->
+		<control type="group" id="501">
+			<!--animations-->
+			<include>modalDialogInOutVertical</include>
+			<posx>384</posx>
+			<posy>4-row</posy>
 			<control type="grouplist" id="5">
+				<description>Control Area</description>
 				<posx>0</posx>
-				<posy>120</posy>
-				<width>840</width>
-				<height>11-row</height>
-				<onright>9000</onright>
+				<posy>0</posy>
+				<width>12-col</width>
+				<height>18-row</height>
+				<itemgap>0</itemgap>
 				<onup>5</onup>
 				<ondown>5</ondown>
+				<onright>502</onright>
 				<orientation>vertical</orientation>
-				<itemgap>3</itemgap>
-			</control>
-			<control type="button" id="7">
-				<description>Default Button</description>
-				<align>left</align>
-				<height>54</height>
 				<font>itemTitle</font>
 				<textcolor>selected</textcolor>
-				<focusedcolor>black</focusedcolor>
 				<texturefocus>masks/selected.png</texturefocus>
-				<texturenofocus>-</texturenofocus>
+				<alttexturefocus>masks/selected.png</alttexturefocus>
 				<textoffsetx>12</textoffsetx>
 			</control>
-			<control type="radiobutton" id="8">
-				<description>Default RadioButton</description>
-			</control>
-			<control type="spincontrolex" id="9">
-				<description>Default SpinControlex</description>
-			</control>
-			<control type="sliderex" id="13">
-				<description>Default Slider</description>
-			</control>
-			<!--buttons-->
-			<control type="panel" id="9000">
-				<posx>12-col</posx>
-				<posy>120</posy>
+			<control type="button" id="7">
+                <description>Default Button</description>
+				<font>itemTitle</font>
+				<textcolor>selected</textcolor>
+				<texturefocus>masks/selected.png</texturefocus>
+				<alttexturefocus>masks/selected.png</alttexturefocus>
+				<textoffsetx>12</textoffsetx>
+            </control>
+            <control type="radiobutton" id="8">
+                <description>Default RadioButton</description>
+				<font>itemTitle</font>
+				<textcolor>selected</textcolor>
+				<texturefocus>masks/selected.png</texturefocus>
+				<alttexturefocus>masks/selected.png</alttexturefocus>
+				<textoffsetx>12</textoffsetx>
+            </control>
+            <control type="spincontrolex" id="9">
+                <description>Default SpinControlex</description>
+				<font>itemTitle</font>
+				<textcolor>selected</textcolor>
+				<texturefocus>masks/selected.png</texturefocus>
+				<alttexturefocus>masks/selected.png</alttexturefocus>
+				<textoffsetx>12</textoffsetx>
+            </control>
+			<control type="edit" id="12">
+                <width>12-col</width>
+                <font>itemTitle</font>
+                <align>left</align>
+                <textoffsetx>24</textoffsetx>
+            </control>
+            <control type="sliderex" id="13">
+                <description>Default Slider</description>
+            </control>
+            <control type="label" id="14">
+                <description>Default Label</description>
+                <label>-</label>
+                <align>left</align>
+                <aligny>center</aligny>
+                <textoffsetx>24</textoffsetx>
+                <height>2-row</height>
+                <font>itemTitle</font>
+                <textcolor>selected</textcolor>
+                <shadowcolor>-</shadowcolor>
+            </control>
+
+			<!--OK / Cancel-->
+			<control type="panel" id="502">
+				<posx>13-col</posx>
+				<posy>0</posy>
 				<width>4-col</width>
 				<height>5-row</height>
-				<itemgap>3</itemgap>
+				<itemgap>0</itemgap>
 				<orientation>vertical</orientation>
 				<onleft>5</onleft>
 				<itemlayout width="4-col" height="1-row">
@@ -104,7 +147,7 @@
 					<control type="label">
 						<posx>1-col</posx>
 						<posy>2</posy>
-						<width>4-col</width>
+						<width>3-col</width>
 						<font>menuTitle</font>
 						<textcolor>selected</textcolor>
 						<label>$INFO[ListItem.label]</label>
@@ -132,7 +175,7 @@
 					<control type="label">
 						<posx>1-col</posx>
 						<posy>2</posy>
-						<width>4-col</width>
+						<width>3-col</width>
 						<font>menuTitle</font>
 						<textcolor>black</textcolor>
 						<label>$INFO[ListItem.label]</label>
@@ -155,28 +198,27 @@
 						<onclick>SendClick(29)</onclick>
 					</item>
 					<item id="3">
-						<description>Defaults Button</description>
-						<label>409</label>
-						<label2></label2>
-						<thumb>-</thumb>
-						<onclick>SendClick(50)</onclick>
-					</item>
+                        <visible>Control.IsEnabled(30) + !window.isactive(osdvideosettings) + !window.isactive(osdaudiosettings)</visible>
+                        <description>clear / settings</description>
+                        <label>192</label>
+                        <label2></label2>
+                        <thumb>-</thumb>
+                        <onclick>SendClick(30)</onclick>
+                    </item>
 				</content>
 			</control>
 		</control>
-		<!--buttons-->
+		<!--hidden dialog controls-->
 		<control type="group">
 			<visible>false</visible>
-			<control type="button" id="29">
-				<description>Cancel Button</description>
-				<label>222</label>
-			</control>
 			<control type="button" id="28">
-				<description>OK Button</description>
+				<description>Ok</description>
 			</control>
-			<control type="button" id="50">
-				<description>Defaults Button</description>
-				<label>409</label>
+			<control type="button" id="29">
+				<description>Cancel</description>
+			</control>
+			<control type="button" id="30">
+				<description>Clear / Settings</description>
 			</control>
 		</control>
 	</controls>

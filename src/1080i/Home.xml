@@ -10,7 +10,7 @@
 	<controls>
 		<include>globalBackground</include>
 		<include>networkStatus</include>
-		<include>musicOverlay</include>
+		<include>MusicOverlay</include>
 
 		<!-- 1) Date/time and Weather -->
 		<control type="group">

@@ -4,6 +4,7 @@
 	<include file="Includes_variables.xml"/>
 	<include file="Includes_animations.xml"/>
 	<include file="Includes_music.xml"/>
+	<include file="Includes_video.xml"/>
 
 
 	<!--fullscreen coordinates -->
@@ -95,9 +96,7 @@
 			</control>
 			<!--show media fanart in relevant sections-->
 			<control type="group">
-				<visible>[container.content(Movies) | container.content(TVShows) | container.content(Seasons) | container.content(MusicVideos) | [container.content(Episodes) + !Substring(Container.folderpath,iplayer)]] +
-					SubString(skin.string(showRecentVideoItems),false)
-				</visible>
+				<visible>[container.content(Movies) | container.content(TVShows) | container.content(Seasons) | container.content(MusicVideos) | [container.content(Episodes) + !Substring(Container.folderpath,iplayer)]] + SubString(skin.string(showRecentVideoItems),false)</visible>
 				<animation type="visible" reversible="false">
 					<effect type="fade" start="0" end="100" time="500" delay="400"/>
 				</animation>

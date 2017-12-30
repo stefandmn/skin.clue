@@ -3,7 +3,7 @@
 <includes>
 
 	<!-- Music Overlay -->
-	<include name="musicOverlay">
+	<include name="MusicOverlay">
 		<control type="group">
 			<visible>Player.hasAudio + !Window.IsActive(visualisation)</visible>
 			<posx>581r</posx>
@@ -138,28 +138,14 @@
 		</control>
 	</include>
 
-	<!-- Main Menu - Items -->
-	<include name="musicMenuItems">
+	<!-- Left Menu: Items -->
+	<include name="MusicMenuItems">
 		<control type="grouplist" id="$PARAM[id]">
 			<posx>-50</posx>
 			<posy>180</posy>
-			<onleft>$PARAM[down]</onleft>
 			<onright>$PARAM[right]</onright>
 			<ondown>$PARAM[down]</ondown>
-			<control type="button" id="301">
-				<description>Latest items</description>
-				<height>40</height>
-				<width>236</width>
-				<font>menuTitle</font>
-				<textcolor>unselected</textcolor>
-				<focusedcolor>selected</focusedcolor>
-				<texturefocus>masks/selected.png</texturefocus>
-				<textoffsetx>12</textoffsetx>
-				<label>31013</label>
-				<onclick>Skin.SetString(showRecentMusicItems,true)</onclick>
-				<onclick>Control.SetFocus($PARAM[latest])</onclick>
-			</control>
-			<control type="button" id="302">
+			<control type="button" id="611">
 				<description>Music Library</description>
 				<height>40</height>
 				<width>236</width>
@@ -171,9 +157,22 @@
 				<label>31053</label>
 				<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
 				<onclick condition="!Window.IsActive(music)">ReplaceWindow(Music)</onclick>
-				<onclick>Control.SetFocus($PARAM[music])</onclick>
+				<onclick>Control.SetFocus($PARAM[library])</onclick>
 			</control>
-			<control type="button" id="303">
+			<control type="button" id="612">
+				<description>Latest items</description>
+				<height>40</height>
+				<width>236</width>
+				<font>menuTitle</font>
+				<textcolor>unselected</textcolor>
+				<focusedcolor>selected</focusedcolor>
+				<texturefocus>masks/selected.png</texturefocus>
+				<textoffsetx>12</textoffsetx>
+				<label>31013</label>
+				<onclick>Skin.SetString(showRecentMusicItems,true)</onclick>
+				<onclick condition="Library.HasContent(Music)">Control.SetFocus($PARAM[latest])</onclick>
+			</control>
+			<control type="button" id="613">
 				<description>customAudioAddon1</description>
 				<visible>!isempty(Skin.String(customAudioAddon1))</visible>
 				<height>40</height>
@@ -185,11 +184,10 @@
 				<textoffsetx>12</textoffsetx>
 				<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon1))]</label>
 				<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-				<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 				<onclick>RunAddon($INFO[Skin.String(customAudioAddon1)])</onclick>
-				<onclick>Control.SetFocus($PARAM[custom])</onclick>
+				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
-			<control type="button" id="304">
+			<control type="button" id="614">
 				<description>customAudioAddon2</description>
 				<visible>!isempty(Skin.String(customAudioAddon2))</visible>
 				<height>40</height>
@@ -201,11 +199,10 @@
 				<textoffsetx>12</textoffsetx>
 				<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon2))]</label>
 				<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-				<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 				<onclick>RunAddon($INFO[Skin.String(customAudioAddon2)])</onclick>
-				<onclick>Control.SetFocus($PARAM[custom])</onclick>
+				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
-			<control type="button" id="305">
+			<control type="button" id="615">
 				<description>customAudioAddon3</description>
 				<visible>!isempty(Skin.String(customAudioAddon3))</visible>
 				<height>40</height>
@@ -217,11 +214,10 @@
 				<textoffsetx>12</textoffsetx>
 				<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon3))]</label>
 				<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-				<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
 				<onclick>RunAddon($INFO[Skin.String(customAudioAddon3)])</onclick>
-				<onclick>Control.SetFocus($PARAM[custom])</onclick>
+				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
-			<control type="button" id="306">
+			<control type="button" id="616">
 				<description>Favorites</description>
 				<height>40</height>
 				<width>236</width>
@@ -236,11 +232,13 @@
 		</control>
 	</include>
 
-	<!-- Secondary Menu - Options -->
-	<include name="musicMenuOptions">
-		<control type="group">
+	<!-- Left Menu: Options -->
+	<include name="MusicMenuOptions">
+		<control type="group" id="$PARAM[id]">
 			<posx>-50</posx>
 			<posy>440</posy>
+			<onright>$PARAM[right]</onright>
+			<onup>$PARAM[up]</onup>
 			<control type="label">
 				<posx>-10</posx>
 				<posy>45</posy>
@@ -251,16 +249,14 @@
 				<shadowcolor>-</shadowcolor>
 			</control>
 			<!--menu items-->
-			<control type="grouplist" id="$PARAM[id]">
+			<control type="grouplist" id="62">
 				<posx>0</posx>
 				<posy>90</posy>
 				<width>4-col</width>
 				<height>12-row</height>
 				<itemgap>0</itemgap>
-				<onleft>$PARAM[up]</onleft>
 				<onright>$PARAM[right]</onright>
 				<onup>$PARAM[up]</onup>
-				<ondown>$PARAM[id]</ondown>
 				<!--sorting-->
 				<control type="button" id="3">
 					<description>Sort by</description>
@@ -287,6 +283,7 @@
 					<alttexturefocus>masks/selected.png</alttexturefocus>
 					<textoffsetx>12</textoffsetx>
 				</control>
+				<!-- search -->
 				<control type="button" id="8">
 					<description>Search (music)</description>
 					<visible>Library.HasContent(Music) + !System.HasAddon(plugin.search)</visible>
@@ -300,7 +297,7 @@
 					<label>137</label>
 					<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
 				</control>
-				<control type="button" id="313">
+				<control type="button" id="621">
 					<description>Search (music)</description>
 					<visible>Library.HasContent(Music) + System.HasAddon(plugin.search)</visible>
 					<height>40</height>
@@ -315,7 +312,7 @@
 					<onclick>RunScript(plugin.search,artists=true&amp;albums=true&amp;songs=true&amp;musicvideos=true)</onclick>
 					<onclick>right</onclick>
 				</control>
-				<control type="button" id="311">
+				<control type="button" id="622">
 					<description>Now playing</description>
 					<visible>Player.HasAudio</visible>
 					<height>40</height>
@@ -329,7 +326,7 @@
 					<onclick>right</onclick>
 					<onclick>activateWindow(visualisation)</onclick>
 				</control>
-				<control type="button" id="312">
+				<control type="button" id="623">
 					<description>Current playlist</description>
 					<visible>MusicPlayer.Offset(0).Exists</visible>
 					<height>40</height>
@@ -344,7 +341,7 @@
 					<onclick>activateWindow(musicplaylist)</onclick>
 				</control>
 				<!--library update-->
-				<control type="button" id="315">
+				<control type="button" id="624">
 					<description>Library update</description>
 					<visible>Library.HasContent(Music)</visible>
 					<height>40</height>
@@ -382,12 +379,13 @@
 		</control>
 	</include>
 
-	<!-- Latest Music -->
-	<include name="musicLatestContent">
-		<control type="group">
+	<!-- Content: Latest Music -->
+	<include name="MusicLatestContent">
+		<control type="group" id="$PARAM[id]">
 			<visible>SubString(skin.string(showRecentMusicItems),true)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
+			<onleft>$PARAM[left]</onleft>
 			<animation type="conditional" condition="window.Next(0)">
 				<effect type="fade" start="100" end="0" time="300" delay="300"/>
 			</animation>
@@ -410,7 +408,7 @@
 				<label>31007</label>
 			</control>
 			<!--content-->
-			<control type="panel" id="$PARAM[id]">
+			<control type="panel" id="630]">
 				<visible>Library.HasContent(Music)</visible>
 				<posx>-12</posx>
 				<posy>0</posy>
@@ -582,13 +580,15 @@
 		</control>
 	</include>
 
-	<!-- List of General Music Content -->
-	<include name="musicGeneralList">
-		<control type="group">
+	<!-- Content: List of General Music List -->
+	<include name="MusicGeneralList">
+		<control type="group" id="$PARAM[id]">
 			<visible>SubString(skin.string(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
-			<control type="panel" id="$PARAM[id]">
+			<onleft>$PARAM[left]</onleft>
+			<onright>$PARAM[scroll]</onright>
+			<control type="panel" id="51">
 				<visible>!container.content(artists) + !container.content(genres) + !container.content(albums) + !container.content(songs)</visible>
 				<posx>0</posx>
 				<posy>4</posy>
@@ -596,8 +596,6 @@
 				<height>12-row</height>
 				<onleft>$PARAM[left]</onleft>
 				<onright>$PARAM[scroll]</onright>
-				<ondown>$PARAM[id]</ondown>
-				<onup>$PARAM[id]</onup>
 				<pagecontrol>$PARAM[scroll]</pagecontrol>
 				<scrolltime tween="sine" easing="inout">200</scrolltime>
 				<itemlayout width="12-col" height="1-row">
@@ -670,13 +668,15 @@
 		</control>
 	</include>
 
-	<!-- List of Artists or Genres -->
-	<include name="musicArtistGenreList">
-		<control type="group">
+	<!-- Content: List of Artists or Genres -->
+	<include name="MusicArtistGenreList">
+		<control type="group" id="$PARAM[id]">
 			<visible>SubString(skin.string(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
-			<control type="panel" id="$PARAM[id]">
+			<onleft>$PARAM[left]</onleft>
+			<onright>$PARAM[scroll]</onright>
+			<control type="panel" id="53">
 				<visible>container.content(artists) | container.content(genres)</visible>
 				<posx>0</posx>
 				<posy>4</posy>
@@ -684,8 +684,6 @@
 				<height>12-row</height>
 				<onleft>$PARAM[left]</onleft>
 				<onright>$PARAM[scroll]</onright>
-				<ondown>$PARAM[id]</ondown>
-				<onup>$PARAM[id]</onup>
 				<pagecontrol>$PARAM[scroll]</pagecontrol>
 				<scrolltime tween="sine" easing="inout">200</scrolltime>
 				<itemlayout width="7-col" height="1-row">
@@ -734,13 +732,15 @@
 		</control>
 	</include>
 
-	<!-- Grid View of General Music Content -->
-	<include name="musicGridView">
-		<control type="group">
+	<!-- Content: Grid View of General Music Content -->
+	<include name="MusicGridView">
+		<control type="group" id="$PARAM[id]">
 			<visible>SubString(skin.string(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
-			<control type="panel" id="$PARAM[id]">
+			<onleft>$PARAM[left]</onleft>
+			<onright>$PARAM[scroll]</onright>
+			<control type="panel" id="55">
 				<visible>container.content(albums) + !container.content(songs)</visible>
 				<posx>-12</posx>
 				<posy>4</posy>
@@ -748,8 +748,6 @@
 				<height>706</height>
 				<onleft>$PARAM[left]</onleft>
 				<onright>$PARAM[scroll]</onright>
-				<ondown>$PARAM[id]</ondown>
-				<onup>$PARAM[id]</onup>
 				<pagecontrol>$PARAM[scroll]</pagecontrol>
 				<preloaditems>2</preloaditems>
 				<scrolltime tween="sine" easing="inout">200</scrolltime>
@@ -865,14 +863,16 @@
 		</control>
 	</include>
 
-	<!-- List of Songs -->
-	<include name="musicSongList">
+	<!-- Content: List of Songs -->
+	<include name="MusicSongList">
 		<control type="group">
 			<visible>SubString(skin.string(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
-			<control type="group">
+			<control type="group" id="$PARAM[id]">
 				<visible>container.content(songs) + !container.content(albums)</visible>
+				<onleft>$PARAM[left]</onleft>
+				<onright>$PARAM[scroll]</onright>
 				<animation type="visible">
 					<include>listSlideIn</include>
 				</animation>
@@ -916,6 +916,8 @@
 				</control>
 			</control>
 			<control type="group">
+				<onleft>$PARAM[left]</onleft>
+				<onright>$PARAM[scroll]</onright>
 				<visible>container.content(songs)</visible>
 				<animation type="visible">
 					<effect type="fade" start="0" end="100" time="300" delay="500"/>
@@ -925,15 +927,13 @@
 					<effect type="fade" start="100" end="0" time="200"/>
 				</animation>
 				<!--song listing-->
-				<control type="panel" id="$PARAM[id]">
+				<control type="panel" id="56">
 					<posx>6-col</posx>
 					<posy>4</posy>
 					<width>14-col</width>
 					<height>12-row</height>
 					<onleft>$PARAM[left]</onleft>
 					<onright>$PARAM[scroll]</onright>
-					<ondown>$PARAM[id]</ondown>
-					<onup>$PARAM[id]</onup>
 					<pagecontrol>$PARAM[scroll]</pagecontrol>
 					<scrolltime tween="sine" easing="inout">200</scrolltime>
 					<itemlayout width="14-col" height="1-row">

@@ -2,8 +2,8 @@
 <window>
 	<defaultcontrol always="true">10</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload>Skin.SetBool(showRecentVideoItems)</onload>
-	<onload>Skin.SetBool(showRecentMusicItems)</onload>
+	<onload condition="Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)">Skin.SetString(showRecentVideoItems,true)</onload>
+	<onload condition="Library.HasContent(Music)">Skin.SetString(showRecentMusicItems,true)</onload>
 	<onload condition="!Skin.HasSetting(HomeSlideshow)">Skin.SetString(HomeSlideshow,true)</onload>
 	<onload condition="!Skin.HasSetting(MusicSlideshow)">Skin.SetString(MusicSlideshow,true)</onload>
 	<coordinates>
