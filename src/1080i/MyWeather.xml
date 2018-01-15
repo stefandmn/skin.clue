@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">2</defaultcontrol>
+	<defaultcontrol always="true">501</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 
 	<controls>
@@ -34,20 +34,30 @@
 				<colordiffuse>ffffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-			<!--Location selector-->
+			<!--Hidden controls-->
+			<control type="button" id="2">
+				<description>Refresh</description>
+				<visible>false</visible>
+			</control>
 			<control type="spincontrolex" id="3">
 				<description>Location Select</description>
+				<visible>false</visible>
+			</control>
+			<!--GoTo Next Location-->
+			<control type="button" id="501">
+				<description>GoTo Next Location</description>
 				<posx>12</posx>
 				<posy>44</posy>
-				<label>-</label>
-				<label2>-</label2>
-				<font>pageTitle</font>
-				<textcolor>white</textcolor>
+				<label></label>
+				<font>symbolLarger</font>
+				<textcolor>black</textcolor>
+				<focusedcolor>selected</focusedcolor>
 				<width>1-col</width>
-				<align>right</align>
+				<align>center</align>
 				<onup>9000</onup>
 				<ondown>60</ondown>
-				<onright>2</onright>
+				<onright>Control.SetFocus(9301)</onright>
+				<onclick>Weather.LocationNext</onclick>
 			</control>
 			<!--Location title-->
 			<control type="label">
@@ -70,26 +80,7 @@
 				<colordiffuse>88ffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-			<!--Refresh button-->
-			<control type="button" id="2">
-				<description>Refresh</description>
-				<posx>1548</posx>
-				<posy>44</posy>
-				<label>184</label>
-				<width>200</width>
-				<align>center</align>
-				<font>pageTitle</font>
-				<textcolor>black</textcolor>
-				<focusedcolor>selected</focusedcolor>
-				<texturefocus>-</texturefocus>
-				<animation effect="fade" start="100" end="25" condition="!Control.HasFocus(2)">Conditional</animation>
-				<onup>9000</onup>
-				<ondown>60</ondown>
-				<onleft>3</onleft>
-				<onright>Control.SetFocus(9301)</onright>
-			</control>
 		</control>
-
 
 		<!--Today's Weather-->
 		<control type="group" id="9200">
@@ -145,6 +136,7 @@
 				</control>
 				<!-- Temperature sign and value -->
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Temperature))</visible>
 					<posx>55</posx>
 					<posy>248</posy>
 					<width>65</width>
@@ -154,6 +146,7 @@
 					<label></label>
 				</control>
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Temperature))</visible>
 					<posx>120</posx>
 					<posy>216</posy>
 					<width>500</width>
@@ -165,6 +158,7 @@
 				</control>
 				<!-- Current weather conditions - Feels like-->
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.FeelsLike))|!isEmpty(Window(Weather).Property(Current.Condition))</visible>
 					<posx>120</posx>
 					<posy>270</posy>
 					<width>500</width>
@@ -177,6 +171,7 @@
 				</control>
 				<!-- Humidity symbol and value -->
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Humidity))</visible>
 					<posx>55</posx>
 					<posy>310</posy>
 					<width>65</width>
@@ -186,6 +181,7 @@
 					<label></label>
 				</control>
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Humidity))</visible>
 					<posx>120</posx>
 					<posy>310</posy>
 					<width>380</width>
@@ -196,6 +192,7 @@
 				</control>
 				<!-- Wind direction symbol and value-->
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Temperature))+!isEmpty(Window(Weather).Property(Current.WindSpeed))</visible>
 					<posx>55</posx>
 					<posy>355</posy>
 					<width>65</width>
@@ -205,6 +202,7 @@
 					<label></label>
 				</control>
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Temperature))+!isEmpty(Window(Weather).Property(Current.WindSpeed))</visible>
 					<posx>120</posx>
 					<posy>355</posy>
 					<width>380</width>
@@ -215,6 +213,7 @@
 				</control>
 				<!-- Sunrise symbol and time -->
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Temperature))+!isEmpty(Window(Weather).Property(Today.Sunrise))</visible>
 					<posx>455</posx>
 					<posy>310</posy>
 					<width>65</width>
@@ -224,6 +223,7 @@
 					<label></label>
 				</control>
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Temperature))+!isEmpty(Window(Weather).Property(Today.Sunrise))</visible>
 					<posx>520</posx>
 					<posy>310</posy>
 					<width>116</width>
@@ -234,6 +234,7 @@
 				</control>
 				<!-- Sunset symbol and time -->
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Temperature))+!isEmpty(Window(Weather).Property(Today.Sunset))</visible>
 					<posx>455</posx>
 					<posy>355</posy>
 					<width>65</width>
@@ -243,6 +244,7 @@
 					<label></label>
 				</control>
 				<control type="label">
+					<visible>!isEmpty(Window(Weather).Property(Current.Temperature))+!isEmpty(Window(Weather).Property(Today.Sunset))</visible>
 					<posx>520</posx>
 					<posy>355</posy>
 					<width>116</width>
@@ -274,7 +276,7 @@
 				<posy>-16</posy>
 				<width>924</width>
 				<height>456</height>
-				<onup>2</onup>
+				<onup>501</onup>
 				<onleft>60</onleft>
 				<onright>60</onright>
 				<pagecontrol>60</pagecontrol>
@@ -523,7 +525,7 @@
 				<posy>-16</posy>
 				<width>924</width>
 				<height>456</height>
-				<onup>2</onup>
+				<onup>501</onup>
 				<onleft>60</onleft>
 				<onright>60</onright>
 				<pagecontrol>60</pagecontrol>
@@ -715,8 +717,7 @@
 			</control>
 		</control>
 
-
-		<!-- Weekly Forecast Weather -->
+		<!-- Pages 2 - Weekly Forecast Weather -->
 		<control type="group" id="9300">
 			<visible>!IsEmpty(Window.Property(Hourly.IsFetched))</visible>
 			<!--animations-->
@@ -732,7 +733,7 @@
 				<height>18-row</height>
 				<onup>9000</onup>
 				<ondown>9301</ondown>
-				<onleft>Control.SetFocus(2)</onleft>
+				<onleft>Control.SetFocus(501)</onleft>
 				<onright>9301</onright>
 				<itemlayout width="336" height="6-col">
 					<control type="label">

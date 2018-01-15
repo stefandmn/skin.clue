@@ -30,7 +30,17 @@
 				<label>[B]$INFO[System.Time][/B] • $INFO[System.Date]</label>
 			</control>
 			<control type="label">
-				<visible>!IsEmpty(Weather.Location)</visible>
+				<visible>!IsEmpty(Weather.Location)+!isEmpty(Window(Weather).Property(Current.Condition))</visible>
+				<posx>0</posx>
+				<posy>156</posy>
+				<width>24-col</width>
+				<align>center</align>
+				<font>regular</font>
+				<textcolor>white</textcolor>
+				<label>$INFO[Weather.Location] • [B]$INFO[Weather.Temperature], $INFO[Window(Weather).Property(Current.Condition)][/B]</label>
+			</control>
+			<control type="label">
+				<visible>!IsEmpty(Weather.Location)+isEmpty(Window(Weather).Property(Current.Condition))</visible>
 				<posx>0</posx>
 				<posy>156</posy>
 				<width>24-col</width>
