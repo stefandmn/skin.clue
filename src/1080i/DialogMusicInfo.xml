@@ -53,7 +53,7 @@
 
 		<!-- 1) content is artist -->
 		<control type="group">
-			<visible>container.content(artists)</visible>
+			<visible>container.content(artists) | String.IsEqual(ListItem.DBTYPE,artist)</visible>
 			<posx>1359</posx>
 			<posy>95</posy>
 			<animation type="Windowopen">
@@ -225,7 +225,7 @@
 
 		<!-- 2)content is album -->
 		<control type="group">
-			<visible>container.content(albums) + !container.content(artists)</visible>
+			<visible>container.content(albums) | String.IsEqual(ListItem.DBTYPE,album)</visible>
 			<posx>1359</posx>
 			<posy>95</posy>
 			<animation type="Windowopen">
@@ -400,7 +400,7 @@
 
         <!-- 3) content is a song -->
         <control type="group">
-            <visible>container.content(songs)</visible>
+            <visible>container.content(songs)| String.IsEqual(ListItem.DBTYPE,song)</visible>
             <!--content-->
             <control type="group">
                 <posx>6-col</posx>
@@ -505,7 +505,7 @@
                 </control>
 				<!--coverart-->
 				<control type="image">
-					<visible>!isEmpty(Listitem.thumb)</visible>
+					<description>Music cover image</description>
 					<posx>-288</posx>
 					<posy>3-row</posy>
 					<width>4-row</width>
