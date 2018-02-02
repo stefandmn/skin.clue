@@ -1,3 +1,7 @@
+v1.2
+- Adapt Favourites screen to allow adding the current playing media
+- Fix Playlist editor (classic playlist and smart playlist)
+
 v1.1
 - Adapt Weather, Movie and Music screens
 - Create themes: Blue, Crimson, Magenta and Lime (beside the default one)

@@ -41,11 +41,29 @@
 				<font>regular</font>
 				<textcolor>selected</textcolor>
 			</control>
+			<control type="button" id="449">
+				<visible>true</visible>
+				<posx>80r</posx>
+				<posy>5</posy>
+				<width>1-col</width>
+				<height>1-col</height>
+				<label></label>
+				<font>symbolLarger</font>
+				<textcolor>selected</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturefocus>masks/selected.png</texturefocus>
+				<texturenofocus>masks/black.png</texturenofocus>
+				<ondown>450</ondown>
+				<onclick>RunScript(service.clue,favourites)</onclick>
+				<onclick>Close</onclick>
+			</control>
 			<control type="panel" id="450">
 				<posx>0</posx>
 				<posy>2-row</posy>
 				<width>24-col</width>
 				<height>13-row</height>
+				<onup>449</onup>
 				<itemlayout width="6-col" height="314">
 					<control type="image">
 						<posx>0</posx>

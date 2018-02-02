@@ -407,8 +407,8 @@
 				<shadowcolor>-</shadowcolor>
 				<label>31007</label>
 			</control>
-			<!--content-->
-			<control type="panel" id="630]">
+			<!-- content - list items -->
+			<control type="panel" id="630">
 				<visible>Library.HasContent(Music)</visible>
 				<posx>-12</posx>
 				<posy>0</posy>

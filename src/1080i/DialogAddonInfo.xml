@@ -28,6 +28,7 @@
 			<visible>isEmpty(ListItem.art(fanart))</visible>
 			<include>globalBackground</include>
 		</control>
+
 		<!--About this addon-->
 		<control type="group">
 			<posx>240</posx>
@@ -92,7 +93,7 @@
 					<font>textboxExtraLeading</font>
 					<width>696</width>
 					<height>340</height>
-					<label>[B]$INFO[ListItem.AddonDescription][/B]</label>
+					<label>[B]$INFO[ListItem.AddonSummary][/B][CR]$INFO[ListItem.AddonDescription]</label>
 					<autoscroll delay="5000" time="1000" repeat="10000"/>
 				</control>
 				<!--screenshots-->

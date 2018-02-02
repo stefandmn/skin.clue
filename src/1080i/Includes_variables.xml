@@ -357,7 +357,7 @@
 
     <variable name="BackgroundImage">
         <value condition="Integer.IsGreater(System.Time(mm),0)+Integer.IsLess(System.Time(mm),30)">backgrounds/background02.png</value>
-		<value condition="Integer.IsGreater(System.Time(mm),30)+Integer.IsLess(System.Time(mm),60)">backgrounds/background02.png</value>
+		<value condition="Integer.IsGreater(System.Time(mm),30)+Integer.IsLess(System.Time(mm),60)">backgrounds/background01.png</value>
         <value condition="Integer.IsEqual(System.Time(mm),0) | Integer.IsEqual(System.Time(mm),30)">special://skin/media/backgrounds/background01.png</value>
 		<value>special://skin/media/backgrounds/background02.png</value>
     </variable>
