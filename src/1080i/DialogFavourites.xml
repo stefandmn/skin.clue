@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window type="dialog">
 	<defaultcontrol always="true">450</defaultcontrol>
+	<onload condition="Integer.IsEqual(Container(450).NumItems,0)">SetFocus(449)</onload>
 	<allowoverlay>no</allowoverlay>
 	<include>fadeInOut</include>
 
