@@ -211,9 +211,9 @@
                         <onclick>activatewindow(SystemSettings)</onclick>
 					</item>
 					<item id="12">
-						<description>System Settings</description>
+						<description>System Setup</description>
 						<visible>System.HasAddon(plugin.clue)</visible>
-						<label>$LOCALIZE[14209]</label>
+						<label>$LOCALIZE[31060]</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31088]</property>
 						<onclick>RunAddon(plugin.clue)</onclick>

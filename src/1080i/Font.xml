@@ -163,44 +163,37 @@
 			<name>symbol</name>
 			<filename>symbol.ttf</filename>
 			<size>20</size>
-			<style></style>
 		</font>
 		<font>
 			<name>symbolSmall</name>
 			<filename>symbol.ttf</filename>
 			<size>14</size>
-			<style></style>
 		</font>
 		<font>
 			<name>symbolMedium</name>
 			<filename>symbol.ttf</filename>
 			<size>30</size>
-			<style></style>
 		</font>
 		<font>
 			<name>symbolNormal</name>
 			<filename>symbol.ttf</filename>
 			<size>24</size>
-			<style></style>
 		</font>
 		<font>
 			<name>symbolLarge</name>
 			<filename>symbol.ttf</filename>
 			<size>36</size>
-			<style></style>
 		</font>
 		<font>
 			<name>symbolLarger</name>
 			<filename>symbol.ttf</filename>
 			<size>48</size>
-			<style></style>
 		</font>
 
 		<font>
 			<name>symbolVeryLarge</name>
 			<filename>symbol.ttf</filename>
 			<size>96</size>
-			<style></style>
 		</font>
 
 		<!-- Weather symbols -->

@@ -198,6 +198,10 @@ msgctxt "#31057"
 msgid "Create Music Playlist"
 msgstr ""
 
+msgctxt "#31060"
+msgid "System Setup"
+msgstr ""
+
 msgctxt "#31061"
 msgid "Look and Feel Options"
 msgstr ""
@@ -299,7 +303,7 @@ msgid "Enable global fanart background: "
 msgstr ""
 
 msgctxt "#31088"
-msgid "Clue/Environment Settings"
+msgid "Clue/Environment Setup"
 msgstr ""
 
 msgctxt "#31089"

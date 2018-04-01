@@ -254,7 +254,7 @@
                         <onclick>ActivateWindow(programs,addons,return)</onclick>
                     </item>
 					<item id="3">
-						<visible>!IsEmpty(Weather.location)+!String.IsEqual(Weather.Location,busy)</visible>
+						<visible>!IsEmpty(Weather.location)</visible>
 						<label>24027</label>
 						<label2></label2>
 						<thumb>-</thumb>

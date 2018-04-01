@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <includes>
 	<include file="Defaults.xml"/>
 	<include file="Includes_variables.xml"/>
 	<include file="Includes_animations.xml"/>
+	<include file="Includes_extensions.xml"/>
 	<include file="Includes_music.xml"/>
 	<include file="Includes_video.xml"/>
 
@@ -310,6 +312,7 @@
     <include name="progressPosition2">
 		<posy>209</posy>
 	</include>
+
 
 	<!-- Keyboard button coordinates -->
 	<include name="KeyboardButton">
