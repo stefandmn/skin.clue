@@ -315,6 +315,16 @@
 					<onclick>Skin.ToggleSetting(showSearch)</onclick>
 					<selected>Skin.HasSetting(showSearch)</selected>
 				</control>
+				<control type="radiobutton" id="20">
+					<visible>Container(8000).Hasfocus(2) + System.HasAddon(plugin.clue)</visible>
+					<description>Show Settings</description>
+					<width>16-col</width>
+					<label>31306</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(showSettings)</onclick>
+					<selected>Skin.HasSetting(showSettings)</selected>
+				</control>
 				<!-- Custom Menus tab -->
 				<control type="label" id="410">
 					<visible>Container(8000).Hasfocus(3)</visible>

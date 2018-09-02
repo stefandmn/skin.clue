@@ -646,6 +646,15 @@ msgctxt "#31304"
 msgid "Global Search"
 msgstr ""
 
+msgctxt "#31305"
+msgid "Settings"
+msgstr ""
+
+msgctxt "#31306"
+msgid "Home: Show System Setup"
+msgstr ""
+
+
 msgctxt "#31310"
 msgid "Artist"
 msgstr ""

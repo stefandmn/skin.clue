@@ -1,8 +1,7 @@
-v1.2
+v1.4
+- Add Settings option in home secondary menu
 - Adapt Favourites screen to allow adding the current playing media
 - Fix Playlist editor (classic playlist and smart playlist)
-
-v1.1
 - Adapt Weather, Movie and Music screens
 - Create themes: Blue, Crimson, Magenta and Lime (beside the default one)
 - Create MyPlaylist screen and aggregate all music components into a file.

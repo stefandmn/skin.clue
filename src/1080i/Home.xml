@@ -276,6 +276,13 @@
 						<onclick>RunScript(plugin.search)</onclick>
 					</item>
 					<item id="6">
+						<visible>Skin.HasSetting(showSettings) + System.HasAddon(plugin.clue)</visible>
+						<label>31305</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>RunScript(plugin.clue)</onclick>
+					</item>
+					<item id="7">
 						<label>31004</label>
 						<label2></label2>
 						<thumb>-</thumb>
