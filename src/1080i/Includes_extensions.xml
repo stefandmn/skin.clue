@@ -61,7 +61,7 @@
 	</include>
 
 
-	<!-- Extended EditBox control -->
+	<!-- Extended EditBox control with Suffix -->
 	<include name="devEditboxSuffix">
 		<control type="label" id="$PARAM[lid]">
 			<enable>Control.HasFocus($PARAM[id])</enable>
@@ -117,7 +117,82 @@
 		</control>
 	</include>
 
+	
+	<!-- Extended EditBox control with Lookup Button -->
+	<include name="devEditboxLookup">
+		<control type="label" id="$PARAM[lid]">
+			<enable>Control.HasFocus($PARAM[id])</enable>
+			<posx>$PARAM[lposx]</posx>
+			<posy>$PARAM[posy]</posy>
+			<width>$PARAM[lwidth]</width>
+			<font>itemTitle</font>
+			<textcolor>selected</textcolor>
+			<textoffsetx>5</textoffsetx>
+			<shadowcolor>-</shadowcolor>
+			<label>$PARAM[label]</label>
+		</control>
+		<control type="image">
+			<posx>$PARAM[bposx]</posx>
+			<posy>$PARAM[posy]</posy>
+			<width>$PARAM[bwidth]</width>
+			<height>1-row</height>
+			<texture border="3" flipy="true" flipx="false">masks/offblack.png</texture>
+			<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
+			<bordersize>3</bordersize>
+		</control>
+		<control type="button" id="$PARAM[id]">
+			<posx>$PARAM[bposx]</posx>
+			<posy>$PARAM[posy]</posy>
+			<width>$PARAM[bwidth]</width>
+			<font>itemTitle</font>
+			<textoffsetx>12</textoffsetx>
+			<textoffsety>0</textoffsety>
+			<align>$PARAM[balign]</align>
+			<aligny>center</aligny>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<shadowcolor>-</shadowcolor>
+			<texturefocus colordiffuse="77FFFFFF">masks/selected.png</texturefocus>
+			<pulseonselect>true</pulseonselect>
+			<label>$PARAM[value]</label>
+			<onup>$PARAM[up]</onup>
+			<ondown>$PARAM[down]</ondown>
+			<onleft>$PARAM[left]</onleft>
+			<onright>$PARAM[kid]</onright>
+		</control>
+		<control type="image">
+			<posx>$PARAM[kposx]</posx>
+			<posy>$PARAM[posy]</posy>
+			<width>1-col</width>
+			<height>1-row</height>
+			<texture border="0,3,3,3" flipy="true" flipx="false">masks/offblack.png</texture>
+			<bordertexture border="0,3,3,3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
+			<bordersize>0,3,3,3</bordersize>
+		</control>
+		<control type="button" id="$PARAM[kid]">
+			<posx>$PARAM[kposx]</posx>
+			<posy>$PARAM[posy]</posy>
+			<width>1-col</width>
+			<font>symbolLarge</font>
+			<textoffsetx>12</textoffsetx>
+			<textoffsety>0</textoffsety>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>unselected</textcolor>
+			<focusedcolor>selected</focusedcolor>
+			<shadowcolor>-</shadowcolor>
+			<texturefocus colordiffuse="77FFFFFF">masks/selected.png</texturefocus>
+			<texturefocus colordiffuse="77FFFFFF">masks/selected.png</texturefocus>
+			<pulseonselect>true</pulseonselect>
+			<label></label>
+			<onup>$PARAM[up]</onup>
+			<ondown>$PARAM[down]</ondown>
+			<onleft>$PARAM[id]</onleft>
+			<onright>$PARAM[right]</onright>
+		</control>
+	</include>
 
+	
 	<!-- ComboBox control -->
 	<include name="devCombobox">
 		<control type="label" id="$PARAM[lid]">
