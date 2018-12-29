@@ -8,6 +8,8 @@
 		<include>globalBackground</include>
 		<!--date and time-->
 		<include>dateTime</include>
+		<!-- Music overlay -->
+		<include>MusicOverlay</include>
 
 		
 		<!-- Main Menu-->
@@ -81,7 +83,7 @@
 						<label>$INFO[ListItem.label2]</label>
 					</control>
 					<control type="label">
-						<posx>101</posx>
+						<posx>85</posx>
 						<posy>5</posy>
 						<width>326</width>
 						<font>itemTitle</font>
@@ -104,7 +106,7 @@
 						<width>72</width>
 						<height>72</height>
 						<aspectratio scalediffuse="false">scale</aspectratio>
-						<texture fallback="masks/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+						<texture fallback="masks/circle.png" diffuse="masks/circle.png" colordiffuse="FFFFFFFF" border="0">$INFO[Listitem.icon]</texture>
 					</control>
 					<control type="label">
 						<posx>18</posx>
@@ -120,7 +122,7 @@
 						<width>326</width>
 						<font>itemTitle</font>
 						<textcolor>selected</textcolor>
-						<label>[ $INFO[ListItem.label] ]</label>
+						<label>$INFO[ListItem.label]</label>
 						<scroll>true</scroll>
 					</control>
 					<control type="label">
@@ -212,11 +214,11 @@
 					</item>
 					<item id="12">
 						<description>System Setup</description>
-						<visible>System.HasAddon(plugin.clue)</visible>
+						<visible>System.HasAddon(program.clue)</visible>
 						<label>$LOCALIZE[31060]</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31088]</property>
-						<onclick>RunAddon(plugin.clue)</onclick>
+						<onclick>RunAddon(program.clue)</onclick>
 					</item>
 				</content>
 			</control>

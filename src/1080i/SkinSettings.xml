@@ -200,8 +200,8 @@
 					<label>31143</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(StopVideoOnMenu)</onclick>
-					<selected>Skin.HasSetting(StopVideoOnMenu)</selected>
+					<onclick>Skin.ToggleSetting(stopVideoOnMenu)</onclick>
+					<selected>Skin.HasSetting(stopVideoOnMenu)</selected>
 				</control>
 				<control type="radiobutton" id="7">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -210,8 +210,8 @@
 					<label>31142</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(ExitFirst)</onclick>
-					<selected>Skin.HasSetting(ExitFirst)</selected>
+					<onclick>Skin.ToggleSetting(exitFirst)</onclick>
+					<selected>Skin.HasSetting(exitFirst)</selected>
 				</control>
 				<control type="radiobutton" id="16">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -220,11 +220,11 @@
 					<label>31163</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(AnimateFanart)</onclick>
-					<selected>Skin.HasSetting(AnimateFanart)</selected>
+					<onclick>Skin.ToggleSetting(animateFanart)</onclick>
+					<selected>Skin.HasSetting(animateFanart)</selected>
 				</control>
 				<control type="radiobutton" id="17">
-					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.slideshow)</visible>
+					<visible>Container(8000).Hasfocus(1) + System.HasAddon(program.slideshow)</visible>
 					<description>Enable Slideshow in Home screen</description>
 					<width>16-col</width>
 					<label>31165</label>
@@ -234,7 +234,7 @@
 					<selected>Skin.HasSetting(HomeSlideshow)</selected>
 				</control>
 				<control type="radiobutton" id="18">
-					<visible>Container(8000).Hasfocus(1) + System.HasAddon(plugin.slideshow)</visible>
+					<visible>Container(8000).Hasfocus(1) + System.HasAddon(program.slideshow)</visible>
 					<description>Enable Slideshow in Music Visualization screen</description>
 					<width>16-col</width>
 					<label>31166</label>
@@ -306,7 +306,7 @@
 					<selected>Skin.HasSetting(showFavourites)</selected>
 				</control>
 				<control type="radiobutton" id="19">
-					<visible>Container(8000).Hasfocus(2) + System.HasAddon(plugin.search)</visible>
+					<visible>Container(8000).Hasfocus(2) + System.HasAddon(program.search)</visible>
 					<description>Show Search</description>
 					<width>16-col</width>
 					<label>31303</label>
@@ -316,7 +316,7 @@
 					<selected>Skin.HasSetting(showSearch)</selected>
 				</control>
 				<control type="radiobutton" id="20">
-					<visible>Container(8000).Hasfocus(2) + System.HasAddon(plugin.clue)</visible>
+					<visible>Container(8000).Hasfocus(2) + System.HasAddon(program.clue)</visible>
 					<description>Show Settings</description>
 					<width>16-col</width>
 					<label>31306</label>
@@ -349,8 +349,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]1[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customVideoAddon1))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customVideoAddon1,xbmc.addon.video,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomVideoAddon1))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomVideoAddon1,xbmc.addon.video,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 				<control type="button" id="412">
@@ -365,8 +365,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]2[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customVideoAddon2))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customVideoAddon2,xbmc.addon.video,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomVideoAddon2))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomVideoAddon2,xbmc.addon.video,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 				<control type="button" id="413">
@@ -381,8 +381,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]3[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customVideoAddon3))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customVideoAddon3,xbmc.addon.video,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomVideoAddon3))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomVideoAddon3,xbmc.addon.video,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 				<control type="label" id="420">
@@ -408,8 +408,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]1[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customAudioAddon1))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customAudioAddon1,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomAudioAddon1))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomAudioAddon1,xbmc.addon.audio,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 				<control type="button" id="422">
@@ -424,8 +424,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]2[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customAudioAddon2))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customAudioAddon2,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomAudioAddon2))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomAudioAddon2,xbmc.addon.audio,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 				<control type="button" id="423">
@@ -440,8 +440,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]3[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customAudioAddon3))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customAudioAddon3,xbmc.addon.audio,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomAudioAddon3))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomAudioAddon3,xbmc.addon.audio,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 				<control type="label" id="430">
@@ -467,8 +467,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]1[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customPictureAddon1))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customPictureAddon1,xbmc.addon.image,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomPictureAddon1))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomPictureAddon1,xbmc.addon.image,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 				<control type="button" id="432">
@@ -483,8 +483,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]2[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customPictureAddon2))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customPictureAddon2,xbmc.addon.image,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomPictureAddon2))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomPictureAddon2,xbmc.addon.image,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 				<control type="button" id="433">
@@ -499,8 +499,8 @@
 					<focusedcolor>selected</focusedcolor>
 					<texturefocus>masks/selected.png</texturefocus>
 					<label>$LOCALIZE[24000] [B]3[/B]</label>
-					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(customPictureAddon3))][/COLOR]</label2>
-					<onclick>Skin.SetAddon(customPictureAddon3,xbmc.addon.image,xbmc.addon.executable)</onclick>
+					<label2>[COLOR=selected]$INFO[system.addontitle(Skin.String(CustomPictureAddon3))][/COLOR]</label2>
+					<onclick>Skin.SetAddon(CustomPictureAddon3,xbmc.addon.image,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
 			</control>

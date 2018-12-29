@@ -121,7 +121,7 @@
 	<!-- Extended EditBox control with Lookup Button -->
 	<include name="devEditboxLookup">
 		<control type="label" id="$PARAM[lid]">
-			<enable>Control.HasFocus($PARAM[id])</enable>
+			<enable>Control.HasFocus($PARAM[id])|Control.HasFocus($PARAM[kid])</enable>
 			<posx>$PARAM[lposx]</posx>
 			<posy>$PARAM[posy]</posy>
 			<width>$PARAM[lwidth]</width>

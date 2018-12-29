@@ -8,6 +8,8 @@
 		<include>globalBackground</include>
 		<!--date and time-->
 		<include>dateTime</include>
+		<!-- Music overlay -->
+		<include>MusicOverlay</include>
 
 		<!-- Header -->
 		<control type="group" id="9100">

@@ -2,7 +2,7 @@
 <window>
 	<allowoverlay>no</allowoverlay>
 	<defaultcontrol>-</defaultcontrol>
-	<onload condition="System.HasAddon(plugin.slideshow) + Skin.HasSetting(MusicSlideshow) + !Window(Visualisation).Property(PluginSlideshow.Running)">RunScript(plugin.slideshow)</onload>
+	<onload condition="System.HasAddon(program.slideshow) + Skin.HasSetting(MusicSlideshow) + !Window(Visualisation).Property(SlideshowAddon.Running)">RunScript(program.slideshow)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>
@@ -13,20 +13,20 @@
 			<aspectratio>stretch</aspectratio>
 		</control>
 
-		<!-- Visualization and PluginSlideshow control-->
+		<!-- Visualization and SlideshowAddon control-->
 		<control type="group">
 			<include>fadeInOut</include>
 			<control type="multiimage">
-				<visible>!isempty(Window(Visualisation).Property(PluginSlideshow))</visible>
+				<visible>!isempty(Window(Visualisation).Property(SlideshowAddon))</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<include>dimensionsFullscreen</include>
-				<imagepath background="true">$INFO[Window(Visualisation).Property(PluginSlideshow)]</imagepath>
+				<imagepath background="true">$INFO[Window(Visualisation).Property(SlideshowAddon)]</imagepath>
 				<aspectratio>keep</aspectratio>
 				<timeperimage>10000</timeperimage>
 				<fadetime>1000</fadetime>
 				<randomize>true</randomize>
-				<include condition="Skin.HasSetting(AnimateFanart)">kenBurnsey</include>
+				<include condition="Skin.HasSetting(animateFanart)">kenBurnsey</include>
 			</control>
 			<!--visualisation-->
 			<control type="visualisation" id="2">

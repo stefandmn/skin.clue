@@ -2,11 +2,13 @@
 <window>
 	<defaultcontrol always="false">6300</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload condition="Skin.hasSetting(StopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
+	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>
 		<include>globalBackground</include>
+		<!-- Music overlay -->
+		<include>MusicOverlay</include>
 
 		<!--page container group-->
 		<control type="group">
@@ -52,8 +54,8 @@
 							<onclick>ReplaceWindow(pictures)</onclick>
 						</control>
 						<control type="button" id="302">
-							<description>customPictureAddon1</description>
-							<visible>!isempty(Skin.String(customPictureAddon1))</visible>
+							<description>CustomPictureAddon1</description>
+							<visible>!isempty(Skin.String(CustomPictureAddon1))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
@@ -61,13 +63,13 @@
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$INFO[System.AddonTitle(Skin.String(customPictureAddon1))]</label>
-							<onclick>RunAddon($INFO[Skin.String(customPictureAddon1)])</onclick>
+							<label>$INFO[System.AddonTitle(Skin.String(CustomPictureAddon1))]</label>
+							<onclick>RunAddon($INFO[Skin.String(CustomPictureAddon1)])</onclick>
 							<onclick>Control.SetFocus(52)</onclick>
 						</control>
 						<control type="button" id="303">
-							<description>customPictureAddon2</description>
-							<visible>!isempty(Skin.String(customPictureAddon2))</visible>
+							<description>CustomPictureAddon2</description>
+							<visible>!isempty(Skin.String(CustomPictureAddon2))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
@@ -75,13 +77,13 @@
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$INFO[System.AddonTitle(Skin.String(customPictureAddon2))]</label>
-							<onclick>RunAddon($INFO[Skin.String(customPictureAddon2)])</onclick>
+							<label>$INFO[System.AddonTitle(Skin.String(CustomPictureAddon2))]</label>
+							<onclick>RunAddon($INFO[Skin.String(CustomPictureAddon2)])</onclick>
 							<onclick>Control.SetFocus(52)</onclick>
 						</control>
 						<control type="button" id="304">
-							<description>customPictureAddon3</description>
-							<visible>!isempty(Skin.String(customPictureAddon3))</visible>
+							<description>CustomPictureAddon3</description>
+							<visible>!isempty(Skin.String(CustomPictureAddon3))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
@@ -89,8 +91,8 @@
 							<focusedcolor>selected</focusedcolor>
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
-							<label>$INFO[System.AddonTitle(Skin.String(customPictureAddon3))]</label>
-							<onclick>RunAddon($INFO[Skin.String(customPictureAddon3)])</onclick>
+							<label>$INFO[System.AddonTitle(Skin.String(CustomPictureAddon3))]</label>
+							<onclick>RunAddon($INFO[Skin.String(CustomPictureAddon3)])</onclick>
 							<onclick>Control.SetFocus(52)</onclick>
 						</control>
 						<control type="button" id="305">
@@ -234,10 +236,7 @@
 									<width>276</width>
 									<height>273</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="masks/offblack.png">$INFO[Listitem.icon]</texture>
-									<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
-									<bordersize>3</bordersize>
-									<colordiffuse>ffFFFFFF</colordiffuse>
+									<texture background="true" border="0">$INFO[Listitem.icon]</texture>
 								</control>
 								<control type="group">
 									<posx>0</posx>
@@ -256,6 +255,7 @@
 										<posx>12</posx>
 										<posy>-12</posy>
 										<width>252</width>
+										<align>center</align>
 										<font>itemTitleSmallCondensed</font>
 										<textcolor>unselected</textcolor>
 										<label>$INFO[ListItem.label]</label>
@@ -264,6 +264,7 @@
 										<posx>12</posx>
 										<posy>18</posy>
 										<width>252</width>
+										<align>center</align>
 										<font>smallMedium</font>
 										<textcolor>unselected</textcolor>
 										<label>$INFO[ListItem.PictureResolution,, • ]$INFO[ListItem.label2]</label>
@@ -277,8 +278,8 @@
 									<width>276</width>
 									<height>273</height>
 									<aspectratio>scale</aspectratio>
-									<texture fallback="masks/offblack.png">$INFO[Listitem.icon]</texture>
-									<bordertexture border="3" colordiffuse="ffFFFFFF">masks/selected.png</bordertexture>
+									<texture background="true" border="0">$INFO[Listitem.icon]</texture>
+									<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
 									<bordersize>3</bordersize>
 									<colordiffuse>ffFFFFFF</colordiffuse>
 								</control>
@@ -299,6 +300,7 @@
 										<posx>12</posx>
 										<posy>-12</posy>
 										<width>252</width>
+										<align>center</align>
 										<font>itemTitleSmallCondensed</font>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>
@@ -309,6 +311,7 @@
 										<posx>12</posx>
 										<posy>18</posy>
 										<width>252</width>
+										<align>center</align>
 										<font>smallMedium</font>
 										<textcolor>black</textcolor>
 										<shadowcolor>-</shadowcolor>

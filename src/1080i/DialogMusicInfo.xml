@@ -26,7 +26,7 @@
 				<include>dimensionsFullscreen</include>
 				<aspectratio align="center" aligny="top">stretch</aspectratio>
 				<texture fallback="masks/black.png">$INFO[Listitem.art(fanart)]</texture>
-				<include condition="Skin.HasSetting(AnimateFanart)">kenBurnsey</include>
+				<include condition="Skin.HasSetting(animateFanart)">kenBurnsey</include>
 			</control>
 			<!--coverart-->
 			<control type="image">

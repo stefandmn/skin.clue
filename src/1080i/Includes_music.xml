@@ -187,8 +187,8 @@
 				<onclick condition="Library.HasContent(Music)">Control.SetFocus($PARAM[latest])</onclick>
 			</control>
 			<control type="button" id="613">
-				<description>customAudioAddon1</description>
-				<visible>!isempty(Skin.String(customAudioAddon1))</visible>
+				<description>CustomAudioAddon1</description>
+				<visible>!isempty(Skin.String(CustomAudioAddon1))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -196,14 +196,14 @@
 				<focusedcolor>selected</focusedcolor>
 				<texturefocus>masks/selected.png</texturefocus>
 				<textoffsetx>12</textoffsetx>
-				<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon1))]</label>
+				<label>$INFO[System.AddonTitle(Skin.String(CustomAudioAddon1))]</label>
 				<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-				<onclick>RunAddon($INFO[Skin.String(customAudioAddon1)])</onclick>
+				<onclick>RunAddon($INFO[Skin.String(CustomAudioAddon1)])</onclick>
 				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
 			<control type="button" id="614">
-				<description>customAudioAddon2</description>
-				<visible>!isempty(Skin.String(customAudioAddon2))</visible>
+				<description>CustomAudioAddon2</description>
+				<visible>!isempty(Skin.String(CustomAudioAddon2))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -211,14 +211,14 @@
 				<focusedcolor>selected</focusedcolor>
 				<texturefocus>masks/selected.png</texturefocus>
 				<textoffsetx>12</textoffsetx>
-				<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon2))]</label>
+				<label>$INFO[System.AddonTitle(Skin.String(CustomAudioAddon2))]</label>
 				<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-				<onclick>RunAddon($INFO[Skin.String(customAudioAddon2)])</onclick>
+				<onclick>RunAddon($INFO[Skin.String(CustomAudioAddon2)])</onclick>
 				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
 			<control type="button" id="615">
-				<description>customAudioAddon3</description>
-				<visible>!isempty(Skin.String(customAudioAddon3))</visible>
+				<description>CustomAudioAddon3</description>
+				<visible>!isempty(Skin.String(CustomAudioAddon3))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -226,9 +226,9 @@
 				<focusedcolor>selected</focusedcolor>
 				<texturefocus>masks/selected.png</texturefocus>
 				<textoffsetx>12</textoffsetx>
-				<label>$INFO[System.AddonTitle(Skin.String(customAudioAddon3))]</label>
+				<label>$INFO[System.AddonTitle(Skin.String(CustomAudioAddon3))]</label>
 				<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-				<onclick>RunAddon($INFO[Skin.String(customAudioAddon3)])</onclick>
+				<onclick>RunAddon($INFO[Skin.String(CustomAudioAddon3)])</onclick>
 				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
 			<control type="button" id="616">
@@ -300,7 +300,7 @@
 				<!-- search -->
 				<control type="button" id="8">
 					<description>Search (music)</description>
-					<visible>Library.HasContent(Music) + !System.HasAddon(plugin.search)</visible>
+					<visible>Library.HasContent(Music) + !System.HasAddon(program.search)</visible>
 					<height>40</height>
 					<width>236</width>
 					<font>smallMedium</font>
@@ -313,7 +313,7 @@
 				</control>
 				<control type="button" id="621">
 					<description>Search (music)</description>
-					<visible>Library.HasContent(Music) + System.HasAddon(plugin.search)</visible>
+					<visible>Library.HasContent(Music) + System.HasAddon(program.search)</visible>
 					<height>40</height>
 					<width>236</width>
 					<font>smallMedium</font>
@@ -323,7 +323,7 @@
 					<textoffsetx>12</textoffsetx>
 					<label>137</label>
 					<onclick>Skin.SetString(showRecentMusicItems,false)</onclick>
-					<onclick>RunScript(plugin.search,artists=true&amp;albums=true&amp;songs=true&amp;musicvideos=true)</onclick>
+					<onclick>RunScript(program.search,artists=true&amp;albums=true&amp;songs=true&amp;musicvideos=true)</onclick>
 					<onclick>right</onclick>
 				</control>
 				<control type="button" id="622">
@@ -602,6 +602,43 @@
 			<posy>3-row</posy>
 			<onleft>$PARAM[left]</onleft>
 			<onright>$PARAM[scroll]</onright>
+			<animation type="windowopen">
+				<include>listSlideIn</include>
+			</animation>
+			<animation type="windowclose">
+				<effect type="fade" start="100" end="0" time="200"/>
+			</animation>
+			<!--focussed item detail-->
+			<control type="group">
+				<visible>!isEmpty(ListItem.Thumb)</visible>
+				<posx>14-col</posx>
+				<posy>0</posy>
+				<!--Show larger thumbnail-->
+				<control type="group">
+					<animation type="windowopen">
+						<effect type="fade" start="0" end="100" time="300" delay="700"/>
+						<effect type="slide" start="3-col" end="0" center="auto" tween="cubic" easing="out" time="400" delay="700"/>
+					</animation>
+					<animation type="windowclose">
+						<effect type="fade" start="100" end="0" time="300" delay="300"/>
+						<effect type="slide" start="0" end="3-col" tween="cubic" easing="out" time="400" delay="300"/>
+					</animation>
+					<animation type="visible">
+						<include>listSlideIn</include>
+					</animation>
+					<control type="group">
+						<control type="image">
+							<posx>0</posx>
+							<posy>0</posy>
+							<width>6-col</width>
+							<height>8-col</height>
+							<aspectratio scalediffuse="false">keep</aspectratio>
+							<texture background="true" border="0">$VAR[PosterThumb]</texture>
+							<fadetime>200</fadetime>
+						</control>
+					</control>
+				</control>
+			</control>
 			<control type="panel" id="51">
 				<visible>!container.content(artists) + !container.content(genres) + !container.content(albums) + !container.content(songs)</visible>
 				<posx>0</posx>

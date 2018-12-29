@@ -37,8 +37,8 @@
 				<onclick condition="Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)">Control.SetFocus($PARAM[latest])</onclick>
 			</control>
 			<control type="button" id="613">
-				<description>customVideoAddon1</description>
-				<visible>!isempty(Skin.String(customVideoAddon1))</visible>
+				<description>CustomVideoAddon1</description>
+				<visible>!isempty(Skin.String(CustomVideoAddon1))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -46,14 +46,14 @@
 				<focusedcolor>selected</focusedcolor>
 				<texturefocus>masks/selected.png</texturefocus>
 				<textoffsetx>12</textoffsetx>
-				<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon1))]</label>
+				<label>$INFO[System.AddonTitle(Skin.String(CustomVideoAddon1))]</label>
 				<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-				<onclick>RunAddon($INFO[Skin.String(customVideoAddon1)])</onclick>
+				<onclick>RunAddon($INFO[Skin.String(CustomVideoAddon1)])</onclick>
 				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
 			<control type="button" id="614">
-				<description>customVideoAddon2</description>
-				<visible>!isempty(Skin.String(customVideoAddon2))</visible>
+				<description>CustomVideoAddon2</description>
+				<visible>!isempty(Skin.String(CustomVideoAddon2))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -61,14 +61,14 @@
 				<focusedcolor>selected</focusedcolor>
 				<texturefocus>masks/selected.png</texturefocus>
 				<textoffsetx>12</textoffsetx>
-				<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon2))]</label>
+				<label>$INFO[System.AddonTitle(Skin.String(CustomVideoAddon2))]</label>
 				<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-				<onclick>RunAddon($INFO[Skin.String(customVideoAddon2)])</onclick>
+				<onclick>RunAddon($INFO[Skin.String(CustomVideoAddon2)])</onclick>
 				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
 			<control type="button" id="615">
-				<description>customVideoAddon3</description>
-				<visible>!isempty(Skin.String(customVideoAddon3))</visible>
+				<description>CustomVideoAddon3</description>
+				<visible>!isempty(Skin.String(CustomVideoAddon3))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -76,9 +76,9 @@
 				<focusedcolor>selected</focusedcolor>
 				<texturefocus>masks/selected.png</texturefocus>
 				<textoffsetx>12</textoffsetx>
-				<label>$INFO[System.AddonTitle(Skin.String(customVideoAddon3))]</label>
+				<label>$INFO[System.AddonTitle(Skin.String(CustomVideoAddon3))]</label>
 				<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-				<onclick>RunAddon($INFO[Skin.String(customVideoAddon3)])</onclick>
+				<onclick>RunAddon($INFO[Skin.String(CustomVideoAddon3)])</onclick>
 				<onclick>Control.SetFocus($PARAM[listing])</onclick>
 			</control>
 			<control type="button" id="616">
@@ -150,7 +150,7 @@
 				<!-- search -->
 				<control type="button" id="8">
 					<description>Search (videos)</description>
-					<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + !System.HasAddon(plugin.search)</visible>
+					<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + !System.HasAddon(program.search)</visible>
 					<height>40</height>
 					<width>236</width>
 					<font>smallMedium</font>
@@ -163,7 +163,7 @@
 				</control>
 				<control type="button" id="621">
 					<description>Search (videos)</description>
-					<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + System.HasAddon(plugin.search)</visible>
+					<visible>[Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)] + System.HasAddon(program.search)</visible>
 					<height>40</height>
 					<width>236</width>
 					<font>smallMedium</font>
@@ -173,7 +173,7 @@
 					<textoffsetx>12</textoffsetx>
 					<label>137</label>
 					<onclick>Skin.SetString(showRecentVideoItems,false)</onclick>
-					<onclick>RunScript(plugin.search,movies=true&amp;actors=true&amp;tvshows=true&amp;episodes=true&amp;musicvideos=true)</onclick>
+					<onclick>RunScript(program.search,movies=true&amp;actors=true&amp;tvshows=true&amp;episodes=true&amp;musicvideos=true)</onclick>
 					<onclick>right</onclick>
 				</control>
 				<control type="button" id="622">
@@ -566,9 +566,7 @@
 							<width>6-col</width>
 							<height>8-col</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
-							<texture background="true" fallback="masks/offblack.png" border="0">$VAR[PosterThumb]</texture>
-							<bordertexture border="3" colordiffuse="33FFFFFF">masks/selected.png</bordertexture>
-							<bordersize>3</bordersize>
+							<texture background="true" border="0">$VAR[PosterThumb]</texture>
 							<fadetime>200</fadetime>
 						</control>
 					</control>
