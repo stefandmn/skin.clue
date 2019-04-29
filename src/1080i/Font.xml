@@ -203,14 +203,19 @@
 			<size>36</size>
 		</font>
 		<font>
+			<name>symbolMediumWeather</name>
+			<filename>weather.ttf</filename>
+			<size>48</size>
+		</font>
+		<font>
 			<name>symbolLargeWeather</name>
 			<filename>weather.ttf</filename>
-			<size>96</size>
+			<size>80</size>
 		</font>
 		<font>
 			<name>symbolVeryLargeWeather</name>
 			<filename>weather.ttf</filename>
-			<size>180</size>
+			<size>160</size>
 		</font>
 
 		<!-- Required for system -->

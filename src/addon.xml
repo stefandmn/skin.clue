@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="skin.clue" name="Clue Skin" version="1.4.6" provider-name="AMSD">
+<addon id="skin.clue" name="Clue Skin" version="1.4.14" provider-name="AMSD">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 	</requires>
-	<extension point="xbmc.gui.skin" debugging="false">
+	<extension point="xbmc.gui.skin" debugging="true">
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>
 	</extension>
 	<extension point="xbmc.addon.metadata">

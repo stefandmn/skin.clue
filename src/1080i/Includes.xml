@@ -62,7 +62,7 @@
 			<control type="image">
 				<visible>!Skin.HasSetting(GlobalFanartBackground) + isempty(Skin.String(GlobalBackground))</visible>
 				<include>dimensionsFullscreen</include>
-				<texture>$VAR[BackgroundImage]</texture>
+				<texture>backgrounds/background01.png</texture>
 				<colordiffuse>6affffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 				<animation effect="fade" start="0" end="100" time="1000" condition="window.previous(home)">windowopen</animation>
@@ -115,9 +115,9 @@
 				<colordiffuse>ffffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-			<!--Player Slideshow based on playing artist(s) in Home or Music Visualization screen(s)-->
+			<!--Slideshow based on playing artist(s) in Home or Music Visualization screen(s)-->
 			<control type="group">
-				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomeSlideshow) + !Skin.HasSetting(GlobalFanartBackground)</visible>
+				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomeSlideshow)</visible>
 				<control type="image">
 					<visible>isempty(Window(Visualisation).Property(SlideshowAddon))</visible>
 					<posx>0</posx>

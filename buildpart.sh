@@ -6,7 +6,7 @@
 # to build components on demand. These actions typically are executed before to
 # create the package.
 #
-# $Id: build-prep.sh 966 2017-02-13 22:54:04Z stefan $
+# $Id: buildpart.sh 966 2017-02-13 22:54:04Z stefan $
 ###############################################################################
 
 # Run TexturePacker for default theme

@@ -123,242 +123,251 @@
 	</variable>
 
 
-	<!--weather icons-->
-	<variable name="ListWeatherIcon">
-		<value condition="stringcompare(ListItem.Property(fanartCode),0)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),1)"></value>
-		<!--Windy/Rain-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),2)"></value>
-		<!--Windy/Rain-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),3)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),4)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),5)"></value>
-		<!--Cloudy/Snow-Rain Mix-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),6)"></value>
-		<!--Hail-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),7)"></value>
-		<!--Icy/Clouds Rain-Snow-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),8)"></value>
-		<!--Icy/Haze Rain-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),9)"></value>
-		<!--Haze/Rain-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),10)"></value>
-		<!--Icy/Rain-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),11)"></value>
-		<!--Light Rain-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),12)"></value>
-		<!--Moderate Rain-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),13)"></value>
-		<!--Cloudy/Flurries-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),14)"></value>
-		<!--Cloudy/Flurries-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),15)"></value>
-		<!--Cloudy/Flurries-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),16)"></value>
-		<!--Cloudy/Flurries-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),17)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),18)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),19)"></value>
-		<!--Dust-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),20)"></value>
-		<!--Fog-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),21)"></value>
-		<!--Haze-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),22)"></value>
-		<!--Smoke-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),23)"></value>
-		<!--Windy-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),24)"></value>
-		<!--Windy-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),25)"></value>
-		<!--Windy-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),26)"></value>
-		<!--Mostly Cloudy-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),27)"></value>
-		<!--Mostly Cloudy/Night-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),28)"></value>
-		<!--Mostly Cloudy/Sunny-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),29)"></value>
-		<!--Partly Cloudy/Night-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),30)"></value>
-		<!--Partly Cloudy/Day-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),31)"></value>
-		<!--Clear/Night-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),32)"></value>
-		<!--Clear/Day-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),33)"></value>
-		<!--Hazy/Night-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),34)"></value>
-		<!--Hazy/Day-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),35)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),36)"></value>
-		<!--Hot!-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),37)"></value>
-		<!--Lightning/Day-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),38)"></value>
-		<!--Lightning-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),39)"></value>
-		<!--Rain/Day-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),40)"></value>
-		<!--Rain-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),41)"></value>
-		<!--Snow-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),42)"></value>
-		<!--Snow-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),43)"></value>
-		<!--Snow-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),44)"></value>
-		<!--Partly Cloudy/Day-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),45)"></value>
-		<!--Rain/Night-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),46)"></value>
-		<!--Snow-->
-		<value condition="stringcompare(ListItem.Property(fanartCode),47)"></value>
-		<!--Thunder Showers/Night-->
+	<!--
+		Weather icons
+		The codes contains three digits (XYZ): X = weather type, Y = variance, Z = neutral, day, night
+			1: clear
+			2: clouds: partially, mostly, windy, gust
+			3: rain: normal, windy, showers, mix, thunderstorm
+			4: snow: normal, windy, thunderstorm
+			5: fog
+			Notes: neutral and/or normal  have 0 value, day = 1, night = 2
+			Others (1000 ++ 10): heat, raindrops, windy, strong wind, lightning, tornado, hurricane
+	-->
+	<variable name="CurrentWeatherIcon">
+		<!--Clear-Sunny/Day/32-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),101)"></value>
+		<!--Clear/Night/62-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),102)"></value>
+		<!--Cloudy/Neutral/37-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),200)"></value>
+		<!--Cloudy/Mostly/Neutral/80-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),210)"></value>
+		<!--Cloudy/Mostly/Day/137-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),211)"></value>
+		<!--Cloudy/Mostly Night/138-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),212)"></value>
+		<!--Cloudy/Partly/Neutral/80-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),220)"></value>
+		<!--Cloudy/Partly/Day/21-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),221)"></value>
+		<!--Cloudy/Partly/Night/65-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),222)"></value>
+		<!--Cloudy/Windy/Neutral/36-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),230)"></value>
+		<!--Cloudy/Windy/Day/20-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),231)"></value>
+		<!--Cloudy/Windy/Night/51-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),232)"></value>
+		<!--Cloudy/Gust/Neutral/35-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),240)"></value>
+		<!--Cloudy/Gust/Day/19-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),241)"></value>
+		<!--Cloudy/Gust/Night/50-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),242)"></value>
+		<!--Rain/Neutral/43-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),300)"></value>
+		<!--Rain/Day/27-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),301)"></value>
+		<!--Rain/Night/56-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),302)"></value>
+		<!--Rain/Windy/Neutral/42-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),310)"></value>
+		<!--Rain/Windy/Day/26-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),311)"></value>
+		<!--Rain/Windy/Night/55-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),312)"></value>
+		<!--Rain/Showers/Neutral/44-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),320)"></value>
+		<!--Rain/Showers/Day/28-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),321)"></value>
+		<!--Rain/Showers/Night/57-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),322)"></value>
+		<!--Rain/Thunderstorm/Neutral/48-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),330)"></value>
+		<!--Rain/Thunderstorm/Day/34-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),331)"></value>
+		<!--Rain/Thunderstorm/Night/61-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),332)"></value>
+		<!--Rain/Mix/Neutral/41-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),340)"></value>
+		<!--Rain/Mix/Day/25-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),341)"></value>
+		<!--Rain/Mix/Night/68-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),342)"></value>
+		<!--Snow/Neutral/45-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),400)"></value>
+		<!--Snow/Day/29-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),401)"></value>
+		<!--Snow/Night/58-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),402)"></value>
+		<!--Snow/Windy/Neutral/113-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),410)"></value>
+		<!--Snow/Windy/Day/114-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),411)"></value>
+		<!--Snow/Windy/Night/115-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),412)"></value>
+		<!--Snow/Thunderstorm/Neutral/121-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),420)"></value>
+		<!--Snow/Thunderstorm/Day/120-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),421)"></value>
+		<!--Snow/Thunderstorm/Night/122-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),422)"></value>
+		<!--Fog/Neutral/38-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),500)"></value>
+		<!--Fog/Day/22-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),501)"></value>
+		<!--Fog/Night/89-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),502)"></value>
+		<!--Others/Heat/126-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),1010)"></value>
+		<!--Others/Raindrops/93-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),1020)"></value>
+		<!--Others/Windy/49-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),1030)"></value>
+		<!--Others/StrongWind/94-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),1040)"></value>
+		<!--Others/Lightning/40-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),1050)"></value>
+		<!--Others/Tornado/100-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),1060)"></value>
+		<!--Others/Hurricane/127-->
+		<value condition="StringCompare(Window(Weather).Property(Current.FanartCode),1070)"></value>
 	</variable>
 
 
-	<!--weather icons-->
-	<variable name="CurrentWeatherIcon">
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),0)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),1)"></value>
-		<!--Windy/Rain-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),2)"></value>
-		<!--Windy/Rain-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),3)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),4)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),5)"></value>
-		<!--Cloudy/Snow-Rain Mix-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),6)"></value>
-		<!--Hail-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),7)"></value>
-		<!--Icy/Clouds Rain-Snow-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),8)"></value>
-		<!--Icy/Haze Rain-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),9)"></value>
-		<!--Haze/Rain-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),10)"></value>
-		<!--Icy/Rain-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),11)"></value>
-		<!--Light Rain-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),12)"></value>
-		<!--Moderate Rain-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),13)"></value>
-		<!--Cloudy/Flurries-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),14)"></value>
-		<!--Cloudy/Flurries-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),15)"></value>
-		<!--Cloudy/Flurries-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),16)"></value>
-		<!--Cloudy/Flurries-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),17)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),18)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),19)"></value>
-		<!--Dust-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),20)"></value>
-		<!--Fog-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),21)"></value>
-		<!--Haze-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),22)"></value>
-		<!--Smoke-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),23)"></value>
-		<!--Windy-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),24)"></value>
-		<!--Windy-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),25)"></value>
-		<!--Windy-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),26)"></value>
-		<!--Mostly Cloudy-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),27)"></value>
-		<!--Mostly Cloudy/Night-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),28)"></value>
-		<!--Mostly Cloudy/Sunny-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),29)"></value>
-		<!--Partly Cloudy/Night-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),30)"></value>
-		<!--Partly Cloudy/Day-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),31)"></value>
-		<!--Clear/Night-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),32)"></value>
-		<!--Clear/Day-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),33)"></value>
-		<!--Hazy/Night-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),34)"></value>
-		<!--Hazy/Day-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),35)"></value>
-		<!--Rain/Lightning-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),36)"></value>
-		<!--Hot!-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),37)"></value>
-		<!--Lightning/Day-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),38)"></value>
-		<!--Lightning-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),39)"></value>
-		<!--Rain/Day-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),40)"></value>
-		<!--Rain-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),41)"></value>
-		<!--Snow-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),42)"></value>
-		<!--Snow-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),43)"></value>
-		<!--Snow-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),44)"></value>
-		<!--Partly Cloudy/Day-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),45)"></value>
-		<!--Rain/Night-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),46)"></value>
-		<!--Snow-->
-		<value condition="stringcompare(Window(Weather).Property(Current.fanartCode),47)"></value>
-		<!--Thunder Showers/Night-->
+	<!---Weather icons for listing controls-->
+	<variable name="ListWeatherIcon">
+		<!--Clear-Sunny/Day/32-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),101)"></value>
+		<!--Clear/Night/62-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),102)"></value>
+		<!--Cloudy/Neutral/37-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),200)"></value>
+		<!--Cloudy/Mostly/Neutral/80-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),210)"></value>
+		<!--Cloudy/Mostly/Day/137-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),211)"></value>
+		<!--Cloudy/Mostly Night/138-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),212)"></value>
+		<!--Cloudy/Partly/Neutral/80-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),220)"></value>
+		<!--Cloudy/Partly/Day/21-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),221)"></value>
+		<!--Cloudy/Partly/Night/65-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),222)"></value>
+		<!--Cloudy/Windy/Neutral/36-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),230)"></value>
+		<!--Cloudy/Windy/Day/20-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),231)"></value>
+		<!--Cloudy/Windy/Night/51-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),232)"></value>
+		<!--Cloudy/Gust/Neutral/35-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),240)"></value>
+		<!--Cloudy/Gust/Day/19-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),241)"></value>
+		<!--Cloudy/Gust/Night/50-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),242)"></value>
+		<!--Rain/Neutral/43-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),300)"></value>
+		<!--Rain/Day/27-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),301)"></value>
+		<!--Rain/Night/56-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),302)"></value>
+		<!--Rain/Windy/Neutral/42-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),310)"></value>
+		<!--Rain/Windy/Day/26-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),311)"></value>
+		<!--Rain/Windy/Night/55-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),312)"></value>
+		<!--Rain/Showers/Neutral/44-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),320)"></value>
+		<!--Rain/Showers/Day/28-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),321)"></value>
+		<!--Rain/Showers/Night/57-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),322)"></value>
+		<!--Rain/Thunderstorm/Neutral/48-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),330)"></value>
+		<!--Rain/Thunderstorm/Day/34-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),331)"></value>
+		<!--Rain/Thunderstorm/Night/61-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),332)"></value>
+		<!--Rain/Mix/Neutral/41-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),340)"></value>
+		<!--Rain/Mix/Day/25-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),341)"></value>
+		<!--Rain/Mix/Night/68-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),342)"></value>
+		<!--Snow/Neutral/45-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),400)"></value>
+		<!--Snow/Day/29-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),401)"></value>
+		<!--Snow/Night/58-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),402)"></value>
+		<!--Snow/Windy/Neutral/113-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),410)"></value>
+		<!--Snow/Windy/Day/114-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),411)"></value>
+		<!--Snow/Windy/Night/115-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),412)"></value>
+		<!--Snow/Thunderstorm/Neutral/121-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),420)"></value>
+		<!--Snow/Thunderstorm/Day/120-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),421)"></value>
+		<!--Snow/Thunderstorm/Night/122-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),422)"></value>
+		<!--Fog/Neutral/38-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),500)"></value>
+		<!--Fog/Day/22-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),501)"></value>
+		<!--Fog/Night/89-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),502)"></value>
+		<!--Others/Heat/126-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),1010)"></value>
+		<!--Others/Raindrops/93-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),1020)"></value>
+		<!--Others/Windy/49-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),1030)"></value>
+		<!--Others/StrongWind/94-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),1040)"></value>
+		<!--Others/Lightning/40-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),1050)"></value>
+		<!--Others/Tornado/100-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),1060)"></value>
+		<!--Others/Hurricane/127-->
+		<value condition="StringCompare(ListItem.Property(FanartCode),1070)"></value>
 	</variable>
 
 
 	<!--Star rating for music player-->
     <variable name="StarRating">
-        <value condition="stringcompare(MusicPlayer.UserRating,1)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,2)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,3)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,4)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,5)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,6)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,7)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,8)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,9)"></value>
-        <value condition="stringcompare(MusicPlayer.UserRating,10)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,1)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,2)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,3)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,4)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,5)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,6)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,7)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,8)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,9)"></value>
+        <value condition="StringCompare(MusicPlayer.UserRating,10)"></value>
         <value></value>
     </variable>
+
 
 	<!--Star rating for song info-->
     <variable name="InfoStarRating">
-        <value condition="stringcompare(ListItem.UserRating,1)"></value>
-        <value condition="stringcompare(ListItem.UserRating,2)"></value>
-        <value condition="stringcompare(ListItem.UserRating,3)"></value>
-        <value condition="stringcompare(ListItem.UserRating,4)"></value>
-        <value condition="stringcompare(ListItem.UserRating,5)"></value>
-        <value condition="stringcompare(ListItem.UserRating,6)"></value>
-        <value condition="stringcompare(ListItem.UserRating,7)"></value>
-        <value condition="stringcompare(ListItem.UserRating,8)"></value>
-        <value condition="stringcompare(ListItem.UserRating,9)"></value>
-        <value condition="stringcompare(ListItem.UserRating,10)"></value>
+        <value condition="StringCompare(ListItem.UserRating,1)"></value>
+        <value condition="StringCompare(ListItem.UserRating,2)"></value>
+        <value condition="StringCompare(ListItem.UserRating,3)"></value>
+        <value condition="StringCompare(ListItem.UserRating,4)"></value>
+        <value condition="StringCompare(ListItem.UserRating,5)"></value>
+        <value condition="StringCompare(ListItem.UserRating,6)"></value>
+        <value condition="StringCompare(ListItem.UserRating,7)"></value>
+        <value condition="StringCompare(ListItem.UserRating,8)"></value>
+        <value condition="StringCompare(ListItem.UserRating,9)"></value>
+        <value condition="StringCompare(ListItem.UserRating,10)"></value>
         <value></value>
     </variable>
 
-    <variable name="BackgroundImage">
-        <value condition="Integer.IsGreater(System.Time(mm),0)+Integer.IsLess(System.Time(mm),30)">backgrounds/background02.png</value>
-		<value condition="Integer.IsGreater(System.Time(mm),30)+Integer.IsLess(System.Time(mm),60)">backgrounds/background01.png</value>
-        <value condition="Integer.IsEqual(System.Time(mm),0) | Integer.IsEqual(System.Time(mm),30)">special://skin/media/backgrounds/background01.png</value>
-		<value>special://skin/media/backgrounds/background02.png</value>
-    </variable>
 </includes>
