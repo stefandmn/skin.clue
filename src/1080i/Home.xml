@@ -41,17 +41,6 @@
 			</control>
 		</control>
 
-		<!--include content="Combobox">
-			<param name="id" value="1001"/>
-			<param name="label" value="Demo Combo"/>
-			<param name="up" value="9000"/>
-			<param name="down" value="9000"/>
-			<param name="posx" value="4-col"/>
-			<param name="posy" value="6-col"/>
-			<param name="lwidth" value="3-col"/>
-			<param name="bwidth" value="3-col"/>
-		</include-->
-
 		<!-- 2) RSS News -->
 		<control type="rss">
 			<animation type="Windowopen">

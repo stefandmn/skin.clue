@@ -289,14 +289,14 @@
 					<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
 					<bordersize>3</bordersize>
 				</control>
-				<control type="spincontrol" id="$PARAM[id]">
-					<posx>$PARAM[bwidth]</posx>
+				<control type="button" id="$PARAM[id]">
+					<posx>0</posx>
 					<posy>0</posy>
-					<width>3-col</width>
+					<width>$PARAM[bwidth]</width>
 					<font>itemTitle</font>
 					<textoffsetx>12</textoffsetx>
 					<textoffsety>0</textoffsety>
-					<align>left</align>
+					<align>$PARAM[balign]</align>
 					<aligny>center</aligny>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
@@ -304,10 +304,36 @@
 					<texturenofocus colordiffuse="77888888">masks/selected.png</texturenofocus>
 					<texturefocus colordiffuse="77FFFFFF">masks/selected.png</texturefocus>
 					<pulseonselect>true</pulseonselect>
+					<label>$PARAM[value]</label>
 					<onup>$PARAM[up]</onup>
 					<ondown>$PARAM[down]</ondown>
 					<onleft>$PARAM[left]</onleft>
 					<onright>$PARAM[right]</onright>
+				</control>
+				<control type="group">
+					<posx>$PARAM[bwidth]</posx>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-row</width>
+						<height>1-row</height>
+						<texture border="3" flipy="true" flipx="false" >masks/offblack.png</texture>
+						<bordertexture border="2" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="label">
+						<enable>Control.HasFocus($PARAM[id])</enable>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1-row</width>
+						<height>1-row</height>
+						<font>symbolLarge</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>selected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label></label>
+					</control>
 				</control>
 			</control>
 		</control>
@@ -315,7 +341,18 @@
 
 
 
-	<!-- ListBox control -->
+	<!--
+		Listbox control - Input parameters:
+			id		- Specifies the control ID of the list box.
+			posx	- Specifies where the left edge of the control should be drawn
+			posy	- Specifies where the top edge of the control should be drawn
+			width	- Specifies the width that should be used to draw the list box control
+			height	- Specifies the height that should be used to draw the list box control
+			up		- Specifies the <id> of the control that should be moved to when the user moves up off this control
+			down	- Specifies the <id> of the control that should be moved to when the user moves down off this control
+			left	- Specifies the <id> of the control that should be moved to when the user moves left off this control
+			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
+	-->
 	<include name="Listbox">
 		<control type="group">
 			<posx>$PARAM[posx]</posx>
