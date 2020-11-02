@@ -1,6 +1,6 @@
 v2.0
 - Adapted for Clue 2.0
-- Added PVR screens
+- Added PVR screens (not yet adapted)
 
 v1.4
 - Adapt Weather screen for new providers (openweathermap, darksky)
