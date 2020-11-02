@@ -7,7 +7,7 @@
 		<res width="1920" height="1080" aspect="16:9" default="true" folder="1080i"/>
 	</extension>
 	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Clue Skin for MCPi</summary>
-		<description lang="en">Clue Skin is an optimized add-on, based on guidance from other MCPi/Kodi packages, attempting to embrace and integrate their good ideas, making it suitable skin for RPi</description>
+		<summary lang="en">Clue Skin for Kodi</summary>
+		<description lang="en">Clue Skin is an optimized add-on, based on guidance from other Kodi packages, attempting to embrace and integrate their good ideas, making it suitable skin for RPi</description>
 	</extension>
 </addon>

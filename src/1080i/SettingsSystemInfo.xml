@@ -103,7 +103,7 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<description>MCPi/Kodi Version</description>
+						<description>Kodi Version</description>
 						<label>31015</label>
 						<label2>Kodi $INFO[System.BuildVersion][CR]$INFO[System.BuildDate][CR][CR]$INFO[System.AddonTitle(skin.clue)] $INFO[System.AddonVersion(skin.clue)]</label2>
 						<property name="itemIcon">&gt;</property>

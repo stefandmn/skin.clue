@@ -1,4 +1,4 @@
-# MCPi language file
+# Kodi language file
 # Addon Name: Clue
 # Addon id: skin.clue
 # Addon Provider: AMSD
@@ -11,7 +11,7 @@ msgstr ""
 "Language: en\n"
 
 msgctxt "Addon Summary"
-msgid "A skin for MCPi/Kodi from AMSD"
+msgid "A skin for Kodi from AMSD"
 msgstr ""
 
 msgctxt "Addon Description"
@@ -79,7 +79,7 @@ msgid "title(s)"
 msgstr ""
 
 msgctxt "#31015"
-msgid "About MCPi"
+msgid "About Kodi"
 msgstr ""
 
 msgctxt "#31016"
@@ -359,7 +359,7 @@ msgid "Disable this Addon"
 msgstr ""
 
 msgctxt "#31105"
-msgid "MCPi Central Configurations"
+msgid "Clue Central Configurations"
 msgstr ""
 
 msgctxt "#31106"
@@ -371,7 +371,7 @@ msgid "Active profile"
 msgstr ""
 
 msgctxt "#31108"
-msgid "Clue and MCPi System Details"
+msgid "Clue/Kodi System Details"
 msgstr ""
 
 msgctxt "#31109"
