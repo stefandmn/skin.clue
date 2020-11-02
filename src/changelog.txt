@@ -1,3 +1,7 @@
+v2.0
+- Adapted for Clue 2.0
+- Added PVR screens
+
 v1.4
 - Adapt Weather screen for new providers (openweathermap, darksky)
 - Design complete schema of secondary themes
