@@ -62,6 +62,11 @@ ifeq ($(shell [[ -f $(PUBLISH)/addons.xml ]] && echo -n yes),yes)
 	cp -f $(OUTPUT)/targets/$(NAME).zip $(PUBLISH)/$(NAME)/$(NAME)-$(DISTRO_VER).zip
 	md5sum $(PUBLISH)/$(NAME)/$(NAME)-$(DISTRO_VER).zip > $(PUBLISH)/$(NAME)/$(NAME)-$(DISTRO_VER).zip.md5
 	python $(PUBLISH)/xmlgen.py
+	git add .
+	git commit -m "Release $(DISTRO_VER)"
+	git push
+	git tag "$(DISTRO_VER)"
+	git push origin --tags
 else
 	echo "Repository location described by PUBLISH variable is not correct (doesn't \
 	contain the expected structure and remote resources)!"
