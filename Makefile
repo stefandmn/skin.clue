@@ -43,6 +43,8 @@ else
 	IP address of the RPi device!"
 endif
 
+test: deploy
+
 
 # Build addon package in deployment format
 build:
@@ -102,3 +104,58 @@ clean:
 # Clean-up all build distributions, cache and stamps
 cleanall:
 	rm -rf $(OUTDIR)/* $(OUTDIR)/.stamp $(OUTDIR)/.ccache
+
+
+# Display the help text
+help:
+	echo -e "\
+\nSYNOPSIS\n\
+       make deploy | build | publish | version | release\n\
+       make clean | cleanall\n\
+       make help\n\
+\nDESCRIPTION\n\
+    Executes one of the make tasks defined through this Makefile flow, according \n\
+    to the scope of this project.\n\n\
+    deploy | test\n\
+                  deploy addon resources on a remote test system (RPi device)\n\
+    build\n\
+                  build the addon package along to the new version of it\n\
+    publish\n\
+                  install/publish the addon (already built) on the repository file\n\
+                  system (it has to be already mounted to the development environment)\n\
+    version\n\
+                  Commit the new release changes into GitHub repository\n\
+    clean\n\
+                  cleanup the build resources within the output location\n\
+    cleanall\n\
+                  Clean-up all resources from the output location (related or nor directly\n\
+                  connected to the addon build process\n\
+    release\n\
+                  Build the system release for the current DEVICE\n\
+    help\n\
+                  Shows this text\n\
+\n\
+    There are couple of system variables that should be be set in order to drive the execution \n\
+    of particular tasks:\n\
+    PUBLISH\n\
+                  Indicates the remote file system mounted to the local development environment, \n\
+                  in order to deploy releases in the repository container.\n\
+    OUTPUT\n\
+                  Describes the local file system location where the build process will be  \n\
+                  executed. Default value is '$(ROOT)/../Clue-out'\n\
+    RPIHOST\n\
+                  Indicates the host name or the IP address of the test system in order to deploy\n\
+                  addon resources through deploy or test task. The remote system should have SSH \n\
+                  service enabled and active.\n\
+\n\
+EXAMPLES\n\
+       deploy the entire distribution on a testing environment ('deploy' task is default)\n\
+       > make\n\
+       > make deploy\n\n\
+       build the entire distribution ('build' make task is default)\n\
+       > make build\n\n\
+       publish new release in the addon repository\n\
+       > make publish\n\n\
+       make complete addon release: build it, publish it and commit the changes on GitHub\n\
+       > make release\n\n\
+" | more
