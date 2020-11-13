@@ -25,7 +25,7 @@
 			</control>
 		</control>
 		<control type="group">
-			<visible>isEmpty(ListItem.art(fanart))</visible>
+			<visible>String.IsEmpty(ListItem.art(fanart))</visible>
 			<include>globalBackground</include>
 		</control>
 

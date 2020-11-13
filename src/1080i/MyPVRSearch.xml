@@ -3,12 +3,15 @@
 	<defaultcontrol always="true">50</defaultcontrol>
 	<menucontrol>9000</menucontrol>
 	<views>50</views>
+	<menucontrol>6053</menucontrol>
 	<controls>
 		<include>DefaultBackground</include>
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
 			<control type="group">
+				<visible>Control.IsVisible(50)</visible>
 				<include>OpenClose_Left</include>
+				<include>Visible_Left</include>
 				<control type="fixedlist" id="50">
 					<left>0</left>
 					<top>list_y_offset</top>
@@ -18,58 +21,47 @@
 					<ondown>50</ondown>
 					<onleft>9000</onleft>
 					<onright>73</onright>
-					<movement>3</movement>
-					<focusposition>4</focusposition>
+					<movement>2</movement>
+					<focusposition>3</focusposition>
 					<pagecontrol>73</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<itemlayout height="100">
 						<control type="label">
-							<left>30</left>
+							<visible>String.IsEmpty(ListItem.Date)</visible>
+							<left>120</left>
 							<top>0</top>
 							<right>30</right>
 							<height>100</height>
 							<font>font36_title</font>
 							<aligny>center</aligny>
-							<visible>String.IsEmpty(ListItem.Date)</visible>
 							<label>$INFO[ListItem.Label]</label>
 						</control>
 						<control type="group">
 							<visible>!String.IsEmpty(ListItem.Date)</visible>
+							<control type="image">
+								<left>25</left>
+								<top>10</top>
+								<width>80</width>
+								<height>80</height>
+								<texture fallback="DefaultTVShows.png">$INFO[Listitem.ActualIcon]</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!String.IsEmpty(ListItem.ActualIcon)</visible>
+							</control>
 							<control type="label">
-								<left>30</left>
+								<left>120</left>
 								<top>10</top>
 								<right>30</right>
-								<height>30</height>
+								<height>100</height>
 								<aligny>top</aligny>
 								<label>$INFO[ListItem.ChannelName][COLOR grey]$INFO[ListItem.Label, - ][/COLOR]</label>
 							</control>
 							<control type="label">
-								<left>30</left>
-								<top>53</top>
-								<width>680</width>
-								<height>30</height>
+								<left>120</left>
+								<top>20</top>
+								<width>350</width>
+								<height>100</height>
 								<font>font12</font>
-								<aligny>top</aligny>
-								<label>$VAR[TimersSubLabel]</label>
-							</control>
-							<control type="label">
-								<right>20</right>
-								<top>13</top>
-								<width>900</width>
-								<height>70</height>
-								<font>font12</font>
-								<align>right</align>
-								<aligny>top</aligny>
-								<label>$INFO[ListItem.Comment]</label>
-							</control>
-							<control type="label">
-								<right>20</right>
-								<top>53</top>
-								<width>900</width>
-								<height>75</height>
-								<font>font12</font>
-								<align>right</align>
-								<aligny>top</aligny>
+								<aligny>center</aligny>
 								<label>$INFO[ListItem.Date]</label>
 							</control>
 						</control>
@@ -84,19 +76,28 @@
 							<visible>Control.HasFocus(50)</visible>
 						</control>
 						<control type="label">
-							<left>30</left>
+							<visible>String.IsEmpty(ListItem.Date)</visible>
+							<left>120</left>
 							<top>0</top>
 							<right>30</right>
 							<height>100</height>
 							<font>font36_title</font>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
-							<visible>String.IsEmpty(ListItem.Date)</visible>
 						</control>
 						<control type="group">
 							<visible>!String.IsEmpty(ListItem.Date)</visible>
+							<control type="image">
+								<left>25</left>
+								<top>10</top>
+								<width>80</width>
+								<height>80</height>
+								<texture fallback="DefaultTVShows.png">$INFO[Listitem.ActualIcon]</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!String.IsEmpty(ListItem.ActualIcon)</visible>
+							</control>
 							<control type="label">
-								<left>30</left>
+								<left>120</left>
 								<top>10</top>
 								<right>30</right>
 								<height>100</height>
@@ -104,32 +105,12 @@
 								<label>$INFO[ListItem.ChannelName]$INFO[ListItem.Label, - ]</label>
 							</control>
 							<control type="label">
-								<left>30</left>
-								<top>53</top>
-								<width>680</width>
+								<left>120</left>
+								<top>20</top>
+								<width>350</width>
 								<height>100</height>
 								<font>font12</font>
-								<aligny>top</aligny>
-								<label>$VAR[TimersSubLabel]</label>
-							</control>
-							<control type="label">
-								<right>20</right>
-								<top>13</top>
-								<width>900</width>
-								<height>70</height>
-								<font>font12</font>
-								<align>right</align>
-								<aligny>top</aligny>
-								<label>$INFO[ListItem.Comment]</label>
-							</control>
-							<control type="label">
-								<right>20</right>
-								<top>53</top>
-								<width>900</width>
-								<height>75</height>
-								<font>font12</font>
-								<align>right</align>
-								<aligny>top</aligny>
+								<aligny>center</aligny>
 								<label>$INFO[ListItem.Date]</label>
 							</control>
 						</control>
@@ -157,41 +138,18 @@
 					<orientation>vertical</orientation>
 					<animation effect="zoom" start="100,100" end="50,100" center="-50,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
 				</control>
-				<include content="PVRInfoPanel">
-					<param name="folder_sortorder" value="ascending" />
-				</include>
+				<include>PVRInfoPanel</include>
 			</control>
-		</control>
-		<include content="TopBar">
-			<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRTimersVar]" />
-		</include>
-		<include content="BottomBar">
-			<param name="info_visible" value="true" />
-		</include>
-		<control type="label">
-			<right>20</right>
-			<include>OpenClose_Right</include>
-			<bottom>10</bottom>
-			<width>850</width>
-			<height>60</height>
-			<label>$INFO[PVR.NextTimer]</label>
-			<shadowcolor>black</shadowcolor>
-			<align>right</align>
-			<aligny>center</aligny>
-			<wrapmultiline>true</wrapmultiline>
-			<font>font27</font>
-		</control>
-		<control type="group">
-			<include>MediaMenuCommon</include>
-			<include>PVRSideBar</include>
-		</control>
-		<control type="label" id="29">
-			<font></font>
-			<include>HiddenObject</include>
-		</control>
-		<control type="label" id="30">
-			<font></font>
-			<include>HiddenObject</include>
+			<include content="TopBar">
+				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRSearchVar]" />
+			</include>
+			<include content="BottomBar">
+				<param name="info_visible" value="true" />
+			</include>
+			<control type="group">
+				<include>MediaMenuCommon</include>
+				<include>PVRSideBar</include>
+			</control>
 		</control>
 	</controls>
 </window>

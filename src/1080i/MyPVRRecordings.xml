@@ -1,265 +1,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-    <defaultcontrol always="false">9999</defaultcontrol>
-    <allowoverlay>no</allowoverlay>
-    <onload condition="Skin.hassetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
-    <onunload>Skin.SetString(showRecentVideoItems,true)</onunload>
-    <controls>
-        <include>globalBackground</include>
-        <!--page container group-->
-        <control type="group">
-            <!--window fader-->
-            <animation type="conditional" condition="window.next(0) | window.next(1)">
-                <effect type="fade" start="100" end="0" time="300"/>
-            </animation>
-            <!--shift page for certain modal dialogs-->
-            <include>modalDialogContentShift</include>
-            <!--content provider-->
-            <control type="group">
-                <posx>0</posx>
-                <posy>0</posy>
-                <!--main menu-->
-                <control type="group" id="8000">
-                    <posx>col-1-begin</posx>
-                    <posy>row-2-begin</posy>
-                    <include>dateTime</include>
-                    <include>menuItems</include>
-                </control>
-                <!--Folder titles-->
-                <control type="group">
-                    <posx>col-4-begin</posx>
-                    <posy>row-2-begin</posy>
-                    <!--source title-->
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>14-col</width>
-                        <font>pageTitle</font>
-                        <label>$LOCALIZE[31006] [COLOR accented]$LOCALIZE[31165][/COLOR]</label>
-                        <textcolor>selected</textcolor>
-                    </control>
-                    <control type="label">
-                        <posx>0</posx>
-                        <posy>45</posy>
-                        <width>14-col</width>
-                        <font>regular</font>
-                        <label>$INFO[container.numitems] $LOCALIZE[31165]</label>
-                        <textcolor>selected</textcolor>
-                    </control>
-                </control>
-                <!--Main content listing-->
-                <control type="group" id="9999">
-                    <posx>col-4-begin</posx>
-                    <posy>270</posy>
-                    <!--animations-->
-                    <animation type="windowopen">
-                        <include>listSlideIn</include>
-                    </animation>
-                    <control type="panel" id="50">
-                        <posx>-12</posx>
-                        <posy>-12</posy>
-                        <width>20-col</width>
-                        <height>11-row</height>
-                        <onleft>9000</onleft>
-                        <onright>60</onright>
-                        <pagecontrol>60</pagecontrol>
-                        <itemlayout width="20-col" height="1-row">
-                            <control type="image">
-                                <posx>0</posx>
-                                <posy>2</posy>
-                                <width>20-col</width>
-                                <height>53</height>
-                                <aspectratio>stretch</aspectratio>
-                                <texture border="24,0,24,0">UIControls/listitemNF.png</texture>
-                                <bordersize>0</bordersize>
-                                <colordiffuse>99FFFFFF</colordiffuse>
-                            </control>
-                            <control type="image">
-                                <posx>4</posx>
-                                <posy>4</posy>
-                                <width>48</width>
-                                <height>48</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="masks/circle.png" border="0">colors/offblack.png</texture>
-                            </control>
-                            <control type="label">
-                                <visible>!isempty(ListItem.playcount) + !ListItem.IsResumable</visible>
-                                <posx>11</posx>
-                                <posy>-2</posy>
-                                <width>38</width>
-                                <font>symbolLarge</font>
-                                <textcolor>selected</textcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label></label>
-                            </control>
-                            <control type="label">
-                                <posx>1-col</posx>
-                                <posy>0</posy>
-                                <width>10-col-gutter</width>
-                                <font>itemTitle</font>
-                                <textcolor>selected</textcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label>$INFO[ListItem.Label]</label>
-                            </control>
-                            <control type="label">
-                                <posx>13-col</posx>
-                                <posy>0</posy>
-                                <width>4-col-gutter</width>
-                                <font>itemTitle</font>
-                                <textcolor>selected</textcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label>$INFO[ListItem.Date]</label>
-                            </control>
-                            <control type="label">
-                                <visible>!isempty(listitem.duration)</visible>
-                                <posx>17-col</posx>
-                                <posy>0</posy>
-                                <width>30</width>
-                                <font>symbol</font>
-                                <textcolor>selected</textcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label></label>
-                            </control>
-                            <control type="label">
-                                <posx>1260</posx>
-                                <posy>0</posy>
-                                <width>2-col</width>
-                                <font>itemTitle</font>
-                                <textcolor>selected</textcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label>$INFO[ListItem.Duration]</label>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="20-col" height="1-row">
-                            <control type="image">
-                                <posx>0</posx>
-                                <posy>2</posy>
-                                <width>20-col</width>
-                                <height>53</height>
-                                <aspectratio>stretch</aspectratio>
-                                <texture border="24,0,24,0">UIControls/listitemFO.png</texture>
-                                <bordersize>0</bordersize>
-                                <colordiffuse>FFFFFFFF</colordiffuse>
-                            </control>
-                            <control type="image">
-                                <posx>4</posx>
-                                <posy>4</posy>
-                                <width>48</width>
-                                <height>48</height>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="masks/circle.png" border="0">colors/offblack.png</texture>
-                            </control>
-                            <control type="label">
-                                <visible>!isempty(ListItem.playcount) + !ListItem.IsResumable</visible>
-                                <posx>11</posx>
-                                <posy>-2</posy>
-                                <width>38</width>
-                                <font>symbolLarge</font>
-                                <textcolor>selected</textcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label></label>
-                            </control>
-                            <control type="label">
-                                <posx>1-col</posx>
-                                <posy>0</posy>
-                                <width>10-col-gutter</width>
-                                <font>itemTitle</font>
-                                <textcolor>black</textcolor>
-                                <selectedcolor>black</selectedcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label>$INFO[ListItem.Label]</label>
-                            </control>
-                            <control type="label">
-                                <posx>13-col</posx>
-                                <posy>0</posy>
-                                <width>4-col-gutter</width>
-                                <font>itemTitle</font>
-                                <textcolor>black</textcolor>
-                                <selectedcolor>black</selectedcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label>$INFO[ListItem.Date]</label>
-                            </control>
-                            <control type="label">
-                                <visible>!isempty(listitem.duration)</visible>
-                                <posx>17-col</posx>
-                                <posy>0</posy>
-                                <width>30</width>
-                                <font>symbol</font>
-                                <textcolor>black</textcolor>
-                                <selectedcolor>black</selectedcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label></label>
-                            </control>
-                            <control type="label">
-                                <posx>1260</posx>
-                                <posy>0</posy>
-                                <width>2-col</width>
-                                <font>itemTitle</font>
-                                <textcolor>black</textcolor>
-                                <selectedcolor>black</selectedcolor>
-                                <shadowcolor>-</shadowcolor>
-                                <label>$INFO[ListItem.Duration]</label>
-                            </control>
-                        </focusedlayout>
-                    </control>
-                    <!--Additional info-->
-                    <control type="group">
-                        <posx>0</posx>
-                        <posy>672</posy>
-                        <control type="label">
-                            <posx>0</posx>
-                            <posy>0</posy>
-                            <width>12-col-gutter</width>
-                            <font>itemTitle</font>
-                            <textcolor>selected</textcolor>
-                            <selectedcolor>selected</selectedcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[Pvr.BackendDiskSpace]</label>
-                        </control>
-                    </control>
-                </control>
-                <!--page scrollbar-->
-                <control type="group" id="9400">
-                    <visible>Control.IsVisible(60)</visible>
-                    <animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(9400).hasfocus">conditional</animation>
-                    <control type="scrollbar" id="60">
-                        <posx>108r</posx>
-                        <posy>276</posy>
-                        <height>672</height>
-                        <onleft>9999</onleft>
-                    </control>
-                </control>
-                <!--Sort / misc labels (footer)-->
-                <control type="group">
-                    <posx>col-4-begin</posx>
-                    <posy>row-18-begin</posy>
-                    <include>mediaListFooter</include>
-                </control>
-            </control>
-        </control>
-        <!--sorting and misc controls-->
-        <control type="group" id="61">
-            <!--Options-->
-            <control type="group">
-                <posx>24</posx>
-                <posy>111</posy>
-                <animation type="Conditional" condition="controlgroup(62).hasfocus">
-                    <effect type="fade" start="0" end="100" time="300"/>
-                    <effect type="slide" start="-200" end="0" tween="sine" easing="out" time="400"/>
-                </animation>
-                <animation type="Conditional" condition="!controlgroup(62).hasfocus | Window.IsActive(5000) | Window.IsActive(5900)">
-                    <effect type="fade" start="100" end="0" time="400"/>
-                    <effect type="slide" start="0" end="-200" tween="sine" easing="out" time="400"/>
-                </animation>
-                <!--menu-->
-                <include>sideBarMenuItems</include>
-            </control>
-        </control>
-        <!--debugging-->
-        <include>DebugGrid</include>
-        <control type="label">
-            <include>DialogID</include>
-            <label>MyPVRRecordings.xml</label>
-        </control>
-    </controls>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<views>50</views>
+	<menucontrol>9000</menucontrol>
+	<controls>
+		<include>DefaultBackground</include>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<control type="group">
+				<include>OpenClose_Left</include>
+				<control type="fixedlist" id="50">
+					<left>0</left>
+					<top>list_y_offset</top>
+					<right>918</right>
+					<bottom>list_y_offset</bottom>
+					<onleft>9000</onleft>
+					<onright>73</onright>
+					<onup>50</onup>
+					<ondown>50</ondown>
+					<movement>3</movement>
+					<focusposition>5</focusposition>
+					<pagecontrol>73</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<focusedlayout height="80">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<right>0</right>
+							<height>80</height>
+							<texture colordiffuse="button_focus">lists/focus.png</texture>
+							<animation effect="fade" start="100" end="0" time="0" condition="!Control.HasFocus(50)">Conditional</animation>
+						</control>
+						<control type="image">
+							<left>21</left>
+							<top>30</top>
+							<width>32</width>
+							<height>32</height>
+							<texture colordiffuse="white">$VAR[ListWatchedIconVar]</texture>
+						</control>
+						<control type="label">
+							<left>75</left>
+							<top>0</top>
+							<height>80</height>
+							<right>30</right>
+							<aligny>center</aligny>
+							<scroll>true</scroll>
+							<label>$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>0</top>
+							<height>80</height>
+							<right>20</right>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+						</control>
+					</focusedlayout>
+					<itemlayout height="80">
+						<control type="image">
+							<left>21</left>
+							<top>30</top>
+							<width>32</width>
+							<height>32</height>
+							<texture>$VAR[ListWatchedIconVar]</texture>
+						</control>
+						<control type="label">
+							<left>75</left>
+							<top>0</top>
+							<height>80</height>
+							<right>30</right>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label]$INFO[ListItem.EpisodeName, (,)]</label>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>0</top>
+							<height>80</height>
+							<right>20</right>
+							<align>right</align>
+							<aligny>center</aligny>
+							<label>$INFO[ListItem.Label2]</label>
+							<textcolor>grey</textcolor>
+							<shadowcolor>text_shadow</shadowcolor>
+						</control>
+					</itemlayout>
+				</control>
+			</control>
+			<control type="group">
+				<depth>DepthContentPanel</depth>
+				<include>OpenClose_Right</include>
+				<width>870</width>
+				<right>0</right>
+				<include content="ContentPanel">
+					<param name="left" value="-72" />
+					<param name="width" value="970" />
+					<param name="top" value="-20" />
+					<param name="flipx" value="true" />
+				</include>
+				<control type="scrollbar" id="73">
+					<left>-50</left>
+					<top>list_y_offset</top>
+					<width>12</width>
+					<bottom>list_y_offset</bottom>
+					<onleft>50</onleft>
+					<onright>50</onright>
+					<orientation>vertical</orientation>
+					<animation effect="zoom" start="100,100" end="50,100" center="-50,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(73)">conditional</animation>
+				</control>
+				<include content="PVRInfoPanel">
+					<param name="folder_sortorder" value="descending" />
+				</include>
+			</control>
+			<include content="TopBar">
+				<param name="breadcrumbs_label" value="$VAR[BreadcrumbsPVRRecordingsVar]" />
+			</include>
+			<include content="BottomBar">
+				<param name="info_visible" value="true" />
+			</include>
+			<control type="group">
+				<depth>DepthBars</depth>
+				<right>20</right>
+				<width>850</width>
+				<include>OpenClose_Right</include>
+				<bottom>0</bottom>
+				<height>60</height>
+				<control type="label">
+					<right>220</right>
+					<width>610</width>
+					<height>20</height>
+					<label>$INFO[PVR.backenddiskspace]</label>
+					<shadowcolor>black</shadowcolor>
+					<align>right</align>
+					<font>font27</font>
+					<visible>!Integer.IsGreater(PVR.backenddiskspaceprogr,100)</visible>
+				</control>
+				<control type="progress">
+					<right>0</right>
+					<top>17</top>
+					<width>200</width>
+					<height>12</height>
+					<info>PVR.backenddiskspaceprogr</info>
+					<visible>!Integer.IsGreater(PVR.backenddiskspaceprogr,100)</visible>
+				</control>
+			</control>
+			<control type="group">
+				<include>MediaMenuCommon</include>
+				<include>PVRSideBar</include>
+			</control>
+		</control>
+		<control type="label" id="29">
+			<font></font>
+			<include>HiddenObject</include>
+		</control>
+		<control type="label" id="30">
+			<font></font>
+			<include>HiddenObject</include>
+		</control>
+	</controls>
 </window>

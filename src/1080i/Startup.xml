@@ -4,9 +4,9 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="Library.HasContent(Movies) | Library.HasContent(TVShows) | Library.HasContent(MusicVideos)">Skin.SetString(showRecentVideoItems,true)</onload>
 	<onload condition="Library.HasContent(Music)">Skin.SetString(showRecentMusicItems,true)</onload>
-	<onload condition="isempty(Skin.String(ConfigSlideshow))+!Skin.HasSetting(HomeSlideshow)">Skin.SetBool(HomeSlideshow)</onload>
-	<onload condition="isempty(Skin.String(ConfigSlideshow))+!Skin.HasSetting(MusicSlideshow)">Skin.SetBool(MusicSlideshow)</onload>
-	<onload condition="isempty(Skin.String(ConfigSlideshow))">Skin.SetString(ConfigSlideshow,true)</onload>
+	<onload condition="String.IsEmpty(Skin.String(ConfigSlideshow))+!Skin.HasSetting(HomeSlideshow)">Skin.SetBool(HomeSlideshow)</onload>
+	<onload condition="String.IsEmpty(Skin.String(ConfigSlideshow))+!Skin.HasSetting(MusicSlideshow)">Skin.SetBool(MusicSlideshow)</onload>
+	<onload condition="String.IsEmpty(Skin.String(ConfigSlideshow))">Skin.SetString(ConfigSlideshow,true)</onload>
 	<coordinates>
 		<posx>15</posx>
 		<posy>15</posy>

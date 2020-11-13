@@ -30,7 +30,7 @@
 				<label>[B]$INFO[System.Time][/B] • $INFO[System.Date]</label>
 			</control>
 			<control type="label">
-				<visible>!IsEmpty(Weather.Location)+!String.IsEqual(Weather.Location,busy)</visible>
+				<visible>!String.IsEmpty(Weather.Location)+!String.IsEqual(Weather.Location,busy)+!String.IsEqual(Weather.Location,)</visible>
 				<posx>0</posx>
 				<posy>156</posy>
 				<width>24-col</width>
@@ -68,11 +68,10 @@
 			<animation condition="SubString(Container(9000).NumItems,3)" effect="slide" end="575,0" time="0">conditional</animation>
 			<animation condition="SubString(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
 			<control type="list" id="9000">
-				<posx>0</posx>
-				<posy>0</posy>
-				<width>2000</width>
+				<width>1728</width>
 				<height>3-col</height>
 				<orientation>horizontal</orientation>
+				<centerleft>70%</centerleft>
 				<onup>9100</onup>
 				<ondown>9100</ondown>
 				<onleft>9000</onleft>
@@ -147,8 +146,16 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<visible>!Skin.HasSetting(hideVideo)</visible>
+						<visible>!Skin.HasSetting(hidePVR)</visible>
 						<label>31000</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>Skin.SetString(showNavigationMenu,pvr)</onclick>
+						<onclick>activateWindow(TVChannels)</onclick>
+					</item>
+					<item id="1">
+						<visible>!Skin.HasSetting(hideVideo)</visible>
+						<label>31002</label>
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>Skin.SetString(showNavigationMenu,video)</onclick>
@@ -164,7 +171,7 @@
 					</item>
 					<item id="3">
 						<visible>!Skin.HasSetting(hidePictures)</visible>
-						<label>31002</label>
+						<label>31003</label>
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>Skin.SetString(showNavigationMenu,picture)</onclick>
@@ -193,11 +200,10 @@
 			<animation condition="SubString(Container(9100).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
 			<animation condition="SubString(Container(9100).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
 			<control type="list" id="9100">
-				<posx>0</posx>
-				<posy>0</posy>
 				<width>1-row</width>
-				<height>400</height>
+				<height>1080</height>
 				<orientation>vertical</orientation>
+				<centertop>100%</centertop>
 				<onup>9100</onup>
 				<ondown>9100</ondown>
 				<onleft>9000</onleft>
@@ -246,14 +252,14 @@
 						<onclick>ActivateWindow(systeminfo)</onclick>
 					</item>
 					<item id="2">
-                        <label>31003</label>
+                        <label>31004</label>
                         <label2></label2>
                         <thumb>-</thumb>
 						<visible>Skin.HasSetting(showPrograms)</visible>
                         <onclick>ActivateWindow(programs,addons,return)</onclick>
                     </item>
 					<item id="3">
-						<visible>!IsEmpty(Weather.location)</visible>
+						<visible>!String.IsEmpty(Weather.location)</visible>
 						<label>24027</label>
 						<label2></label2>
 						<thumb>-</thumb>
@@ -282,7 +288,7 @@
 						<onclick>RunScript(program.clue)</onclick>
 					</item>
 					<item id="7">
-						<label>31004</label>
+						<label>31005</label>
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ActivateWindow(ShutdownMenu)</onclick>

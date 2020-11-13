@@ -89,7 +89,7 @@
 		<value condition="Container.Content(addons)">$LOCALIZE[31010]</value>
 		<value condition="Container.Content(albums)">$LOCALIZE[31037] [COLOR accented]$LOCALIZE[31054] $INFO[container.sortmethod][/COLOR]</value>
 		<value condition="Container.Content(songs)">$INFO[listitem.album] [COLOR accented]$INFO[listitem.artist][/COLOR]</value>
-		<value condition="!isEmpty(container.foldername)">$INFO[container.foldername]</value>
+		<value condition="!String.IsEmpty(container.foldername)">$INFO[container.foldername]</value>
 		<value>$LOCALIZE[14022]</value>
 	</variable>
 
@@ -112,14 +112,14 @@
 	<!--SD / HD value (thanks 'Black!)-->
 	<variable name="ItemResolution">
 		<value condition="Integer.IsGreater(ListItem.VideoResolution,719)">$LOCALIZE[31127]</value>
-		<value condition="!IsEmpty(ListItem.VideoResolution)">$LOCALIZE[31128]</value>
+		<value condition="!String.IsEmpty(ListItem.VideoResolution)">$LOCALIZE[31128]</value>
 	</variable>
 
 
 	<!--poster thumb-->
 	<variable name="PosterThumb">
-		<value condition="!IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-		<value condition="IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
+		<value condition="String.IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Icon]</value>
 	</variable>
 
 

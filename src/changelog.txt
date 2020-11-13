@@ -1,5 +1,5 @@
 v2.0
-- Adapted for Clue 2.0
+- Adapted for Clue 2.0 and Kodi 18+
 - Added PVR screens (not yet adapted)
 
 v1.4

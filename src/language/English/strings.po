@@ -11,7 +11,7 @@ msgstr ""
 "Language: en\n"
 
 msgctxt "Addon Summary"
-msgid "A skin for Kodi from AMSD"
+msgid "A skin for Clue and Kodi from AMSD"
 msgstr ""
 
 msgctxt "Addon Description"
@@ -31,15 +31,15 @@ msgid "Play"
 msgstr ""
 
 msgctxt "#31003"
-msgid "Programs"
+msgid "Show"
 msgstr ""
 
 msgctxt "#31004"
-msgid "Power"
+msgid "Programs"
 msgstr ""
 
 msgctxt "#31005"
-msgid "Latest"
+msgid "Power"
 msgstr ""
 
 msgctxt "#31006"
@@ -359,7 +359,7 @@ msgid "Disable this Addon"
 msgstr ""
 
 msgctxt "#31105"
-msgid "Clue Central Configurations"
+msgid "Clue Central Configuration"
 msgstr ""
 
 msgctxt "#31106"
@@ -371,7 +371,7 @@ msgid "Active profile"
 msgstr ""
 
 msgctxt "#31108"
-msgid "Clue/Kodi System Details"
+msgid "Clue and KOdi System Details"
 msgstr ""
 
 msgctxt "#31109"
@@ -681,4 +681,8 @@ msgstr ""
 
 msgctxt "#31316"
 msgid "Rate"
+msgstr ""
+
+msgctxt "#31317"
+msgid "Home: Hide PVR"
 msgstr ""

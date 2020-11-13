@@ -244,6 +244,16 @@
 					<selected>Skin.HasSetting(MusicSlideshow)</selected>
 				</control>
 				<!-- Home Menu tab -->
+				<control type="radiobutton" id="7">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<description>Hide PVR</description>
+					<width>16-col</width>
+					<label>31317</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(hidePVR)</onclick>
+					<selected>Skin.HasSetting(hidePVR)</selected>
+				</control>
 				<control type="radiobutton" id="8">
 					<visible>Container(8000).Hasfocus(2)</visible>
 					<description>Hide Video</description>

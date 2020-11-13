@@ -186,7 +186,7 @@
 					</item>
 					<item id="8">
                         <description>Programs</description>
-                        <label>31003</label>
+                        <label>31004</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31111]</property>
                         <onclick>ActivateWindow(programs,addons,return)</onclick>
@@ -201,9 +201,16 @@
 					<item id="10">
                         <description>System Information</description>
                         <label>$LOCALIZE[138]</label>
-                        <label2></label2>
+                        <label2></label2>
                         <property name="label3">$LOCALIZE[31108]</property>
                         <onclick>ActivateWindow(systeminfo)</onclick>
+					</item>
+					<item>
+						<description>PVR Client</description>
+						<label>$LOCALIZE[14204]</label>
+						<label2></label2>
+						<property name="label3">$LOCALIZE[31108]</property>
+						<onclick>ActivateWindow(PVRSettings)</onclick>
 					</item>
 					<item id="11">
                         <description>System Configurations</description>

@@ -60,7 +60,7 @@
 			</control>
 			<!--default background-->
 			<control type="image">
-				<visible>!Skin.HasSetting(GlobalFanartBackground) + isempty(Skin.String(GlobalBackground))</visible>
+				<visible>!Skin.HasSetting(GlobalFanartBackground) + String.IsEmpty(Skin.String(GlobalBackground))</visible>
 				<include>dimensionsFullscreen</include>
 				<texture>backgrounds/background01.png</texture>
 				<colordiffuse>6affffff</colordiffuse>
@@ -69,7 +69,7 @@
 			</control>
 			<!--User setting: global background override-->
 			<control type="image">
-				<visible>!Skin.HasSetting(GlobalFanartBackground) + !isempty(Skin.String(GlobalBackground))</visible>
+				<visible>!Skin.HasSetting(GlobalFanartBackground) + !String.IsEmpty(Skin.String(GlobalBackground))</visible>
 				<include>dimensionsFullscreen</include>
 				<texture>$INFO[skin.string(GlobalBackground)]</texture>
 				<colordiffuse>6Affffff</colordiffuse>
@@ -119,7 +119,7 @@
 			<control type="group">
 				<visible>Player.HasAudio + Window.IsActive(home) + Skin.HasSetting(HomeSlideshow)</visible>
 				<control type="image">
-					<visible>isempty(Window(Visualisation).Property(SlideshowAddon))</visible>
+					<visible>String.IsEmpty(Window(Visualisation).Property(SlideshowAddon))</visible>
 					<posx>0</posx>
 					<posy>0</posy>
 					<include>dimensionsFullscreen</include>
@@ -128,7 +128,7 @@
 					<aspectratio align="left" aligny="top">stretch</aspectratio>
 				</control>
 				<control type="multiimage">
-					<visible>!isempty(Window(Visualisation).Property(SlideshowAddon))</visible>
+					<visible>!String.IsEmpty(Window(Visualisation).Property(SlideshowAddon))</visible>
 					<posx>0</posx>
 					<posy>0</posy>
 					<include>dimensionsFullscreen</include>
@@ -206,7 +206,7 @@
 			<itemgap>30</itemgap>
 			<orientation>horizontal</orientation>
 			<control type="label">
-				<visible>!isempty(Window(Home).Property(SystemSetup.NetworkWireless))</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SystemSetup.NetworkWireless))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -214,7 +214,7 @@
 				<label>[B][/B]</label>
 			</control>
 			<control type="label">
-				<visible>!isempty(Window(Home).Property(SystemSetup.NetworkMobile))</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SystemSetup.NetworkMobile))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -222,7 +222,7 @@
 				<label>[B][/B]</label>
 			</control>
 			<control type="label">
-				<visible>!isempty(Window(Home).Property(SystemSetup.NetworkRouter)) | !isempty(Window(Home).Property(SystemSetup.NetworkRepeater))</visible>
+				<visible>!String.IsEmpty(Window(Home).Property(SystemSetup.NetworkRouter)) | !String.IsEmpty(Window(Home).Property(SystemSetup.NetworkRepeater))</visible>
 				<align>center</align>
 				<font>symbol</font>
 				<textcolor>disabled</textcolor>
@@ -274,28 +274,28 @@
 				<textcolor>unselected</textcolor>
 			</control>
 			<control type="label">
-				<visible>!isempty(ListItem.audiocodec)</visible>
+				<visible>!String.IsEmpty(ListItem.audiocodec)</visible>
 				<width>auto</width>
 				<font>symbol</font>
 				<textcolor>selected</textcolor>
 				<label></label>
 			</control>
 			<control type="label">
-				<visible>!isempty(ListItem.audiocodec)</visible>
+				<visible>!String.IsEmpty(ListItem.audiocodec)</visible>
 				<width>auto</width>
 				<font>buttonTitle</font>
 				<textcolor>unselected</textcolor>
 				<label>$INFO[ListItem.audiocodec]</label>
 			</control>
 			<control type="label">
-				<visible>!isempty(ListItem.FileName)</visible>
+				<visible>!String.IsEmpty(ListItem.FileName)</visible>
 				<width>auto</width>
 				<font>symbol</font>
 				<textcolor>selected</textcolor>
 				<label></label>
 			</control>
 			<control type="label">
-				<visible>!isempty(ListItem.FileName)</visible>
+				<visible>!String.IsEmpty(ListItem.FileName)</visible>
 				<width>auto</width>
 				<font>buttonTitle</font>
 				<textcolor>unselected</textcolor>

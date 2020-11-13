@@ -55,7 +55,7 @@
 						</control>
 						<control type="button" id="302">
 							<description>CustomPictureAddon1</description>
-							<visible>!isempty(Skin.String(CustomPictureAddon1))</visible>
+							<visible>!String.IsEmpty(Skin.String(CustomPictureAddon1))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
@@ -69,7 +69,7 @@
 						</control>
 						<control type="button" id="303">
 							<description>CustomPictureAddon2</description>
-							<visible>!isempty(Skin.String(CustomPictureAddon2))</visible>
+							<visible>!String.IsEmpty(Skin.String(CustomPictureAddon2))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>
@@ -83,7 +83,7 @@
 						</control>
 						<control type="button" id="304">
 							<description>CustomPictureAddon3</description>
-							<visible>!isempty(Skin.String(CustomPictureAddon3))</visible>
+							<visible>!String.IsEmpty(Skin.String(CustomPictureAddon3))</visible>
 							<height>40</height>
 							<width>236</width>
 							<font>menuTitle</font>

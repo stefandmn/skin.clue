@@ -38,7 +38,7 @@
 			</control>
 			<control type="button" id="613">
 				<description>CustomVideoAddon1</description>
-				<visible>!isempty(Skin.String(CustomVideoAddon1))</visible>
+				<visible>!String.IsEmpty(Skin.String(CustomVideoAddon1))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -53,7 +53,7 @@
 			</control>
 			<control type="button" id="614">
 				<description>CustomVideoAddon2</description>
-				<visible>!isempty(Skin.String(CustomVideoAddon2))</visible>
+				<visible>!String.IsEmpty(Skin.String(CustomVideoAddon2))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -68,7 +68,7 @@
 			</control>
 			<control type="button" id="615">
 				<description>CustomVideoAddon3</description>
-				<visible>!isempty(Skin.String(CustomVideoAddon3))</visible>
+				<visible>!String.IsEmpty(Skin.String(CustomVideoAddon3))</visible>
 				<height>40</height>
 				<width>236</width>
 				<font>menuTitle</font>
@@ -443,84 +443,84 @@
 						<label2>$INFO[Window(Home).Property(LatestMovie.1.Year),, •] $INFO[Window(Home).Property(LatestMovie.1.RunningTime),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMovie.1.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMovie.1.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestMovie.1.Title))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMovie.1.Title))</visible>
 					</item>
 					<item id="2">
 						<label>$INFO[Window(Home).Property(LatestMovie.2.Title)]</label>
 						<label2>$INFO[Window(Home).Property(LatestMovie.2.Year),, •] $INFO[Window(Home).Property(LatestMovie.2.RunningTime),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMovie.2.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMovie.2.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestMovie.2.Title))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMovie.2.Title))</visible>
 					</item>
 					<item id="3">
 						<label>$INFO[Window(Home).Property(LatestMovie.3.Title)]</label>
 						<label2>$INFO[Window(Home).Property(LatestMovie.3.Year),, •] $INFO[Window(Home).Property(LatestMovie.3.RunningTime),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMovie.3.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMovie.3.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestMovie.3.Title))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMovie.3.Title))</visible>
 					</item>
 					<item id="4">
 						<label>$INFO[Window(Home).Property(LatestMovie.4.Title)]</label>
 						<label2>$INFO[Window(Home).Property(LatestMovie.4.Year),, •] $INFO[Window(Home).Property(LatestMovie.4.RunningTime),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMovie.4.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMovie.4.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestMovie.4.Title)) + [!Library.HasContent(MusicVideos) | !Library.HasContent(TVShows)]</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMovie.4.Title)) + [!Library.HasContent(MusicVideos) | !Library.HasContent(TVShows)]</visible>
 					</item>
 					<item id="5">
 						<label>$INFO[Window(Home).Property(LatestEpisode.1.EpisodeTitle)]</label>
 						<label2>$INFO[Window(Home).Property(LatestEpisode.1.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.1.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.1.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestEpisode.1.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestEpisode.1.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestEpisode.1.EpisodeTitle))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestEpisode.1.EpisodeTitle))</visible>
 					</item>
 					<item id="6">
 						<label>$INFO[Window(Home).Property(LatestEpisode.2.EpisodeTitle)]</label>
 						<label2>$INFO[Window(Home).Property(LatestEpisode.2.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.2.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.2.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestEpisode.2.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestEpisode.2.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestEpisode.2.EpisodeTitle))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestEpisode.2.EpisodeTitle))</visible>
 					</item>
 					<item id="7">
 						<label>$INFO[Window(Home).Property(LatestEpisode.3.EpisodeTitle)]</label>
 						<label2>$INFO[Window(Home).Property(LatestEpisode.3.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.3.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.3.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestEpisode.3.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestEpisode.3.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestEpisode.3.EpisodeTitle))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestEpisode.3.EpisodeTitle))</visible>
 					</item>
 					<item id="8">
 						<label>$INFO[Window(Home).Property(LatestEpisode.4.EpisodeTitle)]</label>
 						<label2>$INFO[Window(Home).Property(LatestEpisode.4.ShowTitle),, • ] $INFO[Window(Home).Property(LatestEpisode.4.EpisodeSeason),$LOCALIZE[31011] , •] $INFO[Window(Home).Property(LatestEpisode.4.EpisodeNumber),$LOCALIZE[31040] ,]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestEpisode.4.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestEpisode.4.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestEpisode.4.EpisodeTitle)) + [!Library.HasContent(MusicVideos) | !Library.HasContent(Movies)]</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestEpisode.4.EpisodeTitle)) + [!Library.HasContent(MusicVideos) | !Library.HasContent(Movies)]</visible>
 					</item>
 					<item id="9">
 						<label>$INFO[Window(Home).Property(LatestMusicVideo.1.Title)] - $INFO[Window(Home).Property(Movies.Count)]</label>
 						<label2>$INFO[Window(Home).Property(LatestMusicVideo.1.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.1.Artist),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMusicVideo.1.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMusicVideo.1.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.1.Title))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMusicVideo.1.Title))</visible>
 					</item>
 					<item id="10">
 						<label>$INFO[Window(Home).Property(LatestMusicVideo.2.Title)]</label>
 						<label2>$INFO[Window(Home).Property(LatestMusicVideo.2.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.2.Artist),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMusicVideo.2.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMusicVideo.2.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.2.Title))</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMusicVideo.2.Title))</visible>
 					</item>
 					<item id="11">
 						<label>$INFO[Window(Home).Property(LatestMusicVideo.3.Title)]</label>
 						<label2>$INFO[Window(Home).Property(LatestMusicVideo.3.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.3.Artist),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMusicVideo.3.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMusicVideo.3.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.3.Title)) + [!IntegerGreaterThan(Window(Home).Property(Movies.Count), 2) | !IntegerGreaterThan(Window(Home).Property(Episodes.Count), 2)]</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMusicVideo.3.Title)) + [!IntegerGreaterThan(Window(Home).Property(Movies.Count), 2) | !IntegerGreaterThan(Window(Home).Property(Episodes.Count), 2)]</visible>
 					</item>
 					<item id="12">
 						<label>$INFO[Window(Home).Property(LatestMusicVideo.4.Title)]</label>
 						<label2>$INFO[Window(Home).Property(LatestMusicVideo.4.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.4.Artist),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMusicVideo.4.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMusicVideo.4.Path)]</onclick>
-						<visible>!IsEmpty(Window(Home).Property(LatestMusicVideo.4.Title)) + [!IntegerGreaterThan(Window(Home).Property(Movies.Count), 1) | !IntegerGreaterThan(Window(Home).Property(Episodes.Count), 1)]</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMusicVideo.4.Title)) + [!IntegerGreaterThan(Window(Home).Property(Movies.Count), 1) | !IntegerGreaterThan(Window(Home).Property(Episodes.Count), 1)]</visible>
 					</item>
 				</content>
 			</control>
@@ -543,7 +543,7 @@
 			</animation>
 			<!--focussed item detail-->
 			<control type="group">
-				<visible>!isEmpty(ListItem.Thumb)</visible>
+				<visible>!String.IsEmpty(ListItem.Thumb)</visible>
 				<posx>14-col</posx>
 				<posy>0</posy>
 				<!--Show larger thumbnail-->
@@ -627,7 +627,7 @@
 						<label></label>
 					</control>
 					<control type="label">
-						<visible>!isempty(ListItem.playcount)</visible>
+						<visible>!String.IsEmpty(ListItem.playcount)</visible>
 						<posx>36r</posx>
 						<posy>1</posy>
 						<width>40</width>
@@ -681,7 +681,7 @@
 						<label></label>
 					</control>
 					<control type="label">
-						<visible>!isempty(ListItem.playcount)</visible>
+						<visible>!String.IsEmpty(ListItem.playcount)</visible>
 						<posx>36r</posx>
 						<posy>1</posy>
 						<width>40</width>

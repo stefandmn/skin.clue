@@ -49,7 +49,7 @@
                     <aspectratio>stretch</aspectratio>
                 </control>
                 <control type="label">
-                    <visible>IsEmpty(Window.Property(IsRadio))</visible>
+                    <visible>String.IsEmpty(Window.Property(IsRadio))</visible>
                     <posx>12</posx>
                     <posy>44</posy>
                     <width>16-col</width>
@@ -59,7 +59,7 @@
                     <shadowcolor>-</shadowcolor>
                 </control>
                 <control type="label">
-                    <visible>!IsEmpty(Window.Property(IsRadio))</visible>
+                    <visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
                     <posx>12</posx>
                     <posy>44</posy>
                     <width>16-col</width>
@@ -242,7 +242,7 @@
                         <ondown>34</ondown>
                     </control>
                     <control type="button" id="34">
-                        <visible>IsEmpty(Window.Property(IsRadio))</visible>
+                        <visible>String.IsEmpty(Window.Property(IsRadio))</visible>
                         <description>TV/Radio Button</description>
                         <posx>0</posx>
                         <posy>7-row</posy>
@@ -262,7 +262,7 @@
                         <ondown>31</ondown>
                     </control>
                     <control type="button" id="34">
-                        <visible>!IsEmpty(Window.Property(IsRadio))</visible>
+                        <visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
                         <description>TV/Radio Button</description>
                         <posx>0</posx>
                         <posy>7-row</posy>
