@@ -83,11 +83,41 @@ else
 endif
 
 
-# Setup and push the new versioning label in the GitHUB
+# Commit and push updated files into versioning system (GitHUB). The 'message' input
+# parameter is required.
+gitcommit:
+ifneq ($(message),)
+	git add .
+	git commit -m "$(message)"
+	git push
+else
+	@printf "\n* Please specify 'message' parameter!\n\n"
+	exit 1
+endif
+
+
+
+# Create and push a new versioning tag equals with the addon release. The uploaded can be
+# done later - manually or through a separate task and thus the tag is transformed into a
+# addon release
+gitrelease:
+	git tag "$(DISTRO_VER)"
+	git push origin --tags
+
+
+# Combine gitcommit and git release tasks into a single one, the only exception is that
+# the commit doesn't require a message, if the message exist it will be used, if not a
+# standard commit message will be composed using the addon version number
 version:
+ifneq ($(message),)
+	git add .
+	git commit -m "$(message)"
+	git push
+else
 	git add .
 	git commit -m "Release $(DISTRO_VER)"
 	git push
+endif
 	git tag "$(DISTRO_VER)"
 	git push origin --tags
 
