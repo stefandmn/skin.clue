@@ -28,6 +28,12 @@ NEXT_MIN=$(shell python -c "print int($(DISTRO_MIN)) + 1")
 NEXT_VER="${DISTRO_REL}.${DISTRO_MAJ}.${NEXT_MIN}"
 
 
+info:
+	echo -e "\tName:         $(NAME)"
+	echo -e "\tVersion ID:   $(DISTRO_VER)"
+	echo -e "\tPackage File: $(OUTPUT)/targets/$(NAME).zip"
+
+
 # Deploy resources (sources and/or system files) into the remote test RPi device,
 # having Kodi v18* or CLue 2.0 linux OS with all components and packages.
 deploy:
@@ -139,13 +145,17 @@ cleanall:
 help:
 	echo -e "\
 \nSYNOPSIS\n\
-       make deploy | version | build | publish | release\n\
+       make info | deploy | version | build | publish | release\n\
        make gitrev | gittag | version\n\
        make clean | cleanall\n\
        make help\n\
 \nDESCRIPTION\n\
-    Executes one of the make tasks defined through this Makefile flow, according \n\
+    Executes one of the make targets defined through this Makefile flow, according \n\
     to the scope of this project.\n\n\
+    info\n\
+                  provides main details about current release: package name, version id\n\
+                  and package file (should be found after execution of 'build' target)\n\
+                  >> this is the default target wihin the CCM process\n\
     deploy | test\n\
                   deploy addon resources on a remote test system (RPi device)\n\
     version\n\
@@ -153,7 +163,8 @@ help:
                   the new version being the incremented value fo previous version\n\
                   (for the minor version number)\n\
     build\n\
-                  build the addon package along to the new version of it\n\
+                  build the addon package along to the new version and prepare the release\n\
+                  package file within location $(OUTPUT)/targets/$(NAME).zip\n\
     publish\n\
                   install/publish the addon (already built) on the repository file\n\
                   system (it has to be already mounted to the development environment)\n\
