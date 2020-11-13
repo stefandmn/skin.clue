@@ -114,8 +114,7 @@ gitrel:
 # standard commit message will be composed using the addon version number
 git:
 ifeq ($(message),)
-	$(eval msg:="Release $(DISTRO_VER)")
-	$(MAKE) gitrev -e message="$(msg)"
+	$(MAKE) gitrev -e message="Release $(DISTRO_VER)"
 else
 	$(MAKE) gitrev
 endif
