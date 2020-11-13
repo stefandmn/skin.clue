@@ -161,15 +161,17 @@ help:
                   Build the addon providing new local version, make release and publish it\n\
                   on the Clue repository (already mounted to the local file system). Then\n\
                   the released version is submitted in the versioning system (GitHUB) over a\n\
-                  new release (tag version + the new addon zip archive)\n\
+                  new release tag version\n\
     gitrev\n\
                   Commit the new release changes into versioning repository (GitHub)\n\
-    gittag\n\
+    gitrel\n\
                   Create a new release tag into versioning repository (GitHub) using current\n\
                   addon version (defined in the addon descriptor - addon.xml file)\n\
-    gitrel\n\
-                  Upload the addon distribution file in to the versioning system, corresponding\n\
-                  to the tag release already created for having the same versioning label\n\
+    git\n\
+                  Combine git commit and git release targets into a single one, the only exception\n\
+                  is that the commit doesn't require a message description; in case the message exist\n\
+                  it will be used as such, otherwise a standard commit message will be composed using\n\
+                  the addon version number\n\
     clean\n\
                   cleanup the build resources within the output location\n\
     cleanall\n\
