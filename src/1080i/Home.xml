@@ -65,13 +65,12 @@
 			<posy>665</posy>
 			<!--animations-->
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
-			<animation condition="SubString(Container(9000).NumItems,3)" effect="slide" end="575,0" time="0">conditional</animation>
-			<animation condition="SubString(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
+			<animation condition="Integer.IsEqual(Container(9000).NumItems,3)" effect="slide" end="575,0" time="0">conditional</animation>
+			<animation condition="Integer.IsEqual(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
 			<control type="list" id="9000">
 				<width>1728</width>
 				<height>3-col</height>
 				<orientation>horizontal</orientation>
-				<centerleft>70%</centerleft>
 				<onup>9100</onup>
 				<ondown>9100</ondown>
 				<onleft>9000</onleft>
@@ -194,16 +193,15 @@
 			<posy>0</posy>
 			<!--animations-->
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
-			<animation condition="SubString(Container(9100).NumItems,2)" effect="slide" end="10,724" time="0">conditional</animation>
-			<animation condition="SubString(Container(9100).NumItems,3)" effect="slide" end="10,662" time="0">conditional</animation>
-			<animation condition="SubString(Container(9100).NumItems,4)" effect="slide" end="10,619" time="0">conditional</animation>
-			<animation condition="SubString(Container(9100).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
-			<animation condition="SubString(Container(9100).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
+			<animation condition="Integer.IsEqual(Container(9100).NumItems,2)" effect="slide" end="10,724" time="0">conditional</animation>
+			<animation condition="Integer.IsEqual(Container(9100).NumItems,3)" effect="slide" end="10,662" time="0">conditional</animation>
+			<animation condition="Integer.IsEqual(Container(9100).NumItems,4)" effect="slide" end="10,619" time="0">conditional</animation>
+			<animation condition="Integer.IsEqual(Container(9100).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
+			<animation condition="Integer.IsEqual(Container(9100).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
 			<control type="list" id="9100">
 				<width>1-row</width>
 				<height>1080</height>
 				<orientation>vertical</orientation>
-				<centertop>100%</centertop>
 				<onup>9100</onup>
 				<ondown>9100</ondown>
 				<onleft>9000</onleft>

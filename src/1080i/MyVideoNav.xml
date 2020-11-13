@@ -4,7 +4,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
 	<onload condition="window.previous(0)">SetFocus(511)</onload>
-	<onload condition="SubString(skin.string(showRecentVideoItems),true)">SetFocus(612)</onload>
+	<onload condition="String.IsEqual(Skin.String(showRecentVideoItems),true)">SetFocus(612)</onload>
 	<previouswindow>home</previouswindow>
 
 	<controls>
@@ -59,10 +59,10 @@
 					<control type="group">
 						<posx>312</posx>
 						<posy>50</posy>
-						<animation type="Conditional" condition="!IntegerGreaterThan(container.numitems,0)">
+						<animation type="Conditional" condition="!Integer.IsGreater(container.numitems,0)">
 							<effect type="fade" start="100" end="0" time="300"/>
 						</animation>
-						<animation type="Conditional" condition="IntegerGreaterThan(container.numitems,0)">
+						<animation type="Conditional" condition="Integer.IsGreater(container.numitems,0)">
 							<effect type="fade" start="0" end="100" time="300"/>
 						</animation>
 						<!--source title-->
@@ -86,7 +86,7 @@
 					</control>
 					<!--tvshow name and season details-->
 					<control type="group">
-						<visible>[container.content(episodes) | container.content(seasons)] + !Substring(Container.folderpath,plugin) + SubString(skin.string(showRecentVideoItems),false)</visible>
+						<visible>[container.content(episodes) | container.content(seasons)] + !String.IsEqual(Container.folderpath,plugin) + String.IsEqual(Skin.String(showRecentVideoItems),false)</visible>
 						<posx>1824</posx>
 						<posy>50</posy>
 						<control type="label">
@@ -121,7 +121,7 @@
 					</control>
 					<!--addons-->
 					<control type="group">
-						<visible>container.content(episodes) + Substring(Container.folderpath,plugin)</visible>
+						<visible>container.content(episodes) + String.IsEqual(Container.folderpath,plugin)</visible>
 						<posx>1824</posx>
 						<posy>50</posy>
 						<control type="label">
@@ -168,7 +168,7 @@
 
 				<!--Page scrollbar-->
 				<control type="group" id="540">
-					<visible>Control.IsVisible(60) + SubString(skin.string(showRecentVideoItems),false)</visible>
+					<visible>Control.IsVisible(60) + String.IsEqual(Skin.String(showRecentVideoItems),false)</visible>
 					<animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(540).hasfocus">conditional</animation>
 					<control type="scrollbar" id="60">
 						<posx>84r</posx>

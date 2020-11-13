@@ -28,7 +28,8 @@ NEXT_MIN=$(shell python -c "print int($(DISTRO_MIN)) + 1")
 NEXT_VER="${DISTRO_REL}.${DISTRO_MAJ}.${NEXT_MIN}"
 
 
-# Deploy resources (sources and/or system files) into the remote RPI container.
+# Deploy resources (sources and/or system files) into the remote test RPi device,
+# having Kodi v18* or CLue 2.0 linux OS with all components and packages.
 deploy:
 ifneq ($(RPIHOST),)
 ifeq ($(shell [[ -d $(ROOT)/$(SRCDIR) ]] && echo -n yes),yes)
@@ -46,9 +47,13 @@ endif
 test: deploy
 
 
+# Mark new revision (addon version) in the development copy
+version:
+	xmlstarlet edit -L -P -u "//addon/@version" -v "$(NEXT_VER)" $(ROOT)/$(SRCDIR)/addon.xml
+
+
 # Build addon package in deployment format
 build:
-	xmlstarlet edit -L -P -u "//addon/@version" -v "$(NEXT_VER)" $(ROOT)/$(SRCDIR)/addon.xml
 	mkdir -p $(OUTDIR) $(OUTDIR)/$(TARGETS)
 	cp -rf ${SRCDIR}/* $(OUTDIR)/
 	cp -rf LICENSE $(OUTDIR)/
@@ -85,7 +90,7 @@ endif
 
 # Commit and push updated files into versioning system (GitHUB). The 'message' input
 # parameter is required.
-gitcommit:
+gitrev:
 ifneq ($(message),)
 	git add .
 	git commit -m "$(message)"
@@ -100,30 +105,25 @@ endif
 # Create and push a new versioning tag equals with the addon release. The uploaded can be
 # done later - manually or through a separate task and thus the tag is transformed into a
 # addon release
-gitrelease:
+gitrel:
 	git tag "$(DISTRO_VER)"
 	git push origin --tags
 
-
-# Combine gitcommit and git release tasks into a single one, the only exception is that
+# Combine git commit and git release tasks into a single one, the only exception is that
 # the commit doesn't require a message, if the message exist it will be used, if not a
 # standard commit message will be composed using the addon version number
-version:
-ifneq ($(message),)
-	git add .
-	git commit -m "$(message)"
-	git push
+git:
+ifeq ($(message),)
+	$(eval msg:="Release $(DISTRO_VER)")
+	$(MAKE) gitrev -e message="$(msg)"
 else
-	git add .
-	git commit -m "Release $(DISTRO_VER)"
-	git push
+	$(MAKE) gitrev
 endif
-	git tag "$(DISTRO_VER)"
-	git push origin --tags
+	$(MAKE) gitrel
 
 
 # Create a complete release: new build, publish it in the repository, update the versioning
-release: build publish version
+release: version build publish git
 
 
 # Clean-up the release
@@ -140,7 +140,8 @@ cleanall:
 help:
 	echo -e "\
 \nSYNOPSIS\n\
-       make deploy | build | publish | version | release\n\
+       make deploy | version | build | publish | release\n\
+       make gitrev | gittag | version\n\
        make clean | cleanall\n\
        make help\n\
 \nDESCRIPTION\n\
@@ -148,20 +149,33 @@ help:
     to the scope of this project.\n\n\
     deploy | test\n\
                   deploy addon resources on a remote test system (RPi device)\n\
+    version\n\
+                  create local new version within local addon descriptor (addon.xml),\n\
+                  the new version being the incremented value fo previous version\n\
+                  (for the minor version number)\n\
     build\n\
                   build the addon package along to the new version of it\n\
     publish\n\
                   install/publish the addon (already built) on the repository file\n\
                   system (it has to be already mounted to the development environment)\n\
-    version\n\
-                  Commit the new release changes into GitHub repository\n\
+    release\n\
+                  Build the addon providing new local version, make release and publish it\n\
+                  on the Clue repository (already mounted to the local file system). Then\n\
+                  the released version is submitted in the versioning system (GitHUB) over a\n\
+                  new release (tag version + the new addon zip archive)\n\
+    gitrev\n\
+                  Commit the new release changes into versioning repository (GitHub)\n\
+    gittag\n\
+                  Create a new release tag into versioning repository (GitHub) using current\n\
+                  addon version (defined in the addon descriptor - addon.xml file)\n\
+    gitrel\n\
+                  Upload the addon distribution file in to the versioning system, corresponding\n\
+                  to the tag release already created for having the same versioning label\n\
     clean\n\
                   cleanup the build resources within the output location\n\
     cleanall\n\
                   Clean-up all resources from the output location (related or nor directly\n\
                   connected to the addon build process\n\
-    release\n\
-                  Build the system release for the current DEVICE\n\
     help\n\
                   Shows this text\n\
 \n\

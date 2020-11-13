@@ -260,7 +260,7 @@
 	<!-- Content: Latest Videos -->>
 	<include name="VideoLatestContent">
 		<control type="group" id="$PARAM[id]">
-			<visible>SubString(skin.string(showRecentVideoItems),true)</visible>
+			<visible>String.IsEqual(Skin.String(showRecentVideoItems),true)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
 			<onleft>$PARAM[left]</onleft>
@@ -513,14 +513,14 @@
 						<label2>$INFO[Window(Home).Property(LatestMusicVideo.3.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.3.Artist),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMusicVideo.3.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMusicVideo.3.Path)]</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(LatestMusicVideo.3.Title)) + [!IntegerGreaterThan(Window(Home).Property(Movies.Count), 2) | !IntegerGreaterThan(Window(Home).Property(Episodes.Count), 2)]</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMusicVideo.3.Title)) + [!Integer.IsGreater(Window(Home).Property(Movies.Count), 2) | !Integer.IsGreater(Window(Home).Property(Episodes.Count), 2)]</visible>
 					</item>
 					<item id="12">
 						<label>$INFO[Window(Home).Property(LatestMusicVideo.4.Title)]</label>
 						<label2>$INFO[Window(Home).Property(LatestMusicVideo.4.Year),, •] $INFO[Window(Home).Property(LatestMusicVideo.4.Artist),, $LOCALIZE[31018]]</label2>
 						<thumb>$INFO[Window(Home).Property(LatestMusicVideo.4.Thumb)]</thumb>
 						<onclick>$INFO[Window(Home).Property(LatestMusicVideo.4.Path)]</onclick>
-						<visible>!String.IsEmpty(Window(Home).Property(LatestMusicVideo.4.Title)) + [!IntegerGreaterThan(Window(Home).Property(Movies.Count), 1) | !IntegerGreaterThan(Window(Home).Property(Episodes.Count), 1)]</visible>
+						<visible>!String.IsEmpty(Window(Home).Property(LatestMusicVideo.4.Title)) + [!Integer.IsGreater(Window(Home).Property(Movies.Count), 1) | !Integer.IsGreater(Window(Home).Property(Episodes.Count), 1)]</visible>
 					</item>
 				</content>
 			</control>
@@ -530,7 +530,7 @@
 	<!-- Content: List of General Video List -->
 	<include name="VideoGeneralList">
 		<control type="group" id="$PARAM[id]">
-			<visible>SubString(skin.string(showRecentVideoItems),false)</visible>
+			<visible>String.IsEqual(Skin.String(showRecentVideoItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
 			<onleft>$PARAM[left]</onleft>
@@ -617,7 +617,7 @@
 					</control>
 					<!--new episodes available flag (tvshows only)-->
 					<control type="label">
-						<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 						<posx>36r</posx>
 						<posy>-2</posy>
 						<width>40</width>
@@ -671,7 +671,7 @@
 					</control>
 					<!--new episodes available flag (tvshows only)-->
 					<control type="label">
-						<visible>IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
+						<visible>Integer.IsGreater(ListItem.Property(UnWatchedEpisodes),0)</visible>
 						<posx>36r</posx>
 						<posy>-2</posy>
 						<width>40</width>

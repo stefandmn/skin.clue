@@ -81,9 +81,9 @@
 
 	<!--folder titles-->
 	<variable name="ListTitle">
-		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31012]</value>
-		<value condition="Window.IsActive(music) + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31053]</value>
-		<value condition="Substring(Container.folderpath,plugin)">$INFO[container.foldername]</value>
+		<value condition="Window.IsActive(videos) + String.IsEqual(Skin.String(showRecentVideoItems),true)">$LOCALIZE[31012]</value>
+		<value condition="Window.IsActive(music) + String.IsEqual(Skin.String(showRecentMusicItems),true)">$LOCALIZE[31053]</value>
+		<value condition="String.IsEqual(Container.folderpath,plugin)">$INFO[container.foldername]</value>
 		<value condition="Container.Content(movies)">$LOCALIZE[20342] [COLOR accented]$LOCALIZE[31054] $INFO[container.sortmethod][/COLOR]</value>
 		<value condition="Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes)">$LOCALIZE[20343] [COLOR accented]$LOCALIZE[31054] $INFO[container.sortmethod][/COLOR]</value>
 		<value condition="Container.Content(addons)">$LOCALIZE[31010]</value>
@@ -95,10 +95,10 @@
 
 	<!--folder sub-titles-->
 	<variable name="ListSubTitle">
-		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),true)">$LOCALIZE[31013]</value>
-		<value condition="Window.IsActive(videos) + SubString(skin.string(showRecentVideoItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
-		<value condition="Window.IsActive(music) + SubString(skin.string(showRecentMusicItems),true)">$LOCALIZE[31013]</value>
-		<value condition="Window.IsActive(music) + SubString(skin.string(showRecentMusicItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
+		<value condition="Window.IsActive(videos) + String.IsEqual(Skin.String(showRecentVideoItems),true)">$LOCALIZE[31013]</value>
+		<value condition="Window.IsActive(videos) + String.IsEqual(Skin.String(showRecentVideoItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
+		<value condition="Window.IsActive(music) + String.IsEqual(Skin.String(showRecentMusicItems),true)">$LOCALIZE[31013]</value>
+		<value condition="Window.IsActive(music) + String.IsEqual(Skin.String(showRecentMusicItems),false)">$INFO[container.Numitems,, $LOCALIZE[31014]]</value>
 	</variable>
 
 	<!--list view item detail / subheader-->

@@ -37,7 +37,7 @@
 				</animation>
 			</control>
 			<control type="label" id="31">
-				<visible>!IntegerGreaterThan(System.CPUTemperature,65)</visible>
+				<visible>!Integer.IsGreater(System.CPUTemperature,65)</visible>
 				<description>message</description>
 				<posx>12</posx>
 				<posy>25</posy>
@@ -56,7 +56,7 @@
 				</animation>
 			</control>
 			<control type="label" id="31">
-				<visible>IntegerGreaterThan(System.CPUTemperature,65)</visible>
+				<visible>Integer.IsGreater(System.CPUTemperature,65)</visible>
 				<description>message</description>
 				<posx>12</posx>
 				<posy>25</posy>

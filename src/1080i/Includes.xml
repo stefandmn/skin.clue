@@ -71,14 +71,14 @@
 			<control type="image">
 				<visible>!Skin.HasSetting(GlobalFanartBackground) + !String.IsEmpty(Skin.String(GlobalBackground))</visible>
 				<include>dimensionsFullscreen</include>
-				<texture>$INFO[skin.string(GlobalBackground)]</texture>
+				<texture>$INFO[Skin.String(GlobalBackground)]</texture>
 				<colordiffuse>6Affffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 				<animation effect="fade" start="0" end="100" time="1000" condition="window.previous(home)">windowopen</animation>
 			</control>
 			<!--User setting: rolling fanart slides-->
 			<control type="multiimage">
-				<visible>Skin.HasSetting(GlobalFanartBackground) + !Container.content(seasons) + !Container.content(songs) + [!Container.content(episodes) | Substring(Container.folderpath,plugin)]</visible>
+				<visible>Skin.HasSetting(GlobalFanartBackground) + !Container.content(seasons) + !Container.content(songs) + [!Container.content(episodes) | String.IsEqual(Container.folderpath,plugin)]</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<include>dimensionsFullscreen</include>
@@ -98,7 +98,7 @@
 			</control>
 			<!--show media fanart in relevant sections-->
 			<control type="group">
-				<visible>[container.content(Movies) | container.content(TVShows) | container.content(Seasons) | container.content(MusicVideos) | [container.content(Episodes) + !Substring(Container.folderpath,iplayer)]] + SubString(skin.string(showRecentVideoItems),false)</visible>
+				<visible>[container.content(Movies) | container.content(TVShows) | container.content(Seasons) | container.content(MusicVideos) | [container.content(Episodes) + !String.IsEqual(Container.folderpath,iplayer)]] + String.IsEqual(Skin.String(showRecentVideoItems),false)</visible>
 				<animation type="visible" reversible="false">
 					<effect type="fade" start="0" end="100" time="500" delay="400"/>
 				</animation>
@@ -161,7 +161,7 @@
 	<!--busy indicator-->
 	<include name="loadingIndicator">
 		<control type="group">
-			<visible>!IntegerGreaterThan(container.numitems,0) | Skin.HasSetting(showLoading) | window.isactive(busydialog)</visible>
+			<visible>!Integer.IsGreater(container.numitems,0) | Skin.HasSetting(showLoading) | window.isactive(busydialog)</visible>
 			<posx>0</posx>
 			<posy>0</posy>
 			<!--animations-->
@@ -235,7 +235,7 @@
 
 	<!--footer for media lists-->
 	<include name="mediaListFooter">
-		<visible>SubString(skin.string(showRecentVideoItems),false)</visible>
+		<visible>String.IsEqual(Skin.String(showRecentVideoItems),false)</visible>
 		<control type="grouplist">
 			<posx>0</posx>
 			<posy>-6</posy>

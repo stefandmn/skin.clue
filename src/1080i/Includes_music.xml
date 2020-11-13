@@ -95,7 +95,7 @@
 				</control>
 				<control type="label">
 					<description>Song Title</description>
-					<visible>!IntegerGreaterThan(System.CPUTemperature,65)</visible>
+					<visible>!Integer.IsGreater(System.CPUTemperature,65)</visible>
 					<posx>10</posx>
 					<posy>27</posy>
 					<font>pageSubTitle</font>
@@ -110,7 +110,7 @@
 				</control>
 				<control type="label">
 					<description>Song Title</description>
-					<visible>IntegerGreaterThan(System.CPUTemperature,65)</visible>
+					<visible>Integer.IsGreater(System.CPUTemperature,65)</visible>
 					<posx>10</posx>
 					<posy>27</posy>
 					<font>pageSubTitle</font>
@@ -396,7 +396,7 @@
 	<!-- Content: Latest Music -->
 	<include name="MusicLatestContent">
 		<control type="group" id="$PARAM[id]">
-			<visible>SubString(skin.string(showRecentMusicItems),true)</visible>
+			<visible>Skin.String(showRecentMusicItems,true)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
 			<onleft>$PARAM[left]</onleft>
@@ -597,7 +597,7 @@
 	<!-- Content: List of General Music List -->
 	<include name="MusicGeneralList">
 		<control type="group" id="$PARAM[id]">
-			<visible>SubString(skin.string(showRecentMusicItems),false)</visible>
+			<visible>String.IsEqual(Skin.String(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
 			<onleft>$PARAM[left]</onleft>
@@ -722,7 +722,7 @@
 	<!-- Content: List of Artists or Genres -->
 	<include name="MusicArtistGenreList">
 		<control type="group" id="$PARAM[id]">
-			<visible>SubString(skin.string(showRecentMusicItems),false)</visible>
+			<visible>String.IsEqual(Skin.String(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
 			<onleft>$PARAM[left]</onleft>
@@ -786,7 +786,7 @@
 	<!-- Content: Grid View of General Music Content -->
 	<include name="MusicGridView">
 		<control type="group" id="$PARAM[id]">
-			<visible>SubString(skin.string(showRecentMusicItems),false)</visible>
+			<visible>String.IsEqual(Skin.String(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
 			<onleft>$PARAM[left]</onleft>
@@ -917,7 +917,7 @@
 	<!-- Content: List of Songs -->
 	<include name="MusicSongList">
 		<control type="group">
-			<visible>SubString(skin.string(showRecentMusicItems),false)</visible>
+			<visible>SubStString.IsEqualtring(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
 			<control type="group" id="$PARAM[id]">

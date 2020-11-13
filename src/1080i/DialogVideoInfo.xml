@@ -2,15 +2,15 @@
 <window>
 	<defaultcontrol always="true">8000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<include condition="skin.string(showcast,false)">fadeInOut</include>
+	<include condition="Skin.String(showcast,false)">fadeInOut</include>
 	<onunload>Skin.Reset(showcast)</onunload>
-	<onunload condition="skin.string(showcast,true)">action(info)</onunload>
+	<onunload condition="Skin.String(showcast,true)">action(info)</onunload>
 
 	<controls>
 		<control type="group">
 			<!--background / fanart-->
 			<control type="image">
-				<visible>!Substring(Container.folderpath,plugin) + !container.content(episodes)</visible>
+				<visible>!String.IsEqual(Container.folderpath,plugin) + !container.content(episodes)</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<include>dimensionsFullscreen</include>
@@ -19,7 +19,7 @@
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
-				<visible>Substring(Container.folderpath,plugin) | container.content(episodes)</visible>
+				<visible>String.IsEqual(Container.folderpath,plugin) | container.content(episodes)</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<include>dimensionsFullscreen</include>
@@ -28,7 +28,7 @@
 				<aspectratio>stretch</aspectratio>
 			</control>
 			<control type="image">
-				<visible>!Substring(Container.folderpath,plugin) + !container.content(episodes)</visible>
+				<visible>!String.IsEqual(Container.folderpath,plugin) + !container.content(episodes)</visible>
 				<posx>0</posx>
 				<posy>0</posy>
 				<include>dimensionsFullscreen</include>
@@ -46,14 +46,14 @@
 		</control>
 		<!--content is movie or tvshow (from XBMC Library)-->
 		<control type="group">
-			<visible>!Substring(Container.folderpath,plugin) + !container.content(episodes)</visible>
+			<visible>!String.IsEqual(Container.folderpath,plugin) + !container.content(episodes)</visible>
 			<posx>1263</posx>
 			<posy>0</posy>
 			<animation type="Windowopen">
 				<effect type="fade" start="0" end="100" time="300" delay="300"/>
 				<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="300"/>
 			</animation>
-			<animation type="conditional" condition="skin.string(showcast,true)">
+			<animation type="conditional" condition="Skin.String(showcast,true)">
 				<effect type="slide" start="0" end="-578" tween="cubic" easing="out" time="400" delay="0"/>
 			</animation>
 			<!--overlay-->
@@ -125,7 +125,7 @@
 			</control>
 			<!--meta-->
 			<control type="panel">
-				<visible>!skin.string(showcast,true)</visible>
+				<visible>!Skin.String(showcast,true)</visible>
 				<posx>96</posx>
 				<posy>608</posy>
 				<width>8-col</width>
@@ -282,7 +282,7 @@
 		</control>
 		<!--content is tvshow episode or content is from a plugin-->
 		<control type="group">
-			<visible>Substring(Container.folderpath,plugin) | container.content(episodes)</visible>
+			<visible>String.IsEqual(Container.folderpath,plugin) | container.content(episodes)</visible>
 			<!--animations-->
 			<include>modalDialogInOut</include>
 			<!--thumbnail if available-->
@@ -413,7 +413,7 @@
 							<onclick>sendclick(2003,8)</onclick>
 						</item>
 						<item id="2">
-							<visible>!Substring(Container.folderpath,plugin)</visible>
+							<visible>!String.IsEqual(Container.folderpath,plugin)</visible>
 							<label>31076</label>
 							<label2></label2>
 							<thumb>-</thumb>
@@ -425,10 +425,10 @@
 		</control>
 		<!--cast and crew toggle-->
 		<control type="group">
-			<visible>skin.string(showcast,true)</visible>
+			<visible>Skin.String(showcast,true)</visible>
 			<posx>1263</posx>
 			<posy>0</posy>
-			<animation type="conditional" condition="skin.string(showcast,true)">
+			<animation type="conditional" condition="Skin.String(showcast,true)">
 				<effect type="slide" start="800" end="0" tween="cubic" easing="out" time="400" delay="100"/>
 			</animation>
 			<!--overlay-->
