@@ -3,6 +3,7 @@
 	<defaultcontrol always="true">5000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
 	<include>fadeInOut</include>
+	<views>50</views>
 
 	<controls>
 		<!--page container group-->

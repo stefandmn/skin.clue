@@ -67,6 +67,7 @@
 			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
 			<animation condition="Integer.IsEqual(Container(9000).NumItems,3)" effect="slide" end="575,0" time="0">conditional</animation>
 			<animation condition="Integer.IsEqual(Container(9000).NumItems,4)" effect="slide" end="468,0" time="0">conditional</animation>
+			<animation condition="Integer.IsEqual(Container(9000).NumItems,5)" effect="slide" end="361,0" time="0">conditional</animation>
 			<control type="list" id="9000">
 				<width>1728</width>
 				<height>3-col</height>
@@ -152,7 +153,7 @@
 						<onclick>Skin.SetString(showNavigationMenu,pvr)</onclick>
 						<onclick>activateWindow(TVChannels)</onclick>
 					</item>
-					<item id="1">
+					<item id="2">
 						<visible>!Skin.HasSetting(hideVideo)</visible>
 						<label>31002</label>
 						<label2></label2>
@@ -160,7 +161,7 @@
 						<onclick>Skin.SetString(showNavigationMenu,video)</onclick>
 						<onclick>activateWindow(videos)</onclick>
 					</item>
-					<item id="2">
+					<item id="3">
 						<visible>!Skin.HasSetting(hideMusic)</visible>
 						<label>31001</label>
 						<label2></label2>
@@ -168,7 +169,7 @@
 						<onclick>Skin.SetString(showNavigationMenu,music)</onclick>
 						<onclick>ActivateWindow(music)</onclick>
 					</item>
-					<item id="3">
+					<item id="4">
 						<visible>!Skin.HasSetting(hidePictures)</visible>
 						<label>31003</label>
 						<label2></label2>
@@ -176,7 +177,7 @@
 						<onclick>Skin.SetString(showNavigationMenu,picture)</onclick>
 						<onclick>ActivateWindow(pictures)</onclick>
 					</item>
-					<item id="4">
+					<item id="5">
 						<label>5</label>
 						<label2></label2>
 						<thumb>-</thumb>

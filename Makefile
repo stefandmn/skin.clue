@@ -50,8 +50,28 @@ else
 	IP address of the RPi device!"
 endif
 
-test: deploy
 
+# Run testing process (for source files) for any remote host and location settled up
+# using TESTPATH variable. IN case this variable is not set the test can be done
+# for RPi host (identified by RPIHOST variable). Variable TESTPATH should have complete
+# ssh location format: <user>@HOST/<base path>
+test:
+ifneq ($(TESTPATH),)
+ifeq ($(shell [[ -d $(ROOT)/$(SRCDIR) ]] && echo -n yes),yes)
+	/usr/bin/rsync -a -zvh --progress --delete -e ssh $(ROOT)/$(SRCDIR)/ $(TESTPATH)/.kodi/addons/$(NAME)
+endif
+else
+ifneq ($(RPIHOST),)
+ifeq ($(shell [[ -d $(ROOT)/$(SRCDIR) ]] && echo -n yes),yes)
+	/usr/bin/rsync -a -zvh --progress --delete -e ssh $(ROOT)/$(SRCDIR)/ root@$(RPIHOST):/clue/.kodi/addons/$(NAME)
+endif
+else
+	echo "For testing process you have to set TESTLOCATION variable to test on any Kodi\
+	environment (syncronized over rsync with ssh) or RPIHOST variable to test on a RPi\
+	device. Test process suppose to synchronize only sourse files, system files can be\
+	tested using 'deply' target - only on RPi devices!"
+endif
+endif
 
 # Mark new revision (addon version) in the development copy
 version:
@@ -145,10 +165,11 @@ cleanall:
 help:
 	echo -e "\
 \nSYNOPSIS\n\
-       make info | deploy | version | build | publish | release\n\
-       make gitrev | gittag | version\n\
-       make clean | cleanall\n\
-       make help\n\
+       make info | deploy | test \n\
+       version | build | publish | release \n\
+       make gitrev | gittag | version \n\
+       make clean | cleanall \n\
+       make help \n\
 \nDESCRIPTION\n\
     Executes one of the make targets defined through this Makefile flow, according \n\
     to the scope of this project.\n\n\
@@ -156,8 +177,13 @@ help:
                   provides main details about current release: package name, version id\n\
                   and package file (should be found after execution of 'build' target)\n\
                   >> this is the default target wihin the CCM process\n\
-    deploy | test\n\
-                  deploy addon resources on a remote test system (RPi device)\n\
+    deploy\n\
+                  deploys addon resources (sources and system files) on a remote test system\n\
+                  (RPi device described by RPIHOST variable)\n\
+    test\n\
+                  runs testing process (for source files) for any remote host and location \n\
+                  settled up using TESTPATH variable. In case this variable is not set the \n\
+                  test can be done for RPi host (identified by RPIHOST variable).\n\
     version\n\
                   create local new version within local addon descriptor (addon.xml),\n\
                   the new version being the incremented value fo previous version\n\
@@ -191,18 +217,21 @@ help:
     help\n\
                   Shows this text\n\
 \n\
-    There are couple of system variables that should be be set in order to drive the execution \n\
+    There are couple of system variables that should be be set in order to drive the execution\n\
     of particular tasks:\n\
     PUBLISH\n\
-                  Indicates the remote file system mounted to the local development environment, \n\
+                  Indicates the remote file system mounted to the local development environment,\n\
                   in order to deploy releases in the repository container.\n\
     OUTPUT\n\
                   Describes the local file system location where the build process will be  \n\
                   executed. Default value is '$(ROOT)/../Clue-out'\n\
     RPIHOST\n\
                   Indicates the host name or the IP address of the test system in order to deploy\n\
-                  addon resources through deploy or test task. The remote system should have SSH \n\
+                  addon resources through deploy or test task. The remote system should have SSH\n\
                   service enabled and active.\n\
+    TESTPATH\n\
+                  Describes the remote location for testing purposes. It should contain complete \n\
+                  ssh location format: <user>@HOST/<base path>\n\
 \n\
 EXAMPLES\n\
        deploy the entire distribution on a testing environment ('deploy' task is default)\n\

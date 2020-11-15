@@ -4,6 +4,7 @@
 	<allowoverlay>yes</allowoverlay>
 	<onload condition="Skin.hasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
 	<previouswindow>home</previouswindow>
+	<views>50,51</views>
 
 	<controls>
 		<include>globalBackground</include>

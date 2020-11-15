@@ -47,7 +47,7 @@ msgid "File Manager"
 msgstr ""
 
 msgctxt "#31007"
-msgid "Library Empty"
+msgid "Empty Library"
 msgstr ""
 
 msgctxt "#31008"
@@ -371,7 +371,7 @@ msgid "Active profile"
 msgstr ""
 
 msgctxt "#31108"
-msgid "Clue and KOdi System Details"
+msgid "Clue and Kodi System Details"
 msgstr ""
 
 msgctxt "#31109"

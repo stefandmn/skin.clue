@@ -6,6 +6,7 @@
 	<onload condition="window.previous(0)">SetFocus(511)</onload>
 	<onload condition="String.IsEqual(Skin.String(showRecentVideoItems),true)">SetFocus(612)</onload>
 	<previouswindow>home</previouswindow>
+	<views>50,51,52,53,54,55,58,59</views>
 
 	<controls>
 		<include>globalBackground</include>

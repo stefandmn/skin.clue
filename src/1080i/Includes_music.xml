@@ -917,7 +917,7 @@
 	<!-- Content: List of Songs -->
 	<include name="MusicSongList">
 		<control type="group">
-			<visible>SubStString.IsEqualtring(showRecentMusicItems),false)</visible>
+			<visible>String.IsEqual(Skin.String(showRecentMusicItems),false)</visible>
 			<posx>0</posx>
 			<posy>3-row</posy>
 			<control type="group" id="$PARAM[id]">

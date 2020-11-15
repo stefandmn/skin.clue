@@ -15,7 +15,7 @@
             </control>
             <!--content-->
             <control type="group">
-                <posx>col-7-begin</posx>
+                <posx>528</posx>
                 <posy>row-6-begin</posy>
                 <include>modalDialogInOut</include>
                 <!--titles-->

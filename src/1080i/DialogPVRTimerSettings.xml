@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
     <defaultcontrol>5</defaultcontrol>
+
     <coordinates>
         <system>1</system>
         <posx>0</posx>
         <posy>0</posy>
     </coordinates>
+
     <controls>
         <!--background-->
         <control type="image">
@@ -20,7 +22,7 @@
             <!--animations-->
             <include>modalDialogInOutVertical</include>
             <control type="group">
-                <posx>col-5-begin</posx>
+                <posx>384</posx>
                 <posy>row-3-begin</posy>
                 <control type="image">
                     <posx>-384</posx>
@@ -183,12 +185,6 @@
                     <description>Cancel Button</description>
                 </control>
             </control>
-        </control>
-        <!--debugging-->
-        <include>DebugGrid</include>
-        <control type="label">
-            <include>DialogID</include>
-            <label>DialogPVRTimerSettings.xml</label>
         </control>
     </controls>
 </window>
