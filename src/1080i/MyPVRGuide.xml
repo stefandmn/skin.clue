@@ -22,11 +22,11 @@
 				<control type="epggrid" id="10">
 					<description>EPG Grid</description>
 					<posx>96</posx>
-					<posy>row-4-begin</posy>
+					<posy>162</posy>
 					<width>24-col</width>
 					<height>23-row</height>
 					<timeblocks>30</timeblocks>
-					<progresstexture border="0,33,18,14">UIControls/PVR-EpgProgressIndicator.png</progresstexture>
+					<progresstexture border="0,33,18,14">controls/pvr-indicator.png</progresstexture>
 					<rulerunit>6</rulerunit>
 					<onback>9000</onback>
 					<rulerlayout height="2-row" width="216">
@@ -60,11 +60,11 @@
 							<width>66</width>
 							<height>66</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
-							<texture fallback="colors/black.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+							<texture fallback="masks/black.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
 						</control>
 						<control type="label">
-							<posx>1-col-indent</posx>
-							<width>4-col-gutter</width>
+							<posx>84</posx>
+							<width>264</width>
 							<height>2-row</height>
 							<font>itemTitle</font>
 							<textcolor>textActive</textcolor>
@@ -78,7 +78,7 @@
 							<posx>1-col</posx>
 							<width>216</width>
 							<height>2-row</height>
-							<texture>colors/white.png</texture>
+							<texture>masks/white.png</texture>
 							<colordiffuse>highlight</colordiffuse>
 						</control>
 						<control type="image">
@@ -87,15 +87,15 @@
 							<width>66</width>
 							<height>66</height>
 							<aspectratio scalediffuse="false">keep</aspectratio>
-							<texture fallback="colors/black.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+							<texture fallback="masks/black.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
 							<animation type="focus" loop="false" reversible="false">
 								<effect type="fade" time="500"/>
 								<effect type="rotatey" end="360" center="33" tween="back" easing="out" time="1000"/>
 							</animation>
 						</control>
 						<control type="label">
-							<posx>1-col-indent</posx>
-							<width>4-col-gutter</width>
+							<posx>84</posx>
+							<width>264</width>
 							<height>2-row</height>
 							<font>itemTitle</font>
 							<textcolor>textActive</textcolor>
@@ -110,8 +110,8 @@
 							<width>213</width>
 							<height>69</height>
 							<aspectratio>stretch</aspectratio>
-							<texture border="0">colors/black.png</texture>
-							<bordertexture colordiffuse="highlight">colors/white.png</bordertexture>
+							<texture border="0">masks/black.png</texture>
+							<bordertexture colordiffuse="highlight">masks/white.png</bordertexture>
 							<bordersize>3,0,0,0</bordersize>
 						</control>
 						<control type="label" id="1">
@@ -131,7 +131,7 @@
 							<width>12</width>
 							<height>12</height>
 							<aspectratio>stretch</aspectratio>
-							<texture border="0" diffuse="masks/circle.png">colors/white.png</texture>
+							<texture border="0" diffuse="masks/circle.png">masks/white.png</texture>
 							<colordiffuse>highlight</colordiffuse>
 							<animation effect="fade" start="30" end="100" time="1000" condition="true" pulse="true">conditional</animation>
 						</control>
@@ -140,7 +140,7 @@
 						<control type="image" id="14">
 							<width>213</width>
 							<height>2-row</height>
-							<texture border="0">colors/white.png</texture>
+							<texture border="0">masks/white.png</texture>
 							<colordiffuse>highlight</colordiffuse>
 						</control>
 						<control type="label" id="1">
@@ -165,7 +165,7 @@
 			</control>
 		</control>
 		<!--mini window-->
-		<include>miniVideoPlayer</include>
+		<include>MiniVideoPlayer</include>
 
 		<!--hub menu-->
 		<include>hubMenu</include>

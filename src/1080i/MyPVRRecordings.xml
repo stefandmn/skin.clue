@@ -22,7 +22,7 @@
             <control type="group" id="9999">
                 <include>contentOpen</include>
                 <posx>96</posx>
-                <posy>row-5-begin</posy>
+                <posy>198</posy>
                 <control type="panel" id="50">
                     <posx>0</posx>
                     <posy>0</posy>
@@ -39,7 +39,7 @@
                             <width>23-col</width>
                             <height>69</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture border="0">colors/black.png</texture>
+                            <texture border="0">masks/black.png</texture>
                             <colordiffuse>overlay</colordiffuse>
                         </control>
                         <control type="image">
@@ -48,7 +48,7 @@
                             <width>66</width>
                             <height>66</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture fallback="colors/black.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+                            <texture fallback="masks/black.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
                         </control>
                         <control type="label">
                             <visible>!String.IsEmpty(ListItem.playcount) + !ListItem.IsResumable</visible>
@@ -62,7 +62,7 @@
                             <label>✓</label>
                         </control>
                         <control type="label">
-                            <posx>1-col-indent</posx>
+                            <posx>84</posx>
                             <posy>0</posy>
                             <width>15-col</width>
                             <height>2-row</height>
@@ -92,7 +92,7 @@
                             <width>23-col</width>
                             <height>2-row</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture border="0">colors/white.png</texture>
+                            <texture border="0">masks/white.png</texture>
                             <colordiffuse>highlight</colordiffuse>
                         </control>
                         <control type="group">
@@ -106,7 +106,7 @@
                                 <width>66</width>
                                 <height>66</height>
                                 <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <texture fallback="colors/white.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
+                                <texture fallback="masks/white.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.thumb]</texture>
                             </control>
                             <control type="label">
                                 <visible>!String.IsEmpty(ListItem.playcount) + !ListItem.IsResumable</visible>
@@ -121,7 +121,7 @@
                             </control>
                         </control>
                         <control type="label">
-                            <posx>1-col-indent</posx>
+                            <posx>84</posx>
                             <posy>0</posy>
                             <width>15-col</width>
                             <height>2-row</height>
@@ -153,7 +153,7 @@
                 <animation effect="fade" start="100" end="0" time="100" condition="!controlgroup(9400).hasfocus">conditional</animation>
                 <control type="scrollbar" id="60">
                     <posx>54r</posx>
-                    <posy>row-6-begin</posy>
+                    <posy>234</posy>
                     <height>20-row</height>
                     <onleft>9999</onleft>
                     <onback>9999</onback>
@@ -166,7 +166,7 @@
         </control>
 
         <!--mini window-->
-        <include>miniVideoPlayer</include>
+        <include>MiniVideoPlayer</include>
 
         <!--hub menu-->
         <include>hubMenu</include>

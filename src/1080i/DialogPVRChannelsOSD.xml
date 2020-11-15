@@ -5,7 +5,7 @@
 	<controls>
 		<control type="label">
 			<posx>96</posx>
-			<posy>row-1-begin</posy>
+			<posy>54</posy>
 			<width>12-col</width>
 			<font>pageTitle</font>
 			<label>$INFO[System.Time]</label>
@@ -37,7 +37,7 @@
 				<posy>0</posy>
 				<width>12-col</width>
 				<height>fullscreenHeight</height>
-				<texture>colors/black.png</texture>
+				<texture>masks/black.png</texture>
 				<colordiffuse>cc111111</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
@@ -66,7 +66,7 @@
 				<focusposition>2</focusposition>
 				<movement>3</movement>
 				<posx>0</posx>
-				<posy>row-4-begin</posy>
+				<posy>162</posy>
 				<height>24-row</height>
 				<width>667</width>
 				<onleft>PreviousChannelGroup</onleft>
@@ -80,7 +80,7 @@
 						<width>66</width>
 						<height>66</height>
 						<aspectratio scalediffuse="false">keep</aspectratio>
-						<texture fallback="colors/offblack.png" border="0">$INFO[Listitem.thumb]</texture>
+						<texture fallback="masks/offblack.png" border="0">$INFO[Listitem.thumb]</texture>
 					</control>
 					<control type="label">
                         <posx>96</posx>
@@ -112,7 +112,7 @@
                         <width>8-col</width>
                         <height>105</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture border="0">colors/white.png</texture>
+                        <texture border="0">masks/white.png</texture>
                         <colordiffuse>highlight</colordiffuse>
                     </control>
 					<control type="image">
@@ -121,7 +121,7 @@
 						<width>66</width>
 						<height>66</height>
 						<aspectratio scalediffuse="false">keep</aspectratio>
-						<texture fallback="colors/offblack.png" border="0">$INFO[Listitem.thumb]</texture>
+						<texture fallback="masks/offblack.png" border="0">$INFO[Listitem.thumb]</texture>
 					</control>
 					<control type="label">
                         <posx>96</posx>

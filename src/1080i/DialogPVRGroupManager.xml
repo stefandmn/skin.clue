@@ -8,7 +8,7 @@
 
         <control type="group">
             <posx>240</posx>
-            <posy>row-3-begin</posy>
+            <posy>126</posy>
             <!--animations-->
             <include>modalDialogInOutVertical</include>
             <!--content provider title / info-->
@@ -17,7 +17,7 @@
                 <posy>0</posy>
                 <width>20-col</width>
                 <height>2-row</height>
-                <texture>colors/white.png</texture>
+                <texture>masks/white.png</texture>
                 <colordiffuse>highlight</colordiffuse>
                 <aspectratio>stretch</aspectratio>
             </control>
@@ -26,7 +26,7 @@
                 <posy>2-row</posy>
                 <width>20-col</width>
                 <height>21-row</height>
-                <texture>colors/black.png</texture>
+                <texture>masks/black.png</texture>
                 <colordiffuse>overlay</colordiffuse>
                 <aspectratio>stretch</aspectratio>
             </control>
@@ -35,7 +35,7 @@
                 <posy>2-row</posy>
                 <width>12-col</width>
                 <height>21-row</height>
-                <texture>colors/black.png</texture>
+                <texture>masks/black.png</texture>
                 <colordiffuse>overlay</colordiffuse>
                 <aspectratio>stretch</aspectratio>
             </control>
@@ -44,7 +44,7 @@
                 <posy>2-row</posy>
                 <width>20-col</width>
                 <height>71</height>
-                <texture>colors/black.png</texture>
+                <texture>masks/black.png</texture>
                 <aspectratio>stretch</aspectratio>
                 <colordiffuse>textboxInactive</colordiffuse>
             </control>
@@ -77,14 +77,14 @@
                 <control type="list" id="13">
                     <posx>0</posx>
                     <posy>1-row</posy>
-                    <width>4-col-textbox</width>
+                    <width>285</width>
                     <height>21-row</height>
                     <onright>12</onright>
                     <itemlayout height="2-row" width="4-col">
                         <control type="label">
                             <posx>24</posx>
                             <posy>2</posy>
-                            <width>4-col-gutter</width>
+                            <width>264</width>
                             <height>2-row</height>
                             <aligny>center</aligny>
                             <font>buttonTitle</font>
@@ -100,12 +100,12 @@
                             <width>4-col</width>
                             <height>2-row</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture>colors/white.png</texture>
+                            <texture>masks/white.png</texture>
                         </control>
                         <control type="label">
                             <posx>24</posx>
                             <posy>0</posy>
-                            <width>4-col-gutter</width>
+                            <width>264</width>
                             <height>2-row</height>
                             <aligny>center</aligny>
                             <font>buttonTitle</font>
@@ -125,7 +125,7 @@
                     <description>name label</description>
                     <posx>12</posx>
                     <posy>0</posy>
-                    <width>6-col-gutter</width>
+                    <width>408</width>
                     <height>2-row</height>
                     <aligny>center</aligny>
                     <font>itemSubTitle</font>
@@ -134,7 +134,7 @@
                 <control type="panel" id="12">
                     <posx>0</posx>
                     <posy>2-row</posy>
-                    <width>6-col-textbox</width>
+                    <width>429</width>
                     <height>19-row</height>
                     <onleft>13</onleft>
                     <onright>11</onright>
@@ -145,12 +145,12 @@
                             <width>2-row</width>
                             <height>2-row</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture fallback="colors/offblack.png" border="0">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="masks/offblack.png" border="0">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="label">
-                            <posx>1-col-indent</posx>
+                            <posx>84</posx>
                             <posy>0</posy>
-                            <width>5-col-gutter</width>
+                            <width>336</width>
                             <height>2-row</height>
                             <aligny>center</aligny>
                             <font>buttonTitle</font>
@@ -168,7 +168,7 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                             <width>2-row</width>
                             <height>2-row</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture fallback="colors/white.png" border="0">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="masks/white.png" border="0">$INFO[ListItem.Icon]</texture>
                             <animation type="focus" loop="false" reversible="false">
                                 <effect type="fade" time="500"/>
                                 <effect type="rotatey" end="360" center="33" tween="back" easing="out" time="1000"/>
@@ -180,14 +180,14 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                             <width>502</width>
                             <height>2-row</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture>colors/white.png</texture>
+                            <texture>masks/white.png</texture>
                             <bordersize>0</bordersize>
                             <colordiffuse>ffffffff</colordiffuse>
                         </control>
                         <control type="label">
-                            <posx>1-col-indent</posx>
+                            <posx>84</posx>
                             <posy>0</posy>
-                            <width>5-col-gutter</width>
+                            <width>336</width>
                             <height>2-row</height>
                             <aligny>center</aligny>
                             <font>buttonTitle</font>
@@ -219,7 +219,7 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                 <control type="panel" id="11">
                     <posx>0</posx>
                     <posy>2-row</posy>
-                    <width>6-col-textbox</width>
+                    <width>429</width>
                     <height>19-row</height>
                     <onleft>12</onleft>
                     <onright>9001</onright>
@@ -230,12 +230,12 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                             <width>2-row</width>
                             <height>2-row</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture fallback="colors/offblack.png" border="0">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="masks/offblack.png" border="0">$INFO[ListItem.Icon]</texture>
                         </control>
                         <control type="label">
-                            <posx>1-col-indent</posx>
+                            <posx>84</posx>
                             <posy>0</posy>
-                            <width>5-col-gutter</width>
+                            <width>336</width>
                             <height>2-row</height>
                             <aligny>center</aligny>
                             <font>buttonTitle</font>
@@ -253,7 +253,7 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                             <width>2-row</width>
                             <height>2-row</height>
                             <aspectratio scalediffuse="false">stretch</aspectratio>
-                            <texture fallback="colors/white.png" border="0">$INFO[ListItem.Icon]</texture>
+                            <texture fallback="masks/white.png" border="0">$INFO[ListItem.Icon]</texture>
                             <animation type="focus" loop="false" reversible="false">
                                 <effect type="fade" time="500"/>
                                 <effect type="rotatey" end="360" center="33" tween="back" easing="out" time="1000"/>
@@ -265,14 +265,14 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                             <width>502</width>
                             <height>2-row</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture>colors/white.png</texture>
+                            <texture>masks/white.png</texture>
                             <bordersize>0</bordersize>
                             <colordiffuse>ffffffff</colordiffuse>
                         </control>
                         <control type="label">
-                            <posx>1-col-indent</posx>
+                            <posx>84</posx>
                             <posy>0</posy>
-                            <width>5-col-gutter</width>
+                            <width>336</width>
                             <height>2-row</height>
                             <aligny>center</aligny>
                             <font>buttonTitle</font>
@@ -308,9 +308,9 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                         <label>$INFO[ListItem.label2]</label>
                     </control>
                     <control type="label">
-                        <posx>1-col-indent</posx>
+                        <posx>84</posx>
                         <posy>-1</posy>
-                        <width>4-col-gutter</width>
+                        <width>264</width>
                         <height>2-row</height>
                         <aligny>center</aligny>
                         <font>buttonTitle</font>
@@ -322,20 +322,20 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
-                        <width>1-col-textbox</width>
+                        <width>69</width>
                         <height>2-row</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture>colors/white.png</texture>
+                        <texture>masks/white.png</texture>
                         <colordiffuse>highlight</colordiffuse>
                         <include>spinFocusIcon</include>
                     </control>
                     <control type="image">
                         <posx>1-col</posx>
                         <posy>0</posy>
-                        <width>5-col-textbox</width>
+                        <width>357</width>
                         <height>2-row</height>
                         <aspectratio>stretch</aspectratio>
-                        <texture>colors/white.png</texture>
+                        <texture>masks/white.png</texture>
                     </control>
                     <control type="label">
                         <posx>0</posx>
@@ -350,9 +350,9 @@ ListItem.ChannelNumberLabel,(,) - ]$INFO[ListItem.ChannelName]</label>
                         <shadowcolor></shadowcolor>
                     </control>
                     <control type="label">
-                        <posx>1-col-indent</posx>
+                        <posx>84</posx>
                         <posy>-1</posy>
-                        <width>5-col-gutter</width>
+                        <width>336</width>
                         <height>2-row</height>
                         <aligny>center</aligny>
                         <font>buttonTitle</font>

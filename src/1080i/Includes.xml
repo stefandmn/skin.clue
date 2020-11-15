@@ -329,10 +329,10 @@
 	</include>
 
 	<!--Mini player window-->
-    <include name="miniVideoPlayer">
+    <include name="MiniVideoPlayer">
         <control type="group">
             <visible>!Skin.hassetting(stopVideoOnMenu) + Player.HasVideo + !VideoPlayer.IsFullscreen + !SlideShow.IsActive</visible>
-            <posx>col-20-begin</posx>
+            <posx>1464</posx>
             <posy>12</posy>
             <control type="image">
                 <posx>0</posx>
@@ -340,8 +340,8 @@
                 <width>444</width>
                 <height>255</height>
                 <aspectratio>stretch</aspectratio>
-                <texture>colors/black.png</texture>
-                <bordertexture border="6" colordiffuse="overlay">colors/black.png</bordertexture>
+                <texture>masks/black.png</texture>
+                <bordertexture border="6" colordiffuse="overlay">masks/black.png</bordertexture>
                 <bordersize>6</bordersize>
             </control>
             <control type="videowindow">

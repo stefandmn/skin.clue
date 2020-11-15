@@ -9,7 +9,7 @@
                 <include>fadeInOut</include>
                 <control type="image">
                     <include>dimensionsFullscreen</include>
-                    <texture>colors/black.png</texture>
+                    <texture>masks/black.png</texture>
                     <colordiffuse>eeFFFFFF</colordiffuse>
                     <aspectratio>stretch</aspectratio>
                 </control>
@@ -17,14 +17,14 @@
             <!--content-->
             <control type="group">
                 <posx>528</posx>
-                <posy>row-5-begin</posy>
+                <posy>198</posy>
                 <include>modalDialogInOut</include>
                 <!--titles-->
                 <control type="label">
                     <description>Episode title</description>
                     <posx>0</posx>
                     <posy>0</posy>
-                    <width>12-col-gutter</width>
+                    <width>1120</width>
                     <height>3-row</height>
                     <align>left</align>
                     <aligny>center</aligny>
@@ -121,7 +121,7 @@
                             <width>4-col</width>
                             <height>2-row</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture>colors/black.png</texture>
+                            <texture>masks/black.png</texture>
                         </control>
                         <control type="label">
                             <posx>0</posx>
@@ -136,7 +136,7 @@
                             <shadowcolor></shadowcolor>
                         </control>
                         <control type="label">
-                            <posx>1-col-indent</posx>
+                            <posx>84</posx>
                             <posy>0</posy>
                             <width>3-col</width>
                             <height>2-row</height>
@@ -151,10 +151,10 @@
                         <control type="image">
                             <posx>0</posx>
                             <posy>0</posy>
-                            <width>1-col-textbox</width>
+                            <width>69</width>
                             <height>2-row</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture>colors/white.png</texture>
+                            <texture>masks/white.png</texture>
                             <colordiffuse>highlight</colordiffuse>
                             <include>spinFocusIcon</include>
                         </control>
@@ -164,7 +164,7 @@
                             <width>3-col</width>
                             <height>2-row</height>
                             <aspectratio>stretch</aspectratio>
-                            <texture>colors/white.png</texture>
+                            <texture>masks/white.png</texture>
                         </control>
                         <control type="label">
                             <posx>0</posx>
@@ -179,7 +179,7 @@
                             <shadowcolor></shadowcolor>
                         </control>
                         <control type="label">
-                            <posx>1-col-indent</posx>
+                            <posx>84</posx>
                             <posy>0</posy>
                             <width>3-col</width>
                             <height>2-row</height>
