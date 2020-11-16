@@ -35,8 +35,6 @@
                     <width>12-col</width>
                     <align>left</align>
                     <font>mediumStrong</font>
-
-
                     <textcolor>selected</textcolor>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
@@ -133,12 +131,6 @@
             <control type="button" id="10">
                 <description>Play</description>
             </control>
-        </control>
-        <!--debugging-->
-        <include>DebugGrid</include>
-        <control type="label">
-            <include>WindowID</include>
-            <label>DialogPVRRecordingInfo.xml</label>
         </control>
     </controls>
 </window>

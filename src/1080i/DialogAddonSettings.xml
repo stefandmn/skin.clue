@@ -54,23 +54,23 @@
 				<shadowcolor>-</shadowcolor>
 			</control>
 			<!--subnav-->
-			<control type="grouplist" id="9">
+			<control type="grouplist" id="3">
 				<posx>0</posx>
 				<posy>120</posy>
 				<width>-</width>
 				<itemgap>3</itemgap>
 				<height>11-row</height>
 				<onleft>4000</onleft>
-				<onright>2</onright>
+				<onright>5</onright>
 				<orientation>vertical</orientation>
 			</control>
 			<!--options area-->
-			<control type="grouplist" id="2">
+			<control type="grouplist" id="5">
 				<posx>4-col</posx>
 				<posy>120</posy>
 				<width>840</width>
 				<height>11-row</height>
-				<onleft>9</onleft>
+				<onleft>3</onleft>
 				<onright>4000</onright>
 				<orientation>vertical</orientation>
 				<itemgap>3</itemgap>
@@ -83,7 +83,8 @@
 				<height>5-row</height>
 				<itemgap>3</itemgap>
 				<orientation>vertical</orientation>
-				<onleft>2</onleft>
+				<onleft>5</onleft>
+				<onright>3</onright>
 				<itemlayout width="6-col" height="1-row">
 					<control type="label">
 						<posx>24</posx>
@@ -138,25 +139,25 @@
 						<label>186</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>SendClick(10140,10)</onclick>
+                        <onclick>SendClick(28)</onclick>
 					</item>
 					<item id="2">
 						<description>Cancel Button</description>
 						<label>222</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>SendClick(10140,11)</onclick>
+                        <onclick>SendClick(29)</onclick>
 					</item>
 					<item id="3">
 						<description>Defaults Button</description>
 						<label>409</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>SendClick(10140,12)</onclick>
+                        <onclick>SendClick(30)</onclick>
 					</item>
 				</content>
 			</control>
-			<control type="button" id="13">
+			<control type="button" id="10">
 				<description>Default Category Button</description>
 				<align>left</align>
 				<aligny>top</aligny>
@@ -168,7 +169,7 @@
 				<textoffsetx>12</textoffsetx>
 				<textoffsety>8</textoffsety>
 			</control>
-			<control type="button" id="3">
+			<control type="button" id="7">
 				<description>Default Button</description>
 				<align>left</align>
 				<height>54</height>
@@ -178,16 +179,16 @@
 				<texturefocus>masks/selected.png</texturefocus>
 				<textoffsetx>12</textoffsetx>
 			</control>
-			<control type="radiobutton" id="4">
+			<control type="radiobutton" id="8">
 				<description>Default RadioButton</description>
 			</control>
-			<control type="spincontrolex" id="5">
+			<control type="spincontrolex" id="9">
 				<description>Default spincontrolex</description>
 			</control>
-			<control type="label" id="7">
+			<control type="label" id="14">
 				<label>-</label>
 			</control>
-			<control type="image" id="6">
+			<control type="image" id="11">
 				<description>Default Separator</description>
 				<width>1</width>
 				<height>1</height>
@@ -195,19 +196,19 @@
 				<colordiffuse>ffffffff</colordiffuse>
 				<aspectratio>stretch</aspectratio>
 			</control>
-			<control type="sliderex" id="8">
+			<control type="sliderex" id="13">
 				<description>Default Slider</description>
 			</control>
 			<!--ok, cancel etc buttons-->
 			<control type="group">
 				<visible>false</visible>
-				<control type="button" id="10">
+				<control type="button" id="128">
 					<description>OK Button</description>
 				</control>
-				<control type="button" id="11">
+				<control type="button" id="29">
 					<description>Cancel Button</description>
 				</control>
-				<control type="button" id="12">
+				<control type="button" id="30">
 					<description>Defaults Button</description>
 				</control>
 			</control>

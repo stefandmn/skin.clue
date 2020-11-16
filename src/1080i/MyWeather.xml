@@ -813,66 +813,64 @@
 					<content>
 						<item id="1">
 							<description>Day 0</description>
-							<label>$INFO[Window.Property(Day.0.Title)]</label>
-							<property name="fanartCode">$INFO[Window.Property(Day.0.fanartCode)]</property>
-							<property name="HighTemp">$INFO[Window.Property(Day.0.HighTemp)]</property>
-							<property name="LowTemp">$INFO[Window.Property(Day.0.LowTemp)]</property>
-							<property name="Outlook">$INFO[Window.Property(Day.0.Outlook)]</property>
+							<label>$INFO[Window.Property(Day0.Title)]</label>
+							<property name="fanartCode">$INFO[Window.Property(Day0.fanartCode)]</property>
+							<property name="HighTemp">$INFO[Window.Property(Day0.HighTemp)]</property>
+							<property name="LowTemp">$INFO[Window.Property(Day0.LowTemp)]</property>
+							<property name="Outlook">$INFO[Window.Property(Day0.Outlook)]</property>
 							<onclick>noop</onclick>
 						</item>
 						<item id="2">
 							<description>Day 1</description>
-							<label>$INFO[Window.Property(Day.1.Title)]</label>
-							<label2>$INFO[Window.Property(Day.1.ShortDate)]</label2>
-							<property name="fanartCode">$INFO[Window.Property(Day.1.fanartCode)]</property>
-							<property name="HighTemp">$INFO[Window.Property(Day.1.HighTemp)]</property>
-							<property name="LowTemp">$INFO[Window.Property(Day.1.LowTemp)]</property>
-							<property name="Outlook">$INFO[Window.Property(Day.1.Outlook)]</property>
+							<label>$INFO[Window.Property(Day1.Title)]</label>
+							<property name="fanartCode">$INFO[Window.Property(Day1.fanartCode)]</property>
+							<property name="HighTemp">$INFO[Window.Property(Day1.HighTemp)]</property>
+							<property name="LowTemp">$INFO[Window.Property(Day1.LowTemp)]</property>
+							<property name="Outlook">$INFO[Window.Property(Day1.Outlook)]</property>
 							<onclick>noop</onclick>
 						</item>
 						<item id="3">
 							<description>Day 2</description>
-							<label>$INFO[Window.Property(Day.2.Title)]</label>
-							<property name="fanartCode">$INFO[Window.Property(Day.2.fanartCode)]</property>
-							<property name="HighTemp">$INFO[Window.Property(Day.2.HighTemp)]</property>
-							<property name="LowTemp">$INFO[Window.Property(Day.2.LowTemp)]</property>
-							<property name="Outlook">$INFO[Window.Property(Day.2.Outlook)]</property>
+							<property name="fanartCode">$INFO[Window.Property(Day2.fanartCode)]</property>
+							<property name="HighTemp">$INFO[Window.Property(Day2.HighTemp)]</property>
+							<property name="LowTemp">$INFO[Window.Property(Day2.LowTemp)]</property>
+							<property name="Outlook">$INFO[Window.Property(Day2.Outlook)]</property>
 							<onclick>noop</onclick>
 						</item>
 						<item id="4">
 							<description>Day 3</description>
-							<label>$INFO[Window.Property(Day.3.Title)]</label>
-							<property name="fanartCode">$INFO[Window.Property(Day.3.fanartCode)]</property>
-							<property name="HighTemp">$INFO[Window.Property(Day.3.HighTemp)]</property>
-							<property name="LowTemp">$INFO[Window.Property(Day.3.LowTemp)]</property>
-							<property name="Outlook">$INFO[Window.Property(Day.3.Outlook)]</property>
+							<label>$INFO[Window.Property(Day3.Title)]</label>
+							<property name="fanartCode">$INFO[Window.Property(Day3.fanartCode)]</property>
+							<property name="HighTemp">$INFO[Window.Property(Day3.HighTemp)]</property>
+							<property name="LowTemp">$INFO[Window.Property(Day3.LowTemp)]</property>
+							<property name="Outlook">$INFO[Window.Property(Day3.Outlook)]</property>
 							<onclick>noop</onclick>
 						</item>
 						<item id="5">
 							<description>Day 4</description>
-							<label>$INFO[Window.Property(Day.4.Title)]</label>
-							<property name="fanartCode">$INFO[Window.Property(Day.4.fanartCode)]</property>
-							<property name="HighTemp">$INFO[Window.Property(Day.4.HighTemp)]</property>
-							<property name="LowTemp">$INFO[Window.Property(Day.4.LowTemp)]</property>
-							<property name="Outlook">$INFO[Window.Property(Day.4.Outlook)]</property>
+							<label>$INFO[Window.Property(Day4.Title)]</label>
+							<property name="fanartCode">$INFO[Window.Property(Day4.fanartCode)]</property>
+							<property name="HighTemp">$INFO[Window.Property(Day4.HighTemp)]</property>
+							<property name="LowTemp">$INFO[Window.Property(Day4.LowTemp)]</property>
+							<property name="Outlook">$INFO[Window.Property(Day4.Outlook)]</property>
 							<onclick>noop</onclick>
 						</item>
 						<item id="6">
 							<description>Day 5</description>
-							<label>$INFO[Window.Property(Day.5.Title)]</label>
-							<property name="fanartCode">$INFO[Window.Property(Day.5.fanartCode)]</property>
-							<property name="HighTemp">$INFO[Window.Property(Day.5.HighTemp)]</property>
-							<property name="LowTemp">$INFO[Window.Property(Day.5.LowTemp)]</property>
-							<property name="Outlook">$INFO[Window.Property(Day.5.Outlook)]</property>
+							<label>$INFO[Window.Property(Day5.Title)]</label>
+							<property name="fanartCode">$INFO[Window.Property(Day5.fanartCode)]</property>
+							<property name="HighTemp">$INFO[Window.Property(Day5.HighTemp)]</property>
+							<property name="LowTemp">$INFO[Window.Property(Day5.LowTemp)]</property>
+							<property name="Outlook">$INFO[Window.Property(Day5.Outlook)]</property>
 							<onclick>noop</onclick>
 						</item>
 						<item id="7">
 							<description>Day 7</description>
-							<label>$INFO[Window.Property(Day.6.Title)]</label>
-							<property name="fanartCode">$INFO[Window.Property(Day.6.fanartCode)]</property>
-							<property name="HighTemp">$INFO[Window.Property(Day.6.HighTemp)]</property>
-							<property name="LowTemp">$INFO[Window.Property(Day.6.LowTemp)]</property>
-							<property name="Outlook">$INFO[Window.Property(Day.6.Outlook)]</property>
+							<label>$INFO[Window.Property(Day6.Title)]</label>
+							<property name="fanartCode">$INFO[Window.Property(Day6.fanartCode)]</property>
+							<property name="HighTemp">$INFO[Window.Property(Day6.HighTemp)]</property>
+							<property name="LowTemp">$INFO[Window.Property(Day6.LowTemp)]</property>
+							<property name="Outlook">$INFO[Window.Property(Day6.Outlook)]</property>
 							<onclick>noop</onclick>
 						</item>
 					</content>
@@ -997,43 +995,43 @@
 				</focusedlayout>
 				<content>
 					<item id="1">
-						<label>$INFO[Window.Property(Day.0.Title)]</label>
-						<property name="fanartCode">$INFO[Window.Property(Day.0.fanartCode)]</property>
-						<property name="HighTemp">$INFO[Window.Property(Day.0.HighTemp)]</property>
-						<property name="LowTemp">$INFO[Window.Property(Day.0.LowTemp)]</property>
-						<property name="Outlook">$INFO[Window.Property(Day.0.Outlook)]</property>
+						<label>$INFO[Window.Property(Day0.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day0.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day0.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day0.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day0.Outlook)]</property>
 						<onclick>noop</onclick>
 					</item>
 					<item id="2">
-						<label>$INFO[Window.Property(Day.1.Title)]</label>
-						<property name="fanartCode">$INFO[Window.Property(Day.1.fanartCode)]</property>
-						<property name="HighTemp">$INFO[Window.Property(Day.1.HighTemp)]</property>
-						<property name="LowTemp">$INFO[Window.Property(Day.1.LowTemp)]</property>
-						<property name="Outlook">$INFO[Window.Property(Day.1.Outlook)]</property>
+						<label>$INFO[Window.Property(Day1.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day1.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day1.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day1.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day1.Outlook)]</property>
 						<onclick>noop</onclick>
 					</item>
 					<item id="3">
-						<label>$INFO[Window.Property(Day.2.Title)]</label>
-						<property name="fanartCode">$INFO[Window.Property(Day.2.fanartCode)]</property>
-						<property name="HighTemp">$INFO[Window.Property(Day.2.HighTemp)]</property>
-						<property name="LowTemp">$INFO[Window.Property(Day.2.LowTemp)]</property>
-						<property name="Outlook">$INFO[Window.Property(Day.2.Outlook)]</property>
+						<label>$INFO[Window.Property(Day2.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day2.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day2.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day2.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day2.Outlook)]</property>
 						<onclick>noop</onclick>
 					</item>
 					<item id="4">
-						<label>$INFO[Window.Property(Day.3.Title)]</label>
-						<property name="fanartCode">$INFO[Window.Property(Day.3.fanartCode)]</property>
-						<property name="HighTemp">$INFO[Window.Property(Day.3.HighTemp)]</property>
-						<property name="LowTemp">$INFO[Window.Property(Day.3.LowTemp)]</property>
-						<property name="Outlook">$INFO[Window.Property(Day.3.Outlook)]</property>
+						<label>$INFO[Window.Property(Day3.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day3.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day3.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day3.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day3.Outlook)]</property>
 						<onclick>noop</onclick>
 					</item>
 					<item id="5">
-						<label>$INFO[Window.Property(Day.4.Title)]</label>
-						<property name="fanartCode">$INFO[Window.Property(Day.4.fanartCode)]</property>
-						<property name="HighTemp">$INFO[Window.Property(Day.4.HighTemp)]</property>
-						<property name="LowTemp">$INFO[Window.Property(Day.4.LowTemp)]</property>
-						<property name="Outlook">$INFO[Window.Property(Day.4.Outlook)]</property>
+						<label>$INFO[Window.Property(Day4.Title)]</label>
+						<property name="fanartCode">$INFO[Window.Property(Day4.fanartCode)]</property>
+						<property name="HighTemp">$INFO[Window.Property(Day4.HighTemp)]</property>
+						<property name="LowTemp">$INFO[Window.Property(Day4.LowTemp)]</property>
+						<property name="Outlook">$INFO[Window.Property(Day4.Outlook)]</property>
 						<onclick>noop</onclick>
 					</item>
 				</content>

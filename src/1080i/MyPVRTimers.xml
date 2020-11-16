@@ -179,8 +179,5 @@
 				<include>pageHeader</include>    
             </control>
         </control>
-
-        <!--hub menu-->
-        <include>hubMenu</include>
     </controls>
 </window>

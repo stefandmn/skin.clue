@@ -166,8 +166,5 @@
 		</control>
 		<!--mini window-->
 		<include>MiniVideoPlayer</include>
-
-		<!--hub menu-->
-		<include>hubMenu</include>
 	</controls>
 </window>
