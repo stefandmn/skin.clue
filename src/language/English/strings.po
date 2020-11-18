@@ -50,10 +50,6 @@ msgctxt "#31007"
 msgid "Empty Library"
 msgstr ""
 
-msgctxt "#31008"
-msgid "Resources"
-msgstr ""
-
 msgctxt "#31009"
 msgid "No plot info available"
 msgstr ""

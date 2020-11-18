@@ -66,10 +66,10 @@ ifeq ($(shell [[ -d $(ROOT)/$(SRCDIR) ]] && echo -n yes),yes)
 	/usr/bin/rsync -a -zvh --progress --delete -e ssh $(ROOT)/$(SRCDIR)/ root@$(RPIHOST):/clue/.kodi/addons/$(NAME)
 endif
 else
-	echo "For testing process you have to set TESTLOCATION variable to test on any Kodi\
+	echo "For testing process you have to set TESTPATH variable to test on any Kodi\
 	environment (syncronized over rsync with ssh) or RPIHOST variable to test on a RPi\
 	device. Test process suppose to synchronize only sourse files, system files can be\
-	tested using 'deply' target - only on RPi devices!"
+	tested using 'deploy' target - only on RPi devices!"
 endif
 endif
 
@@ -78,8 +78,21 @@ version:
 	xmlstarlet edit -L -P -u "//addon/@version" -v "$(NEXT_VER)" $(ROOT)/$(SRCDIR)/addon.xml
 
 
+# Build graphical themes
+themes:
+	$(RESDIR)/utilities/TexturePacker -input "$(RESDIR)/themes/Defaults" -output "$(SRCDIR)/media/Textures.xbt"
+	$(RESDIR)/utilities/TexturePacker -input "$(RESDIR)/themes/Blue" -output "$(SRCDIR)/media/Blue.xbt"
+	$(RESDIR)/utilities/TexturePacker -input "$(RESDIR)/themes/Crimson" -output "$(SRCDIR)/media/Crimson.xbt"
+	$(RESDIR)/utilities/TexturePacker -input "$(RESDIR)/themes/Lime" -output "$(SRCDIR)/media/Lime.xbt"
+	$(RESDIR)/utilities/TexturePacker -input "$(RESDIR)/themes/Magenta" -output "$(SRCDIR)/media/Magenta.xbt"
+
+
+
 # Build addon package in deployment format
 build:
+ifneq ($(shell test -e $(SRCDIR)/media/Textures.xbt && echo -n yes),yes)
+	$(MAKE) themes
+endif
 	mkdir -p $(OUTDIR) $(OUTDIR)/$(TARGETS)
 	cp -rf ${SRCDIR}/* $(OUTDIR)/
 	cp -rf LICENSE $(OUTDIR)/

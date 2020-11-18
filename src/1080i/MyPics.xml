@@ -10,6 +10,8 @@
 		<include>globalBackground</include>
 		<!-- Music overlay -->
 		<include>MusicOverlay</include>
+		<!--mini window for playing video-->
+		<include>MiniVideoPlayer</include>
 
 		<!--page container group-->
 		<control type="group">
@@ -52,7 +54,7 @@
 							<texturefocus>masks/selected.png</texturefocus>
 							<textoffsetx>12</textoffsetx>
 							<label>31056</label>
-							<onclick>ReplaceWindow(pictures)</onclick>
+							<onclick>Control.SetFocus(50)</onclick>
 						</control>
 						<control type="button" id="302">
 							<description>CustomPictureAddon1</description>
@@ -66,7 +68,7 @@
 							<textoffsetx>12</textoffsetx>
 							<label>$INFO[System.AddonTitle(Skin.String(CustomPictureAddon1))]</label>
 							<onclick>RunAddon($INFO[Skin.String(CustomPictureAddon1)])</onclick>
-							<onclick>Control.SetFocus(52)</onclick>
+							<onclick>Control.SetFocus(51)</onclick>
 						</control>
 						<control type="button" id="303">
 							<description>CustomPictureAddon2</description>
@@ -80,7 +82,7 @@
 							<textoffsetx>12</textoffsetx>
 							<label>$INFO[System.AddonTitle(Skin.String(CustomPictureAddon2))]</label>
 							<onclick>RunAddon($INFO[Skin.String(CustomPictureAddon2)])</onclick>
-							<onclick>Control.SetFocus(52)</onclick>
+							<onclick>Control.SetFocus(51)</onclick>
 						</control>
 						<control type="button" id="304">
 							<description>CustomPictureAddon3</description>
@@ -94,7 +96,7 @@
 							<textoffsetx>12</textoffsetx>
 							<label>$INFO[System.AddonTitle(Skin.String(CustomPictureAddon3))]</label>
 							<onclick>RunAddon($INFO[Skin.String(CustomPictureAddon3)])</onclick>
-							<onclick>Control.SetFocus(52)</onclick>
+							<onclick>Control.SetFocus(51)</onclick>
 						</control>
 						<control type="button" id="305">
 							<description>Favorites</description>
@@ -158,19 +160,6 @@
 								<alttexturefocus>masks/selected.png</alttexturefocus>
 								<textoffsetx>12</textoffsetx>
 							</control>
-							<control type="button" id="500">
-								<description>Files (pictures)</description>
-								<height>40</height>
-								<width>236</width>
-								<font>smallMedium</font>
-								<textcolor>unselected</textcolor>
-								<focusedcolor>selected</focusedcolor>
-								<texturefocus>masks/selected.png</texturefocus>
-								<textoffsetx>12</textoffsetx>
-								<label>31008</label>
-								<onclick>right</onclick>
-								<onclick>ActivateWindow(pictures,root)</onclick>
-							</control>
 						</control>
 					</control>
 				</control>
@@ -182,7 +171,7 @@
 					<posy>50</posy>
 					<!--source title-->
 					<control type="label">
-						<visible>Integer.IsGreater(container.Numitems,0)</visible>
+						<visible>Integer.IsGreater(Container.Numitems,0)</visible>
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>14-col</width>
@@ -192,12 +181,12 @@
 					</control>
 					<!--source subtitle-->
 					<control type="label">
-						<visible>Integer.IsGreater(container.Numitems,0) + Container.HasFolders</visible>
+						<visible>Integer.IsGreater(Container.Numitems,0) + Container.HasFolders</visible>
 						<posx>0</posx>
 						<posy>45</posy>
 						<width>24-col</width>
 						<font>regular</font>
-						<label>$INFO[container.Numitems,, $LOCALIZE[31037]]</label>
+						<label>$INFO[Container.Numitems,, $LOCALIZE[31037]]</label>
 						<textcolor>selected</textcolor>
 					</control>
 					<control type="label">
@@ -206,7 +195,7 @@
 						<posy>45</posy>
 						<width>24-col</width>
 						<font>regular</font>
-						<label>$INFO[container.Numitems,, $LOCALIZE[31050]]$INFO[container.foldername, - ,]</label>
+						<label>$INFO[Container.Numitems,, $LOCALIZE[31050]]$INFO[Container.FolderName, - ,]</label>
 						<textcolor>selected</textcolor>
 					</control>
 				</control>
@@ -219,7 +208,7 @@
 					<!--source content-->
 					<control type="group">
 						<!--Photo Grid Browser-->
-						<control type="panel" id="52">
+						<control type="panel" id="50">
 							<visible>true</visible>
 							<posx>-12</posx>
 							<posy>0</posy>
