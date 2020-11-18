@@ -299,7 +299,7 @@ msgid "Enable global fanart background: "
 msgstr ""
 
 msgctxt "#31088"
-msgid "Clue/Environment Setup"
+msgid "Kodi settings"
 msgstr ""
 
 msgctxt "#31089"
@@ -346,6 +346,10 @@ msgctxt "#31101"
 msgid "Delete Group"
 msgstr ""
 
+msgctxt "#31102"
+msgid "Kodi System Configuration"
+msgstr ""
+
 msgctxt "#31103"
 msgid "System Access Profiling"
 msgstr ""
@@ -355,7 +359,7 @@ msgid "Disable this Addon"
 msgstr ""
 
 msgctxt "#31105"
-msgid "Clue Central Configuration"
+msgid "Clue System Central Setup"
 msgstr ""
 
 msgctxt "#31106"
@@ -526,6 +530,10 @@ msgctxt "#31149"
 msgid "Home: Hide Pictures"
 msgstr ""
 
+msgctxt "#31150"
+msgid "Home: Show File Manager"
+msgstr ""
+
 msgctxt "#31151"
 msgid "Home: Show Programs"
 msgstr ""
@@ -681,4 +689,8 @@ msgstr ""
 
 msgctxt "#31317"
 msgid "Home: Hide PVR"
+msgstr ""
+
+msgctxt "#31081"
+msgid "Digital Television Setup"
 msgstr ""

@@ -305,6 +305,16 @@
 					<onclick>Skin.ToggleSetting(showPrograms)</onclick>
 					<selected>Skin.HasSetting(showPrograms)</selected>
 				</control>
+				<control type="radiobutton" id="14">
+					<visible>Container(8000).Hasfocus(2)</visible>
+					<description>Show File Manager</description>
+					<width>16-col</width>
+					<label>31150</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(showFileManager)</onclick>
+					<selected>Skin.HasSetting(showFileManager)</selected>
+				</control>
 				<control type="radiobutton" id="13">
 					<visible>Container(8000).Hasfocus(2)</visible>
 					<description>Show Favourites</description>

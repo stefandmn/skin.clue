@@ -140,52 +140,53 @@
                         <label>$LOCALIZE[14201]</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31063]</property>
-                        <onclick>activatewindow(PlayerSettings)</onclick>
+                        <onclick>ActivateWindow(PlayerSettings)</onclick>
 					</item>
 					<item id="2">
                         <description>Library Settings</description>
                         <label>$LOCALIZE[14203]</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31079]</property>
-                        <onclick>activatewindow(MediaSettings)</onclick>
+                        <onclick>ActivateWindow(MediaSettings)</onclick>
 					</item>
 					<item id="3">
                         <description>Services Settings</description>
                         <label>$LOCALIZE[14208]</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31071]</property>
-                        <onclick>activatewindow(ServiceSettings)</onclick>
+                        <onclick>ActivateWindow(ServiceSettings)</onclick>
 					</item>
 					<item id="4">
                         <description>Interface settings</description>
                         <label>$LOCALIZE[14207]</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31061]</property>
-                        <onclick>activatewindow(InterfaceSettings)</onclick>
+                        <onclick>ActivateWindow(InterfaceSettings)</onclick>
 					</item>
 					<item id="5">
                         <description>Skin settings</description>
                         <label>$LOCALIZE[20077]</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31083]</property>
-                        <onclick>activatewindow(SkinSettings)</onclick>
+                        <onclick>ActivateWindow(SkinSettings)</onclick>
 					</item>
 					<item id="6">
                         <description>Profiles</description>
                         <label>$LOCALIZE[14210]</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31103]</property>
-                        <onclick>activatewindow(Profiles)</onclick>
+                        <onclick>ActivateWindow(Profiles)</onclick>
 					</item>
 					<item id="7">
                         <description>Addons</description>
                         <label>24001</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31067]</property>
-                        <onclick>activatewindow(AddonBrowser)</onclick>
+                        <onclick>ActivateWindow(AddonBrowser)</onclick>
 					</item>
 					<item id="8">
                         <description>Programs</description>
+						<visible>!System.HasAddon(program.clue)</visible>
                         <label>31004</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31111]</property>
@@ -196,7 +197,14 @@
                         <label>10003</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31095]</property>
-                        <onclick>activatewindow(filemanager)</onclick>
+                        <onclick>ActivateWindow(filemanager)</onclick>
+					</item>
+					<item>
+						<description>PVR Client</description>
+						<label>$LOCALIZE[14205]</label>
+						<label2></label2>
+						<property name="label3">$LOCALIZE[31081]</property>
+						<onclick>ActivateWindow(PVRSettings)</onclick>
 					</item>
 					<item id="10">
                         <description>System Information</description>
@@ -205,26 +213,19 @@
                         <property name="label3">$LOCALIZE[31108]</property>
                         <onclick>ActivateWindow(systeminfo)</onclick>
 					</item>
-					<item>
-						<description>PVR Client</description>
-						<label>$LOCALIZE[14204]</label>
-						<label2></label2>
-						<property name="label3">$LOCALIZE[31108]</property>
-						<onclick>ActivateWindow(PVRSettings)</onclick>
-					</item>
 					<item id="11">
-                        <description>System Configurations</description>
-                        <label>$LOCALIZE[31016]</label>
+                        <description>Kodi Settings</description>
+                        <label>$LOCALIZE[31088]</label>
                         <label2></label2>
-                        <property name="label3">$LOCALIZE[31105]</property>
-                        <onclick>activatewindow(SystemSettings)</onclick>
+                        <property name="label3">$LOCALIZE[31102]</property>
+                        <onclick>ActivateWindow(SystemSettings)</onclick>
 					</item>
 					<item id="12">
-						<description>System Setup</description>
+						<description>Clue System Setup</description>
 						<visible>System.HasAddon(program.clue)</visible>
 						<label>$LOCALIZE[31060]</label>
 						<label2></label2>
-						<property name="label3">$LOCALIZE[31088]</property>
+						<property name="label3">$LOCALIZE[31105]</property>
 						<onclick>RunAddon(program.clue)</onclick>
 					</item>
 				</content>

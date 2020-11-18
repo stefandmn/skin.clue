@@ -251,12 +251,13 @@
 						<onclick>ActivateWindow(systeminfo)</onclick>
 					</item>
 					<item id="2">
-                        <label>31004</label>
-                        <label2></label2>
-                        <thumb>-</thumb>
-						<visible>Skin.HasSetting(showPrograms)</visible>
-                        <onclick>ActivateWindow(programs,addons,return)</onclick>
-                    </item>
+						<visible>Skin.HasSetting(showFavourites)</visible>
+						<label>1036</label>
+						<label2></label2>
+						<thumb>-</thumb>
+						<onclick>Skin.SetString(showNavigationMenu,favourites)</onclick>
+						<onclick>ReplaceWindow(favourites)</onclick>
+					</item>
 					<item id="3">
 						<visible>!String.IsEmpty(Weather.location)</visible>
 						<label>24027</label>
@@ -265,28 +266,34 @@
 						<onclick>ActivateWindow(weather)</onclick>
 					</item>
 					<item id="4">
-						<visible>Skin.HasSetting(showFavourites)</visible>
-						<label>1036</label>
-						<label2></label2>
-						<thumb>-</thumb>
-						<onclick>Skin.SetString(showNavigationMenu,favourites)</onclick>
-						<onclick>ReplaceWindow(favourites)</onclick>
-					</item>
+                        <label>31004</label>
+                        <label2></label2>
+                        <thumb>-</thumb>
+						<visible>Skin.HasSetting(showPrograms)</visible>
+                        <onclick>ActivateWindow(programs,addons,return)</onclick>
+                    </item>
 					<item id="5">
+                        <label>31006</label>
+                        <label2></label2>
+                        <thumb>-</thumb>
+						<visible>Skin.HasSetting(showFileManager)</visible>
+                        <onclick>ActivateWindow(filemanager,return)</onclick>
+                    </item>
+					<item id="6">
 						<visible>Skin.HasSetting(showSearch) + System.HasAddon(program.search)</visible>
 						<label>31304</label>
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>RunScript(program.search)</onclick>
 					</item>
-					<item id="6">
+					<item id="7">
 						<visible>Skin.HasSetting(showSettings) + System.HasAddon(program.clue)</visible>
 						<label>31305</label>
 						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>RunScript(program.clue)</onclick>
 					</item>
-					<item id="7">
+					<item id="8">
 						<label>31005</label>
 						<label2></label2>
 						<thumb>-</thumb>
