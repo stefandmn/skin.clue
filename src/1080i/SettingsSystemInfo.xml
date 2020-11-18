@@ -145,7 +145,7 @@
 					<item id="6">
 						<description>CPU</description>
 						<label>31064</label>
-						<label2>$INFO[System.CpuFrequency][CR]$LOCALIZE[139]$INFO[System.CPUTemperature, ,]</label2>
+						<label2>$INFO[System.CpuFrequency][CR]$LOCALIZE[139]$INFO[System.CPUTemperature, ,][CR]$INFO[System.CPUUsage]</label2>
 						<property name="itemIcon">&gt;</property>
 						<thumb>-</thumb>
 						<onclick>noop</onclick>
