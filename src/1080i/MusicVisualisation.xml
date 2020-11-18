@@ -13,7 +13,7 @@
 			<aspectratio>stretch</aspectratio>
 		</control>
 
-		<!-- Visualization and SlideshowAddon control-->
+		<!-- Visualization and Slideshow Addon control-->
 		<control type="group">
 			<include>fadeInOut</include>
 			<control type="multiimage">
