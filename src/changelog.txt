@@ -1,4 +1,7 @@
 v2.0
+- Global Settings screen has been updated to include PVR and to accommodate all config areas
+- Update MyPics sceen to simplify the access to main resources
+- Adapted Weather screen to support any provider
 - Adapted for Clue 2.0 and Kodi 18+
 - Added PVR screens (not yet adapted)
 

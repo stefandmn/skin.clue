@@ -124,7 +124,7 @@
 
 
 	<!--
-		Weather icons
+		Generic Weather icons
 		The codes contains three digits (XYZ): X = weather type, Y = variance, Z = neutral, day, night
 			1: clear
 			2: clouds: partially, mostly, windy, gust
@@ -135,20 +135,29 @@
 			Others (1000 ++ 10): heat, raindrops, windy, strong wind, lightning, tornado, hurricane
 	-->
 	<variable name="CurrentWeatherIcon">
-		<!--Yahoo/MIXED_RAIN_AND_SNOW/5-->
+	<!-- Yahoo specific codes -->
+		<!--MIXED_RAIN_AND_SNOW-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),5)"></value>
-		<!--Yahoo/CLOUDY/26-->
+		<!--LIGHT_SNOW_SHOWERS-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),14)"></value>
+		<!--CLOUDY-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),26)"></value>
-		<!--Yahoo/MOSTLY_CLOUDY/27/28-->
+		<!--MOSTLY_CLOUDY-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),27)"></value>
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),28)"></value>
-		<!--Yahoo/PARTLY_CLOUDY/29/30-->
-		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),29)"></value>
-		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),30)"></value>
-		<!--Yahoo/CLEAR/31-->
-		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),31)"></value>
-		<!--Yahoo/FAIR/62-->
-		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),33)"></value>
+		<!--PARTLY_CLOUDY_NIGHT-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),29)"></value>
+		<!--PARTLY_CLOUDY_DAY-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),30)"></value>
+		<!--CLEAR_NIGHT-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),31)"></value>
+		<!--CLEAR_DAY-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),32)"></value>
+		<!--FAIR_NIGHT-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),33)"></value>
+		<!--FAIR_NIGHT-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),34)"></value>
+	<!-- Generic Codes -->
 		<!--Clear/Sunny/Day-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),101)"></value>
 		<!--Clear/Night-->
@@ -252,20 +261,29 @@
 
 	<!---Weather icons for listing controls-->
 	<variable name="ListWeatherIcon">
-		<!--Yahoo/MIXED_RAIN_AND_SNOW/5-->
+	<!-- Yahoo specific codes -->
+		<!--MIXED_RAIN_AND_SNOW-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),5)"></value>
-		<!--Yahoo/CLOUDY/26-->
+		<!--LIGHT_SNOW_SHOWERS-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),14)"></value>
+		<!--CLOUDY-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),26)"></value>
-		<!--Yahoo/MOSTLY_CLOUDY/27/28-->
+		<!--MOSTLY_CLOUDY-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),27)"></value>
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),28)"></value>
-		<!--Yahoo/PARTLY_CLOUDY/29/30-->
-		<value condition="String.IsEqual(ListItem.Property(FanartCode),29)"></value>
-		<value condition="String.IsEqual(ListItem.Property(FanartCode),30)"></value>
-		<!--Yahoo/CLEAR/31-->
-		<value condition="String.IsEqual(ListItem.Property(FanartCode),31)"></value>
-		<!--Yahoo/FAIR/62-->
-		<value condition="String.IsEqual(ListItem.Property(FanartCode),33)"></value>
+		<!--PARTLY_CLOUDY_NIGHT-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),29)"></value>
+		<!--PARTLY_CLOUDY_DAY-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),30)"></value>
+		<!--CLEAR_NIGHT-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),31)"></value>
+		<!--CLEAR_DAY-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),32)"></value>
+		<!--FAIR_NIGHT-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),33)"></value>
+		<!--FAIR_DAY-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),34)"></value>
+	<!-- Generic Codes -->
 		<!--Clear/Sunny/Day-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),101)"></value>
 		<!--Clear/Night-->
