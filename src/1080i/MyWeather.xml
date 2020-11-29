@@ -361,7 +361,7 @@
 						<visible>!String.IsEmpty(Window(Weather).Property(Current.Temperature))+!String.IsEmpty(Window(Weather).Property(Today.HighTemperature))</visible>
 						<posx>520</posx>
 						<posy>75</posy>
-						<width>116</width>
+						<width>136</width>
 						<align>left</align>
 						<font>regularStrong</font>
 						<textcolor>selected</textcolor>
@@ -384,7 +384,7 @@
 						<visible>!String.IsEmpty(Window(Weather).Property(Current.Temperature))+!String.IsEmpty(Window(Weather).Property(Today.LowTemperature))</visible>
 						<posx>520</posx>
 						<posy>120</posy>
-						<width>116</width>
+						<width>136</width>
 						<align>left</align>
 						<font>regularStrong</font>
 						<textcolor>selected</textcolor>

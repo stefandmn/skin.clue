@@ -140,7 +140,6 @@ else
 endif
 
 
-
 # Create and push a new versioning tag equals with the addon release. The uploaded can be
 # done later - manually or through a separate task and thus the tag is transformed into a
 # addon release
