@@ -140,6 +140,8 @@
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),5)"></value>
 		<!--LIGHT_SNOW_SHOWERS-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),14)"></value>
+		<!--SNOW-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),16)"></value>
 		<!--CLOUDY-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),26)"></value>
 		<!--MOSTLY_CLOUDY-->
@@ -266,6 +268,8 @@
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),5)"></value>
 		<!--LIGHT_SNOW_SHOWERS-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),14)"></value>
+		<!--SNOW-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),16)"></value>
 		<!--CLOUDY-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),26)"></value>
 		<!--MOSTLY_CLOUDY-->

@@ -60,7 +60,7 @@
 					<width>276</width>
 					<height>6-row</height>
 					<onleft>noop</onleft>
-					<onright>200</onright>
+					<onright>9000</onright>
 					<onup>9001</onup>
 					<pagecontrol>-</pagecontrol>
 					<itemgap>3</itemgap>
@@ -123,7 +123,7 @@
 			</control>
 
 			<!--options-->
-			<control type="grouplist" id="200">
+			<control type="grouplist" id="9000">
 				<posx>4-col</posx>
 				<posy>120</posy>
 				<width>16-col</width>
@@ -147,7 +147,7 @@
 					<label2>$INFO[Skin.String(GlobalBackground)]</label2>
 					<onclick>Skin.SetFile(GlobalBackground,.png|.jpg|.gif,special://skin/media/backgrounds/)</onclick>
 					<textwidth>8-col</textwidth>
-					<onright>501</onright>
+					<onright>901</onright>
 				</control>
 				<control type="button" id="2">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -164,7 +164,7 @@
 					<label2>$INFO[Skin.String(VideoFanartLocation)]</label2>
 					<onclick>Skin.SetPath(VideoFanartLocation)</onclick>
 					<textwidth>8-col</textwidth>
-					<onright>502</onright>
+					<onright>902</onright>
 				</control>
 				<control type="button" id="3">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -181,7 +181,7 @@
 					<label2>$INFO[Skin.String(MusicFanartLocation)]</label2>
 					<onclick>Skin.SetPath(MusicFanartLocation)</onclick>
 					<textwidth>8-col</textwidth>
-					<onright>503</onright>
+					<onright>903</onright>
 				</control>
 				<control type="radiobutton" id="5">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -203,15 +203,26 @@
 					<onclick>Skin.ToggleSetting(stopVideoOnMenu)</onclick>
 					<selected>Skin.HasSetting(stopVideoOnMenu)</selected>
 				</control>
-				<control type="radiobutton" id="7">
+				<control type="radiobutton" id="101">
 					<visible>Container(8000).Hasfocus(1)</visible>
-					<description>Reverse power down options</description>
+					<enable>!Skin.HasSetting(trace)</enable>
+					<description>Enable Debug in System Addons</description>
 					<width>16-col</width>
-					<label>31142</label>
+					<label>31318</label>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
-					<onclick>Skin.ToggleSetting(exitFirst)</onclick>
-					<selected>Skin.HasSetting(exitFirst)</selected>
+					<onclick>Skin.ToggleSetting(debug)</onclick>
+					<selected>Skin.HasSetting(debug)|Skin.HasSetting(trace)</selected>
+				</control>
+				<control type="radiobutton" id="102">
+					<visible>Container(8000).Hasfocus(1)</visible>
+					<description>Enable Trace in System Addons</description>
+					<width>16-col</width>
+					<label>31319</label>
+					<textcolor>unselected</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<onclick>Skin.ToggleSetting(trace)</onclick>
+					<selected>Skin.HasSetting(trace)</selected>
 				</control>
 				<control type="radiobutton" id="16">
 					<visible>Container(8000).Hasfocus(1)</visible>
@@ -223,7 +234,7 @@
 					<onclick>Skin.ToggleSetting(animateFanart)</onclick>
 					<selected>Skin.HasSetting(animateFanart)</selected>
 				</control>
-				<control type="radiobutton" id="17">
+				<control type="radiobutton" id="103">
 					<visible>Container(8000).Hasfocus(1) + System.HasAddon(program.slideshow)</visible>
 					<description>Enable Slideshow in Home screen</description>
 					<width>16-col</width>
@@ -233,7 +244,7 @@
 					<onclick>Skin.ToggleSetting(HomeSlideshow)</onclick>
 					<selected>Skin.HasSetting(HomeSlideshow)</selected>
 				</control>
-				<control type="radiobutton" id="18">
+				<control type="radiobutton" id="104">
 					<visible>Container(8000).Hasfocus(1) + System.HasAddon(program.slideshow)</visible>
 					<description>Enable Slideshow in Music Visualization screen</description>
 					<width>16-col</width>
@@ -284,7 +295,7 @@
 					<onclick>Skin.ToggleSetting(hidePictures)</onclick>
 					<selected>Skin.HasSetting(hidePictures)</selected>
 				</control>
-				<control type="label" id="403">
+				<control type="label" id="200">
 					<visible>Container(8000).Hasfocus(2)</visible>
 					<width>15-col</width>
 					<height>45</height>
@@ -295,7 +306,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 				</control>
-				<control type="radiobutton" id="12">
+				<control type="radiobutton" id="201">
 					<visible>Container(8000).Hasfocus(2)</visible>
 					<description>Show Programs</description>
 					<width>16-col</width>
@@ -305,7 +316,7 @@
 					<onclick>Skin.ToggleSetting(showPrograms)</onclick>
 					<selected>Skin.HasSetting(showPrograms)</selected>
 				</control>
-				<control type="radiobutton" id="14">
+				<control type="radiobutton" id="202">
 					<visible>Container(8000).Hasfocus(2)</visible>
 					<description>Show File Manager</description>
 					<width>16-col</width>
@@ -315,7 +326,7 @@
 					<onclick>Skin.ToggleSetting(showFileManager)</onclick>
 					<selected>Skin.HasSetting(showFileManager)</selected>
 				</control>
-				<control type="radiobutton" id="13">
+				<control type="radiobutton" id="203">
 					<visible>Container(8000).Hasfocus(2)</visible>
 					<description>Show Favourites</description>
 					<width>16-col</width>
@@ -325,7 +336,7 @@
 					<onclick>Skin.ToggleSetting(showFavourites)</onclick>
 					<selected>Skin.HasSetting(showFavourites)</selected>
 				</control>
-				<control type="radiobutton" id="19">
+				<control type="radiobutton" id="204">
 					<visible>Container(8000).Hasfocus(2) + System.HasAddon(program.search)</visible>
 					<description>Show Search</description>
 					<width>16-col</width>
@@ -335,8 +346,8 @@
 					<onclick>Skin.ToggleSetting(showSearch)</onclick>
 					<selected>Skin.HasSetting(showSearch)</selected>
 				</control>
-				<control type="radiobutton" id="20">
-					<visible>Container(8000).Hasfocus(2) + System.HasAddon(program.clue)</visible>
+				<control type="radiobutton" id="205">
+					<visible>Container(8000).Hasfocus(2) + System.HasAddon(service.clue)</visible>
 					<description>Show Settings</description>
 					<width>16-col</width>
 					<label>31306</label>
@@ -346,7 +357,7 @@
 					<selected>Skin.HasSetting(showSettings)</selected>
 				</control>
 				<!-- Custom Menus tab -->
-				<control type="label" id="410">
+				<control type="label" id="300">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<width>15-col</width>
 					<height>45</height>
@@ -357,7 +368,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 				</control>
-				<control type="button" id="411">
+				<control type="button" id="301">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Video Menu for Addon 1</description>
 					<height>54</height>
@@ -373,7 +384,7 @@
 					<onclick>Skin.SetAddon(CustomVideoAddon1,xbmc.addon.video,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
-				<control type="button" id="412">
+				<control type="button" id="302">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Video Menu for Addon 2</description>
 					<height>54</height>
@@ -389,7 +400,7 @@
 					<onclick>Skin.SetAddon(CustomVideoAddon2,xbmc.addon.video,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
-				<control type="button" id="413">
+				<control type="button" id="303">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Video Menu for Addon 3</description>
 					<height>54</height>
@@ -405,7 +416,7 @@
 					<onclick>Skin.SetAddon(CustomVideoAddon3,xbmc.addon.video,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
-				<control type="label" id="420">
+				<control type="label" id="310">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<width>15-col</width>
 					<height>45</height>
@@ -416,7 +427,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 				</control>
-				<control type="button" id="421">
+				<control type="button" id="311">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Audio Menu for Addon 1</description>
 					<height>54</height>
@@ -432,7 +443,7 @@
 					<onclick>Skin.SetAddon(CustomAudioAddon1,xbmc.addon.audio,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
-				<control type="button" id="422">
+				<control type="button" id="312">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Audio Menu for Addon 2</description>
 					<height>54</height>
@@ -448,7 +459,7 @@
 					<onclick>Skin.SetAddon(CustomAudioAddon2,xbmc.addon.audio,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
-				<control type="button" id="423">
+				<control type="button" id="313">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Audio Menu for Addon 3</description>
 					<height>54</height>
@@ -464,7 +475,7 @@
 					<onclick>Skin.SetAddon(CustomAudioAddon3,xbmc.addon.audio,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
-				<control type="label" id="430">
+				<control type="label" id="320">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<width>15-col</width>
 					<height>45</height>
@@ -475,7 +486,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 				</control>
-				<control type="button" id="431">
+				<control type="button" id="321">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Picture Menu for Addon 1</description>
 					<height>54</height>
@@ -491,7 +502,7 @@
 					<onclick>Skin.SetAddon(CustomPictureAddon1,xbmc.addon.image,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
-				<control type="button" id="432">
+				<control type="button" id="322">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Picture Menu for Addon 2</description>
 					<height>54</height>
@@ -507,7 +518,7 @@
 					<onclick>Skin.SetAddon(CustomPictureAddon2,xbmc.addon.image,xbmc.addon.executable)</onclick>
 					<textwidth>8-col</textwidth>
 				</control>
-				<control type="button" id="433">
+				<control type="button" id="323">
 					<visible>Container(8000).Hasfocus(3)</visible>
 					<description>Custom Picture Menu for Addon 3</description>
 					<height>54</height>
@@ -528,7 +539,7 @@
 			<!--reset buttons-->
 			<control type="group">
 				<posx>19-col</posx>
-				<control type="button" id="501">
+				<control type="button" id="901">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<posy>120</posy>
 					<height>54</height>
@@ -541,10 +552,10 @@
 					<texturefocus>masks/selected.png</texturefocus>
 					<label></label>
 					<onleft>1</onleft>
-					<ondown>502</ondown>
+					<ondown>902</ondown>
 					<onclick>Skin.Reset(GlobalBackground)</onclick>
 				</control>
-				<control type="button" id="502">
+				<control type="button" id="902">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<posy>177</posy>
 					<height>54</height>
@@ -557,11 +568,11 @@
 					<texturefocus>masks/selected.png</texturefocus>
 					<label></label>
 					<onleft>2</onleft>
-					<ondown>503</ondown>
-					<onup>501</onup>
+					<ondown>903</ondown>
+					<onup>901</onup>
 					<onclick>Skin.Reset(VideoFanartLocation)</onclick>
 				</control>
-				<control type="button" id="503">
+				<control type="button" id="903">
 					<visible>Container(8000).Hasfocus(1)</visible>
 					<posy>234</posy>
 					<height>54</height>
@@ -575,7 +586,7 @@
 					<label></label>
 					<onleft>3</onleft>
 					<ondown>504</ondown>
-					<onup>502</onup>
+					<onup>902</onup>
 					<onclick>Skin.Reset(MusicFanartLocation)</onclick>
 				</control>
 			</control>

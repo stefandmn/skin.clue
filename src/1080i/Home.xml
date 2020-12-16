@@ -72,7 +72,7 @@
 				<width>1728</width>
 				<height>3-col</height>
 				<orientation>horizontal</orientation>
-				<onup>9100</onup>
+				<onup>666</onup>
 				<ondown>9100</ondown>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
@@ -150,7 +150,6 @@
 						<label>31000</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>Skin.SetString(showNavigationMenu,pvr)</onclick>
 						<onclick>activateWindow(TVChannels)</onclick>
 					</item>
 					<item id="2">
@@ -158,7 +157,6 @@
 						<label>31002</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>Skin.SetString(showNavigationMenu,video)</onclick>
 						<onclick>activateWindow(videos)</onclick>
 					</item>
 					<item id="3">
@@ -166,7 +164,6 @@
 						<label>31001</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>Skin.SetString(showNavigationMenu,music)</onclick>
 						<onclick>ActivateWindow(music)</onclick>
 					</item>
 					<item id="4">
@@ -174,7 +171,6 @@
 						<label>31003</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>Skin.SetString(showNavigationMenu,picture)</onclick>
 						<onclick>ActivateWindow(pictures)</onclick>
 					</item>
 					<item id="5">
@@ -255,7 +251,6 @@
 						<label>1036</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>Skin.SetString(showNavigationMenu,favourites)</onclick>
 						<onclick>ReplaceWindow(favourites)</onclick>
 					</item>
 					<item id="3">
@@ -287,11 +282,11 @@
 						<onclick>RunScript(program.search)</onclick>
 					</item>
 					<item id="7">
-						<visible>Skin.HasSetting(showSettings) + System.HasAddon(program.clue)</visible>
+						<visible>Skin.HasSetting(showSettings) + System.HasAddon(service.clue)</visible>
 						<label>31305</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>RunScript(program.clue)</onclick>
+						<onclick>ActivateWindow(1100)</onclick>
 					</item>
 					<item id="8">
 						<label>31005</label>

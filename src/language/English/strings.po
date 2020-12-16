@@ -498,10 +498,6 @@ msgctxt "#31141"
 msgid "Chapter"
 msgstr ""
 
-msgctxt "#31142"
-msgid "Prioritise exit over shutdown in power menu"
-msgstr ""
-
 msgctxt "#31143"
 msgid "Stop video on return to menu"
 msgstr ""
@@ -693,4 +689,37 @@ msgstr ""
 
 msgctxt "#31081"
 msgid "Digital Television Setup"
+msgstr ""
+
+msgctxt "#31318"
+msgid "Enable Debug in System Addons"
+msgstr ""
+
+msgctxt "#31319"
+msgid "Enable Trace in System Addons"
+msgstr ""
+
+msgctxt "#32001"
+msgid "Clue System Setup"
+msgstr ""
+
+msgctxt "#32002"
+msgid "System Identity"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Host and Device Name"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Access Account"
+msgstr ""
+
+msgctxt "#32005"
+msgid "Root Credentials and Access"
+msgstr ""
+
+
+msgctxt "#32090"
+msgid "Save & Close"
 msgstr ""

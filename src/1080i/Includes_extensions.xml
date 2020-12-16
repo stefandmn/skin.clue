@@ -32,7 +32,8 @@
 			lwidth	- Specifies the width that should be used to draw the label
 			bwidth	- Specifies the width that should be used to draw the edit box control
 			font	- Specifies the font to use from the font.xml file
-			label	- Specifies the text which should be drawn as control label
+			label	- Specifies the text label which should be drawn as control label
+			value	- Specifies the text value which should be drawn as control editbox
 			balign	- Aligns the text within the given edit box control
 			up		- Specifies the <id> of the control that should be moved to when the user moves up off this control
 			down	- Specifies the <id> of the control that should be moved to when the user moves down off this control
@@ -74,6 +75,7 @@
 					<textoffsety>0</textoffsety>
 					<align>$PARAM[balign]</align>
 					<aligny>center</aligny>
+					<value>$PARAM[value]</value>
 					<textcolor>unselected</textcolor>
 					<focusedcolor>selected</focusedcolor>
 					<shadowcolor>-</shadowcolor>
@@ -84,6 +86,75 @@
 					<ondown>$PARAM[down]</ondown>
 					<onleft>$PARAM[left]</onleft>
 					<onright>$PARAM[right]</onright>
+				</control>
+			</control>
+		</control>
+	</include>
+
+
+	<!--
+		Editbox control - Input parameters:
+			id		- Specifies the control ID of the edit box.
+			posx	- Specifies where the left edge of the control should be drawn
+			posy	- Specifies where the top edge of the control should be drawn
+			lwidth	- Specifies the width that should be used to draw the label
+			bwidth	- Specifies the width that should be used to draw the edit box control
+			font	- Specifies the font to use from the font.xml file
+			label	- Specifies the text label which should be drawn as control label
+			value	- Specifies the text value which should be drawn as control editbox
+			balign	- Aligns the text within the given edit box control
+			up		- Specifies the <id> of the control that should be moved to when the user moves up off this control
+			down	- Specifies the <id> of the control that should be moved to when the user moves down off this control
+			left	- Specifies the <id> of the control that should be moved to when the user moves left off this control
+			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
+	-->
+	<include name="Inputbox">
+		<control type="group">
+			<posx>$PARAM[posx]</posx>
+			<posy>$PARAM[posy]</posy>
+			<control type="label" id="$PARAM[id]1">
+				<enable>Control.HasFocus($PARAM[id])</enable>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>$PARAM[lwidth]</width>
+				<font>itemTitle</font>
+				<textcolor>selected</textcolor>
+				<textoffsetx>5</textoffsetx>
+				<shadowcolor>-</shadowcolor>
+				<label>$PARAM[label]</label>
+			</control>
+			<control type="group">
+				<posx>$PARAM[lwidth]</posx>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>$PARAM[bwidth]</width>
+					<height>1-row</height>
+					<texture border="3" flipy="true" flipx="false">masks/offblack.png</texture>
+					<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
+					<bordersize>3</bordersize>
+				</control>
+				<control type="button" id="$PARAM[id]">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>$PARAM[bwidth]</width>
+					<font>itemTitle</font>
+					<textoffsetx>12</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<align>$PARAM[balign]</align>
+					<aligny>center</aligny>
+					<textcolor>black</textcolor>
+					<focusedcolor>black</focusedcolor>
+					<shadowcolor>-</shadowcolor>
+					<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
+					<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
+					<pulseonselect>true</pulseonselect>
+					<label>$PARAM[value]</label>
+					<onup>$PARAM[up]</onup>
+					<ondown>$PARAM[down]</ondown>
+					<onleft>$PARAM[left]</onleft>
+					<onright>$PARAM[right]</onright>
+					<onclick>RunScript(service.clue,setlabel,dialog=string&amp;window=$PARAM[window]&amp;field=$PARAM[id])</onclick>
 				</control>
 			</control>
 		</control>
@@ -210,6 +281,7 @@
 				<ondown>$PARAM[down]</ondown>
 				<onleft>$PARAM[left]</onleft>
 				<onright>$PARAM[right]</onright>
+				<onlick>$PARAM[action]</onlick>
 			</control>
 		</control>
 	</include>

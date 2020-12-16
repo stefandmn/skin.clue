@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<window id="1100">
+	<defaultcontrol always="true">1200</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+
+
+	<controls>
+		<!--background-->
+		<include>globalBackground</include>
+		<!--date and time-->
+		<include>dateTime</include>
+
+		<!-- Header -->
+		<control type="group" id="1100">
+			<posx>58</posx>
+			<posy>210</posy>
+			<!--animations-->
+			<include>modalDialogInOutVertical</include>
+			<!--General info-->
+			<control type="image">
+				<posx>-58</posx>
+				<posy>44</posy>
+				<width>2000</width>
+				<height>1-row</height>
+				<texture>masks/selected.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<!--Dialog Icon-->
+			<control type="label">
+				<description>Dialog logo</description>
+				<posx>-57</posx>
+				<posy>45</posy>
+				<width>55</width>
+				<height>55</height>
+				<font>symbolLarge</font>
+				<align>center</align>
+				<label></label>
+				<textcolor>selected</textcolor>
+			</control>
+			<control type="image">
+				<posx>-1</posx>
+				<posy>44</posy>
+				<width>3</width>
+				<height>1-row</height>
+				<texture>masks/black.png</texture>
+				<colordiffuse>ffffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+			<control type="label" id="1101">
+				<posx>24</posx>
+				<posy>44</posy>
+				<width>12-col</width>
+				<font>pageTitle</font>
+				<label>32001</label>
+				<textcolor>black</textcolor>
+				<shadowcolor>-</shadowcolor>
+			</control>
+			<!--overlay-->
+			<control type="image">
+				<posx>-48</posx>
+				<posy>2-row</posy>
+				<width>fullscreenWidth</width>
+				<height>7-row</height>
+				<texture>masks/black.png</texture>
+				<colordiffuse>88ffffff</colordiffuse>
+				<aspectratio>stretch</aspectratio>
+			</control>
+		</control>
+
+		<!-- Main Menu -->
+		<control type="group" id="1200">
+			<!--animations-->
+			<include>modalDialogInOutVertical</include>
+			<posx>84</posx>
+			<posy>260</posy>
+			<width>26-col</width>
+			<height>18-row</height>
+			<control type="Panel" id="1201">
+				<posx>0</posx>
+				<posy>1-col</posy>
+				<width>24-col</width>
+				<height>12-col</height>
+				<itemlayout width="6-col" height="2-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>12</posy>
+						<width>72</width>
+						<height>72</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture fallback="masks/offblack.png" diffuse="masks/circle.png" border="0">$INFO[Listitem.icon]</texture>
+						<bordersize>0</bordersize>
+						<colordiffuse>ccFFFFFF</colordiffuse>
+					</control>
+					<control type="label">
+						<posx>18</posx>
+						<posy>18</posy>
+						<width>326</width>
+						<font>symbolLarge</font>
+						<textcolor>unselected</textcolor>
+						<label>$INFO[listitem.property(icon)]</label>
+					</control>
+					<control type="label">
+						<posx>85</posx>
+						<posy>5</posy>
+						<width>326</width>
+						<font>itemTitle</font>
+						<textcolor>unselected</textcolor>
+						<label>$INFO[ListItem.label]</label>
+					</control>
+					<control type="label">
+						<posx>85</posx>
+						<posy>38</posy>
+						<width>326</width>
+						<font>smallMedium</font>
+						<textcolor>unselected</textcolor>
+						<label>$INFO[ListItem.label2]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="6-col" height="2-row">
+					<control type="image">
+						<posx>0</posx>
+						<posy>12</posy>
+						<width>72</width>
+						<height>72</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture fallback="masks/circle.png" diffuse="masks/circle.png" colordiffuse="FFFFFFFF" border="0">$INFO[Listitem.icon]</texture>
+					</control>
+					<control type="label">
+						<posx>18</posx>
+						<posy>18</posy>
+						<width>326</width>
+						<font>symbolLarge</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[listitem.property(icon)]</label>
+					</control>
+					<control type="label">
+						<posx>85</posx>
+						<posy>5</posy>
+						<width>326</width>
+						<font>itemTitle</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.label]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="label">
+						<posx>85</posx>
+						<posy>38</posy>
+						<width>326</width>
+						<font>smallMedium</font>
+						<textcolor>selected</textcolor>
+						<label>$INFO[ListItem.label2]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+                        <description>System Identity</description>
+						<label>32002</label>
+                        <label2>32003</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(1101)</onclick>
+					</item>
+					<item id="2">
+						<description>Access Account</description>
+                        <label>32004</label>
+                        <label2>32005</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(1102)</onclick>
+					</item>
+					<item id="3">
+                        <description>GPU Memory</description>
+                        <label>GPU Memory</label>
+                        <label2>GPU Memory Split</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5003)</onclick>
+					</item>
+					<item id="4">
+                        <description>File System</description>
+                        <label>File System</label>
+                        <label2>File System Options</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5004)</onclick>
+					</item>
+					<item id="5">
+                        <description>Drives</description>
+                        <label>Drives</label>
+                        <label2>Local and Network Drives</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5005)</onclick>
+					</item>
+					<item id="6">
+                        <description>Overclocking</description>
+                        <label>Overclocking</label>
+                        <label2>CPU Overclocking</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5006)</onclick>
+					</item>
+					<item id="7">
+                        <description>Licenses</description>
+                        <label>Licenses</label>
+                        <label2>Codec Licenses</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5007)</onclick>
+					</item>
+					<item id="8">
+                        <description>Bridge</description>
+                        <label>Bridge</label>
+                        <label2>HomeKit Bridge</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5008)</onclick>
+					</item>
+					<item id="9">
+                        <description>Surveillance</description>
+                        <label>Surveillance</label>
+                        <label2>Video Surveillance</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5009)</onclick>
+					</item>
+					<item id="10">
+                        <description>Network</description>
+                        <label>Network</label>
+                        <label2>Network Interfaces</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5010)</onclick>
+					</item>
+					<item id="11">
+                        <description>Router</description>
+                        <label>Router</label>
+                        <label2>Access Point</label2>
+                        <property name="icon"></property>
+                        <onclick>ActivateWindow(5011)</onclick>
+					</item>
+					<item id="12">
+						<description>Repeater</description>
+						<label>Repeater</label>
+						<label2>Extend Network</label2>
+						<property name="icon"></property>
+						<onclick>ActivateWindow(5012)</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>
