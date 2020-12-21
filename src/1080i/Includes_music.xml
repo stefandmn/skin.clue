@@ -128,7 +128,8 @@
 					<width>8-col</width>
 					<height>1</height>
 					<info>Player.Progress</info>
-					<midtexture>masks/inactive.png</midtexture>
+					<texturebg>masks/inactive.png</texturebg>
+					<midtexture>masks/selected.png</midtexture>
 					<reveal>true</reveal>
 				</control>
 			</control>

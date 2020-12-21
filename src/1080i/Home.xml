@@ -2,7 +2,7 @@
 <window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onload condition="System.HasAddon(program.slideshow) + Skin.HasSetting(HomeSlideshow) + !Window(Home).Property(SlideshowAddon.Running)">RunScript(program.slideshow)</onload>
+	<onload condition="System.HasAddon(program.slideshow) + Skin.HasSetting(HomeSlideshow) + !Window(Visualisation).Property(SlideshowAddon.Running)">RunScript(program.slideshow)</onload>
 	<onload condition="Skin.HasSetting(stopVideoOnMenu) + !Player.HasAudio">PlayerControl(stop)</onload>
 	<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 	<animation effect="fade" start="0" end="100" time="1000" reversible="true">WindowOpen</animation>
