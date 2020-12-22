@@ -116,6 +116,12 @@
 						<onclick>Hibernate()</onclick>
 					</item>
 					<item id="7">
+						<description>Restart Kodi</description>
+						<label>31167</label>
+						<thumb>-</thumb>
+						<onclick>RestartApp()</onclick>
+					</item>
+					<item id="7">
 						<description>Reload skin</description>
 						<label>31164</label>
 						<thumb>-</thumb>

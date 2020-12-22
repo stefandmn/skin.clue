@@ -186,7 +186,6 @@
 					</item>
 					<item id="8">
                         <description>Programs</description>
-						<visible>!System.HasAddon(program.clue)</visible>
                         <label>31004</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31111]</property>
@@ -208,6 +207,7 @@
 					</item>
 					<item id="10">
                         <description>System Information</description>
+						<visible>!System.HasAddon(service.clue)</visible>
                         <label>$LOCALIZE[138]</label>
                         <label2></label2>
                         <property name="label3">$LOCALIZE[31108]</property>
@@ -222,11 +222,11 @@
 					</item>
 					<item id="12">
 						<description>Clue System Setup</description>
-						<visible>System.HasAddon(program.clue)</visible>
+						<visible>System.HasAddon(service.clue)</visible>
 						<label>$LOCALIZE[31060]</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31105]</property>
-						<onclick>RunAddon(program.clue)</onclick>
+						<onclick>RunAddon(service.clue,setup)</onclick>
 					</item>
 				</content>
 			</control>

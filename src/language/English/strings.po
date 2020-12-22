@@ -586,6 +586,10 @@ msgctxt "#31166"
 msgid "Enable Slideshow in Music Visualization screen"
 msgstr ""
 
+msgctxt "#31167"
+msgid "Restart App"
+msgstr ""
+
 msgctxt "#31168"
 msgid "Back"
 msgstr ""
@@ -712,14 +716,13 @@ msgid "Host and Device Name"
 msgstr ""
 
 msgctxt "#32004"
-msgid "Access Account"
+msgid "System Access"
 msgstr ""
 
 msgctxt "#32005"
 msgid "Root Credentials and Access"
 msgstr ""
 
-
-msgctxt "#32090"
+msgctxt "#32099"
 msgid "Save & Close"
 msgstr ""

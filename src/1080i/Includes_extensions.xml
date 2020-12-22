@@ -33,7 +33,6 @@
 			bwidth	- Specifies the width that should be used to draw the edit box control
 			font	- Specifies the font to use from the font.xml file
 			label	- Specifies the text label which should be drawn as control label
-			value	- Specifies the text value which should be drawn as control editbox
 			balign	- Aligns the text within the given edit box control
 			up		- Specifies the <id> of the control that should be moved to when the user moves up off this control
 			down	- Specifies the <id> of the control that should be moved to when the user moves down off this control
@@ -75,17 +74,18 @@
 					<textoffsety>0</textoffsety>
 					<align>$PARAM[balign]</align>
 					<aligny>center</aligny>
-					<value>$PARAM[value]</value>
-					<textcolor>unselected</textcolor>
-					<focusedcolor>selected</focusedcolor>
+					<textcolor>black</textcolor>
+					<focusedcolor>black</focusedcolor>
 					<shadowcolor>-</shadowcolor>
-					<texturenofocus colordiffuse="77888888">masks/selected.png</texturenofocus>
-					<texturefocus colordiffuse="77FFFFFF">masks/selected.png</texturefocus>
+					<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
+					<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
 					<pulseonselect>true</pulseonselect>
+					<hinttext>$INFO[Window.Property(Value.$PARAM[id])]</hinttext>
 					<onup>$PARAM[up]</onup>
 					<ondown>$PARAM[down]</ondown>
 					<onleft>$PARAM[left]</onleft>
 					<onright>$PARAM[right]</onright>
+					<onunfocus>SetProperty(Value.$PARAM[id],$INFO[Control.GetLabel($PARAM[id]).index(1)])</onunfocus>
 				</control>
 			</control>
 		</control>
@@ -101,7 +101,6 @@
 			bwidth	- Specifies the width that should be used to draw the edit box control
 			font	- Specifies the font to use from the font.xml file
 			label	- Specifies the text label which should be drawn as control label
-			value	- Specifies the text value which should be drawn as control editbox
 			balign	- Aligns the text within the given edit box control
 			up		- Specifies the <id> of the control that should be moved to when the user moves up off this control
 			down	- Specifies the <id> of the control that should be moved to when the user moves down off this control
@@ -149,12 +148,14 @@
 					<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
 					<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
 					<pulseonselect>true</pulseonselect>
-					<label>$PARAM[value]</label>
+					<label>$INFO[Window.Property(Value.$PARAM[id])]</label>
 					<onup>$PARAM[up]</onup>
 					<ondown>$PARAM[down]</ondown>
 					<onleft>$PARAM[left]</onleft>
 					<onright>$PARAM[right]</onright>
-					<onclick>RunScript(service.clue,setlabel,dialog=string&amp;window=$PARAM[window]&amp;field=$PARAM[id])</onclick>
+					<onfocus>Skin.SetString(Value,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
+					<onclick>Skin.SetString(Value)</onclick>
+					<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(Value)])</onclick>
 				</control>
 			</control>
 		</control>
@@ -281,7 +282,7 @@
 				<ondown>$PARAM[down]</ondown>
 				<onleft>$PARAM[left]</onleft>
 				<onright>$PARAM[right]</onright>
-				<onlick>$PARAM[action]</onlick>
+				<onclick>$PARAM[action]</onclick>
 			</control>
 		</control>
 	</include>
