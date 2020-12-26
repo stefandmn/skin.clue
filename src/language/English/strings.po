@@ -195,7 +195,7 @@ msgid "Create Music Playlist"
 msgstr ""
 
 msgctxt "#31060"
-msgid "System setup"
+msgid "Clue settings"
 msgstr ""
 
 msgctxt "#31061"
@@ -359,7 +359,7 @@ msgid "Disable this Addon"
 msgstr ""
 
 msgctxt "#31105"
-msgid "Clue System Central Setup"
+msgid "Clue System Configuration"
 msgstr ""
 
 msgctxt "#31106"
@@ -723,6 +723,31 @@ msgctxt "#32005"
 msgid "Root Credentials and Access"
 msgstr ""
 
+msgctxt "#32006"
+msgid "Enable SSH Access"
+msgstr ""
+
+msgctxt "#32007"
+msgid "Disable SSH Password"
+msgstr ""
+
+msgctxt "#32008"
+msgid "Change Root Password"
+msgstr ""
+
+msgctxt "#32009"
+msgid "Enter the current Password"
+msgstr ""
+
+msgctxt "#32010"
+msgid "Enter the new Password"
+msgstr ""
+
+msgctxt "#32011"
+msgid "Re-enter the new Password"
+msgstr ""
+
 msgctxt "#32099"
 msgid "Save & Close"
 msgstr ""
+
