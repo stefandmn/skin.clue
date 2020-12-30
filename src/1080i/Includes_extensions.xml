@@ -514,6 +514,7 @@
 				<control type="group">
 					<posx>$PARAM[lwidth]</posx>
 					<control type="image">
+						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>$PARAM[bwidth]</width>
@@ -543,6 +544,7 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
+						<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
 						<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
@@ -551,6 +553,8 @@
 						<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
 					</control>
 				</control>
 			</control>
@@ -618,6 +622,7 @@
 				<control type="group">
 					<posx>$PARAM[lwidth]</posx>
 					<control type="image">
+						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>$PARAM[bwidth]</width>
@@ -647,6 +652,7 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
+						<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 						<onfocus>Skin.SetNumeric(NumberValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
 						<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
@@ -655,6 +661,8 @@
 						<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
 					</control>
 				</control>
 			</control>
@@ -679,11 +687,6 @@
 			Visible.[id] - Makes the control to be visible or hidden. The possible values are True or Empty and False
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
 			Label.[id]   - describes the control label. This labbel can be set in Pre-Init phase, before to start window controls loading
-			Action0.[id] - Indicates the pre-action that might be executed in case it is specified after the new value is provided.
-							For button control there is no other builtin action in between, so 'Action1' will follow immediately
-			Action1.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
 	-->
 	<include name="PropertyButton">
 		<param name="id"/>
@@ -696,41 +699,33 @@
 		<param name="left"/>
 		<param name="right"/>
 		<definition>
-			<control type="group">
+			<control type="button" id="$PARAM[id]">
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
+				<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
-				<control type="button" id="$PARAM[id]">
-					<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>$PARAM[width]</width>
-					<font>itemTitle</font>
-					<textoffsetx>12</textoffsetx>
-					<textoffsety>0</textoffsety>
-					<align>center</align>
-					<aligny>center</aligny>
-					<textcolor>selected</textcolor>
-					<focusedcolor>selected</focusedcolor>
-					<shadowcolor>-</shadowcolor>
-					<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
-					<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
-					<pulseonselect>true</pulseonselect>
-					<include content="LabelParam" condition="!String.IsEmpty(Window.Property(Label.$PARAM[id]))">
-						<param name="label" value="$INFO[Window.Property(Label.$PARAM[id])]"/>
-					</include>
-					<include content="LabelParam" condition="String.IsEmpty(Window.Property(Label.$PARAM[id]))">
-						<param name="label" value="$PARAM[label]"/>
-					</include>
-					<onup>$PARAM[up]</onup>
-					<ondown>$PARAM[down]</ondown>
-					<onleft>$PARAM[left]</onleft>
-					<onright>$PARAM[right]</onright>
-					<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
-				</control>
+				<width>$PARAM[width]</width>
+				<font>itemTitle</font>
+				<textoffsetx>12</textoffsetx>
+				<textoffsety>0</textoffsety>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>selected</textcolor>
+				<focusedcolor>selected</focusedcolor>
+				<shadowcolor>-</shadowcolor>
+				<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
+				<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
+				<pulseonselect>true</pulseonselect>
+				<include content="LabelParam" condition="!String.IsEmpty(Window.Property(Label.$PARAM[id]))">
+					<param name="label" value="$INFO[Window.Property(Label.$PARAM[id])]"/>
+				</include>
+				<include content="LabelParam" condition="String.IsEmpty(Window.Property(Label.$PARAM[id]))">
+					<param name="label" value="$PARAM[label]"/>
+				</include>
+				<onup>$PARAM[up]</onup>
+				<ondown>$PARAM[down]</ondown>
+				<onleft>$PARAM[left]</onleft>
+				<onright>$PARAM[right]</onright>
 			</control>
 		</definition>
 	</include>
@@ -770,35 +765,42 @@
 		<param name="left"/>
 		<param name="right"/>
 		<definition>
-			<control type="radiobutton" id="$PARAM[id]">
+			<control type="group">
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
-				<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
-				<width>$PARAM[width]</width>
-				<textcolor>disabled</textcolor>
-				<focusedcolor>selected</focusedcolor>
-				<texturefocus colordiffuse="77FFFFFF">masks/selected.png</texturefocus>
-				<pulseonselect>true</pulseonselect>
-				<textoffsetx>5</textoffsetx>
-				<include content="LabelParam" condition="!String.IsEmpty(Window.Property(Label.$PARAM[id]))">
-					<param name="label" value="$INFO[Window.Property(Label.$PARAM[id])]"/>
-				</include>
-				<include content="LabelParam" condition="String.IsEmpty(Window.Property(Label.$PARAM[id]))">
-					<param name="label" value="$PARAM[label]"/>
-				</include>
-				<onup>$PARAM[up]</onup>
-				<ondown>$PARAM[down]</ondown>
-				<onleft>$PARAM[left]</onleft>
-				<onright>$PARAM[right]</onright>
-				<onfocus>Skin.SetString(BoolValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-				<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
-				<onclick>Skin.ToggleSetting(BoolValue)</onclick>
-				<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(BoolValue)])</onclick>
-				<selected>String.IsEqual(Window.Property(Value.$PARAM[id]),true)</selected>
-				<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
-				<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
-				<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
+				<control type="radiobutton" id="$PARAM[id]">
+					<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>$PARAM[width]</width>
+					<textcolor>disabled</textcolor>
+					<focusedcolor>selected</focusedcolor>
+					<texturefocus colordiffuse="77FFFFFF">masks/selected.png</texturefocus>
+					<pulseonselect>true</pulseonselect>
+					<textoffsetx>5</textoffsetx>
+					<include content="LabelParam" condition="!String.IsEmpty(Window.Property(Label.$PARAM[id]))">
+						<param name="label" value="$INFO[Window.Property(Label.$PARAM[id])]"/>
+					</include>
+					<include content="LabelParam" condition="String.IsEmpty(Window.Property(Label.$PARAM[id]))">
+						<param name="label" value="$PARAM[label]"/>
+					</include>
+					<onup>$PARAM[up]</onup>
+					<ondown>$PARAM[down]</ondown>
+					<onleft>$PARAM[left]</onleft>
+					<onright>$PARAM[right]</onright>
+					<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
+					<onfocus condition="String.IsEqual(Window.Property(Value.$PARAM[id]),True)|String.IsEqual(Window.Property(Value.$PARAM[id]),true)">Skin.SetBool(BoolValue)</onfocus>
+					<onfocus condition="!String.IsEqual(Window.Property(Value.$PARAM[id]),True)+!String.IsEqual(Window.Property(Value.$PARAM[id]),true)">Skin.Reset(BoolValue)</onfocus>
+					<onclick>Skin.ToggleSetting(BoolValue)</onclick>
+					<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.HasSetting(BoolValue)])</onclick>
+					<selected>String.IsEqual(Window.Property(Value.$PARAM[id]),True)|String.IsEqual(Window.Property(Value.$PARAM[id]),true)</selected>
+					<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
+					<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
+					<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
+				</control>
 			</control>
 		</definition>
 	</include>
@@ -847,7 +849,7 @@
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
-				<control type="label" id="$PARAM[id]">
+				<control type="label">
 					<enable>Control.HasFocus($PARAM[id])</enable>
 					<posx>0</posx>
 					<posy>0</posy>
@@ -861,6 +863,7 @@
 				<control type="group">
 					<posx>$PARAM[width]</posx>
 					<control type="image">
+						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 						<posx>-74</posx>
 						<posy>7</posy>
 						<width>64</width>
@@ -891,6 +894,7 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
+						<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
 						<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
@@ -899,6 +903,8 @@
 						<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
 					</control>
 				</control>
 			</control>
@@ -961,6 +967,7 @@
 				<control type="group">
 					<posx>$PARAM[width]</posx>
 					<control type="image">
+						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 						<posx>-67</posx>
 						<posy>0</posy>
 						<width>57</width>
@@ -990,6 +997,7 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
+						<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
 						<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
@@ -998,11 +1006,12 @@
 						<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
 					</control>
 				</control>
 			</control>
 		</definition>
 	</include>
-
 
 </includes>

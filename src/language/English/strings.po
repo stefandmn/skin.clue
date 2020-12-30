@@ -587,7 +587,7 @@ msgid "Enable Slideshow in Music Visualization screen"
 msgstr ""
 
 msgctxt "#31167"
-msgid "Restart App"
+msgid "Restart"
 msgstr ""
 
 msgctxt "#31168"
