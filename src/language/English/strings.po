@@ -755,6 +755,15 @@ msgctxt "#31913"
 msgid "Keep the Device Name in Synch with the Host name"
 msgstr ""
 
+msgctxt "#31914"
+msgid "Password is correct"
+msgstr ""
+
+msgctxt "#31915"
+msgid "Password was changed"
+msgstr ""
+
+
 msgctxt "#31999"
 msgid "Save & Close"
 msgstr ""

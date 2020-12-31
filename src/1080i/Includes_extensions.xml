@@ -827,10 +827,8 @@
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
 			Label.[id]   - describes the control label that can overwrite label parameter
 			Value.[id]   - describes the default value of the edit control (it should be numeric format)
-			Action0.[id] - Indicates the pre-action that might be executed in case it is specified after the new value is provided
-			Action1.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
+			Action.[id]	 - Indicates the action that might be executed in case it is specified after the new value is provided
+			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyLabelPopup">
 		<param name="id"/>
@@ -849,8 +847,8 @@
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
-				<control type="label" id="$PARAM[id]">
-					<enable>Control.HasFocus($PARAM[id])</enable>
+				<control type="label">
+					<enable>Control.HasFocus($PARAM[id])|Control.HasFocus($PARAM[id]0)</enable>
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>$PARAM[width]</width>
@@ -872,7 +870,7 @@
 						<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
 						<bordersize>3</bordersize>
 					</control>
-					<control type="button" id="$PARAM[id]">
+					<control type="button" id="$PARAM[id]0">
 						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 						<posx>-67</posx>
 						<posy>0</posy>
@@ -893,16 +891,22 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
-						<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-						<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
 						<onclick>Skin.SetString(StringValue)</onclick>
 						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(StringValue)])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
+						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
+						<onclick>Skin.SetString(InputTitle,)</onclick>
+					</control>
+					<control type="button" id="$PARAM[id]">
+						<description>Proxy button</description>
+						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
+						<onfocus>SetFocus($PARAM[id]0)</onfocus>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1</width>
 					</control>
 				</control>
 			</control>
@@ -929,10 +933,8 @@
 			Visible.[id] - Makes the control to be visible or hidden. The possible values are True or Empty and False
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
 			Value.[id]   - describes the default value of the edit control (it should be numeric format)
-			Action0.[id] - Indicates the pre-action that might be executed in case it is specified after the new value is provided
-			Action1.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
+			Action.[id]  - Indicates the action that might be executed in case it is specified after the new value is provided
+			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyValuePopup">
 		<param name="id"/>
@@ -951,8 +953,8 @@
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
-				<control type="label" id="$PARAM[id]">
-					<enable>Control.HasFocus($PARAM[id])</enable>
+				<control type="label">
+					<enable>Control.HasFocus($PARAM[id])|Control.HasFocus($PARAM[id]0)</enable>
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>$PARAM[width]</width>
@@ -974,7 +976,7 @@
 						<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
 						<bordersize>3</bordersize>
 					</control>
-					<control type="button" id="$PARAM[id]">
+					<control type="button" id="$PARAM[id]0">
 						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 						<posx>-67</posx>
 						<posy>0</posy>
@@ -995,17 +997,22 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
-						<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-						<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
 						<onclick>Skin.SetString(StringValue)</onclick>
 						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(StringValue)])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
+						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
+						<onclick>Skin.SetString(InputTitle,)</onclick>
+					</control>
+					<control type="button" id="$PARAM[id]">
+						<description>Proxy button</description>
+						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
+						<onfocus>SetFocus($PARAM[id]0)</onfocus>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1</width>
 					</control>
 				</control>
 			</control>
