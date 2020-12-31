@@ -703,51 +703,59 @@ msgctxt "#31319"
 msgid "Enable Trace in System Addons"
 msgstr ""
 
-msgctxt "#32001"
+msgctxt "#31901"
 msgid "Clue System Setup"
 msgstr ""
 
-msgctxt "#32002"
+msgctxt "#31902"
 msgid "System Identity"
 msgstr ""
 
-msgctxt "#32003"
+msgctxt "#31903"
 msgid "Host and Device Name"
 msgstr ""
 
-msgctxt "#32004"
+msgctxt "#31904"
 msgid "System Access"
 msgstr ""
 
-msgctxt "#32005"
+msgctxt "#31905"
 msgid "Root Credentials and Access"
 msgstr ""
 
-msgctxt "#32006"
+msgctxt "#31906"
 msgid "Enable SSH Access"
 msgstr ""
 
-msgctxt "#32007"
+msgctxt "#31907"
 msgid "Disable SSH Password"
 msgstr ""
 
-msgctxt "#32008"
+msgctxt "#31908"
 msgid "Change Root Password"
 msgstr ""
 
-msgctxt "#32009"
+msgctxt "#31909"
 msgid "Enter the current Password"
 msgstr ""
 
-msgctxt "#32010"
+msgctxt "#31910"
 msgid "Enter the new Password"
 msgstr ""
 
-msgctxt "#32011"
+msgctxt "#31911"
 msgid "Re-enter the new Password"
 msgstr ""
 
-msgctxt "#32099"
+msgctxt "#31912"
+msgid "Host Name"
+msgstr ""
+
+msgctxt "#31913"
+msgid "Keep the Device Name in Synch with the Host name"
+msgstr ""
+
+msgctxt "#31999"
 msgid "Save & Close"
 msgstr ""
 

@@ -138,6 +138,10 @@
 	<!-- Yahoo specific codes -->
 		<!--MIXED_RAIN_AND_SNOW-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),5)"></value>
+		<!--SHOWERS / rain_day_night-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),11)"></value>
+		<!--SHOWERS / rain_day_night-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),12)"></value>
 		<!--LIGHT_SNOW_SHOWERS-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),14)"></value>
 		<!--SNOW-->
@@ -159,6 +163,8 @@
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),33)"></value>
 		<!--FAIR_NIGHT-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),34)"></value>
+		<!--SCATTERED_THUNDERSTORMS-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),39)"></value>
 	<!-- Generic Codes -->
 		<!--Clear/Sunny/Day-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),101)"></value>
@@ -266,6 +272,10 @@
 	<!-- Yahoo specific codes -->
 		<!--MIXED_RAIN_AND_SNOW-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),5)"></value>
+		<!--SHOWERS / rain_day_night-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),11)"></value>
+		<!--SHOWERS / rain_day_night-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),12)"></value>
 		<!--LIGHT_SNOW_SHOWERS-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),14)"></value>
 		<!--SNOW-->
@@ -287,6 +297,8 @@
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),33)"></value>
 		<!--FAIR_DAY-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),34)"></value>
+		<!--SCATTERED_THUNDERSTORMS-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),39)"></value>
 	<!-- Generic Codes -->
 		<!--Clear/Sunny/Day-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),101)"></value>
