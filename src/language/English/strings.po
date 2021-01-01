@@ -760,9 +760,96 @@ msgid "Password is correct"
 msgstr ""
 
 msgctxt "#31915"
-msgid "Password was changed"
+msgid "Password has been changed"
 msgstr ""
 
+msgctxt "#31916"
+msgid "System Configuration"
+msgstr ""
+
+msgctxt "#31917"
+msgid "Core Parameters and Processes"
+msgstr ""
+
+msgctxt "#31918"
+msgid "System Services"
+msgstr ""
+
+msgctxt "#31919"
+msgid "System and Application Services"
+msgstr ""
+
+msgctxt "#31920"
+msgid "Drives"
+msgstr ""
+
+msgctxt "#31921"
+msgid "Local and Network Drive"
+msgstr ""
+
+msgctxt "#31922"
+msgid "Network"
+msgstr ""
+
+msgctxt "#31923"
+msgid "Network Configuration"
+msgstr ""
+
+msgctxt "#31924"
+msgid "Bluetooth"
+msgstr ""
+
+msgctxt "#31925"
+msgid "Bluetooth Configuration"
+msgstr ""
+
+msgctxt "#31926"
+msgid "Tethering"
+msgstr ""
+
+msgctxt "#31927"
+msgid "Tethering Configuration"
+msgstr ""
+
+msgctxt "#31928"
+msgid "Licenses"
+msgstr ""
+
+msgctxt "#31929"
+msgid "Licenses for Hw Codecs"
+msgstr ""
+
+msgctxt "#31930"
+msgid "Bridge"
+msgstr ""
+
+msgctxt "#31931"
+msgid "HomeKit Bridge"
+msgstr ""
+
+msgctxt "#31932"
+msgid "Surveillance"
+msgstr ""
+
+msgctxt "#31933"
+msgid "Video Surveillance"
+msgstr ""
+
+msgctxt "#31934"
+msgid "VPN Client"
+msgstr ""
+
+msgctxt "#31935"
+msgid "VPN Client Setup"
+msgstr ""
+
+msgctxt "#31936"
+msgid "GPU Memory Split"
+msgstr ""
+
+msgctxt "#31937"
+msgid "CPU Overclocking"
+msgstr ""
 
 msgctxt "#31999"
 msgid "Save & Close"

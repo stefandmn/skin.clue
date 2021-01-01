@@ -654,10 +654,10 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
-						<onfocus>Skin.SetNumeric(NumberValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
+						<onfocus>Skin.SetString(NumberValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
 						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
-						<onclick>Skin.SetString(NumberValue)</onclick>
+						<onclick>Skin.SetNumeric(NumberValue)</onclick>
 						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(NumberValue)])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
 						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
