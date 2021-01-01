@@ -477,9 +477,8 @@
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
 			Label.[id]   - describes the control label
 			Value.[id]   - describes the default value of the edit control (it should be string format)
-			Action1.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
+			Action.[id]	 - Indicates the action that might be executed in case it is specified after the new value is provided
+			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyStringEditbox">
 		<param name="id"/>
@@ -501,7 +500,7 @@
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
 				<control type="label">
-					<enable>Control.HasFocus($PARAM[id])</enable>
+					<enable>Control.HasFocus($PARAM[id])|Control.HasFocus($PARAM[id]0)</enable>
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>$PARAM[lwidth]</width>
@@ -523,7 +522,7 @@
 						<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
 						<bordersize>3</bordersize>
 					</control>
-					<control type="button" id="$PARAM[id]">
+					<control type="button" id="$PARAM[id]0">
 						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 						<posx>0</posx>
 						<posy>0</posy>
@@ -534,7 +533,7 @@
 						<align>$PARAM[balign]</align>
 						<aligny>center</aligny>
 						<textcolor>black</textcolor>
-						<focusedcolor>black</focusedcolor>
+						<focusedcolor>white</focusedcolor>
 						<shadowcolor>-</shadowcolor>
 						<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
 						<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
@@ -544,17 +543,22 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
-						<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-						<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
 						<onclick>Skin.SetString(StringValue)</onclick>
 						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(StringValue)])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
+						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
+						<onclick>Skin.SetString(InputTitle,)</onclick>
+					</control>
+					<control type="button" id="$PARAM[id]">
+						<description>Proxy button</description>
+						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
+						<onfocus>SetFocus($PARAM[id]0)</onfocus>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1</width>
 					</control>
 				</control>
 			</control>
@@ -584,10 +588,8 @@
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
 			Value.[id]   - describes the default value of the edit control (it should be numeric format)
 			Label.[id]   - describes the control label
-			Action0.[id] - Indicates the pre-action that might be executed in case it is specified after the new value is provided
-			Action1.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
+			Action.[id]	 - Indicates the action that might be executed in case it is specified after the new value is provided
+			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyNumberEditbox">
 		<param name="id"/>
@@ -609,7 +611,7 @@
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
 				<control type="label">
-					<enable>Control.HasFocus($PARAM[id])</enable>
+					<enable>Control.HasFocus($PARAM[id])|Control.HasFocus($PARAM[id]0)</enable>
 					<posx>0</posx>
 					<posy>0</posy>
 					<width>$PARAM[lwidth]</width>
@@ -631,7 +633,7 @@
 						<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
 						<bordersize>3</bordersize>
 					</control>
-					<control type="button" id="$PARAM[id]">
+					<control type="button" id="$PARAM[id]0">
 						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 						<posx>0</posx>
 						<posy>0</posy>
@@ -642,7 +644,7 @@
 						<align>$PARAM[balign]</align>
 						<aligny>center</aligny>
 						<textcolor>black</textcolor>
-						<focusedcolor>black</focusedcolor>
+						<focusedcolor>white</focusedcolor>
 						<shadowcolor>-</shadowcolor>
 						<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
 						<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
@@ -652,17 +654,22 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
-						<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 						<onfocus>Skin.SetNumeric(NumberValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-						<onclick condition="!String.IsEmpty(Window.Property(Action0.$PARAM[id]))">Window.Property(Action0.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
 						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
 						<onclick>Skin.SetString(NumberValue)</onclick>
 						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(NumberValue)])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
+						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
+						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
+						<onclick>Skin.SetString(InputTitle,)</onclick>
+					</control>
+					<control type="button" id="$PARAM[id]">
+						<description>Proxy button</description>
+						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
+						<onfocus>SetFocus($PARAM[id]0)</onfocus>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1</width>
 					</control>
 				</control>
 			</control>
@@ -750,9 +757,8 @@
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
 			Label.[id]   - describes the control label. This label can be set in Pre-Init phase, before to start window controls loading
 			Value.[id]   - describes the default value of the edit control (it should be numeric format)
-			Action1.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
-			Action2.[id] - Indicates the first action that might be executed in case it is specified after the new value is provided
+			Action.[id]	 - Indicates the action that might be executed in case it is specified after the new value is provided
+			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyCheckbox">
 		<param name="id"/>
@@ -769,7 +775,7 @@
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
-				<control type="radiobutton" id="$PARAM[id]">
+				<control type="radiobutton" id="$PARAM[id]0">
 					<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 					<posx>0</posx>
 					<posy>0</posy>
@@ -792,14 +798,20 @@
 					<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
 					<onfocus condition="String.IsEqual(Window.Property(Value.$PARAM[id]),True)|String.IsEqual(Window.Property(Value.$PARAM[id]),true)">Skin.SetBool(BoolValue)</onfocus>
 					<onfocus condition="!String.IsEqual(Window.Property(Value.$PARAM[id]),True)+!String.IsEqual(Window.Property(Value.$PARAM[id]),true)">Skin.Reset(BoolValue)</onfocus>
+					<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
 					<onclick>Skin.ToggleSetting(BoolValue)</onclick>
 					<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.HasSetting(BoolValue)])</onclick>
 					<selected>String.IsEqual(Window.Property(Value.$PARAM[id]),True)|String.IsEqual(Window.Property(Value.$PARAM[id]),true)</selected>
-					<onclick condition="!String.IsEmpty(Window.Property(Action1.$PARAM[id]))">Window.Property(Action1.$PARAM[id])</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(Action2.$PARAM[id]))">Window.Property(Action2.$PARAM[id])</onclick>
-					<onclick condition="!String.IsEmpty(Window.Property(Action3.$PARAM[id]))">Window.Property(Action3.$PARAM[id])</onclick>
-					<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SendClick($PARAM[id])</onclick>
-					<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">ClearProperty(Callback.$PARAM[id])</onclick>
+					<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
+					<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
+				</control>
+				<control type="button" id="$PARAM[id]">
+					<description>Proxy button</description>
+					<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
+					<onfocus>SetFocus($PARAM[id]0)</onfocus>
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>1</width>
 				</control>
 			</control>
 		</definition>
