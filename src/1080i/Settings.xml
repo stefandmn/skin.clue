@@ -226,6 +226,7 @@
 						<label>$LOCALIZE[31060]</label>
 						<label2></label2>
 						<property name="label3">$LOCALIZE[31105]</property>
+						<onclick>ActivateWindow(busydialog)</onclick>
 						<onclick>RunAddon(service.clue,setup)</onclick>
 					</item>
 				</content>
