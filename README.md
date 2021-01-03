@@ -1,7 +1,7 @@
 # Clue Skin for Kodi
 
 **Clue Skin** package/addon is designed to become the default skin for **Kodi** over
-**Clue 2.0** - Linux OS build and optimized for RPi devices, but might be used also 
+**Clue 2.0** - Linux OS built and optimized for RPi devices, but might be used also 
 as a standalone skin addon for any type of **Kodi** instance (v18+ compatible).
 
 Development, testing and deployment activities are driven by CCM process (Clue 
