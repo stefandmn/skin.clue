@@ -2,7 +2,6 @@
 <window>
 	<defaultcontrol always="true">21</defaultcontrol>
 	<allowoverlay>yes</allowoverlay>
-	<onunload condition="!String.IsEmpty(Skin.String(InputQuestion))">Skin.SetString(InputQuestion,)</onunload>
 	<coordinates>
 		<origin x="0" y="540"/>
 	</coordinates>
@@ -22,19 +21,7 @@
 		<control type="group">
 			<posx>96</posx>
 			<posy>38</posy>
-			<control type="label" id="901">
-				<visible>!String.IsEmpty(Skin.String(InputTitle))</visible>
-				<description>header label</description>
-				<posx>-288</posx>
-				<posy>-64</posy>
-				<width>2264</width>
-				<height>1-row</height>
-				<align>center</align>
-				<font>itemTitleSmall</font>
-				<textcolor>selected</textcolor>
-			</control>
 			<control type="label" id="1">
-				<visible>String.IsEmpty(Skin.String(InputTitle))</visible>
 				<description>header label</description>
 				<posx>-288</posx>
 				<posy>-64</posy>

@@ -17,14 +17,14 @@
 		<param name="width"/>
 		<param name="label"/>
 		<param name="font" default="itemTitle"/>
-		<param name="color" default="unselected"/>
+		<param name="color" default="selected"/>
 		<definition>
 			<control type="label" id="$PARAM[id]1">
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
 				<width>$PARAM[width]</width>
 				<font>$PARAM[font]</font>
-				<textcolor>selected</textcolor>
+				<textcolor>$PARAM[color]</textcolor>
 				<textoffsetx>5</textoffsetx>
 				<shadowcolor>-</shadowcolor>
 				<label>$PARAM[label]</label>
@@ -180,7 +180,7 @@
 			left	- Specifies the <id> of the control that should be moved to when the user moves left off this control
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 	-->
-	<include name="Checkbox">
+	<include name="Radiobutton">
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -206,112 +206,6 @@
 					<ondown>$PARAM[down]</ondown>
 					<onleft>$PARAM[left]</onleft>
 					<onright>$PARAM[right]</onright>
-				</control>
-			</control>
-		</definition>
-	</include>
-
-
-	<!--
-		Compobox control - Input parameters:
-			id		- Specifies the control ID of the edit box.
-			posx	- Specifies where the left edge of the control should be drawn
-			posy	- Specifies where the top edge of the control should be drawn
-			lwidth	- Specifies the width that should be used to draw the label
-			bwidth	- Specifies the width that should be used to draw the edit box control
-			font	- Specifies the font to use from the font.xml file
-			label	- Specifies the text which should be drawn as control label
-			balign	- Aligns the text within the given edit box control
-			up		- Specifies the <id> of the control that should be moved to when the user moves up off this control
-			down	- Specifies the <id> of the control that should be moved to when the user moves down off this control
-			left	- Specifies the <id> of the control that should be moved to when the user moves left off this control
-			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
-	-->
-	<include name="Combobox">
-		<param name="id"/>
-		<param name="posx"/>
-		<param name="posy"/>
-		<param name="lwidth"/>
-		<param name="bwidth"/>
-		<param name="balign"/>
-		<param name="label"/>
-		<param name="hint"/>
-		<param name="up"/>
-		<param name="down"/>
-		<param name="left"/>
-		<param name="right"/>
-		<definition>
-			<control type="group">
-				<posx>$PARAM[posx]</posx>
-				<posy>$PARAM[posy]</posy>
-				<control type="label" id="$PARAM[id]1">
-					<enable>Control.HasFocus($PARAM[id])</enable>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>$PARAM[lwidth]</width>
-					<font>itemTitle</font>
-					<textcolor>selected</textcolor>
-					<textoffsetx>5</textoffsetx>
-					<shadowcolor>-</shadowcolor>
-					<label>$PARAM[label]</label>
-				</control>
-				<control type="group">
-					<posx>$PARAM[lwidth]</posx>
-					<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>$PARAM[bwidth]</width>
-						<height>1-row</height>
-						<texture border="3" flipy="true" flipx="false">masks/offblack.png</texture>
-						<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
-						<bordersize>3</bordersize>
-					</control>
-					<control type="button" id="$PARAM[id]">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>$PARAM[bwidth]</width>
-						<font>itemTitle</font>
-						<textoffsetx>12</textoffsetx>
-						<textoffsety>0</textoffsety>
-						<align>$PARAM[balign]</align>
-						<aligny>center</aligny>
-						<textcolor>unselected</textcolor>
-						<focusedcolor>selected</focusedcolor>
-						<shadowcolor>-</shadowcolor>
-						<texturenofocus colordiffuse="77888888">masks/selected.png</texturenofocus>
-						<texturefocus colordiffuse="77FFFFFF">masks/selected.png</texturefocus>
-						<pulseonselect>true</pulseonselect>
-						<label>$PARAM[value]</label>
-						<onup>$PARAM[up]</onup>
-						<ondown>$PARAM[down]</ondown>
-						<onleft>$PARAM[left]</onleft>
-						<onright>$PARAM[right]</onright>
-					</control>
-					<control type="group">
-						<posx>$PARAM[bwidth]</posx>
-						<control type="image">
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>1-row</width>
-							<height>1-row</height>
-							<texture border="3" flipy="true" flipx="false" >masks/offblack.png</texture>
-							<bordertexture border="2" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
-							<bordersize>2</bordersize>
-						</control>
-						<control type="label">
-							<enable>Control.HasFocus($PARAM[id])</enable>
-							<posx>0</posx>
-							<posy>0</posy>
-							<width>1-row</width>
-							<height>1-row</height>
-							<font>symbolLarge</font>
-							<align>center</align>
-							<aligny>center</aligny>
-							<textcolor>selected</textcolor>
-							<shadowcolor>-</shadowcolor>
-							<label></label>
-						</control>
-					</control>
 				</control>
 			</control>
 		</definition>
@@ -456,7 +350,7 @@
 
 
 	<!--
-		PropertyStringEditbox control - Provides capability to collect String data input using Text Dialog box.
+		PropertyEditbox control - Provides capability to collect String data input using Text Dialog box.
 		In addition, the control allows dynamic content (like default value, input value) through window parameters.
 		Input parameters:
 			id		- Specifies the control ID of the edit box.
@@ -472,6 +366,7 @@
 			left	- Specifies the <id> of the control that should be moved to when the user moves left off this control
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 			title	- Shows a custom label into the KeyboardDialog to set a new value
+			dialog  - Indicates the type of dialog that will take the input data; could be: string, number, date, time. ipaddr, select
 		Input properties
 			Visible.[id] - Makes the control to be visible or hidden. The possible values are True or Empty and False
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
@@ -480,7 +375,7 @@
 			Action.[id]	 - Indicates the action that might be executed in case it is specified after the new value is provided
 			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
-	<include name="PropertyStringEditbox">
+	<include name="PropertyEditbox">
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -494,6 +389,7 @@
 		<param name="left"/>
 		<param name="right"/>
 		<param name="title"/>
+		<param name="dialog" default="string"/>
 		<definition>
 			<control type="group">
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
@@ -543,125 +439,9 @@
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
-						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
-						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
-						<onclick>Skin.SetString(StringValue)</onclick>
-						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(StringValue)])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
-						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
-						<onclick>Skin.SetString(InputTitle,)</onclick>
-					</control>
-					<control type="button" id="$PARAM[id]">
-						<description>Proxy button</description>
-						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
-						<onfocus>SetFocus($PARAM[id]0)</onfocus>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>1</width>
-					</control>
-				</control>
-			</control>
-		</definition>
-	</include>
-
-
-	<!--
-		PropertyNumberEditbox control - Provides capability to collect String data input using Numeric Dialog box.
-		In addition, the control allows dynamic content (like default value, input value) through window parameters.
-		Input parameters:
-			id		- Specifies the control ID of the edit box.
-			posx	- Specifies where the left edge of the control should be drawn
-			posy	- Specifies where the top edge of the control should be drawn
-			lwidth	- Specifies the width that should be used to draw the label
-			bwidth	- Specifies the width that should be used to draw the edit box control
-			font	- Specifies the font to use from the font.xml file
-			label	- Specifies the text label which should be drawn as control label
-			balign	- Aligns the text within the given edit box control
-			up		- Specifies the <id> of the control that should be moved to when the user moves up off this control
-			down	- Specifies the <id> of the control that should be moved to when the user moves down off this control
-			left	- Specifies the <id> of the control that should be moved to when the user moves left off this control
-			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
-			title	- Shows a custom label into the NumericDialog to set a new value
-		Input properties
-			Visible.[id] - Makes the control to be visible or hidden. The possible values are True or Empty and False
-			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
-			Value.[id]   - describes the default value of the edit control (it should be numeric format)
-			Label.[id]   - describes the control label
-			Action.[id]	 - Indicates the action that might be executed in case it is specified after the new value is provided
-			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
-	-->
-	<include name="PropertyNumberEditbox">
-		<param name="id"/>
-		<param name="posx"/>
-		<param name="posy"/>
-		<param name="lwidth"/>
-		<param name="bwidth"/>
-		<param name="balign"/>
-		<param name="label" default=""/>
-		<param name="hint"/>
-		<param name="up"/>
-		<param name="down"/>
-		<param name="left"/>
-		<param name="right"/>
-		<param name="title"/>
-		<definition>
-			<control type="group">
-				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
-				<posx>$PARAM[posx]</posx>
-				<posy>$PARAM[posy]</posy>
-				<control type="label">
-					<enable>Control.HasFocus($PARAM[id])|Control.HasFocus($PARAM[id]0)</enable>
-					<posx>0</posx>
-					<posy>0</posy>
-					<width>$PARAM[lwidth]</width>
-					<font>itemTitle</font>
-					<textcolor>selected</textcolor>
-					<textoffsetx>5</textoffsetx>
-					<shadowcolor>-</shadowcolor>
-					<label fallback="$PARAM[label]">$INFO[Window.Property(Label.$PARAM[id])]</label>
-				</control>
-				<control type="group">
-					<posx>$PARAM[lwidth]</posx>
-					<control type="image">
-						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>$PARAM[bwidth]</width>
-						<height>1-row</height>
-						<texture border="3" flipy="true" flipx="false">masks/offblack.png</texture>
-						<bordertexture border="3" colordiffuse="77FFFFFF">controls/square-fo.png</bordertexture>
-						<bordersize>3</bordersize>
-					</control>
-					<control type="button" id="$PARAM[id]0">
-						<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>$PARAM[bwidth]</width>
-						<font>itemTitle</font>
-						<textoffsetx>12</textoffsetx>
-						<textoffsety>0</textoffsety>
-						<align>$PARAM[balign]</align>
-						<aligny>center</aligny>
-						<textcolor>black</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<shadowcolor>-</shadowcolor>
-						<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
-						<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
-						<pulseonselect>true</pulseonselect>
-						<label>$INFO[Window.Property(Value.$PARAM[id])]</label>
-						<onup>$PARAM[up]</onup>
-						<ondown>$PARAM[down]</ondown>
-						<onleft>$PARAM[left]</onleft>
-						<onright>$PARAM[right]</onright>
-						<onfocus>Skin.SetString(NumberValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
-						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
-						<onclick>Skin.SetNumeric(NumberValue)</onclick>
-						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(NumberValue)])</onclick>
-						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
-						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
-						<onclick>Skin.SetString(InputTitle,)</onclick>
+						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id]&amp;callback=SendClick($PARAM[id]))</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id])</onclick>
 					</control>
 					<control type="button" id="$PARAM[id]">
 						<description>Proxy button</description>
@@ -739,7 +519,7 @@
 
 
 	<!--
-		PropertyCheckbox control - Provides capability to collect Bool data input using a Radiobutton control, but
+		PropertyRadiobutton control - Provides capability to collect Bool data input using a Radiobutton control, but
 		stylised to look like a Checkbox control. The Value.[id] property can be True or False. In case if is empty
 		the control will show unchecked (similar with False value)
 		Input parameters:
@@ -760,7 +540,7 @@
 			Action.[id]	 - Indicates the action that might be executed in case it is specified after the new value is provided
 			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
-	<include name="PropertyCheckbox">
+	<include name="PropertyRadiobutton">
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -795,13 +575,9 @@
 					<ondown>$PARAM[down]</ondown>
 					<onleft>$PARAM[left]</onleft>
 					<onright>$PARAM[right]</onright>
-					<onfocus condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),off)">SetProperty(Callback.$PARAM[id],on)</onfocus>
-					<onfocus condition="String.IsEqual(Window.Property(Value.$PARAM[id]),True)|String.IsEqual(Window.Property(Value.$PARAM[id]),true)">Skin.SetBool(BoolValue)</onfocus>
-					<onfocus condition="!String.IsEqual(Window.Property(Value.$PARAM[id]),True)+!String.IsEqual(Window.Property(Value.$PARAM[id]),true)">Skin.Reset(BoolValue)</onfocus>
-					<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
-					<onclick>Skin.ToggleSetting(BoolValue)</onclick>
-					<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.HasSetting(BoolValue)])</onclick>
-					<selected>String.IsEqual(Window.Property(Value.$PARAM[id]),True)|String.IsEqual(Window.Property(Value.$PARAM[id]),true)</selected>
+					<onclick condition="String.IsEqual(Window.Property(Value.$PARAM[id]),True)|String.IsEqual(Window.Property(Value.$PARAM[id]),true)|String.IsEqual(Window.Property(Value.$PARAM[id]),on)">SetProperty(Value.$PARAM[id],off)</onclick>
+					<onclick condition="String.IsEqual(Window.Property(Value.$PARAM[id]),False)|String.IsEqual(Window.Property(Value.$PARAM[id]),false)|String.IsEqual(Window.Property(Value.$PARAM[id]),off)">SetProperty(Value.$PARAM[id],on)</onclick>
+					<selected>String.IsEqual(Window.Property(Value.$PARAM[id]),True)|String.IsEqual(Window.Property(Value.$PARAM[id]),true)|String.IsEqual(Window.Property(Value.$PARAM[id]),on)</selected>
 					<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
 					<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
 				</control>
@@ -819,7 +595,7 @@
 
 
 	<!--
-		PropertyLabelPopup control - Provides capability to collect data input over a String Dialog box and to store
+		PropertyPopupHiddenValue control - Provides capability to collect data input over a String Dialog box and to store
 		it but not display it. The control provides and indicative meaning and guessed action based on the aggregated
 		label which actually provides a static/fix content.
 		Input parameters:
@@ -834,6 +610,8 @@
 			left	- Specifies the <id> of the control that should be moved to when the user moves left off this control
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 			title	- Shows a custom label into the KeyboardDialog to set a new value
+			icon	- Graphical icon or simple text (byt limited to max 2-3 chars) to be displayed on the lookup button
+			dialog  - Indicates the type of dialog that will take the input data; could be: string, number, date, time. ipaddr, select
 		Input properties
 			Visible.[id] - Makes the control to be visible or hidden. The possible values are True or Empty and False
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
@@ -842,12 +620,13 @@
 			Action.[id]	 - Indicates the action that might be executed in case it is specified after the new value is provided
 			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
-	<include name="PropertyLabelPopup">
+	<include name="PropertyPopupHiddenValue">
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
 		<param name="width"/>
 		<param name="label" default=""/>
+		<param name="icon" default=""/>
 		<param name="hint"/>
 		<param name="up"/>
 		<param name="down"/>
@@ -887,30 +666,25 @@
 						<posx>-67</posx>
 						<posy>0</posy>
 						<width>57</width>
-						<font>itemTitle</font>
+						<font>symbolMedium</font>
 						<textoffsetx>12</textoffsetx>
 						<textoffsety>0</textoffsety>
 						<align>center</align>
 						<aligny>center</aligny>
 						<textcolor>black</textcolor>
-						<focusedcolor>black</focusedcolor>
+						<focusedcolor>white</focusedcolor>
 						<shadowcolor>-</shadowcolor>
 						<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
 						<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
 						<pulseonselect>true</pulseonselect>
-						<label>...</label>
+						<label>$PARAM[icon]</label>
 						<onup>$PARAM[up]</onup>
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
-						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
-						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
-						<onclick>Skin.SetString(StringValue)</onclick>
-						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(StringValue)])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
-						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
-						<onclick>Skin.SetString(InputTitle,)</onclick>
+						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id]&amp;callback=SendClick($PARAM[id]))</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id])</onclick>
 					</control>
 					<control type="button" id="$PARAM[id]">
 						<description>Proxy button</description>
@@ -927,7 +701,7 @@
 
 
 	<!--
-		PropertyValuePopup control - Provides capability to collect data input over String Dialog box and to store
+		PropertyPopupDisplayValue control - Provides capability to collect data input over String Dialog box and to store
 		it and to display it into a the associated label.
 		Input parameters:
 			id		- Specifies the control ID of the edit box.
@@ -941,6 +715,7 @@
 			left	- Specifies the <id> of the control that should be moved to when the user moves left off this control
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 			title	- Shows a custom label into the KeyboardDialog to set a new value
+			icon	- Graphical icon or simple text (byt limited to max 2-3 chars) to be displayed on the lookup button
 		Input properties
 			Visible.[id] - Makes the control to be visible or hidden. The possible values are True or Empty and False
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
@@ -948,12 +723,13 @@
 			Action.[id]  - Indicates the action that might be executed in case it is specified after the new value is provided
 			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
-	<include name="PropertyValuePopup">
+	<include name="PropertyPopupDisplayValue">
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
 		<param name="width"/>
 		<param name="value"/>
+		<param name="icon" default=""/>
 		<param name="hint"/>
 		<param name="up"/>
 		<param name="down"/>
@@ -993,30 +769,25 @@
 						<posx>-67</posx>
 						<posy>0</posy>
 						<width>57</width>
-						<font>itemTitle</font>
+						<font>symbolMedium</font>
 						<textoffsetx>12</textoffsetx>
 						<textoffsety>0</textoffsety>
 						<align>center</align>
 						<aligny>center</aligny>
 						<textcolor>black</textcolor>
-						<focusedcolor>black</focusedcolor>
+						<focusedcolor>white</focusedcolor>
 						<shadowcolor>-</shadowcolor>
 						<texturenofocus colordiffuse="77FFFFFF">masks/selected.png</texturenofocus>
 						<texturefocus colordiffuse="77FFFFFF">controls/square-fo.png</texturefocus>
 						<pulseonselect>true</pulseonselect>
-						<label>...</label>
+						<label>$PARAM[icon]</label>
 						<onup>$PARAM[up]</onup>
 						<ondown>$PARAM[down]</ondown>
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
-						<onfocus>Skin.SetString(StringValue,$INFO[Window.Property(Value.$PARAM[id])])</onfocus>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SetProperty(Callback.$PARAM[id],off)</onclick>
-						<onclick>Skin.SetString(InputTitle,$PARAM[title])</onclick>
-						<onclick>Skin.SetString(StringValue)</onclick>
-						<onclick>SetProperty(Value.$PARAM[id],$INFO[Skin.String(StringValue)])</onclick>
 						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
-						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">SendClick($PARAM[id])</onclick>
-						<onclick>Skin.SetString(InputTitle,)</onclick>
+						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id]&amp;callback=SendClick($PARAM[id]))</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id])</onclick>
 					</control>
 					<control type="button" id="$PARAM[id]">
 						<description>Proxy button</description>

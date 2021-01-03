@@ -48,6 +48,7 @@
 					<textcolor>black</textcolor>
 					<shadowcolor>-</shadowcolor>
 				</control>
+
 				<control type="group" id="9000">
 					<control type="panel" id="3">
 						<posx>0</posx>
@@ -203,6 +204,7 @@
 						</focusedlayout>
 					</control>
 				</control>
+
 				<!--larger thumbnail-->
 				<control type="image">
 					<posx>12-col</posx>
@@ -213,6 +215,7 @@
 					<texture border="0">$INFO[Container(6).Listitem.icon]</texture>
 					<fadetime>200</fadetime>
 				</control>
+
 				<!--OK / Cancel-->
 				<control type="panel" id="9999">
 					<visible>control.isvisible(3) | control.isvisible(5)</visible>

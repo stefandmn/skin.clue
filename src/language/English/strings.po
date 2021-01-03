@@ -851,6 +851,42 @@ msgctxt "#31937"
 msgid "CPU Overclocking"
 msgstr ""
 
+msgctxt "#31938"
+msgid "Choose GPU Memory Split"
+msgstr ""
+
+msgctxt "#31939"
+msgid "Select Overclocking Profile"
+msgstr ""
+
+msgctxt "#31940"
+msgid "Enter Host/Device Name"
+msgstr ""
+
+msgctxt "#31941"
+msgid "Activate Turbo Mode"
+msgstr ""
+
+msgctxt "#31942"
+msgid "Enable System Backup"
+msgstr ""
+
+msgctxt "#31943"
+msgid "Enable Automatic Updates"
+msgstr ""
+
+msgctxt "#31944"
+msgid "Reset Kodi to Default"
+msgstr ""
+
+msgctxt "#31945"
+msgid "Reset System to Default"
+msgstr ""
+
+msgctxt "#31990"
+msgid "Reboot is needed!"
+msgstr ""
+
 msgctxt "#31999"
 msgid "Save & Close"
 msgstr ""
