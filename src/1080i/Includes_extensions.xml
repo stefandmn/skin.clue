@@ -440,8 +440,8 @@
 						<onleft>$PARAM[left]</onleft>
 						<onright>$PARAM[right]</onright>
 						<onclick condition="!String.IsEmpty(Window.Property(Action.$PARAM[id]))">Window.Property(Action.$PARAM[id])</onclick>
-						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id]&amp;callback=SendClick($PARAM[id]))</onclick>
-						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id])</onclick>
+						<onclick condition="String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id]&amp;callback=SendClick($PARAM[id]))</onclick>
+						<onclick condition="!String.IsEqual(Window.Property(Callback.$PARAM[id]),on)">RunScript(service.clue,graphic.setproperty,dialog=$PARAM[dialog]&amp;title=$PARAM[title]&amp;data=$INFO[Window.Property(Data.$PARAM[id])]&amp;default=$INFO[Window.Property(Value.$PARAM[id])]&amp;property=Value.$PARAM[id])</onclick>
 					</control>
 					<control type="button" id="$PARAM[id]">
 						<description>Proxy button</description>
@@ -611,7 +611,7 @@
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 			title	- Shows a custom label into the KeyboardDialog to set a new value
 			icon	- Graphical icon or simple text (byt limited to max 2-3 chars) to be displayed on the lookup button
-			dialog  - Indicates the type of dialog that will take the input data; could be: string, number, date, time. ipaddr, select
+			dialog  - Indicates the type of dialog that will take the input data; could be: string, number, date, time. ipaddr, select, none
 		Input properties
 			Visible.[id] - Makes the control to be visible or hidden. The possible values are True or Empty and False
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
@@ -633,6 +633,7 @@
 		<param name="left"/>
 		<param name="right"/>
 		<param name="title"/>
+		<param name="dialog" default="string"/>
 		<definition>
 			<control type="group">
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
@@ -716,6 +717,7 @@
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 			title	- Shows a custom label into the KeyboardDialog to set a new value
 			icon	- Graphical icon or simple text (byt limited to max 2-3 chars) to be displayed on the lookup button
+			dialog  - Indicates the type of dialog that will take the input data; could be: string, number, date, time. ipaddr, select
 		Input properties
 			Visible.[id] - Makes the control to be visible or hidden. The possible values are True or Empty and False
 			Enable.[id]  - Activates and de-activates the control. The possible values are True or Empty and False
@@ -736,6 +738,7 @@
 		<param name="left"/>
 		<param name="right"/>
 		<param name="title"/>
+		<param name="dialog" default="string"/>
 		<definition>
 			<control type="group">
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>

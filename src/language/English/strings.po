@@ -883,6 +883,14 @@ msgctxt "#31945"
 msgid "Reset System to Default"
 msgstr ""
 
+msgctxt "#31946"
+msgid "Do you confirm Reset Kodi to Default operation?"
+msgstr ""
+
+msgctxt "#31947"
+msgid "DO you confirm Reset System to Default operation"
+msgstr ""
+
 msgctxt "#31990"
 msgid "Reboot is needed!"
 msgstr ""
