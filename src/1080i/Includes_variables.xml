@@ -165,6 +165,8 @@
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),34)"></value>
 		<!--SCATTERED_THUNDERSTORMS-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),39)"></value>
+		<!--HEAVY SNOW-->
+		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),42)"></value>
 	<!-- Generic Codes -->
 		<!--Clear/Sunny/Day-->
 		<value condition="String.IsEqual(Window(Weather).Property(Current.FanartCode),101)"></value>
@@ -299,6 +301,8 @@
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),34)"></value>
 		<!--SCATTERED_THUNDERSTORMS-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),39)"></value>
+		<!--HEAVY SNOW-->
+		<value condition="String.IsEqual(ListItem.Property(FanartCode),42)"></value>
 	<!-- Generic Codes -->
 		<!--Clear/Sunny/Day-->
 		<value condition="String.IsEqual(ListItem.Property(FanartCode),101)"></value>
