@@ -11,6 +11,7 @@
 			color	- Specified the color scheme  of the text
 	-->
 	<include name="Label">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -20,6 +21,7 @@
 		<param name="color" default="selected"/>
 		<definition>
 			<control type="label" id="$PARAM[id]1">
+				<description>$PARAM[description]</description>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
 				<width>$PARAM[width]</width>
@@ -49,6 +51,7 @@
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 	-->
 	<include name="Editbox">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -63,6 +66,7 @@
 		<param name="right"/>
 		<definition>
 			<control type="group">
+				<description>$PARAM[description]</description>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
 				<control type="label" id="$PARAM[id]1">
@@ -128,6 +132,7 @@
 			action	- Specifies the control action for onClick event. It is attached only when the parameter is not empty.
 	-->
 	<include name="Button">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -139,6 +144,7 @@
 		<param name="right"/>
 		<definition>
 			<control type="group">
+				<description>$PARAM[description]</description>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
 				<control type="button" id="$PARAM[id]">
@@ -181,6 +187,7 @@
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 	-->
 	<include name="Radiobutton">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -192,9 +199,12 @@
 		<param name="right"/>
 		<definition>
 			<control type="group">
+				<description>$PARAM[description]</description>
+				<posx>$PARAM[posx]</posx>
+				<posy>$PARAM[posy]</posy>
 				<control type="radiobutton" id="$PARAM[id]">
-					<posx>$PARAM[posx]</posx>
-					<posy>$PARAM[posy]</posy>
+					<posx>0</posx>
+					<posy>0</posy>
 					<width>$PARAM[width]</width>
 					<textcolor>disabled</textcolor>
 					<focusedcolor>selected</focusedcolor>
@@ -225,6 +235,7 @@
 			right	- Specifies the <id> of the control that should be moved to when the user moves right off this control
 	-->
 	<include name="Listbox">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -239,6 +250,7 @@
 		<param name="orientation" default="vertical"/>
 		<definition>
 			<control type="group">
+				<description>$PARAM[description]</description>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
 				<control type="image">
@@ -325,6 +337,7 @@
 			Label.[id]   - describes the control label
 	-->
 	<include name="PropertyLabel">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -334,6 +347,7 @@
 		<param name="color" default="unselected"/>
 		<definition>
 			<control type="label" id="$PARAM[id]">
+				<description>$PARAM[description]</description>
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 				<posx>$PARAM[posx]</posx>
@@ -376,6 +390,7 @@
 			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyEditbox">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -392,6 +407,7 @@
 		<param name="dialog" default="string"/>
 		<definition>
 			<control type="group">
+				<description>$PARAM[description]</description>
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
@@ -476,6 +492,7 @@
 			Label.[id]   - describes the control label. This labbel can be set in Pre-Init phase, before to start window controls loading
 	-->
 	<include name="PropertyButton">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -487,6 +504,7 @@
 		<param name="right"/>
 		<definition>
 			<control type="button" id="$PARAM[id]">
+				<description>$PARAM[description]</description>
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<enable>String.IsEmpty(Window.Property(Enable.$PARAM[id]))|String.IsEqual(Window.Property(Enable.$PARAM[id]),true)</enable>
 				<posx>$PARAM[posx]</posx>
@@ -541,6 +559,7 @@
 			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyRadiobutton">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -552,6 +571,7 @@
 		<param name="right"/>
 		<definition>
 			<control type="group">
+				<description>$PARAM[description]</description>
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
@@ -621,6 +641,7 @@
 			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyPopupHiddenValue">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -636,6 +657,7 @@
 		<param name="dialog" default="string"/>
 		<definition>
 			<control type="group">
+				<description>$PARAM[description]</description>
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
@@ -726,6 +748,7 @@
 			Callback.[id]- Specifies if the current control wil trigger Click action immediately after the input value is provided
 	-->
 	<include name="PropertyPopupDisplayValue">
+		<param name="description"/>
 		<param name="id"/>
 		<param name="posx"/>
 		<param name="posy"/>
@@ -741,6 +764,7 @@
 		<param name="dialog" default="string"/>
 		<definition>
 			<control type="group">
+				<description>$PARAM[description]</description>
 				<visible>String.IsEmpty(Window.Property(Visible.$PARAM[id]))|String.IsEqual(Window.Property(Visible.$PARAM[id]),true)</visible>
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
