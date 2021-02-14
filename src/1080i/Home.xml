@@ -150,14 +150,14 @@
 						<label>31000</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>activateWindow(TVChannels)</onclick>
+						<onclick>ActivateWindow(TVChannels)</onclick>
 					</item>
 					<item id="2">
 						<visible>!Skin.HasSetting(hideVideo)</visible>
 						<label>31002</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>activateWindow(videos)</onclick>
+						<onclick>ActivateWindow(videos)</onclick>
 					</item>
 					<item id="3">
 						<visible>!Skin.HasSetting(hideMusic)</visible>
@@ -187,17 +187,11 @@
 		<!-- 4) Secondary Menu - Environment controls -->
 		<control type="group">
 			<posx>10</posx>
-			<posy>0</posy>
-			<!--animations-->
-			<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
-			<animation condition="Integer.IsEqual(Container(9100).NumItems,2)" effect="slide" end="10,724" time="0">conditional</animation>
-			<animation condition="Integer.IsEqual(Container(9100).NumItems,3)" effect="slide" end="10,662" time="0">conditional</animation>
-			<animation condition="Integer.IsEqual(Container(9100).NumItems,4)" effect="slide" end="10,619" time="0">conditional</animation>
-			<animation condition="Integer.IsEqual(Container(9100).NumItems,5)" effect="slide" end="10,596" time="0">conditional</animation>
-			<animation condition="Integer.IsEqual(Container(9100).NumItems,6)" effect="slide" end="10,553" time="0">conditional</animation>
+			<posy>10-row</posy>
 			<control type="list" id="9100">
 				<width>1-row</width>
-				<height>1080</height>
+				<height>10-row</height>
+				<centerbottom>50%</centerbottom>
 				<orientation>vertical</orientation>
 				<onup>9100</onup>
 				<ondown>9100</ondown>
@@ -205,44 +199,90 @@
 				<onright>9000</onright>
 				<itemlayout width="1-row" height="1-row">
 					<control type="label">
+						<visible>!String.IsEqual(ListItem.label,$LOCALIZE[24027])</visible>
 						<posx>3</posx>
 						<posy>3</posy>
-						<width>36</width>
-						<height>36</height>
+						<width>50</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
 						<font>symbolMedium</font>
 						<textcolor>unselected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
+					</control>
+					<control type="label">
+						<visible>String.IsEqual(ListItem.label,$LOCALIZE[24027])</visible>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>50</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolSmallerWeather</font>
+						<textcolor>unselected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>[B]$VAR[CurrentWeatherIcon][/B]</label>
 					</control>
 				</itemlayout>
 				<focusedlayout width="1-row" height="1-row">
 					<control type="label">
+						<visible>Control.HasFocus(9100)+!String.IsEqual(ListItem.label,$LOCALIZE[24027])</visible>
 						<posx>3</posx>
 						<posy>3</posy>
-						<width>36</width>
-						<height>36</height>
+						<width>50</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
 						<font>symbolMedium</font>
 						<textcolor>selected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>Control.HasFocus(9100)</visible>
 					</control>
 					<control type="label">
+						<visible>!Control.HasFocus(9100)+!String.IsEqual(ListItem.label,$LOCALIZE[24027])</visible>
 						<posx>3</posx>
 						<posy>3</posy>
-						<width>36</width>
-						<height>36</height>
+						<width>50</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
 						<font>symbolMedium</font>
 						<textcolor>unselected</textcolor>
 						<shadowcolor>-</shadowcolor>
 						<label>$INFO[ListItem.label2]</label>
-						<visible>!Control.HasFocus(9100)</visible>
+					</control>
+					<control type="label">
+						<visible>Control.HasFocus(9100)+String.IsEqual(ListItem.label,$LOCALIZE[24027])</visible>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>50</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolSmallerWeather</font>
+						<textcolor>selected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>[B]$VAR[CurrentWeatherIcon][/B]</label>
+					</control>
+					<control type="label">
+						<visible>!Control.HasFocus(9100)+String.IsEqual(ListItem.label,$LOCALIZE[24027])</visible>
+						<posx>3</posx>
+						<posy>3</posy>
+						<width>50</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>symbolSmallerWeather</font>
+						<textcolor>unselected</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>[B]$VAR[CurrentWeatherIcon][/B]</label>
 					</control>
 				</focusedlayout>
 				<content>
 					<item id="1">
 						<label>10511</label>
-						<label2></label2>
+						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ActivateWindow(systeminfo)</onclick>
 					</item>
@@ -251,7 +291,7 @@
 						<label>1036</label>
 						<label2></label2>
 						<thumb>-</thumb>
-						<onclick>ReplaceWindow(favourites)</onclick>
+						<onclick>ActivateWindow(favourites)</onclick>
 					</item>
 					<item id="3">
 						<visible>!String.IsEmpty(Weather.location)</visible>
@@ -263,7 +303,7 @@
 					<item id="4">
 						<visible>Skin.HasSetting(showSearch) + System.HasAddon(program.search)</visible>
 						<label>31304</label>
-						<label2></label2>
+						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ActivateWindow(busydialog)</onclick>
 						<onclick>RunScript(program.search)</onclick>
@@ -271,23 +311,23 @@
 					<item id="5">
 						<visible>Skin.HasSetting(showSettings) + System.HasAddon(service.clue)</visible>
 						<label>31305</label>
-						<label2></label2>
+						<label2></label2>
 						<thumb>-</thumb>
 						<onclick>ActivateWindow(busydialog)</onclick>
 						<onclick>RunScript(service.clue,window.setup)</onclick>
 					</item>
 					<item id="6">
+						<visible>Skin.HasSetting(showPrograms)</visible>
                         <label>31004</label>
                         <label2></label2>
                         <thumb>-</thumb>
-						<visible>Skin.HasSetting(showPrograms)</visible>
                         <onclick>ActivateWindow(programs,addons,return)</onclick>
                     </item>
 					<item id="7">
+						<visible>Skin.HasSetting(showFileManager)</visible>
                         <label>31006</label>
                         <label2></label2>
                         <thumb>-</thumb>
-						<visible>Skin.HasSetting(showFileManager)</visible>
                         <onclick>ActivateWindow(filemanager,return)</onclick>
                     </item>
 					<item id="8">

@@ -35,13 +35,14 @@
 		</animation>
 	</include>
 
+
 	<!--modal dialog handling-->
 	<include name="modalDialogInOut">
-		<animation type="Windowopen">
+		<animation type="windowOpen">
 			<effect type="fade" start="0" end="100" time="300"/>
 			<effect type="slide" start="1920" end="0" tween="cubic" easing="out" time="400"/>
 		</animation>
-		<animation type="Windowclose">
+		<animation type="windowOpen">
 			<effect type="fade" start="100" end="0" time="300"/>
 			<effect type="slide" start="0" end="-1920" tween="cubic" easing="out" time="400"/>
 		</animation>
@@ -49,11 +50,11 @@
 
 
 	<include name="modalDialogInOutVertical">
-		<animation type="Windowopen">
+		<animation type="windowOpen">
 			<effect type="fade" start="0" end="100" time="300"/>
 			<effect type="slide" start="0,-200" end="0" tween="cubic" easing="out" time="400"/>
 		</animation>
-		<animation type="Windowclose">
+		<animation type="windowOpen">
 			<effect type="fade" start="100" end="0" time="300"/>
 			<effect type="slide" start="0" end="0,300" tween="cubic" easing="out" time="400"/>
 		</animation>

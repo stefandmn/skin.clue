@@ -198,6 +198,11 @@
 
 		<!-- Weather symbols -->
 		<font>
+			<name>symbolSmallerWeather</name>
+			<filename>weather.ttf</filename>
+			<size>30</size>
+		</font>
+		<font>
 			<name>symbolWeather</name>
 			<filename>weather.ttf</filename>
 			<size>36</size>

@@ -9,6 +9,9 @@
 			font	- Specifies the font to use from the font.xml file
 			label	- Specifies the text which should be drawn
 			color	- Specified the color scheme  of the text
+			wrap	- Indicates multi-line display
+			alignx  - Indicates the horizontal alignment
+			aligny  - Indicates the vertical alignment
 	-->
 	<include name="Label">
 		<param name="description"/>
@@ -19,6 +22,9 @@
 		<param name="label"/>
 		<param name="font" default="itemTitle"/>
 		<param name="color" default="selected"/>
+		<param name="wrap" default="false"/>
+		<param name="alignx" default="left"/>
+		<param name="aligny" default="top"/>
 		<definition>
 			<control type="label" id="$PARAM[id]1">
 				<description>$PARAM[description]</description>
@@ -30,6 +36,9 @@
 				<textoffsetx>5</textoffsetx>
 				<shadowcolor>-</shadowcolor>
 				<label>$PARAM[label]</label>
+				<align>$PARAM[alignx]</align>
+				<aligny>$PARAM[aligny]</aligny>
+				<wrapmultiline>$PARAM[wrap]</wrapmultiline>
 			</control>
 		 </definition>
 	</include>
@@ -242,7 +251,6 @@
 		<param name="width"/>
 		<param name="height"/>
 		<param name="label"/>
-		<param name="hint"/>
 		<param name="up"/>
 		<param name="down"/>
 		<param name="left"/>
@@ -398,7 +406,6 @@
 		<param name="bwidth"/>
 		<param name="balign"/>
 		<param name="label" default=""/>
-		<param name="hint"/>
 		<param name="up"/>
 		<param name="down"/>
 		<param name="left"/>
@@ -648,7 +655,6 @@
 		<param name="width"/>
 		<param name="label" default=""/>
 		<param name="icon" default=""/>
-		<param name="hint"/>
 		<param name="up"/>
 		<param name="down"/>
 		<param name="left"/>
@@ -755,7 +761,6 @@
 		<param name="width"/>
 		<param name="value"/>
 		<param name="icon" default=""/>
-		<param name="hint"/>
 		<param name="up"/>
 		<param name="down"/>
 		<param name="left"/>

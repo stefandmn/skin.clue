@@ -87,7 +87,7 @@
 							<colordiffuse>77FFFFFF</colordiffuse>
 						</control>
 						<control type="image">
-							<visible>control.hasfocus(8000)</visible>
+							<visible>Control.HasFocus(8000)</visible>
 							<posx>0</posx>
 							<posy>2</posy>
 							<width>4-col</width>

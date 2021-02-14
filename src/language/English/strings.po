@@ -764,19 +764,11 @@ msgid "Password has been changed"
 msgstr ""
 
 msgctxt "#31916"
-msgid "System Configuration"
+msgid "System Maintenance"
 msgstr ""
 
 msgctxt "#31917"
-msgid "Core Parameters and Processes"
-msgstr ""
-
-msgctxt "#31918"
-msgid "System Services"
-msgstr ""
-
-msgctxt "#31919"
-msgid "System and Application Services"
+msgid "Maintenance and Administration"
 msgstr ""
 
 msgctxt "#31920"
@@ -820,11 +812,11 @@ msgid "Licenses for Hw Codecs"
 msgstr ""
 
 msgctxt "#31930"
-msgid "Bridge"
+msgid "HomeKit Bridge"
 msgstr ""
 
 msgctxt "#31931"
-msgid "HomeKit Bridge"
+msgid "Apple HomeKit Integration"
 msgstr ""
 
 msgctxt "#31932"
@@ -891,8 +883,149 @@ msgctxt "#31947"
 msgid "Do you confirm [Reset System to Default] operation?"
 msgstr ""
 
+msgctxt "#31948"
+msgid "To the next reboot soft reset will be applied"
+msgstr ""
+
+msgctxt "#31949"
+msgid "To the next reboot hard reset will be applied"
+msgstr ""
+
+msgctxt "#31950"
+msgid "Enable Samba (smbd/nmbd) Services"
+msgstr ""
+
+msgctxt "#31951"
+msgid "Username"
+msgstr ""
+
+msgctxt "#31952"
+msgid "Password"
+msgstr ""
+
+msgctxt "#31953"
+msgid "Secure"
+msgstr ""
+
+msgctxt "#31954"
+msgid "Min"
+msgstr ""
+
+msgctxt "#31955"
+msgid "Max"
+msgstr ""
+
+msgctxt "#31956"
+msgid "Workgroup"
+msgstr ""
+
+msgctxt "#31957"
+msgid "Supported Protocol Versions"
+msgstr ""
+
+msgctxt "#31958"
+msgid "File Sharing"
+msgstr ""
+
+msgctxt "#31959"
+msgid "File Sharing over Samba Server"
+msgstr ""
+
+msgctxt "#31960"
+msgid "Autoshare"
+msgstr ""
+
+msgctxt "#31961"
+msgid "Remote Screen"
+msgstr ""
+
+msgctxt "#31962"
+msgid "VNC Service over Mirror Server"
+msgstr ""
+
+msgctxt "#31963"
+msgid "Memory"
+msgstr ""
+
+msgctxt "#31964"
+msgid "GPU and Swap Memory"
+msgstr ""
+
+msgctxt "#31965"
+msgid "Overclocking"
+msgstr ""
+
+msgctxt "#31966"
+msgid "CPU Overclocking and Turbo Mode"
+msgstr ""
+
+msgctxt "#31967"
+msgid "Enable Avahi Service"
+msgstr ""
+
+msgctxt "#31968"
+msgid "Enable Cron Service"
+msgstr ""
+
+msgctxt "#31969"
+msgid "Enable Mirror/VNC Service"
+msgstr ""
+
+msgctxt "#31970"
+msgid "TCP Port"
+msgstr ""
+
+msgctxt "#31971"
+msgid "Connection Password"
+msgstr ""
+
+msgctxt "#31972"
+msgid "Frame rate"
+msgstr ""
+
+msgctxt "#31973"
+msgid "Fullscreen Mode"
+msgstr ""
+
+msgctxt "#31974"
+msgid "Screen Downscale"
+msgstr ""
+
+msgctxt "#31975"
+msgid "Multi-threading"
+msgstr ""
+
+msgctxt "#31976"
+msgid "Enable Swap Memory File"
+msgstr ""
+
+msgctxt "#31977"
+msgid "Swap Size"
+msgstr ""
+
+msgctxt "#31978"
+msgid "MPEG-2 License Key"
+msgstr ""
+
+msgctxt "#31979"
+msgid "VC-1 License Key"
+msgstr ""
+
+
 msgctxt "#31990"
 msgid "Reboot is needed!"
+msgstr ""
+
+msgctxt "#31991"
+msgid "Restart"
+msgstr ""
+
+msgctxt "#31992"
+msgid "Error applying service status: %s"
+msgstr ""
+
+msgctxt "#31993"
+msgid "Error applying configuration by restating main service: %s"
 msgstr ""
 
 msgctxt "#31999"

@@ -139,7 +139,7 @@
 				<!-- Weather current symbol -->
 				<control type="label">
 					<posx>0</posx>
-					<posy>-25</posy>
+					<posy>-15</posy>
 					<width>350</width>
 					<height>250</height>
 					<font>symbolVeryLargeWeather</font>
