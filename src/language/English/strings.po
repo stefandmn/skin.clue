@@ -752,7 +752,7 @@ msgid "Host Name"
 msgstr ""
 
 msgctxt "#31913"
-msgid "Keep the Device Name in Synch with the Host name"
+msgid "Keep the Device Name in sync with the Host Name"
 msgstr ""
 
 msgctxt "#31914"

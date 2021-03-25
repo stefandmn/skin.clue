@@ -504,6 +504,7 @@
 		<param name="posx"/>
 		<param name="posy"/>
 		<param name="width"/>
+		<param name="font" default="itemTitle"/>
 		<param name="label" default=""/>
 		<param name="up"/>
 		<param name="down"/>
@@ -517,7 +518,7 @@
 				<posx>$PARAM[posx]</posx>
 				<posy>$PARAM[posy]</posy>
 				<width>$PARAM[width]</width>
-				<font>itemTitle</font>
+				<font>$PARAM[font]</font>
 				<textoffsetx>12</textoffsetx>
 				<textoffsety>0</textoffsety>
 				<align>center</align>
