@@ -1028,7 +1028,14 @@ msgctxt "#31993"
 msgid "Error applying configuration by restating main service: %s"
 msgstr ""
 
+msgctxt "#31994"
+msgid "Do you want to start system backup now?"
+msgstr ""
+
+msgctxt "#31995"
+msgid "DO you want to check system updates now?"
+msgstr ""
+
 msgctxt "#31999"
 msgid "Save & Close"
 msgstr ""
-
