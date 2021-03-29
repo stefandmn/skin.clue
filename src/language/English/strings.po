@@ -1033,7 +1033,7 @@ msgid "Do you want to start system backup now?"
 msgstr ""
 
 msgctxt "#31995"
-msgid "DO you want to check system updates now?"
+msgid "Do you want to check system updates now?"
 msgstr ""
 
 msgctxt "#31999"
